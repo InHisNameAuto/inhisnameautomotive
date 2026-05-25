@@ -283,9 +283,9 @@
         
         <div class="contact-header" style="text-align: center !important; margin-bottom: 3.5rem !important; width: 100% !important;">
             <p class="section-label" style="text-align: center !important; margin: 0 auto 0.5rem auto !important;">GET IN TOUCH</p>
-            <h3 class="section-title" style="text-align: center !important; margin: 0 auto 1.5rem auto !important;">
-                <span style="display: block !important; margin-bottom: 0.5rem !important;">COME SEE US.</span>
-                <span class="gold">WE'LL BE STRAIGHT WITH YOU.</span>
+            <h3 class="section-title" style="text-align: center !important; margin: 0 auto 1.5rem auto !important; font-size: 2.2rem !important; font-weight: 800 !important; line-height: 1.2 !important;">
+                <span style="display: block !important; margin-bottom: 0.5rem !important; color: white !important;">COME SEE US.</span>
+                <span class="gold" style="color: #d4a574 !important;">WE'LL BE STRAIGHT WITH YOU.</span>
             </h3>
             <p class="contact-intro" style="max-width: 700px !important; margin: 0 auto !important; text-align: center !important; color: #b0b0b0 !important; line-height: 1.6 !important; font-size: 1.05rem !important;">
                 Call, email, or just drop by. No waiting room games, no service advisor sales pitch. Just honest answers.
@@ -294,7 +294,7 @@
 
         <div class="contact-layout-grid" style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: stretch !important; gap: 3rem !important; width: 100% !important;">
             
-            <div id="leftContactColumn" class="contact-boxes" style="display: flex !important; flex-direction: column !important; gap: 1.5rem !important; flex: 1 !important; min-width: 300px !important; max-width: 500px !important; margin: 0 !important; text-align: left !important;">
+            <div class="contact-boxes" style="display: flex !important; flex-direction: column !important; gap: 1.5rem !important; width: 450px !important; max-width: 100% !important; margin: 0 !important; text-align: left !important;">
                 
                 <a href="tel:9714286446" class="contact-box" style="margin: 0 !important; text-decoration: none !important;">
                     <span class="contact-label">CALL OR TEXT</span>
@@ -306,22 +306,21 @@
                     <span class="contact-value">Nathan@InHisNameAutomotive.com</span>
                 </a>
                 
-                <a href="https://www.google.com/maps/search/?api=1&query=119+50th+Ave+NW+Salem+OR+97304" target="_blank" rel="noopener noreferrer" class="contact-box" style="margin: 0 !important; text-decoration: none !important;">
+                <a href="https://maps.google.com/maps?q=119+50th+Ave+NW,+Salem,+OR+97304" target="_blank" rel="noopener noreferrer" class="contact-box" style="margin: 0 !important; text-decoration: none !important;">
                     <span class="contact-label">LOCATION</span>
                     <span class="contact-value">119 50th Ave NW<br>Salem, OR 97304</span>
                 </a>
             </div>
 
-            <div id="rightMapContainer" class="map-container" style="flex: 1 !important; min-width: 300px !important; max-width: 500px !important; border-radius: 8px !important; overflow: hidden !important; box-shadow: 0 12px 36px rgba(0,0,0,0.4) !important; border: 1px solid rgba(212, 165, 116, 0.2) !important; margin: 0 !important;">
+            <div class="map-container" style="width: 450px !important; max-width: 100% !important; aspect-ratio: 1 / 1 !important; border-radius: 12px !important; overflow: hidden !important; box-shadow: 0 12px 36px rgba(0,0,0,0.4) !important; border: 1px solid rgba(212, 165, 116, 0.2) !important; margin: 0 !important;">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.5628834395297!2d-123.08954!3d44.8365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54bffc72d7b89ac5%3A0x8c3a3d7f8c5d4e6f!2s119%2050th%20Ave%20NW%2C%20Salem%2C%20OR%2097304!5e0!3m2!1sen!2sus!4v1000000000000" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d2821.234567890123!2d-123.08535!3d44.94567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54bfc00000000001%3A0x0!2zMTE5IDUwdGggQXZlIE5XLCBTYWxlbSwgT1IgOTczMDQ!5e0!3m2!1sen!2sus!4v1716666666666!5m2!1sen!2sus" 
                     width="100%" 
                     height="100%" 
-                    style="border:0; width: 100% !important; height: 100% !important; display: block !important; min-height: 350px !important;" 
+                    style="border:0; width: 100% !important; height: 100% !important; display: block !important;" 
                     allowfullscreen="" 
                     loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    onload="setTimeout(function(){ var h = document.getElementById('leftContactColumn').clientHeight; if(window.innerWidth > 768 && h > 0) { document.getElementById('rightMapContainer').style.height = h + 'px'; document.getElementById('rightMapContainer').style.width = h + 'px'; } }, 100);">
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
 
