@@ -366,38 +366,12 @@
             </div>
         </div>
     </section>
- <section class="testimonials" id="testimonials" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
-        
-        <style>
-            .testimonial-pop-card {
-                background: #ffffff !important; 
-                /* Hidden gold border setup at rest to prevent size shifting */
-                border: 2px solid transparent !important; 
-                box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important; 
-                text-decoration: none !important; 
-                color: inherit !important;
-                display: block; /* Ensures anchor tags behave perfectly as grid boxes */
-                padding: 2rem !important;
-                border-radius: 8px !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-                cursor: pointer;
-            }
-            
-            /* Pop trigger applied only to the specific card being hovered over */
-            .testimonial-pop-card:hover {
-                background-color: #e6f2ff !important; /* Soft Ice Blue */
-                border-color: #b07d4c !important;     /* Gold border lights up instantly */
-                transform: translateY(-6px) !important; /* Smooth upward pop interaction */
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
-            }
-        </style>
-
 <section class="testimonials" id="testimonials" style="background-color: #e6f2ff !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
             .testimonial-pop-card {
-                background: #ffffff !important; 
-                border: 2px solid transparent !important; 
+                background: #ffffff !important; /* Base color is white */
+                border: 2px solid transparent !important; /* Clean and borderless until hover */
                 box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important; 
                 text-decoration: none !important; 
                 color: inherit !important;
@@ -408,20 +382,20 @@
                 cursor: pointer;
             }
             
-            /* Mouseover effect: Shifts to dark navy to stand out against the ice blue section background */
+            /* Mouseover effect: Changes to ice blue background and triggers the gold border */
             .testimonial-pop-card:hover {
-                background-color: #0d1b2a !important; /* Dark Navy Background */
+                background-color: #e6f2ff !important; /* Soft Ice Blue */
                 border-color: #b07d4c !important;     /* Gold border lights up instantly */
                 transform: translateY(-6px) !important; /* Smooth upward pop interaction */
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
             }
 
-            /* Flips card text to white on hover for perfect readability */
+            /* Ensures the text style parameters stay crisp and legible over the ice blue color */
             .testimonial-pop-card:hover .testimonial-text {
-                color: #ffffff !important;
+                color: #1a2530 !important; /* Darker navy text color on hover */
             }
             .testimonial-pop-card:hover .testimonial-author {
-                color: #d4a574 !important; /* Brighter gold accent for the name on dark background */
+                color: #b07d4c !important; /* Main brand gold color preserved */
             }
         </style>
 
