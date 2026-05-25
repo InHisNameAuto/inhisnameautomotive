@@ -366,104 +366,80 @@
             </div>
         </div>
     </section>
-<section class="testimonials" id="testimonials" style="background-color: #e6f2ff !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+<section class="why-us" id="why-us" style="background-color: #e6f2ff !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
-            .testimonial-pop-card {
-                background: #ffffff !important; /* Base color is white */
+            .whyus-pop-card {
+                margin: 0 !important;
+                background: #ffffff !important; /* Starts crisp solid white */
                 border: 2px solid transparent !important; /* Clean and borderless until hover */
-                box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important; 
-                text-decoration: none !important; 
-                color: inherit !important;
-                display: block; 
                 padding: 2rem !important;
                 border-radius: 8px !important;
                 transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
                 cursor: pointer;
             }
             
-            /* Mouseover effect: Changes to ice blue background and triggers the gold border */
-            .testimonial-pop-card:hover {
-                background-color: #e6f2ff !important; /* Soft Ice Blue */
-                border-color: #b07d4c !important;     /* Gold border lights up instantly */
-                transform: translateY(-6px) !important; /* Smooth upward pop interaction */
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+            /* Text elements start dark immediately so they read perfectly over the white background */
+            .whyus-pop-card h4 {
+                color: #0d1b2a !important; /* Dark Navy/Black for headers */
+                font-weight: bold !important;
+                margin-bottom: 0.8rem !important;
+                transition: color 0.3s ease !important;
             }
-
-            /* Ensures the text style parameters stay crisp and legible over the ice blue color */
-            .testimonial-pop-card:hover .testimonial-text {
-                color: #1a2530 !important; /* Darker navy text color on hover */
-            }
-            .testimonial-pop-card:hover .testimonial-author {
-                color: #b07d4c !important; /* Main brand gold color preserved */
-            }
-        </style>
-
-<section class="testimonials" id="testimonials" style="background-color: #e6f2ff !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
-        
-        <style>
-            .testimonial-pop-card {
-                background: #ffffff !important; /* Base color is white */
-                border: 2px solid transparent !important; /* Clean and borderless until hover */
-                box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important; 
-                text-decoration: none !important; 
-                color: inherit !important;
-                display: block; 
-                padding: 2rem !important;
-                border-radius: 8px !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-                cursor: pointer;
+            .whyus-pop-card p {
+                color: #4a5568 !important; /* Dark grey for descriptions */
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+                transition: color 0.3s ease !important;
             }
             
-            /* Mouseover effect: Changes to ice blue background and triggers the gold border */
-            .testimonial-pop-card:hover {
+            /* Mouseover effect: turns the background ice blue and pops the gold border */
+            .whyus-pop-card:hover {
                 background-color: #e6f2ff !important; /* Soft Ice Blue */
-                border-color: #b07d4c !important;     /* Gold border lights up instantly */
-                transform: translateY(-6px) !important; /* Smooth upward pop interaction */
+                border-color: #b07d4c !important;     /* Gold border lights up */
+                transform: translateY(-6px) !important; /* Smooth upward pop */
                 box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
             }
 
-            /* Ensures the text style parameters stay crisp and legible over the ice blue color */
-            .testimonial-pop-card:hover .testimonial-text {
-                color: #1a2530 !important; /* Darker navy text color on hover */
+            /* Keeps text readable and numbers matching brand gold on hover */
+            .whyus-pop-card:hover h4 {
+                color: #0d1b2a !important; 
             }
-            .testimonial-pop-card:hover .testimonial-author {
-                color: #b07d4c !important; /* Main brand gold color preserved */
+            .whyus-pop-card:hover p {
+                color: #4a5568 !important; 
             }
         </style>
 
-        <div class="testimonials-content" style="max-width: 1100px !important; margin: 0 auto !important;">
-            <h1 class="section-label" style="color: #b07d4c !important; text-align: center !important;">WHAT CUSTOMERS SAY</h1>
-            <h1 class="section-title" style="color: #1a2530 !important; text-align: center !important;">REAL PEOPLE. <span style="color: #b07d4c !important;">REAL RESULTS.</span></h1>
+        <div class="why-us-content" style="max-width: 1100px !important; margin: 0 auto !important;">
+            <h1 class="section-label" style="color: #b07d4c !important; font-size: 1rem !important; letter-spacing: 2px !important; font-weight: bold !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important;">WHY CHOOSE US</h1>
+            <h1 class="section-title" style="color: #1a2530 !important; font-size: 2.2rem !important; font-weight: 800 !important; line-height: 1.2 !important; margin-bottom: 1.5rem !important;">
+                <span>A SHOP YOU CAN </span><span class="gold" style="color: #b07d4c !important;">ACTUALLY TRUST</span>
+            </h1>
+            <p class="section-subtitle" style="color: #4a5568 !important; opacity: 1 !important;">We built this shop around one question: what would it look like if an auto repair shop treated every customer the way we'd want to be treated?</p>
 
-            <div class="testimonials-grid" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
+            <div class="benefits-grid" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
                 
-                <a href="https://www.google.com/maps/place/In+His+Name+Automotive/@44.8365,-123.0895,17z/reviews" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                    <div class="stars" style="margin-bottom: 1rem !important;">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text" style="color: #4a5568 !important; line-height: 1.6 !important; margin-bottom: 1.5rem !important; transition: color 0.3s ease;">"Great service, fast and professional, definitely I will recommend In his Name Automotive to my friends and Family ."</p>
-                    <p class="testimonial-author" style="color: #b07d4c !important; font-weight: bold !important; margin: 0 !important; transition: color 0.3s ease;">JOSEPH JARA</p>
-                </a>
+                <div class="benefit-card whyus-pop-card">
+                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">01</div>
+                    <h4>HONEST ESTIMATES, EVERY TIME</h4>
+                    <p>You'll never get a bill full of surprise line items. We walk you through exactly what needs to be done and why before any work begins.</p>
+                </div>
+                
+                <div class="benefit-card whyus-pop-card">
+                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">02</div>
+                    <h4>VISUAL PROOF OF EVERY ISSUE</h4>
+                    <p>Through Tekmetric, we document every problem with photos and videos. You see the worn brake pad, the leaking gasket, the cracked belt — not just our word for it.</p>
+                </div>
+                
+                <div class="benefit-card whyus-pop-card">
+                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">03</div>
+                    <h4>FAITH-DRIVEN STANDARDS</h4>
+                    <p>Our business is built on Proverbs 11:1 — "Honest scales and balances belong to the Lord." We hold ourselves to a higher standard.</p>
+                </div>
 
-                <a href="https://www.google.com/maps/place/In+His+Name+Automotive/@44.8365,-123.0895,17z/reviews" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                    <div class="stars" style="margin-bottom: 1rem !important;">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text" style="color: #4a5568 !important; line-height: 1.6 !important; margin-bottom: 1.5rem !important; transition: color 0.3s ease;">"Excellent service and care. These guys are top-notch. They went above and beyond checking my entire vehicle. Professional and honest. They check everything and explain things very clearly. I highly recommend In His Name Automotive."</p>
-                    <p class="testimonial-author" style="color: #b07d4c !important; font-weight: bold !important; margin: 0 !important; transition: color 0.3s ease;">BYRON INSCOE</p>
-                </a>
-
-                <a href="https://www.google.com/maps/place/In+His+Name+Automotive/@44.8365,-123.0895,17z/reviews" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                    <div class="stars" style="margin-bottom: 1rem !important;">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text" style="color: #4a5568 !important; line-height: 1.6 !important; margin-bottom: 1.5rem !important; transition: color 0.3s ease;">"I brought my car in today to In His Name auto shop and Nathan did an inspection on my car. He took photos and explained different areas of my car. Very professional and friendly. The price was more than fair. I'll definitely be back!"</p>
-                    <p class="testimonial-author" style="color: #b07d4c !important; font-weight: bold !important; margin: 0 !important; transition: color 0.3s ease;">TASIA SMITH</p>
-                </a>
-            </div>
-
-            <div class="review-cta" style="text-align: center !important; margin-top: 3rem !important;">
-                <p style="color: #4a5568 !important; margin-bottom: 0.5rem !important;">Had a great experience at In His Name Automotive? We'd love to hear about it.</p>
-                <a href="https://www.google.com/maps/place/In+His+Name+Automotive/@44.8365,-123.0895,17z/reviews" target="_blank" class="gold-link" style="color: #b07d4c !important; font-weight: bold !important; text-decoration: none !important;">LEAVE A GOOGLE REVIEW →</a>
             </div>
         </div>
     </section>
-
     <section id="contact" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
