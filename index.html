@@ -292,12 +292,12 @@
         </div>
     </section>
     
-<section class="why-us" id="why-us" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; color: #e8e8e8 !important; padding: 5rem 2rem !important;">
+<section class="why-us" id="why-us" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
             .whyus-pop-card {
                 margin: 0 !important;
-                background: #ffffff !important; /* Starts crisp solid white */
+                background: #ffffff !important; /* Base color stays solid white */
                 border: 2px solid transparent !important; /* Clean and borderless until hover */
                 padding: 2rem !important;
                 border-radius: 8px !important;
@@ -305,9 +305,9 @@
                 cursor: pointer;
             }
             
-            /* Text elements start dark immediately so they read perfectly over the white background */
+            /* Text elements sit clean and dark immediately over the rest state */
             .whyus-pop-card h4 {
-                color: #0d1b2a !important; /* Dark Navy/Black for headers */
+                color: #0d1b2a !important; /* Dark Navy for headers */
                 font-weight: bold !important;
                 margin-bottom: 0.8rem !important;
                 transition: color 0.3s ease !important;
@@ -319,89 +319,15 @@
                 transition: color 0.3s ease !important;
             }
             
-            /* Mouseover effect: turns the background ice blue and pops the gold border */
+            /* Mouseover effect: blends card background to section ice blue and pops gold border */
             .whyus-pop-card:hover {
-                background-color: #e6f2ff !important; /* Soft Ice Blue */
-                border-color: #b07d4c !important;     /* Gold border lights up */
+                background-color: #f0f4f8 !important; /* Blends perfectly to the section background */
+                border-color: #b07d4c !important;     /* Brand gold border lights up */
                 transform: translateY(-6px) !important; /* Smooth upward pop */
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
             }
 
-            /* Keeps text readable and numbers matching brand gold on hover */
-            .whyus-pop-card:hover h4 {
-                color: #0d1b2a !important; 
-            }
-            .whyus-pop-card:hover p {
-                color: #4a5568 !important; 
-            }
-        </style>
-
-        <div class="why-us-content" style="max-width: 1100px !important; margin: 0 auto !important;">
-            <h1 class="section-label" style="color: #b07d4c !important; font-size: 1rem !important; letter-spacing: 2px !important; font-weight: bold !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important;">WHY CHOOSE US</h1>
-            <h1 class="section-title" style="color: #ffffff !important; font-size: 2.2rem !important; font-weight: 800 !important; line-height: 1.2 !important; margin-bottom: 1.5rem !important;">
-                <span style="color: #ffffff !important;">A SHOP YOU CAN </span><span class="gold" style="color: #b07d4c !important;">ACTUALLY TRUST</span>
-            </h1>
-            <p class="section-subtitle" style="color: #ffffff !important; opacity: 1 !important;">We built this shop around one question: what would it look like if an auto repair shop treated every customer the way we'd want to be treated?</p>
-
-            <div class="benefits-grid" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
-                
-                <div class="benefit-card whyus-pop-card">
-                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">01</div>
-                    <h4>HONEST ESTIMATES, EVERY TIME</h4>
-                    <p>You'll never get a bill full of surprise line items. We walk you through exactly what needs to be done and why before any work begins.</p>
-                </div>
-                
-                <div class="benefit-card whyus-pop-card">
-                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">02</div>
-                    <h4>VISUAL PROOF OF EVERY ISSUE</h4>
-                    <p>Through Tekmetric, we document every problem with photos and videos. You see the worn brake pad, the leaking gasket, the cracked belt — not just our word for it.</p>
-                </div>
-                
-                <div class="benefit-card whyus-pop-card">
-                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">03</div>
-                    <h4>FAITH-DRIVEN STANDARDS</h4>
-                    <p>Our business is built on Proverbs 11:1 — "Honest scales and balances belong to the Lord." We hold ourselves to a higher standard.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-<section class="why-us" id="why-us" style="background-color: #e6f2ff !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
-        
-        <style>
-            .whyus-pop-card {
-                margin: 0 !important;
-                background: #f0f4f8 !important; /* Starts crisp solid white */
-                border: 2px solid transparent !important; /* Clean and borderless until hover */
-                padding: 2rem !important;
-                border-radius: 8px !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-                cursor: pointer;
-            }
-            
-            /* Text elements start dark immediately so they read perfectly over the white background */
-            .whyus-pop-card h4 {
-                color: #0d1b2a !important; /* Dark Navy/Black for headers */
-                font-weight: bold !important;
-                margin-bottom: 0.8rem !important;
-                transition: color 0.3s ease !important;
-            }
-            .whyus-pop-card p {
-                color: #4a5568 !important; /* Dark grey for descriptions */
-                font-size: 0.95rem !important;
-                line-height: 1.6 !important;
-                transition: color 0.3s ease !important;
-            }
-            
-            /* Mouseover effect: turns the background ice blue and pops the gold border */
-            .whyus-pop-card:hover {
-                background-color: #e6f2ff !important; /* Soft Ice Blue */
-                border-color: #b07d4c !important;     /* Gold border lights up */
-                transform: translateY(-6px) !important; /* Smooth upward pop */
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
-            }
-
-            /* Keeps text readable and numbers matching brand gold on hover */
+            /* Main text layers maintain absolute visibility on hover */
             .whyus-pop-card:hover h4 {
                 color: #0d1b2a !important; 
             }
