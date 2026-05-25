@@ -296,7 +296,8 @@
         
         <style>
             .whyus-pop-card {
-                background: rgba(255, 255, 255, 0.05) !important; /* Slight tint so they stand out on the dark background at rest */
+                margin: 0 !important;
+                background: #ffffff !important; /* Starts crisp solid white */
                 border: 2px solid transparent !important; /* Clean and borderless until hover */
                 padding: 2rem !important;
                 border-radius: 8px !important;
@@ -304,7 +305,21 @@
                 cursor: pointer;
             }
             
-            /* Mouseover effect: turns the text dark to read perfectly over the soft ice blue background */
+            /* Text elements start dark immediately so they read perfectly over the white background */
+            .whyus-pop-card h4 {
+                color: #0d1b2a !important; /* Dark Navy/Black for headers */
+                font-weight: bold !important;
+                margin-bottom: 0.8rem !important;
+                transition: color 0.3s ease !important;
+            }
+            .whyus-pop-card p {
+                color: #4a5568 !important; /* Dark grey for descriptions */
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+                transition: color 0.3s ease !important;
+            }
+            
+            /* Mouseover effect: turns the background ice blue and pops the gold border */
             .whyus-pop-card:hover {
                 background-color: #e6f2ff !important; /* Soft Ice Blue */
                 border-color: #b07d4c !important;     /* Gold border lights up */
@@ -312,15 +327,12 @@
                 box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
             }
 
-            /* Flip the text and numbers inside the hovered card so they stay perfectly readable */
-            .whyus-pop-card:hover .benefit-number {
-                color: #b07d4c !important; /* Keeps your numbers matching the brand gold */
-            }
+            /* Keeps text readable and numbers matching brand gold on hover */
             .whyus-pop-card:hover h4 {
-                color: #0d1b2a !important; /* Dark Navy/Black for headers */
+                color: #0d1b2a !important; 
             }
             .whyus-pop-card:hover p {
-                color: #4a5568 !important; /* Dark grey for descriptions */
+                color: #4a5568 !important; 
             }
         </style>
 
@@ -335,26 +347,25 @@
                 
                 <div class="benefit-card whyus-pop-card">
                     <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">01</div>
-                    <h4 style="transition: color 0.3s ease; font-weight: bold !important; margin-bottom: 0.8rem !important;">HONEST ESTIMATES, EVERY TIME</h4>
-                    <p style="transition: color 0.3s ease; font-size: 0.95rem !important; line-height: 1.6 !important;">You'll never get a bill full of surprise line items. We walk you through exactly what needs to be done and why before any work begins.</p>
+                    <h4>HONEST ESTIMATES, EVERY TIME</h4>
+                    <p>You'll never get a bill full of surprise line items. We walk you through exactly what needs to be done and why before any work begins.</p>
                 </div>
                 
                 <div class="benefit-card whyus-pop-card">
                     <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">02</div>
-                    <h4 style="transition: color 0.3s ease; font-weight: bold !important; margin-bottom: 0.8rem !important;">VISUAL PROOF OF EVERY ISSUE</h4>
-                    <p style="transition: color 0.3s ease; font-size: 0.95rem !important; line-height: 1.6 !important;">Through Tekmetric, we document every problem with photos and videos. You see the worn brake pad, the leaking gasket, the cracked belt — not just our word for it.</p>
+                    <h4>VISUAL PROOF OF EVERY ISSUE</h4>
+                    <p>Through Tekmetric, we document every problem with photos and videos. You see the worn brake pad, the leaking gasket, the cracked belt — not just our word for it.</p>
                 </div>
                 
                 <div class="benefit-card whyus-pop-card">
                     <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">03</div>
-                    <h4 style="transition: color 0.3s ease; font-weight: bold !important; margin-bottom: 0.8rem !important;">FAITH-DRIVEN STANDARDS</h4>
-                    <p style="transition: color 0.3s ease; font-size: 0.95rem !important; line-height: 1.6 !important;">Our business is built on Proverbs 11:1 — "Honest scales and balances belong to the Lord." We hold ourselves to a higher standard.</p>
+                    <h4>FAITH-DRIVEN STANDARDS</h4>
+                    <p>Our business is built on Proverbs 11:1 — "Honest scales and balances belong to the Lord." We hold ourselves to a higher standard.</p>
                 </div>
 
             </div>
         </div>
     </section>
-
  <section class="testimonials" id="testimonials" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
