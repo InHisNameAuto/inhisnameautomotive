@@ -399,6 +399,39 @@
             }
         </style>
 
+<section class="testimonials" id="testimonials" style="background-color: #e6f2ff !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+        
+        <style>
+            .testimonial-pop-card {
+                background: #ffffff !important; /* Base color is white */
+                border: 2px solid transparent !important; /* Clean and borderless until hover */
+                box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important; 
+                text-decoration: none !important; 
+                color: inherit !important;
+                display: block; 
+                padding: 2rem !important;
+                border-radius: 8px !important;
+                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+                cursor: pointer;
+            }
+            
+            /* Mouseover effect: Changes to ice blue background and triggers the gold border */
+            .testimonial-pop-card:hover {
+                background-color: #e6f2ff !important; /* Soft Ice Blue */
+                border-color: #b07d4c !important;     /* Gold border lights up instantly */
+                transform: translateY(-6px) !important; /* Smooth upward pop interaction */
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+            }
+
+            /* Ensures the text style parameters stay crisp and legible over the ice blue color */
+            .testimonial-pop-card:hover .testimonial-text {
+                color: #1a2530 !important; /* Darker navy text color on hover */
+            }
+            .testimonial-pop-card:hover .testimonial-author {
+                color: #b07d4c !important; /* Main brand gold color preserved */
+            }
+        </style>
+
         <div class="testimonials-content" style="max-width: 1100px !important; margin: 0 auto !important;">
             <h1 class="section-label" style="color: #b07d4c !important; text-align: center !important;">WHAT CUSTOMERS SAY</h1>
             <h1 class="section-title" style="color: #1a2530 !important; text-align: center !important;">REAL PEOPLE. <span style="color: #b07d4c !important;">REAL RESULTS.</span></h1>
@@ -430,8 +463,8 @@
             </div>
         </div>
     </section>
-    
-<section id="contact" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+
+    <section id="contact" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
             .contact-pop-card {
