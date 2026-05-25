@@ -164,22 +164,25 @@
         </div>
     </section>
 
- <section class="services" id="services" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+<section class="services" id="services" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
             .services-pop-card {
                 margin: 0 !important; 
                 background: #ffffff !important; 
-                border: 2px solid #b07d4c !important; /* Permanent gold border matching your scheme */
+                /* Clean borderless look at rest (using a transparent border so the card size doesn't jitter on hover) */
+                border: 2px solid transparent !important; 
                 padding: 2rem !important; 
                 border-radius: 8px !important; 
                 box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
                 cursor: pointer;
             }
-            /* Hover physics identical to your hero buttons */
+            
+            /* Applies the pop up, ice blue background, and gold border ONLY to the exact card being hovered over */
             .services-pop-card:hover {
                 background-color: #e6f2ff !important; /* Soft Ice Blue */
+                border-color: #b07d4c !important;     /* Gold border lights up instantly */
                 transform: translateY(-6px) !important; /* Smooth upward pop interaction */
                 box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
             }
@@ -249,6 +252,7 @@
             <p class="services-footer" style="margin-top: 3rem; text-align: center; color: #4a5568 !important; font-weight: 500;">Don't see your specific issue listed? Call us – if we can't help, we'll tell you who can.</p>
         </div>
     </section>
+    
 <section class="why-us" id="why-us" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; color: #e8e8e8 !important; padding: 5rem 2rem !important;">
         <div class="why-us-content" style="max-width: 1100px !important; margin: 0 auto !important;">
             <h1 class="section-label" style="color: #b07d4c !important; font-size: 1rem !important; letter-spacing: 2px !important; font-weight: bold !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important;">WHY CHOOSE US</h1>
