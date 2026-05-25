@@ -47,18 +47,19 @@
                 background: #ffffff !important;
                 padding: 2rem !important;
                 border-radius: 8px !important;
-                border: 1px solid rgba(0, 0, 0, 0.1) !important;
+                /* Added static gold border using your site's gold theme color variable */
+                border: 2px solid var(--gold, #d4a574) !important; 
                 text-align: center !important;
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: center !important;
                 align-items: center !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
                 cursor: pointer;
             }
             .hero-custom-card .checkmark {
                 font-size: 1.5rem !important;
-                color: #d4a574 !important; /* Gold checkmark color */
+                color: var(--gold, #d4a574) !important; /* Gold checkmark color */
                 margin-bottom: 0.5rem !important;
             }
             .hero-custom-card h4 {
@@ -75,9 +76,8 @@
             /* Hover physics matching your video clip layout using an Ice Blue / Gold theme */
             .hero-custom-card:hover {
                 background-color: #e6f2ff !important; /* Soft Ice Blue */
-                border-color: #d4a574 !important;     /* Crisp Gold Border */
                 transform: translateY(-6px) !important; /* Smooth upward pop interaction */
-                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2) !important;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
             }
         </style>
 
@@ -164,62 +164,82 @@
         </div>
     </section>
 
-    <section class="services" id="services" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+ <section class="services" id="services" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+        
+        <style>
+            .services-pop-card {
+                margin: 0 !important; 
+                background: #ffffff !important; 
+                border: 2px solid #b07d4c !important; /* Permanent gold border matching your scheme */
+                padding: 2rem !important; 
+                border-radius: 8px !important; 
+                box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;
+                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+                cursor: pointer;
+            }
+            /* Hover physics identical to your hero buttons */
+            .services-pop-card:hover {
+                background-color: #e6f2ff !important; /* Soft Ice Blue */
+                transform: translateY(-6px) !important; /* Smooth upward pop interaction */
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+            }
+        </style>
+
         <div class="process-content" style="max-width: 1100px !important; margin: 0 auto !important;">
             <h2 class="section-label" style="color: #b07d4c !important;">WHAT WE FIX</h2>
             <h3 class="section-title" style="color: #1a2530 !important;">SERVICES <span style="color: #b07d4c !important;">OFFERED</span></h3>
 
             <div class="process-steps" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">💎</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">ENGINE DIAGNOSTICS</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Full computer diagnostics with clear explanations of what the codes mean and what actually needs repair.</p>
                 </div>
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🔧</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">BRAKE SERVICE</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Pad and rotor replacement, caliper inspection, fluid flushes — with photos so you see the wear yourself.</p>
                 </div>
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🛢️</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">OIL CHANGES</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Quick, thorough service. We check your filters, fluids, and tire pressure while we're at it.</p>
                 </div>
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🚗</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">SUSPENSION & STEERING</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Shocks, struts, tie rods, alignments — we diagnose precisely and only recommend what's needed.</p>
                 </div>
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">❄️</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">COOLING SYSTEM</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Radiator, thermostat, hoses, water pump. We keep you from overheating — literally.</p>
                 </div>
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🔋</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">ELECTRICAL SYSTEMS</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Batteries, alternators, starters, and wiring diagnosis. Modern vehicles need modern diagnostic tools.</p>
                 </div>
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">⚙️</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">TRANSMISSION SERVICE</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Fluid services, diagnostics, and honest guidance on whether a repair or rebuild is truly needed.</p>
                 </div>
                 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🛡️</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">PRE-PURCHASE INSPECTIONS</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Buying a used car? We'll give you the full picture — good and bad — before you sign anything.</p>
                 </div>
 
-                <div class="step" style="margin: 0 !important; background: #ffffff !important; border: 1px solid rgba(176,125,76,0.15) !important; padding: 2rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;">
+                <div class="step services-pop-card">
                     <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">📋</div>
                     <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">SCHEDULED MAINTENANCE</h4>
                     <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">30k, 60k, and 90k factory mileage checks to keep your vehicle's warranty status intact.</p>
@@ -229,7 +249,6 @@
             <p class="services-footer" style="margin-top: 3rem; text-align: center; color: #4a5568 !important; font-weight: 500;">Don't see your specific issue listed? Call us – if we can't help, we'll tell you who can.</p>
         </div>
     </section>
-
 <section class="why-us" id="why-us" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; color: #e8e8e8 !important; padding: 5rem 2rem !important;">
         <div class="why-us-content" style="max-width: 1100px !important; margin: 0 auto !important;">
             <h1 class="section-label" style="color: #b07d4c !important; font-size: 1rem !important; letter-spacing: 2px !important; font-weight: bold !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important;">WHY CHOOSE US</h1>
