@@ -39,24 +39,63 @@
         </p>
 
         <div class="hero-image-container" style="max-width: 800px; margin: 0 auto 4rem auto; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
-            <img src="Screenshot 2026-05-25 130313.jpg" alt="In His Name Automotive Shop Lift" style="width: 100%; height: auto; display: block;">
+            <img src="workshop-image.jpg" alt="In His Name Automotive Shop Lift" style="width: 100%; height: auto; display: block;">
         </div>
+
+        <style>
+            .hero-custom-card {
+                background: #ffffff !important;
+                padding: 2rem !important;
+                border-radius: 8px !important;
+                border: 1px solid rgba(0, 0, 0, 0.1) !important;
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+                cursor: pointer;
+            }
+            .hero-custom-card .checkmark {
+                font-size: 1.5rem !important;
+                color: #d4a574 !important; /* Gold checkmark color */
+                margin-bottom: 0.5rem !important;
+            }
+            .hero-custom-card h4 {
+                color: #0d1b2a !important; /* Black/Dark Navy font */
+                font-weight: 800 !important;
+                margin: 0 0 0.5rem 0 !important;
+                letter-spacing: 1px !important;
+            }
+            .hero-custom-card p {
+                color: #4a5568 !important; /* Clean readable dark grey subtext */
+                margin: 0 !important;
+                font-size: 0.95rem !important;
+            }
+            /* Hover physics matching your video clip layout using an Ice Blue / Gold theme */
+            .hero-custom-card:hover {
+                background-color: #e6f2ff !important; /* Soft Ice Blue */
+                border-color: #d4a574 !important;     /* Crisp Gold Border */
+                transform: translateY(-6px) !important; /* Smooth upward pop interaction */
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2) !important;
+            }
+        </style>
 
         <div class="hero-features" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; margin-top: 2rem; align-items: stretch;">
             
-            <div class="feature">
+            <div class="hero-custom-card">
                 <div class="checkmark">✓</div>
                 <h4>HONEST ESTIMATES</h4>
                 <p>No hidden fees</p>
             </div>
             
-            <div class="feature">
+            <div class="hero-custom-card">
                 <div class="checkmark">✓</div>
                 <h4>PHOTO & VIDEO PROOF</h4>
                 <p>Via Tekmetric</p>
             </div>
             
-            <div class="feature">
+            <div class="hero-custom-card">
                 <div class="checkmark">✓</div>
                 <h4>ZERO UPSELLING</h4>
                 <p>We only fix what's broken</p>
