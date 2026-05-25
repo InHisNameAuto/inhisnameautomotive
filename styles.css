@@ -30,25 +30,27 @@ body {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 50;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.fixed-logo {
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    background: white;
-    border-radius: 8px;
-    padding: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+.logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    height: 120px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header-logo {
+.floating-logo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .header-content {
@@ -109,16 +111,6 @@ body {
     color: var(--light-text);
 }
 
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.05;
-    z-index: 0;
-}
-
 .hero-content-wrapper {
     max-width: 1400px;
     margin: 0 auto;
@@ -130,48 +122,58 @@ body {
     z-index: 1;
 }
 
-.hero-content {
+.hero-image-section {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.hero-location {
+.hero-image {
+    text-align: center;
+}
+
+.workshop-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(212, 165, 116, 0.3);
+}
+
+.hero-features {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feature {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 180px;
+}
+
+.checkmark {
+    color: var(--gold);
+    font-size: 1.3rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.feature div strong {
+    color: white;
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.feature div p {
+    color: #b0b0b0;
     font-size: 0.85rem;
-    letter-spacing: 2px;
-    color: var(--gold);
-    font-weight: 600;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    margin: 0;
-}
-
-.hero-title .white {
-    color: white;
-    display: block;
-}
-
-.hero-title .gold {
-    color: var(--gold);
-    display: block;
-}
-
-.hero-tagline {
-    font-size: 1.2rem;
-    color: #a8a8a8;
-    font-style: italic;
-    margin: 0;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: white;
-    font-weight: 600;
     margin: 0;
 }
 
@@ -179,7 +181,7 @@ body {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    justify-content: flex-start;
 }
 
 .button {
@@ -218,50 +220,42 @@ body {
     color: var(--navy);
 }
 
-.hero-features {
+.hero-content {
     display: flex;
-    gap: 2.5rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.feature {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.checkmark {
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.feature div strong {
-    color: white;
-    display: block;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.3rem;
-}
-
-.feature div p {
-    color: #b0b0b0;
-    font-size: 0.9rem;
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 2px;
     margin: 0;
 }
 
-.hero-image {
-    text-align: center;
+.hero-title .white {
+    color: white;
+    display: block;
 }
 
-.workshop-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 3px solid rgba(212, 165, 116, 0.3);
+.hero-title .gold {
+    color: var(--gold);
+    display: block;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    color: #a8a8a8;
+    font-style: italic;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* Responsive Design */
@@ -293,6 +287,13 @@ body {
     .phone-link, .cta-button {
         width: 100%;
         text-align: center;
+    }
+
+    .logo-container {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 10px;
     }
 }
 
