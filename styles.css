@@ -719,3 +719,67 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Custom Services Layout Matching the Process Design Rules */
+.services-unified-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    margin: 3rem 0;
+    align-items: stretch;
+}
+
+/* Individual Custom Cards inheriting the standard global styling layout */
+.step-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    text-align: center;
+    transition: all 0.3s ease; /* Enables smooth animated hover lifting transitions */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Inherited matching styling parameters for the text tags */
+.step-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.step-card h4 {
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.step-card p {
+    color: #b0b0b0;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Hover Physics - Exact carbon copy match to your upper theme sections */
+.step-card:hover {
+    background: rgba(212, 165, 116, 0.1);
+    transform: translateY(-5px); /* Pushes cards up exactly like the rest of the layout rules */
+    border-color: var(--gold);
+}
+
+/* Mobile responsivity configuration so cards automatically drop to standard vertical alignments */
+@media (max-width: 992px) {
+    .services-unified-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-unified-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
