@@ -13,7 +13,7 @@
              style="position: absolute; top: 10px; left: 20px; height: 130px; width: auto; z-index: 1001; max-width: none; filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1)) drop-shadow(0px 0px 4px rgba(176, 125, 76, 1));">
         
         <div style="position: absolute; left: 0; right: 0; display: flex; justify-content: center; align-items: center; pointer-events: none; width: 100%; height: 100%;">
-            <div class="logo-text" style="pointer-events: auto; font-weight: bold; color: #ffffff;">IN HIS NAME AUTOMOTIVE</div>
+            <h3 class="logo-text" style="pointer-events: auto; font-weight: bold; color: #ffffff; margin: 0; font-size: 1.5rem; letter-spacing: 1px;">IN HIS NAME AUTOMOTIVE</h3>
         </div>
 
         <div class="header-content" style="margin-left: auto; position: relative; z-index: 2; height: 100%; display: flex; align-items: center; padding-right: 20px;">
@@ -37,10 +37,10 @@
 <section class="hero" id="home" style="position: relative; padding: 6rem 2rem 4rem 2rem; text-align: center;">
     <div class="hero-content" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
         
-        <p class="section-label" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">SALEM, OREGON</p>
+        <p class="section-label" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; color: #b07d4c !important; font-weight: bold;">SALEM, OREGON</p>
         
         <h1 class="hero-title" style="font-weight: 900; margin-bottom: 1rem; color: #ffffff;">
-            IN HIS NAME <span class="gold">AUTOMOTIVE</span>
+            IN HIS NAME <span class="gold" style="color: #b07d4c !important;">AUTOMOTIVE</span>
         </h1>
         
         <p class="hero-subtitle" style="font-style: italic; margin-bottom: 0.5rem; color: #b0b0b0;">
@@ -50,7 +50,7 @@
             No upsells. No BS. Just the truth about your vehicle.
         </p>
 
-        <div class="hero-image-container" style="max-width: 800px; margin: 0 auto 4rem auto; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
+        <div class="hero-image-container" style="max-width: 1100px !important; margin: 0 auto 4rem auto !important; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 2px solid #b07d4c !important; width: 100%;">
             <img src="workshop-image.jpg" alt="In His Name Automotive Shop Lift" style="width: 100%; height: auto; display: block;">
         </div>
 
@@ -59,8 +59,7 @@
                 background: #ffffff !important;
                 padding: 2rem !important;
                 border-radius: 8px !important;
-                /* Added static gold border using your site's gold theme color variable */
-                border: 2px solid var(--gold, #d4a574) !important; 
+                border: 2px solid #b07d4c !important; /* Synced cleanly to brand gold color */
                 text-align: center !important;
                 display: flex !important;
                 flex-direction: column !important;
@@ -71,11 +70,11 @@
             }
             .hero-custom-card .checkmark {
                 font-size: 1.5rem !important;
-                color: var(--gold, #d4a574) !important; /* Gold checkmark color */
+                color: #b07d4c !important; /* Synced to brand gold */
                 margin-bottom: 0.5rem !important;
             }
             .hero-custom-card h4 {
-                color: #0d1b2a !important; /* Black/Dark Navy font */
+                color: #0d1b2a !important; /* Dark Navy font */
                 font-weight: 800 !important;
                 margin: 0 0 0.5rem 0 !important;
                 letter-spacing: 1px !important;
@@ -85,7 +84,8 @@
                 margin: 0 !important;
                 font-size: 0.95rem !important;
             }
-            /* Hover physics matching your video clip layout using an Ice Blue / Gold theme */
+            
+            /* Hover interactions */
             .hero-custom-card:hover {
                 background-color: #e6f2ff !important; /* Soft Ice Blue */
                 transform: translateY(-6px) !important; /* Smooth upward pop interaction */
@@ -93,7 +93,7 @@
             }
         </style>
 
-        <div class="hero-features" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; margin-top: 2rem; align-items: stretch;">
+        <div class="hero-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; width: 100%; max-width: 1100px !important; margin: 2rem auto 0 auto !important; align-items: stretch;">
             
             <div class="hero-custom-card">
                 <div class="checkmark">✓</div>
