@@ -724,3 +724,65 @@ body {
         order: 3;
         margin-top: 0.5rem;
     }
+/* ==========================================================================
+   MOBILE RESPONSIVENESS OVERRIDES (FOR SMARTPHONES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Fix the Header/Navbar container from overlapping */
+    header, .navbar, .nav-container {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks navigation items vertically */
+        align-items: center !important;
+        padding: 1rem !important;
+        height: auto !important; /* Prevents elements from spilling out of a fixed height */
+    }
+
+    /* 2. Center and resize the overlapping logo gear */
+    .logo, .header-logo, img[src*="logo"] {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 0 auto 1rem auto !important;
+        max-width: 90px !important; /* Shrinks the gear to fit smaller phone screens */
+        display: block !important;
+    }
+
+    /* 3. Scale down the massive hero text headers so they don't overlap or clip */
+    h1, .hero-title {
+        font-size: 2.2rem !important; /* Resizes 'IN HIS NAME' to a legible mobile height */
+        line-height: 1.2 !important;
+        text-align: center !important;
+        margin-top: 0.5rem !important;
+    }
+
+    h2, .hero-subtitle {
+        font-size: 1.6rem !important; /* Resizes 'AUTOMOTIVE' cleanly */
+        text-align: center !important;
+    }
+
+    /* 4. Fix the location tag ('Salem, Oregon') positioning */
+    .location-text, .sub-header-tag {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 0.5rem auto !important;
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        display: block !important;
+    }
+
+    /* 5. Clean up the Call Action bar links */
+    .phone-number, .header-contact {
+        margin: 0.5rem 0 !important;
+        font-size: 1rem !important;
+    }
+
+    .call-now-btn, .cta-button {
+        width: 100% !important; /* Makes the button easy to tap with a thumb on mobile */
+        max-width: 280px !important;
+        text-align: center !important;
+        padding: 0.8rem !important;
+        margin-top: 0.5rem !important;
+    }
+}
