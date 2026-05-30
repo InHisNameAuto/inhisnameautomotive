@@ -724,14 +724,22 @@ body {
         order: 3;
         margin-top: 0.5rem;
     }
+
 /* ==========================================================
-   MOBILE & RESPONSIVE LAYOUT FIXES
+   GLOBAL RULES: HIDE THE MOBILE BUTTON ON DESKTOP LAYOUTS
+   ========================================================== */
+.mobile-call-banner {
+    display: none !important; /* Completely vanishes from desktop, fixing your layout scale */
+}
+
+/* ==========================================================
+   MOBILE & RESPONSIVE LAYOUT MATRIX (Max 768px Screens)
    ========================================================== */
 @media (max-width: 768px) {
-    /* Main Layout Viewport Overrides */
+    /* Standard Viewport Structural Container Overrides */
     .header {
         height: auto !important;
-        min-height: 90px !important;
+        min-height: 105px !important; /* Increased to cleanly clear text + button stack */
         padding: 10px 15px !important;
         display: flex !important;
         align-items: center !important;
@@ -739,9 +747,9 @@ body {
         position: fixed !important;
     }
 
-    /* Keeps the logo clean, left-aligned, and visible on mobile */
+    /* Mobile Asset Dimensions Tuning */
     .header-logo {
-        height: 65px !important;
+        height: 75px !important;
         width: auto !important;
         position: relative !important;
         top: 0 !important;
@@ -750,31 +758,56 @@ body {
         margin-right: 15px !important;
     }
 
-    /* Adjusts the text container to sit nicely next to the logo */
-    .header div[style*="position: absolute; left: 0; right: 0;"] {
+    /* Stack title text over the new button layer */
+    .header div[style*="position: absolute; left: 0; right: 0;"],
+    .header-center-wrapper {
         position: relative !important;
         width: auto !important;
         height: auto !important;
         flex-grow: 1 !important;
         display: flex !important;
-        justify-content: flex-start !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Left aligns layout stack next to logo */
+        justify-content: center !important;
+        left: 0 !important;
+        right: 0 !important;
+        pointer-events: auto !important; /* Restores clickability on mobile */
     }
 
-    /* Resizes the shop title so it never overflows or smashes */
+    /* Responsive Shop Title Typography Rules */
     .logo-text {
         font-size: clamp(0.95rem, 4.2vw, 1.3rem) !important;
         text-align: left !important;
         white-space: nowrap !important;
+        margin-bottom: 6px !important; /* Creates clean spacing between shop name and button */
     }
 
-    /* WIPES OUT the small desktop call action button overlapping your text */
+    /* MOBILE CALL BUTTON: Styled centered link matching text width */
+    .mobile-call-banner {
+        display: block !important; /* Reveals the button ONLY on mobile screens */
+        width: 100% !important; /* Forces the gold background to match the exact length of the text above it */
+        max-width: 260px !important; /* Caps the maximum length so it frames beautifully */
+        box-sizing: border-box !important;
+        background-color: var(--gold, #b07d4c) !important;
+        color: #0d1b2a !important; /* Deep navy text color contrast for readability */
+        text-align: center !important; /* Centers button content */
+        text-decoration: none !important;
+        font-weight: 800 !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 0.5px !important;
+        padding: 6px 0 !important; /* Padding creates a sleek touch target height */
+        border-radius: 4px !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    }
+
+    /* Wipes out the old desktop header assets completely */
     .header-content, 
     .header-actions,
     .header .header-content .cta-button {
         display: none !important;
     }
 
-    /* Forces your hero features grid into a clean vertical stack for phones */
+    /* Flattens the feature block cards for mobile viewports */
     .hero-features {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
