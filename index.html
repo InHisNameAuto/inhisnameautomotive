@@ -267,205 +267,135 @@
         </div>
     </section>
     
-<section class="services" id="services" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
-        
-        <style>
-            /* Perspective container for the 3D flip effect */
-            .services-flip-card {
-                background: transparent;
-                perspective: 1000px;
-                min-height: 240px; /* Match standard card size content height */
-            }
+<section class="services" id="services">
+    <div class="process-content">
+        <h1 class="section-label">WHAT WE FIX</h1>
+        <h1 class="section-title">SERVICES <span>OFFERED</span></h1>
 
-            /* Inner container managing the structural 3D transitions */
-            .card-inner {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                text-align: left;
-                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-                transform-style: preserve-3d;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-                border-radius: 8px;
-            }
-
-            /* Flip behavior triggered on hover */
-            .services-flip-card:hover .card-inner {
-                transform: rotateY(180deg);
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-            }
-
-            /* Common styles for both front and back panels */
-            .card-front, .card-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                -webkit-backface-visibility: hidden; /* Safari support */
-                backface-visibility: hidden;
-                border-radius: 8px;
-                box-sizing: border-box;
-            }
-
-            /* Front properties (Visible initially) */
-            .card-front {
-                background-color: #f0f4f8 !important;
-                border: 2px solid transparent !important;
-                padding: 2rem !important;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-            }
-
-            /* Slight styling pop on front panel immediately prior/during rotation kickoff */
-            .services-flip-card:hover .card-front {
-                background-color: #e6f2ff !important;
-                border-color: #b07d4c !important;
-            }
-
-            /* Back properties (Hidden initially) */
-            .card-back {
-                background-color: #1a2530;
-                transform: rotateY(180deg);
-                overflow: hidden;
-                border: 2px solid #b07d4c !important;
-            }
-
-            /* Ensuring standard aspect ratio alignment for image display templates */
-            .card-back img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
-        </style>
-
-        <div class="process-content" style="max-width: 1100px !important; margin: 0 auto !important;">
-            <h1 class="section-label" style="color: #b07d4c !important;">WHAT WE FIX</h1>
-            <h1 class="section-title" style="color: #1a2530 !important;">SERVICES <span style="color: #b07d4c !important;">OFFERED</span></h1>
-
-            <div class="process-steps" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">💎</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">ENGINE DIAGNOSTICS</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Full computer diagnostics with clear explanations of what the codes mean and what actually needs repair.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="EngineDiag.png" alt="Engine Diagnostics">
-                        </div>
+        <div class="process-steps">
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">💎</div>
+                        <h4>ENGINE DIAGNOSTICS</h4>
+                        <p>Full computer diagnostics with clear explanations of what the codes mean and what actually needs repair.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./EngineDiag.png" alt="Engine Diagnostics">
                     </div>
                 </div>
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🔧</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">BRAKE SERVICE</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Pad and rotor replacement, caliper inspection, fluid flushes — with photos so you see the wear yourself.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="BrakeService.png" alt="Brake Service">
-                        </div>
+            </div>
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">🔧</div>
+                        <h4>BRAKE SERVICE</h4>
+                        <p>Pad and rotor replacement, caliper inspection, fluid flushes — with photos so you see the wear yourself.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./BrakeService.png" alt="Brake Service">
                     </div>
                 </div>
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🛢️</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">OIL CHANGES</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Quick, thorough service. We check your filters, fluids, and tire pressure while we're at it.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="OilChange.png" alt="Oil Changes">
-                        </div>
+            </div>
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">🛢️</div>
+                        <h4>OIL CHANGES</h4>
+                        <p>Quick, thorough service. We check your filters, fluids, and tire pressure while we're at it.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./OilChange.png" alt="Oil Changes">
                     </div>
                 </div>
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🚗</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">SUSPENSION & STEERING</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Shocks, struts, tie rods, alignments — we diagnose precisely and only recommend what's needed.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="SuspensionService.png" alt="Suspension and Steering">
-                        </div>
+            </div>
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">🚗</div>
+                        <h4>SUSPENSION & STEERING</h4>
+                        <p>Shocks, struts, tie rods, alignments — we diagnose precisely and only recommend what's needed.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./SuspensionService.png" alt="Suspension and Steering">
                     </div>
                 </div>
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">❄️</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">COOLING SYSTEM</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Radiator, thermostat, hoses, water pump. We keep you from overheating — literally.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="CoolantService.png" alt="Cooling System Service">
-                        </div>
+            </div>
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">❄️</div>
+                        <h4>COOLING SYSTEM</h4>
+                        <p>Radiator, thermostat, hoses, water pump. We keep you from overheating — literally.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./CoolantService.png" alt="Cooling System Service">
                     </div>
                 </div>
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🔋</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">ELECTRICAL SYSTEMS</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Batteries, alternators, starters, and wiring diagnosis. Modern vehicles need modern diagnostic tools.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="Electrical.png" alt="Electrical Systems">
-                        </div>
+            </div>
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">🔋</div>
+                        <h4>ELECTRICAL SYSTEMS</h4>
+                        <p>Batteries, alternators, starters, and wiring diagnosis. Modern vehicles need modern diagnostic tools.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./Electrical.png" alt="Electrical Systems">
                     </div>
                 </div>
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">⚙️</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">TRANSMISSION SERVICE</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Fluid services, diagnostics, and honest guidance on whether a repair or rebuild is truly needed.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="TransmissionService.png" alt="Transmission Service">
-                        </div>
+            </div>
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">⚙️</div>
+                        <h4>TRANSMISSION SERVICE</h4>
+                        <p>Fluid services, diagnostics, and honest guidance on whether a repair or rebuild is truly needed.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./TransmissionService.png" alt="Transmission Service">
                     </div>
                 </div>
-                
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🛡️</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">PRE-PURCHASE INSPECTIONS</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">Buying a used car? We'll give you the full picture — good and bad — before you sign anything.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="PrePurchace.png" alt="Pre-Purchase Inspection">
-                        </div>
+            </div>
+            
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">🛡️</div>
+                        <h4>PRE-PURCHASE INSPECTIONS</h4>
+                        <p>Buying a used car? We'll give you the full picture — good and bad — before you sign anything.</p>
                     </div>
-                </div>
-
-                <div class="step services-flip-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">📋</div>
-                            <h4 style="color: #1a2530 !important; font-weight: bold !important; margin-bottom: 0.8rem !important;">SCHEDULED MAINTENANCE</h4>
-                            <p style="color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important;">30k, 60k, and 90k factory mileage checks to keep your vehicle's warranty status intact.</p>
-                        </div>
-                        <div class="card-back">
-                            <img src="ScheduledMaintance.png" alt="Scheduled Maintenance">
-                        </div>
+                    <div class="card-back">
+                        <img src="./PrePurchace.png" alt="Pre-Purchase Inspection">
                     </div>
                 </div>
             </div>
 
-            <p class="services-footer" style="margin-top: 3rem; text-align: center; color: #4a5568 !important; font-weight: 500;">Don't see your specific issue listed? Call us – if we can't help, we'll tell you who can.</p>
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="step-icon">📋</div>
+                        <h4>SCHEDULED MAINTENANCE</h4>
+                        <p>30k, 60k, and 90k factory mileage checks to keep your vehicle's warranty status intact.</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="./ScheduledMaintance.png" alt="Scheduled Maintenance">
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <p class="services-footer">Don't see your specific issue listed? Call us – if we can't help, we'll tell you who can.</p>
+    </div>
+</section>
+    
 <section class="testimonials" id="testimonials" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
         
         <style>
