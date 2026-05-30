@@ -724,86 +724,37 @@ body {
         order: 3;
         margin-top: 0.5rem;
     }
-/* ==========================================================================
-   WIDESCREEN & MOBILE HEADER CRISIS FIX 
-   ========================================================================== */
-
-/* 1. DESKTOP WIDESCREEN FIX: Prevents the header from flattening your scroll height */
-header, .header, .nav-container {
-    height: auto !important;             /* Wipes out any fixed pixel heights restricting the viewport */
-    min-height: 90px !important;         /* Keeps a uniform baseline thickness */
-    position: relative !important;       /* Safely drops it back into the normal document flow */
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 1rem 2rem !important;
-    box-sizing: border-box !important;
-}
-
-/* Forces the main body content areas to sit cleanly below the navigation area */
-body > section:first-of-type, main, #hero {
-    margin-top: 0 !important;
-    clear: both !important;
-}
-
-
-/* 2. CELL PHONE OVERRIDES: Triggers strictly on smartphone portrait viewports */
+/* ==========================================
+   MOBILE HEADER FIXES (Max 768px screen size)
+   ========================================== */
 @media (max-width: 768px) {
-    
-    /* Stacks header components cleanly down the center line */
-    header, .header, .nav-container {
-        flex-direction: column !important;
-        padding: 1.5rem 1rem !important;
-        gap: 1rem !important;
-        text-align: center !important;
+    /* Prevent duplicate rendering of any wrapper elements */
+    header.header {
+        height: auto !important;
+        position: fixed !important;
+        padding: 10px 12px !important;
     }
 
-    /* Pushes the Prayer Hands Gear Logo comfortably to the top center position */
-    .logo, img[src*="logo"], .logo-wrapper, header img {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
-        margin: 0 auto !important;
-        display: block !important;
-        max-width: 100px !important; /* Prevents logo sizing scale blowout */
+    /* Target and COMPLETELY remove the duplicate button overlapping the text */
+    header .header-content,
+    header .header-actions,
+    header .cta-button,
+    header [style*="position: absolute; left: 0; right: 0;"] + .header-content {
+        display: none !important; /* Forces the small overlapping desktop assets off mobile screen entirely */
     }
 
-    /* Centers the "IN HIS NAME AUTOMOTIVE" text group directly beneath the gear */
-    .brand-name, h1, .title, header span {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        margin: 0 auto !important;
-        text-align: center !important;
-        display: block !important;
+    /* Format your brand title cleanly so it scales without overlap */
+    header h2.logo-text {
+        font-size: 1.1rem !important;
+        padding-left: 65px !important; /* Gives the logo image breathing room */
+        text-align: left !important;
+        width: auto !important;
     }
 
-    /* Hides the two overlapping desktop phone links/buttons on small viewports */
-    .phone-number, .call-now-btn, header a[href^="tel"], .nav-right {
-        display: none !important;
+    /* Keeps your main logo sized correctly on phone screens */
+    header img.header-logo {
+        height: 50px !important;
+        top: 5px !important;
+        left: 10px !important;
     }
-
-    /* COMBINED CTA INJECTION: Builds the perfect mobile calling block right under the text */
-    header::after {
-        content: "📞  CALL NOW\A      971.428.6446" !important;
-        white-space: pre-wrap !important;   /* Allows the text strings to break across 2 neat lines */
-        display: block !important;
-        background: #d4a574 !important;     /* Premium Gold Background Accent */
-        color: #0c1926 !important;           /* Dark Navy Font for heavy visibility contrast */
-        font-weight: 900 !important;
-        font-size: 1.15rem !important;
-        letter-spacing: 1px !important;
-        line-height: 1.4 !important;
-        padding: 0.8rem 2.5rem !important;
-        border-radius: 8px !important;
-        margin: 1rem auto 0 auto !important;
-        width: 100% !important;
-        max-width: 290px !important;         /* Perfectly scaled for thumb tapping */
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
-        text-align: center !important;
-        cursor: pointer !important;
-    }
-}
 }
