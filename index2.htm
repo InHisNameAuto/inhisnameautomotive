@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Local Network - Certified Trust Experts</title>
+    <style>
+        /* ==========================================================================
+           Core Themes & Global Layout Locking
+           ========================================================================== */
+        :root {
+            --navy: #1a2d45;
+            --gold: #b07d4c;
+            --dark-bg: #0d1b2a;
+            --light-text: #e8e8e8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevents double scrollbars between your site and the embedded site */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+
+        /* Container designed to mathematically stack header over content window */
+        .page-viewport-matrix {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* ==========================================================================
+           Fixed Header Component (Retains matching structure to index.html)
+           ========================================================================== */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            flex-shrink: 0; /* Prevents header compression */
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .header-logo-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Small styled affiliation tag placed directly above the brand marker */
+        .affiliation-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: -2px;
+        }
+
+        .network-brand-logo {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .header-center {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .header-center h1 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .header-center p {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        /* Elegant Home Navigation Trigger Button */
+        .home-return-btn {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .home-return-btn:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 0 15px rgba(176, 125, 76, 0.4);
+        }
+
+        /* ==========================================================================
+           The Embedded Sandbox Layer (Fills remaining height smoothly)
+           ========================================================================== */
+        .network-viewport-container {
+            flex-grow: 1;
+            width: 100%;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .network-viewport-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* ==========================================================================
+           Mobile Adjustments & Responsive Reflow Override
+           ========================================================================== */
+        .mobile-call-banner {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: auto !important;
+                min-height: 115px !important;
+                padding: 12px 15px !important;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .header-logo-group {
+                align-items: flex-start;
+                flex: 0 0 auto;
+            }
+
+            .header-right {
+                flex: 0 0 auto;
+            }
+
+            .home-return-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .header-center {
+                flex-basis: 100%;
+                order: 3;
+                text-align: center;
+                margin-top: 10px;
+                padding-top: 8px;
+                border-top: 1px solid rgba(255,255,255,0.08);
+            }
+
+            .header-center h1 {
+                font-size: 0.95rem;
+            }
+
+            .header-center p {
+                font-size: 0.75rem;
+            }
+
+            /* Responsive Touch-Target Mobile Top Bar Banner */
+            .mobile-call-banner {
+                display: block !important;
+                width: 100% !important;
+                background-color: var(--gold) !important;
+                color: #0d1b2a !important;
+                text-align: center !important;
+                text-decoration: none !important;
+                font-weight: 800 !important;
+                font-size: 0.75rem !important;
+                letter-spacing: 0.5px !important;
+                padding: 8px 0 !important;
+                flex-shrink: 0;
+                z-index: 101;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-viewport-matrix">
+        
+        <a href="index.html" class="mobile-call-banner">← RETURN BACK TO HOME PAGE</a>
+
+        <header class="header">
+            
+            <div class="header-logo-group">
+                <span class="affiliation-label">Affiliated With</span>
+                <img src="Screenshot 2026-05-30 142624.png" alt="Pro Salem Networking Logo" class="network-brand-logo">
+            </div>
+
+            <div class="header-center">
+                <h1>PRO SALEM NETWORKING DIRECTORY</h1>
+                <p>Find Local Experts You Can Trust</p>
+            </div>
+
+            <div class="header-right">
+                <a href="index.html" class="home-return-btn">
+                    <span>🏠</span> Return Home
+                </a>
+            </div>
+            
+        </header>
+
+        <main class="network-viewport-container">
+            <iframe 
+                src="https://www.prosalem.com/directory/" 
+                title="Pro Salem Business Network Directory Sandbox Engine"
+                loading="lazy"
+                allow="geolocation; clipboard-write">
+            </iframe>
+        </main>
+
+    </div>
+
+</body>
+</html>
