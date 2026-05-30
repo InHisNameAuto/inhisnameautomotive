@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +33,7 @@
             background: #ffffff !important;
             padding: 2rem !important;
             border-radius: 8px !important;
-            border: 2px solid transparent !important; /* Made transparent by default */
+            border: 2px solid transparent !important; /* Invisible border prevents text-shift jumps */
             text-align: center !important;
             display: flex !important;
             flex-direction: column !important;
@@ -42,30 +44,103 @@
         }
         .hero-custom-card .checkmark {
             font-size: 1.5rem !important;
-            color: #b07d4c !important; /* Synced to brand gold */
+            color: #b07d4c !important; 
             margin-bottom: 0.5rem !important;
         }
         .hero-custom-card h4 {
-            color: #0d1b2a !important; /* Dark Navy font */
+            color: #0d1b2a !important; 
             font-weight: 800 !important;
             margin: 0 0 0.5rem 0 !important;
             letter-spacing: 1px !important;
         }
         .hero-custom-card p {
-            color: #4a5568 !important; /* Clean readable dark grey subtext */
+            color: #4a5568 !important; 
             margin: 0 !important;
             font-size: 0.95rem !important;
         }
         
-        /* Hover interactions */
+        /* Interactive State Trigger overrides */
         .hero-custom-card:hover {
-            background-color: #e6f2ff !important; /* Soft Ice Blue */
-            border-color: #b07d4c !important; /* Gold border activates ONLY on hover */
-            transform: translateY(-6px) !important; /* Smooth upward pop interaction */
+            background-color: #e6f2ff !important; 
+            border-color: #b07d4c !important; /* Gold displays exclusively on mouseover */
+            transform: translateY(-6px) !important; 
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
         }
     </style>
 </head>
+<body>
+
+<header class="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-sizing: border-box; height: 70px; background-color: #0d1b2a;">
+        
+    <img src="logo.png" alt="In His Name Automotive Logo" class="header-logo" 
+         style="position: absolute; top: 10px; left: 20px; height: 130px; width: auto; z-index: 1001; max-width: none; filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1)) drop-shadow(0px 0px 4px rgba(176, 125, 76, 1));">
+    
+    <div style="position: absolute; left: 0; right: 0; display: flex; justify-content: center; align-items: center; pointer-events: none; width: 100%; height: 100%;">
+        <h2 class="logo-text" style="pointer-events: auto; font-weight: bold; color: #ffffff; margin: 0; font-size: 1.5rem; letter-spacing: 1px;">IN HIS NAME AUTOMOTIVE</h2>
+    </div>
+
+    <div class="header-content" style="margin-left: auto; position: relative; z-index: 2; height: 100%; display: flex; align-items: center; padding-right: 20px;">
+        <div class="header-actions">
+            <a href="tel:9714286446" class="phone-link" style="color: #ffffff; text-decoration: none; margin-right: 15px;">📞 971.428.6446</a>
+            <a href="#contact" class="cta-button">CALL NOW</a>
+        </div>
+    </div>
+
+    <div style="position: absolute; bottom: -16px; left: 0; width: 100%; height: 16px; background-color: #0d1b2a; box-shadow: 0 4px 6px rgba(0,0,0,0.15); display: block;">
+        <div style="width: 100%; height: 100%; background: linear-gradient(to bottom, 
+            #0d1b2a 0px, #0d1b2a 3px,
+            #ffcc00 3px, #ffcc00 6px,   /* Yellow Stripe 1 */
+            #0d1b2a 6px, #0d1b2a 10px,
+            #ffcc00 10px, #ffcc00 13px, /* Yellow Stripe 2 */
+            #0d1b2a 13px, #0d1b2a 16px
+        );"></div>
+    </div>
+</header>
+
+<section class="hero" id="home" style="position: relative; padding: 6rem 2rem 4rem 2rem; text-align: center;">
+    <div class="hero-content" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+        
+        <p class="section-label" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; color: #b07d4c !important; font-weight: bold;">WEST SALEM, OREGON</p>
+        
+        <h1 class="hero-title" style="font-weight: 900; margin-bottom: 1rem; color: #ffffff;">
+            IN HIS NAME <span class="gold" style="color: #b07d4c !important;">AUTOMOTIVE</span>
+        </h1>
+        
+        <p class="hero-subtitle" style="font-style: italic; margin-bottom: 0.5rem; color: #b0b0b0;">
+            Honest repairs. Real proof. Faith-driven service.
+        </p>
+        <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 3rem; color: #ffffff;">
+            No upsells. No BS. Just the truth about your vehicle.
+        </p>
+
+        <div class="hero-image-container" style="max-width: 1100px !important; margin: 0 auto 4rem auto !important; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 2px solid #b07d4c !important; width: 100%;">
+            <img src="workshop-image.png" alt="In His Name Automotive Shop Lift" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <div class="hero-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; width: 100%; max-width: 1100px !important; margin: 2rem auto 0 auto !important; align-items: stretch;">
+            
+            <div class="hero-custom-card">
+                <div class="checkmark">✓</div>
+                <h4>HONEST ESTIMATES</h4>
+                <p>No hidden fees</p>
+            </div>
+            
+            <div class="hero-custom-card">
+                <div class="checkmark">✓</div>
+                <h4>PHOTO & VIDEO PROOF</h4>
+                <p>Via Tekmetric</p>
+            </div>
+            
+            <div class="hero-custom-card">
+                <div class="checkmark">✓</div>
+                <h4>ZERO UPSELLING</h4>
+                <p>We only fix what's broken</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 <body>
 
 <header class="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-sizing: border-box; height: 70px; background-color: #0d1b2a; margin-bottom: 20px;">
