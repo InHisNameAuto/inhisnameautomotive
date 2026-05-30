@@ -1,4 +1,6 @@
-/* Root Variables */
+/* ==========================================================================
+   Root Variables & Global Resets
+   ========================================================================== */
 :root {
     --navy: #1a2d45;
     --gold: #b07d4c;       /* Darkened slightly for rich contrast on light backgrounds */
@@ -21,7 +23,9 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+/* ==========================================================================
+   Header Component
+   ========================================================================== */
 .header {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
     position: fixed;
@@ -91,7 +95,9 @@ body {
     border: 2px solid var(--gold);
 }
 
-/* Hero Section */
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
     padding: 120px 2rem 4rem;
@@ -247,25 +253,23 @@ body {
 }
 
 /* ==========================================================================
-   UPDATED: LIGHT ICE BLUE SECTIONS (Our Story, What We Fix, Get In Touch)
+   Shared Light Layout Settings (Our Story, Get In Touch)
    ========================================================================== */
-
 .about, .why-us, .contact {
-    background-color: var(--ice-blue) !important; /* Forces the light background */
+    background-color: var(--ice-blue) !important;
     padding: 5rem 2rem;
 }
 
-/* Light Section Typography Fixes */
 .about .section-title,
 .why-us .section-title,
 .contact-info .section-title {
-    color: var(--dark-text) !important; /* Converts headers to dark charcoal */
+    color: var(--dark-text) !important;
 }
 
 .about-text p,
 .why-us p,
 .contact-intro {
-    color: #4a5568 !important; /* Crisp dark slate body text */
+    color: #4a5568 !important;
 }
 
 .section-label {
@@ -281,7 +285,9 @@ body {
     color: var(--gold) !important;
 }
 
-/* Our Story Specific Inner Layout Elements */
+/* ==========================================================================
+   Our Story Layout Settings
+   ========================================================================== */
 .about-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -294,7 +300,7 @@ body {
 }
 
 .quote-box {
-    background: #ffffff; /* Crisp white card background layout */
+    background: #ffffff;
     border-left: 4px solid var(--gold);
     padding: 2rem;
     margin: 1.5rem 0;
@@ -357,7 +363,9 @@ body {
     margin: 0;
 }
 
-/* What We Fix Specific Inner Layout Elements */
+/* ==========================================================================
+   Why Us Layout Settings
+   ========================================================================== */
 .why-us-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -371,7 +379,7 @@ body {
 }
 
 .benefit-card {
-    background: #ffffff; /* Crisp white cards */
+    background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid rgba(176, 125, 76, 0.2);
@@ -399,7 +407,9 @@ body {
     font-weight: 700;
 }
 
-/* Contact / Get In Touch Layout Elements */
+/* ==========================================================================
+   Contact Layout Settings
+   ========================================================================== */
 .contact-content {
     max-width: 1100px;
     margin: 0 auto;
@@ -441,13 +451,13 @@ body {
     flex: 1;
     min-width: 300px;
     max-width: 480px;
-    height: 460px; /* Locked mathematical baseline alignment */
+    height: 460px;
     margin: 0;
     text-align: left;
 }
 
 .contact-box {
-    background: #ffffff; /* Crisp white buttons */
+    background: #ffffff;
     border: 1px solid rgba(176, 125, 76, 0.25);
     padding: 1.5rem;
     border-radius: 8px;
@@ -485,7 +495,7 @@ body {
     flex: 1;
     min-width: 300px;
     max-width: 480px;
-    height: 460px; /* Aligns mathematically level with buttons */
+    height: 460px;
     background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
@@ -502,29 +512,16 @@ body {
 }
 
 /* ==========================================================================
-   REST OF THE THEME SECTIONS (Dark Sections retained for layout contrast)
+   Old Standard Process Layout (Kept Safe for Alternative Blocks)
    ========================================================================== */
-
-/* Process Section */
 .process {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
     padding: 5rem 2rem;
     text-align: center;
 }
 
-.process-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.step {
+/* Isolated old step rule to prevent breaking the new 3D grid layout frames */
+.process .step {
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 8px;
@@ -532,7 +529,7 @@ body {
     transition: all 0.3s;
 }
 
-.step:hover {
+.process .step:hover {
     background: rgba(212, 165, 116, 0.1);
     transform: translateY(-5px);
     border-color: var(--gold);
@@ -543,7 +540,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.step h4 {
+.process .step h4 {
     color: white;
     font-size: 1.1rem;
     letter-spacing: 1px;
@@ -551,14 +548,138 @@ body {
     font-weight: 700;
 }
 
-.step p {
+.process .step p {
     color: #b0b0b0;
     line-height: 1.7;
     font-size: 0.95rem;
     margin: 0;
 }
 
-/* Testimonials */
+/* ==========================================================================
+   NEW MODULE: Interactive 3D Card Flip System (Services Offered Block)
+   ========================================================================== */
+#services.services {
+    background-color: var(--ice-blue) !important;
+    padding: 5rem 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+#services .process-content {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
+
+#services .section-label {
+    color: var(--gold) !important;
+}
+
+#services .section-title {
+    color: var(--dark-text) !important;
+}
+
+#services .section-title span {
+    color: var(--gold) !important;
+}
+
+#services .process-steps {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    align-items: stretch !important;
+    margin-top: 3rem !important;
+}
+
+#services .services-footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: #4a5568 !important;
+    font-weight: 500;
+}
+
+#services .services-flip-card {
+    background: transparent;
+    perspective: 1000px;
+}
+
+#services .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "stack";
+    text-align: left;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+#services .services-flip-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+#services .card-front, 
+#services .card-back {
+    grid-area: stack;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    background: #f0f4f8 !important; 
+    border: 2px solid transparent !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+#services .card-front {
+    padding: 2.5rem 2rem !important;
+    position: relative;
+    z-index: 2;
+}
+
+#services .card-front .step-icon {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+#services .card-front h4 {
+    color: var(--dark-text) !important;
+    font-weight: bold !important;
+    margin-bottom: 0.8rem !important;
+}
+
+#services .card-front p {
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+
+#services .services-flip-card:hover .card-front {
+    background-color: #e6f2ff !important;
+    border-color: var(--gold) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+#services .card-back {
+    transform: rotateY(180deg);
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--gold) !important;
+    background-color: var(--dark-text) !important;
+}
+
+#services .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   Testimonials Layout Settings
+   ========================================================================== */
 .testimonials {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
     padding: 5rem 2rem;
@@ -631,7 +752,9 @@ body {
     color: #e8c596;
 }
 
-/* Footer */
+/* ==========================================================================
+   Footer Component
+   ========================================================================== */
 .footer {
     background: #0a1218;
     border-top: 1px solid rgba(212, 165, 116, 0.2);
@@ -705,111 +828,15 @@ body {
     margin: 0.5rem 0;
 }
 
-/* Responsive Structural Reflow Adjustments */
-@media (max-width: 768px) {
-    .header {
-        height: 100px;
-        padding: 0.5rem 1rem;
-        flex-wrap: wrap;
-    }
-
-    .header-logo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .header-center {
-        font-size: 0.85rem;
-        flex-basis: 100%;
-        order: 3;
-        margin-top: 0.5rem;
-    }
-
-/* ==========================================================
+/* ==========================================================================
    GLOBAL RULES: HIDE THE MOBILE BUTTON ON DESKTOP LAYOUTS
-   ========================================================== */
+   ========================================================================== */
 .mobile-call-banner {
-    display: none !important; /* Completely vanishes from desktop, fixing your layout scale */
+    display: none !important;
 }
 
-/* ==========================================================
+/* ==========================================================================
    MOBILE & RESPONSIVE LAYOUT MATRIX (Max 768px Screens)
-   ========================================================== */
+   ========================================================================== */
 @media (max-width: 768px) {
-    /* Standard Viewport Structural Container Overrides */
     .header {
-        height: auto !important;
-        min-height: 105px !important; /* Increased to cleanly clear text + button stack */
-        padding: 10px 15px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        position: fixed !important;
-    }
-
-    /* Mobile Asset Dimensions Tuning */
-    .header-logo {
-        height: 75px !important;
-        width: auto !important;
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        z-index: 1002 !important;
-        margin-right: 15px !important;
-    }
-
-    /* Stack title text over the new button layer */
-    .header div[style*="position: absolute; left: 0; right: 0;"],
-    .header-center-wrapper {
-        position: relative !important;
-        width: auto !important;
-        height: auto !important;
-        flex-grow: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important; /* Left aligns layout stack next to logo */
-        justify-content: center !important;
-        left: 0 !important;
-        right: 0 !important;
-        pointer-events: auto !important; /* Restores clickability on mobile */
-    }
-
-    /* Responsive Shop Title Typography Rules */
-    .logo-text {
-        font-size: clamp(0.95rem, 4.2vw, 1.3rem) !important;
-        text-align: left !important;
-        white-space: nowrap !important;
-        margin-bottom: 6px !important; /* Creates clean spacing between shop name and button */
-    }
-
-    /* MOBILE CALL BUTTON: Styled centered link matching text width */
-    .mobile-call-banner {
-        display: block !important; /* Reveals the button ONLY on mobile screens */
-        width: 100% !important; /* Forces the gold background to match the exact length of the text above it */
-        max-width: 260px !important; /* Caps the maximum length so it frames beautifully */
-        box-sizing: border-box !important;
-        background-color: var(--gold, #b07d4c) !important;
-        color: #0d1b2a !important; /* Deep navy text color contrast for readability */
-        text-align: center !important; /* Centers button content */
-        text-decoration: none !important;
-        font-weight: 800 !important;
-        font-size: 0.75rem !important;
-        letter-spacing: 0.5px !important;
-        padding: 6px 0 !important; /* Padding creates a sleek touch target height */
-        border-radius: 4px !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
-    }
-
-    /* Wipes out the old desktop header assets completely */
-    .header-content, 
-    .header-actions,
-    .header .header-content .cta-button {
-        display: none !important;
-    }
-
-    /* Flattens the feature block cards for mobile viewports */
-    .hero-features {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-}
