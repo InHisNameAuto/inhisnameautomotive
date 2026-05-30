@@ -724,37 +724,59 @@ body {
         order: 3;
         margin-top: 0.5rem;
     }
-/* ==========================================
-   MOBILE HEADER FIXES (Max 768px screen size)
-   ========================================== */
+/* ==========================================================
+   MOBILE & RESPONSIVE LAYOUT FIXES
+   ========================================================== */
 @media (max-width: 768px) {
-    /* Prevent duplicate rendering of any wrapper elements */
-    header.header {
+    /* Main Layout Viewport Overrides */
+    .header {
         height: auto !important;
+        min-height: 90px !important;
+        padding: 10px 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
         position: fixed !important;
-        padding: 10px 12px !important;
     }
 
-    /* Target and COMPLETELY remove the duplicate button overlapping the text */
-    header .header-content,
-    header .header-actions,
-    header .cta-button,
-    header [style*="position: absolute; left: 0; right: 0;"] + .header-content {
-        display: none !important; /* Forces the small overlapping desktop assets off mobile screen entirely */
-    }
-
-    /* Format your brand title cleanly so it scales without overlap */
-    header h2.logo-text {
-        font-size: 1.1rem !important;
-        padding-left: 65px !important; /* Gives the logo image breathing room */
-        text-align: left !important;
+    /* Keeps the logo clean, left-aligned, and visible on mobile */
+    .header-logo {
+        height: 65px !important;
         width: auto !important;
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 1002 !important;
+        margin-right: 15px !important;
     }
 
-    /* Keeps your main logo sized correctly on phone screens */
-    header img.header-logo {
-        height: 50px !important;
-        top: 5px !important;
-        left: 10px !important;
+    /* Adjusts the text container to sit nicely next to the logo */
+    .header div[style*="position: absolute; left: 0; right: 0;"] {
+        position: relative !important;
+        width: auto !important;
+        height: auto !important;
+        flex-grow: 1 !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+    }
+
+    /* Resizes the shop title so it never overflows or smashes */
+    .logo-text {
+        font-size: clamp(0.95rem, 4.2vw, 1.3rem) !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+    }
+
+    /* WIPES OUT the small desktop call action button overlapping your text */
+    .header-content, 
+    .header-actions,
+    .header .header-content .cta-button {
+        display: none !important;
+    }
+
+    /* Forces your hero features grid into a clean vertical stack for phones */
+    .hero-features {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
 }
