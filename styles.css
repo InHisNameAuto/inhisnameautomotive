@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Root Variables & Global Resets
-   ========================================================================== */
 :root {
     --navy: #1a2d45;
     --gold: #b07d4c;       
@@ -29,9 +26,6 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   Header Component (Desktop Standard Layout Settings)
-   ========================================================================== */
 .header {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
     position: fixed;
@@ -101,9 +95,6 @@ body {
     border: 2px solid var(--gold);
 }
 
-/* ==========================================================================
-   Hero Layout View
-   ========================================================================== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
     padding: 120px 2rem 4rem;
@@ -238,9 +229,6 @@ body {
 .button-secondary { background-color: transparent; color: var(--gold); border-color: var(--gold); }
 .button-secondary:hover { background-color: var(--gold); color: var(--navy); }
 
-/* ==========================================================================
-   Shared Light Layout Settings
-   ========================================================================== */
 .about, .why-us, .contact {
     background-color: var(--ice-blue) !important;
     padding: 5rem 2rem;
@@ -268,9 +256,6 @@ body {
 
 .section-title .gold { color: var(--gold) !important; }
 
-/* ==========================================================================
-   Our Story Settings
-   ========================================================================== */
 .about-content { max-width: 1000px; margin: 0 auto; width: 100%; }
 .about-text { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; }
 
@@ -313,9 +298,6 @@ body {
 .owner-name { color: var(--dark-text); font-weight: 700; margin: 0; }
 .owner-title { color: var(--gold); font-size: 0.9rem; margin: 0; }
 
-/* ==========================================================================
-   Why Us Layout Settings
-   ========================================================================== */
 .why-us-content { max-width: 1200px; margin: 0 auto; width: 100%; }
 .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
 
@@ -332,9 +314,6 @@ body {
 .benefit-number { font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem; }
 .benefit-card h4 { color: var(--dark-text) !important; font-size: 1.05rem; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 700; }
 
-/* ==========================================================================
-   Contact Block
-   ========================================================================== */
 .contact-content { max-width: 1100px; margin: 0 auto; width: 100%; }
 .contact-info { text-align: center; margin-bottom: 3.5rem; width: 100%; }
 .contact-info .section-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin: 0 auto 1.5rem auto; }
@@ -385,9 +364,6 @@ body {
 
 .map-container iframe { width: 100%; height: 100%; border: none; display: block; }
 
-/* ==========================================================================
-   Process Settings
-   ========================================================================== */
 .process { background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%); padding: 5rem 2rem; text-align: center; width: 100%; }
 .process .step { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); transition: all 0.3s; }
 .process .step:hover { background: rgba(212, 165, 116, 0.1); transform: translateY(-5px); border-color: var(--gold); }
@@ -395,9 +371,6 @@ body {
 .process .step h4 { color: white; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 700; }
 .process .step p { color: #b0b0b0; line-height: 1.7; font-size: 0.95rem; margin: 0; }
 
-/* ==========================================================================
-   Services Grid
-   ========================================================================== */
 #services.services { background-color: var(--ice-blue) !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important; }
 #services .process-content { max-width: 1100px !important; margin: 0 auto !important; width: 100% !important; }
 #services .section-label { color: var(--gold) !important; }
@@ -431,9 +404,6 @@ body {
 #services .card-back { transform: rotateY(180deg); overflow: hidden; z-index: 1; border: 2px solid var(--gold) !important; background-color: var(--dark-text) !important; }
 #services .card-back img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* ==========================================================================
-   Testimonials Block
-   ========================================================================== */
 .testimonials { background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%); padding: 5rem 2rem; text-align: center; width: 100%; }
 .testimonials-content { max-width: 1200px; margin: 0 auto; width: 100%; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
@@ -447,9 +417,6 @@ body {
 .gold-link { color: var(--gold); text-decoration: none; font-weight: 700; }
 .gold-link:hover { color: #e8c596; }
 
-/* ==========================================================================
-   Footer 
-   ========================================================================== */
 .footer { background: #0a1218; border-top: 1px solid rgba(212, 165, 116, 0.2); padding: 3rem 2rem; width: 100%; }
 .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; width: 100%; }
 .footer-column { display: flex; flex-direction: column; gap: 0.8rem; }
@@ -463,7 +430,6 @@ body {
 .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(212, 165, 116, 0.2); color: #b0b0b0; font-size: 0.9rem; }
 .footer-bottom p { margin: 0.5rem 0; }
 
-/* Global safety catch to destroy completely duplicate leaked headers */
 .hero ~ .header,
 .hero ~ header,
 .mobile-call-banner,
@@ -474,10 +440,6 @@ body {
     overflow: hidden !important;
 }
 
-
-/* ==========================================================================
-   MOBILE LAYOUT ENGINE (Exact Spacing & Clearances Recovered for 221.jpg)
-   ========================================================================== */
 @media (max-width: 768px) {
     html, body {
         width: 100% !important;
@@ -485,7 +447,6 @@ body {
         overflow-x: hidden !important;
     }
 
-    /* Stack elements inside a dedicated mobile-first frame */
     .header {
         position: relative !important; 
         display: flex !important;
@@ -497,14 +458,13 @@ body {
         min-height: unset !important;
         padding: 2.5rem 1rem 2rem 1rem !important; 
         background: #0d1b2a !important; 
-        border-bottom: 5px solid #b07d4c !important; /* Gold ribbon rule matching 221.jpg */
+        border-bottom: 5px solid #b07d4c !important; 
         box-shadow: none !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
     }
 
-    /* POSITION 1: THE GEAR/PRAYING HANDS LOGO */
     .header-logo {
         display: block !important;
         width: 110px !important; 
@@ -516,7 +476,6 @@ body {
         transform: none !important;
     }
 
-    /* POSITION 2: THE NATIVE SITE TEXT TITLE */
     .header-center {
         display: block !important;
         width: 100% !important;
@@ -531,18 +490,15 @@ body {
         text-transform: uppercase !important;
     }
     
-    /* Ensure colors look right if there are span formatting classes applied */
     .header-center span, 
     .header-center .gold {
         color: #b07d4c !important;
     }
 
-    /* Hide standard desktop text phone link safely */
     .phone-link {
         display: none !important;
     }
 
-    /* POSITION 3: RIGHT CONTAINER ELEMENTS RESET */
     .header-right {
         display: block !important;
         width: 100% !important;
@@ -550,7 +506,6 @@ body {
         padding: 0 !important;
     }
 
-    /* THE CALL NOW ACTION BUTTON - MOVED LOWER AWAY FROM THE TEXT GRAPHICS */
     .cta-button {
         display: flex !important;
         flex-direction: row !important;
@@ -561,7 +516,7 @@ body {
         width: 90% !important;
         max-width: 420px !important; 
         padding: 0.85rem 1.25rem !important;
-        margin: 0.5rem auto 0 auto !important; /* Explicit top margin to prevent overlapping text elements */
+        margin: 1.5rem auto 0 auto !important; 
         
         background-color: #b07d4c !important; 
         color: #1a2d45 !important; 
@@ -578,12 +533,10 @@ body {
         letter-spacing: 0.5px !important;
     }
 
-    /* Match all child elements explicitly inside the button block */
     .cta-button * {
         color: #1a2d45 !important;
     }
 
-    /* Dynamic phone icon layout placement settings */
     .cta-button::before {
         content: "📞" !important;
         font-size: 1.8rem !important;
@@ -599,9 +552,6 @@ body {
         display: none !important;
     }
 
-    /* ==========================================================================
-       HERO AND SUB-CONTENT RESPONSIVE COMPRESSION
-       ========================================================================== */
     .hero {
         display: block !important;
         width: 100% !important;
@@ -626,7 +576,6 @@ body {
         line-height: 1.2 !important;
     }
 
-    /* Section dynamic padding collapse structural overrides */
     .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
         width: 100% !important;
         max-width: 100% !important;
