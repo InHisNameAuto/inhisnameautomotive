@@ -482,71 +482,71 @@ body {
         overflow-x: hidden !important;
     }
 
-    /* THE HEADER BAR CONTAINER 
-       Strips standard fixed layouts and allows contents to stack vertically.
+    /* THE STACKED CONTAINER 
+       Switches layout to block/flex-column to prevent elements from breaking boundaries.
     */
     .header {
         position: relative !important; 
-        display: block !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 2rem 1.25rem 0 1.25rem !important; 
-        background: #112233 !important;
+        padding: 2.5rem 1.25rem 0 1.25rem !important; 
+        background: #0d1b2a !important;
         
-        /* The decorative double gold bottom border lines */
+        /* Double gold border separating header from content text */
         border-bottom: 6px double #b07d4c !important; 
         box-shadow: none !important;
         top: auto !important;
         left: auto !important;
     }
 
-    /* --- POSITION 1: THE LOGO --- */
+    /* --- POSITION 1: THE LOGO (TOP) --- */
     .header-logo {
         display: block !important;
         width: 110px !important; 
         height: auto !important;
-        margin: 0 auto 1.25rem auto !important; 
+        margin: 0 auto 1.5rem auto !important; 
         position: relative !important;
         top: auto !important;
         left: auto !important;
         transform: none !important;
     }
 
-    /* --- POSITION 2: SITE TEXT ROW --- */
+    /* --- POSITION 2: IN HIS NAME AUTOMOTIVE (MIDDLE) --- */
     .header-center {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
         
-        font-size: 1.85rem !important;
+        font-size: 2.1rem !important;
         line-height: 1.2 !important;
         font-weight: 800 !important;
         letter-spacing: 0.5px !important;
         color: #ffffff !important;
         text-transform: uppercase !important;
         
-        margin: 0 auto 1.25rem auto !important; 
+        margin: 0 auto 1.5rem auto !important; 
     }
 
-    /* Completely hide inline anchor helper items from flow calculations */
+    /* Suppress absolute hidden baseline references */
     .phone-link {
         display: none !important;
     }
 
-    /* --- POSITION 3: CALL CONTAINER BLOCK --- */
+    /* --- POSITION 3: CALL CONTAINER BOX (BOTTOM) --- */
     .header-right {
         display: block !important;
         width: 100% !important;
         margin: 0 auto !important;
-        padding: 0 0 1.75rem 0 !important; 
+        padding: 0 0 2.5rem 0 !important; /* Forces breathing room right before the gold lines */
     }
 
-    /* THE CALL BUTTON 
-       Clears previous visibility suppression to let text inside 
-       the element anchor render visibly and sharply.
-    */
+    /* THE CALL BUTTON */
     .cta-button {
         display: flex !important;
         flex-direction: column !important;
@@ -555,43 +555,40 @@ body {
         
         width: 100% !important;
         max-width: 360px !important; 
-        padding: 0.8rem 1rem !important;
+        padding: 0.85rem 1.5rem !important;
         margin: 0 auto !important;
         
         background-color: var(--gold) !important;
         border-radius: 6px !important;
         text-decoration: none !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
         
-        /* Typography controls for internal text block rendering */
-        font-size: 1.1rem !important;
+        font-size: 1.15rem !important;
         font-weight: 700 !important;
         line-height: 1.3 !important;
-        letter-spacing: 0.5px !important;
+        letter-spacing: 1px !important;
         color: var(--navy) !important;
         text-transform: uppercase !important;
         white-space: normal !important;
     }
     
-    /* Safely drops pseudo layer configurations */
     .cta-button::before,
     .cta-button::after {
         display: none !important;
     }
 
     /* ==========================================================================
-       HERO PANEL FIXED OVERLAP RESOLUTION
+       HERO PANEL TEXT ALIGNMENT & RESPONSIVE BUFFER
        ========================================================================== */
     .hero {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 3rem 1.25rem 4rem 1.25rem !important;
+        padding: 4rem 1.25rem 4rem 1.25rem !important; /* Pushes content completely clear of header borders */
         box-sizing: border-box !important;
         margin-top: 0 !important;
     }
 
-    /* Clears relative layer coordinates pushing content behind the header */
     .hero-content-wrapper {
         position: relative !important;
         top: auto !important;
@@ -604,12 +601,12 @@ body {
     }
 
     .hero-title {
-        font-size: 2.2rem !important;
+        font-size: 2.4rem !important;
         line-height: 1.2 !important;
-        margin-top: 0.5rem !important;
+        margin-top: 0.75rem !important;
     }
 
-    /* Rest of mobile sections padding normalization */
+    /* Section normalizations */
     .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
         width: 100% !important;
         max-width: 100% !important;
