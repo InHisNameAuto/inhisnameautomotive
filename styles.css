@@ -215,223 +215,6 @@ body {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    flex-wrap:/* ==========================================================================
-   Root Variables & Global Resets
-   ========================================================================== */
-:root {
-    --navy: #1a2d45;
-    --gold: #b07d4c;       
-    --dark-bg: #0d1b2a;    
-    --ice-blue: #f0f4f8;   
-    --light-text: #e8e8e8;
-    --dark-text: #1a2530;  
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--light-text);
-    line-height: 1.6;
-}
-
-/* ==========================================================================
-   Header Component (Desktop Standard Layout)
-   ========================================================================== */
-.header {
-    background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.header-logo {
-    width: 120px;
-    height: 140px;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-.header-center {
-    flex: 1;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: white;
-}
-
-.header-right {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.phone-link {
-    color: var(--gold);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-.phone-link:hover {
-    color: #e8c596;
-}
-
-.cta-button {
-    background-color: var(--gold);
-    color: var(--navy);
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    transition: all 0.3s;
-}
-
-.cta-button:hover {
-    background-color: transparent;
-    color: var(--gold);
-    border: 2px solid var(--gold);
-}
-
-/* ==========================================================================
-   Hero Section
-   ========================================================================== */
-.hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    padding: 120px 2rem 4rem;
-    margin-top: 0;
-    width: 100%;
-}
-
-.hero-content-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-.hero-location {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin: 0;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    margin: 0;
-    color: white;
-}
-
-.hero-title .white { color: white; }
-.hero-title .gold { color: var(--gold); }
-
-.hero-tagline {
-    font-size: 1.2rem;
-    color: #a8a8a8;
-    font-style: italic;
-    margin: 0;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: white;
-    font-weight: 600;
-    margin: 0;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 1100px;
-    margin: 3rem auto;
-    display: flex;
-    justify-content: center;
-}
-
-.workshop-img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 3px solid rgba(212, 165, 116, 0.3);
-}
-
-.hero-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
-    margin: 2rem 0;
-}
-
-.feature {
-    background: rgba(212, 165, 116, 0.1);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(212, 165, 116, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.checkmark {
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.feature strong {
-    color: white;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.3rem;
-}
-
-.feature p {
-    color: #b0b0b0;
-    font-size: 0.85rem;
-    margin: 0;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
 }
@@ -708,7 +491,7 @@ body {
         display: block !important;
     }
 
-    /* Sets mobile header up as a direct vertical top-to-bottom layout */
+    /* Sets mobile header container up to stack vertically cleanly */
     .header {
         position: relative !important; 
         display: flex !important;
@@ -718,13 +501,13 @@ body {
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 2.5rem 1rem !important;
-        gap: 0 !important; /* Disables automated container layout spacing controls */
+        padding: 2.5rem 1rem 1.5rem 1rem !important;
+        gap: 0 !important; 
         background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%) !important;
         box-shadow: none !important;
     }
 
-    /* --- POSITION A: LOGO (TOP POSITION) --- */
+    /* --- POSITION A: LOGO (TOP) --- */
     .header-logo {
         position: relative !important;
         order: 1 !important; 
@@ -732,40 +515,41 @@ body {
         height: auto !important;
         display: block !important;
         
-        /* 1. Sets alignment to center, 2. Generates empty layout space directly BELOW it */
-        margin: 0 auto 2rem auto !important; 
+        /* Spacing below the logo */
+        margin: 0 auto 1.5rem auto !important; 
         
         top: auto !important;
         left: auto !important;
         transform: none !important;
     }
 
-    /* --- POSITION B: IN HIS NAME AUTOMOTIVE (MIDDLE POSITION) --- */
+    /* --- POSITION B: IN HIS NAME AUTOMOTIVE (MIDDLE) --- */
     .header-center {
         position: relative !important;
         order: 2 !important; 
         width: 100% !important;
-        max-width: 310px !important; 
+        max-width: 100% !important;
         display: block !important;
         text-align: center !important;
         
-        /* Typography parameters */
-        font-size: 1.4rem !important;
-        line-height: 1.3 !important;
-        font-weight: 900 !important;
-        letter-spacing: 1px !important;
+        /* Text styling matching screenshot layout specifications */
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.5px !important;
         color: #ffffff !important;
+        text-transform: uppercase !important;
         
-        /* Generates explicit empty layout space directly BELOW the business name */
-        margin: 0 auto 2.25rem auto !important; 
+        /* Spacing below the business name text */
+        margin: 0 auto 1.5rem auto !important; 
     }
 
-    /* Hides redundant text links on modern mobile viewports */
+    /* Clear secondary phone markup out of flow calculations */
     .phone-link {
         display: none !important;
     }
 
-    /* --- POSITION C: CALL BUTTON (BOTTOM POSITION) --- */
+    /* --- POSITION C: CALL BUTTON (BOTTOM) --- */
     .header-right {
         position: relative !important;
         order: 3 !important; 
@@ -777,55 +561,38 @@ body {
         padding: 0 !important;
     }
 
-    /* CALL ACTION BUTTON BOX - FIXED TO WIDTH OF BUSINESS NAME CONTAINER ABOVE */
+    /* NATIVE BUTTON OVERRIDES - RENDERS CLEANLY AND REMOVES TEXT CLIPPING OVERLAPS */
     .cta-button {
         display: flex !important;
         position: relative !important;
         align-items: center !important;
         justify-content: center !important;
         
+        /* Standard structural box behavior matching design file */
         width: 100% !important;
-        max-width: 310px !important; 
-        
-        padding: 0.9rem 1rem !important;
+        max-width: 340px !important; 
+        padding: 0.8rem 1.5rem !important;
         margin: 0 auto !important;
+        
         background-color: var(--gold) !important;
-        color: var(--navy) !important;
         border-radius: 6px !important;
         text-decoration: none !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
         
-        white-space: normal !important; 
-        font-size: 0px !important;       
-        color: transparent !important;   
-    }
-
-    /* Phone icon layout size properties */
-    .cta-button::before {
-        content: "📞" !important;
-        font-size: 1.9rem !important;    
+        /* Cleans out string injection rendering and handles natively */
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
         color: var(--navy) !important;
-        margin-right: 0.75rem !important; 
-        display: inline-block !important;
-        line-height: 1 !important;
-        vertical-align: middle !important;
+        white-space: nowrap !important;
     }
-
-    /* Multi-line phone block text layout properties */
+    
+    .cta-button::before,
     .cta-button::after {
-        content: "CALL NOW\A 971.428.6446" !important;
-        display: inline-block !important;
-        white-space: pre-wrap !important; 
-        text-align: left !important;      
-        vertical-align: middle !important;
-        font-size: 1.05rem !important;
-        font-weight: 900 !important;
-        color: var(--navy) !important;
-        letter-spacing: 0.5px !important;
-        line-height: 1.2 !important;
+        display: none !important;
     }
 
-    /* Hero header context adjustments */
+    /* Hero context grid formatting adjustments */
     .hero {
         padding-top: 2rem !important;
     }
@@ -849,7 +616,7 @@ body {
         gap: 1.5rem !important;
     }
 
-    /* Services Card Flip Safeguards on Screen Resize */
+    /* Responsive adjustments for Services Offered card setups */
     #services .process-steps {
         display: flex !important;
         flex-direction: column !important;
