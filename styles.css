@@ -485,7 +485,7 @@ body {
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
-        margin: 0 auto 1.5rem auto !important; 
+        margin: 0 auto 2.5rem auto !important; /* Pushes button safely down below title text */
         font-size: 1.8rem !important;
         font-weight: 900 !important;
         line-height: 1.2 !important;
@@ -510,18 +510,11 @@ body {
         padding: 0 !important;
     }
 
-    /* FIXES THE OVERLAP & THE WHITESPACE HOLE */
     .cta-button {
-        display: grid !important; /* Changes behavior to structured grid layout rows */
-        grid-template-columns: 1fr !important;
-        align-items: center !important;
-        justify-content: center !important;
-        justify-items: center !important;
-        row-gap: 0 !important; /* Kills any structural vertical spacing gaps */
-        
-        width: 90% !important;
-        max-width: 320px !important; 
-        padding: 1rem 1.25rem !important;
+        display: block !important; /* Drops flex/grid rendering completely to enforce solid structural box */
+        width: 85% !important;
+        max-width: 290px !important; 
+        padding: 0.85rem 1rem !important;
         margin: 0 auto !important; 
         
         background-color: #b07d4c !important; 
@@ -530,8 +523,9 @@ body {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
         border: none !important;
         white-space: nowrap !important;
+        text-align: center !important;
         
-        /* Completely hides all native font renderings inside HTML container links */
+        /* Forces zero size on native HTML strings to wipe out text overlap completely */
         font-size: 0 !important;
         color: transparent !important;
         line-height: 0 !important;
@@ -541,7 +535,7 @@ body {
         display: none !important;
     }
 
-    /* Clean generation row 1 */
+    /* Standard block elements stacked directly on top of each other inside button frame */
     .cta-button::before {
         content: "📞 CALL NOW" !important;
         font-size: 1.4rem !important;
@@ -549,12 +543,11 @@ body {
         color: #1a2d45 !important;
         line-height: 1.2 !important;
         display: block !important;
-        margin: 0 !important;
+        margin: 0 0 0.1rem 0 !important; /* Drops empty space hole between lines */
         padding: 0 !important;
         letter-spacing: 0.5px !important;
     }
 
-    /* Clean generation row 2 */
     .cta-button::after {
         content: "971.428.6446" !important;
         font-size: 1.2rem !important;
