@@ -874,38 +874,40 @@ body {
     }
 
     /* ==========================================================================
-       MOBILE HEADER & BANNER FIX
-       Eliminates all text overlapping, scales the logo, and structures container layers.
+       MOBILE HEADER HAMBURGER STACK FIX
+       Arranges elements in a clean vertical flow: Logo -> Name -> Action Button
        ========================================================================== */
     .header {
-        position: relative !important; /* Changes from fixed to allow correct visual clearing */
+        position: relative !important; /* Drops fixed mode to seamlessly push the hero down */
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: column !important; /* Forces the vertical hamburger style layout stack */
         align-items: center !important;
         justify-content: flex-start !important;
         text-align: center !important;
         width: 100% !important;
         height: auto !important;
-        min-height: 180px !important;
-        padding: 1.25rem 1rem !important;
-        gap: 0.75rem !important;
+        min-height: 240px !important;
+        padding: 1.5rem 1.25rem !important;
+        gap: 1.25rem !important; /* Generates a clear uniform space between elements */
         background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%) !important;
     }
 
+    /* 1. Logo at the top */
     .header-logo {
         position: relative !important;
-        width: 75px !important;
-        height: 75px !important;
+        width: 70px !important;
+        height: 70px !important;
         margin: 0 auto !important;
         display: block !important;
     }
 
+    /* 2. Business Name in the middle */
     .header-center {
         position: relative !important;
-        font-size: 1.1rem !important;
+        font-size: 1.15rem !important;
         line-height: 1.3 !important;
         font-weight: 800 !important;
-        letter-spacing: 1px !important;
+        letter-spacing: 1.5px !important;
         margin: 0 auto !important;
         padding: 0 !important;
         width: 100% !important;
@@ -913,36 +915,47 @@ body {
         color: #ffffff !important;
     }
 
+    /* 3. Container wrapping the phone action button at the bottom */
     .header-right {
         position: relative !important;
         display: flex !important;
-        flex-direction: row !important; /* Places phone number and button cleanly side-by-side */
+        flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 1.25rem !important;
         width: 100% !important;
-        margin-top: 0.25rem !important;
+        margin: 0 auto !important;
+        gap: 0 !important;
     }
 
+    /* Hides standalone inline links to keep the new combined layout clear */
     .phone-link {
-        font-size: 0.95rem !important;
-        font-weight: 700 !important;
-        color: var(--gold) !important;
-        white-space: nowrap !important;
+        display: none !important;
     }
 
+    /* Wide button spanning matching the width of the business name text block */
     .cta-button {
-        width: auto !important;
-        max-width: none !important;
-        padding: 0.5rem 1.1rem !important;
-        font-size: 0.85rem !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 320px !important; /* Keeps container responsive and proportional */
+        padding: 0.75rem 1rem !important;
+        border-radius: 6px !important;
+        margin: 0 auto !important;
+        background-color: var(--gold) !important;
+        color: var(--navy) !important;
+        text-decoration: none !important;
+        
+        /* Font rules for multi-line formatting inside the button */
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
+        line-height: 1.4 !important;
+        white-space: normal !important; /* Allows lines to drop onto a clean new line */
         text-align: center !important;
-        margin: 0 !important;
     }
 
-    /* Hero Layout Mobile Normalization */
+    /* Hero Section Top-Margin Compensation */
     .hero {
-        padding-top: 2rem !important;
+        padding-top: 2.5rem !important;
     }
 
     .hero-title {
@@ -955,7 +968,7 @@ body {
         width: 100% !important;
     }
 
-    /* Dynamic flex columns to completely prevent layout crushing */
+    /* Dynamic columns layout management */
     .benefits-grid, 
     .testimonials-grid, 
     .contact-layout-wrapper {
@@ -979,7 +992,7 @@ body {
     #services .services-flip-card {
         width: 100% !important;
         height: auto !important;
-        perspective: none !important; /* Disables problematic mobile 3D perspective engine */
+        perspective: none !important;
     }
 
     #services .card-inner {
@@ -989,16 +1002,14 @@ body {
         width: 100% !important;
         height: auto !important;
         transform: none !important;
-        transform-style: flat !important; /* Forces layout tracking back onto a 2D plane */
+        transform-style: flat !important;
     }
 
-    /* Prevent mobile hover triggers from breaking orientation layout context */
     #services .services-flip-card:hover .card-inner,
     #services .services-flip-card:active .card-inner {
         transform: none !important;
     }
 
-    /* Displays the front side info cleanly inside the layout flow */
     #services .card-front {
         position: relative !important;
         width: 100% !important;
@@ -1017,7 +1028,6 @@ body {
         box-shadow: none !important;
     }
 
-    /* Safely drops the background picture on mobile browsers to prevent blowout glitches */
     #services .card-back {
         display: none !important; 
     }
