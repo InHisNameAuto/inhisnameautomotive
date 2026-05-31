@@ -330,7 +330,7 @@ body {
 
 .benefit-card:hover { background: #fafafa; transform: translateY(-5px); border-color: var(--gold); }
 .benefit-number { font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem; }
-.benefit-card h4 { color: var(--dark-text); font-size: 1.05rem; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 700; }
+.benefit-card h4 { color: var(--dark-text) !important; font-size: 1.05rem; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 700; }
 
 /* ==========================================================================
    Contact Layout Settings
@@ -473,7 +473,7 @@ body {
 }
 
 /* ==========================================================================
-   MOBILE & RESPONSIVE LAYOUT (Exact Match for Image 221.jpg)
+   MOBILE & RESPONSIVE LAYOUT (Exact Layout Match for Image 221.jpg)
    ========================================================================== */
 @media (max-width: 768px) {
     html, body {
@@ -482,87 +482,80 @@ body {
         overflow-x: hidden !important;
     }
 
-    .hero, .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
-        box-sizing: border-box !important;
-        display: block !important;
-    }
-
-    /* THE BLOCK CONTAINER
-       Explicit height reset. Removes fixed behavior to allow the 
-       stacked child elements to expand to their full natural sizes.
+    /* THE HEADER BAR CONTAINER 
+       Strips standard fixed layouts and allows contents to stack vertically.
     */
     .header {
         position: relative !important; 
-        display: block !important; /* Disables flex completely to prevent overlapping items */
+        display: block !important; 
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 2rem 1rem 0 1rem !important; /* Zero padding on bottom, handled by the border */
+        padding: 2rem 1.25rem 0 1.25rem !important; 
         background: #112233 !important;
         
-        /* THE DOUBLE GOLD LINE: Generates the exact double border look from image 221.jpg */
+        /* The decorative double gold bottom border lines */
         border-bottom: 6px double #b07d4c !important; 
         box-shadow: none !important;
+        top: auto !important;
+        left: auto !important;
     }
 
-    /* --- ITEM 1: THE LOGO (TOP POSITION) --- */
+    /* --- POSITION 1: THE LOGO --- */
     .header-logo {
         display: block !important;
-        width: 110px !important; /* Exact sizing matching the image aspect ratio */
+        width: 110px !important; 
         height: auto !important;
-        margin: 0 auto 1.25rem auto !important; /* Centers logo and pushes content below it down */
+        margin: 0 auto 1.25rem auto !important; 
         position: relative !important;
         top: auto !important;
         left: auto !important;
         transform: none !important;
     }
 
-    /* --- ITEM 2: IN HIS NAME AUTOMOTIVE (MIDDLE POSITION) --- */
+    /* --- POSITION 2: SITE TEXT ROW --- */
     .header-center {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
         
-        /* Direct typography styling matching 221.jpg */
         font-size: 1.85rem !important;
-        line-height: 1.15 !important;
+        line-height: 1.2 !important;
         font-weight: 800 !important;
         letter-spacing: 0.5px !important;
         color: #ffffff !important;
         text-transform: uppercase !important;
         
-        /* Breaks into two rows naturally if container wraps, pushes button down */
         margin: 0 auto 1.25rem auto !important; 
     }
 
-    /* Completely hide secondary inline text strings from layout math */
+    /* Completely hide inline anchor helper items from flow calculations */
     .phone-link {
         display: none !important;
     }
 
-    /* --- ITEM 3: THE CALL BUTTON CONTAINER (BOTTOM POSITION) --- */
+    /* --- POSITION 3: CALL CONTAINER BLOCK --- */
     .header-right {
         display: block !important;
         width: 100% !important;
         margin: 0 auto !important;
-        padding: 0 0 1.75rem 0 !important; /* Creates clean buffer space right above the double border line */
+        padding: 0 0 1.75rem 0 !important; 
     }
 
-    /* THE CALL NOW ACTION BAR - SPANS CLEAR AND WIDE WITH INTERNAL FLEX DIRECTION */
+    /* THE CALL BUTTON 
+       Clears previous visibility suppression to let text inside 
+       the element anchor render visibly and sharply.
+    */
     .cta-button {
         display: flex !important;
-        flex-direction: row !important;
+        flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
         
         width: 100% !important;
-        max-width: 360px !important; /* Fits completely inside body layout rules */
-        padding: 0.75rem 1rem !important;
+        max-width: 360px !important; 
+        padding: 0.8rem 1rem !important;
         margin: 0 auto !important;
         
         background-color: var(--gold) !important;
@@ -570,25 +563,60 @@ body {
         text-decoration: none !important;
         box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
         
-        /* Wipes out string injections completely to make space for native layout text */
-        font-size: 0px !important;
-        color: transparent !important;
+        /* Typography controls for internal text block rendering */
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.5px !important;
+        color: var(--navy) !important;
+        text-transform: uppercase !important;
         white-space: normal !important;
     }
     
-    /* Disable any hidden text generators that caused overlapping layouts */
+    /* Safely drops pseudo layer configurations */
     .cta-button::before,
     .cta-button::after {
         display: none !important;
     }
 
-    /* Hero header section layout parameters */
+    /* ==========================================================================
+       HERO PANEL FIXED OVERLAP RESOLUTION
+       ========================================================================== */
     .hero {
-        padding-top: 3rem !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 3rem 1.25rem 4rem 1.25rem !important;
+        box-sizing: border-box !important;
+        margin-top: 0 !important;
+    }
+
+    /* Clears relative layer coordinates pushing content behind the header */
+    .hero-content-wrapper {
+        position: relative !important;
+        top: auto !important;
+        transform: none !important;
+        padding-top: 0 !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
     }
 
     .hero-title {
         font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        margin-top: 0.5rem !important;
+    }
+
+    /* Rest of mobile sections padding normalization */
+    .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+        display: block !important;
     }
 
     .hero-features {
@@ -606,7 +634,6 @@ body {
         gap: 1.5rem !important;
     }
 
-    /* Interactive components safe mobile rendering */
     #services .process-steps {
         display: flex !important;
         flex-direction: column !important;
