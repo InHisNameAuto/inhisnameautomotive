@@ -83,7 +83,7 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-    height: 90px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,50 +102,42 @@ body {
 .header-center {
     flex: 1;
     text-align: center;
-    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.header-title-text {
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: white;
-}
-
-.header-right {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    flex-shrink: 0;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 .phone-link {
     color: var(--gold);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 700;
+    font-size: 1.1rem;
     white-space: nowrap;
     transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .phone-link:hover {
     color: #e8c596;
 }
 
-.cta-button {
-    background-color: var(--gold);
-    color: var(--navy);
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    transition: var(--transition-smooth);
-    border: 2px solid transparent;
-}
-
-.cta-button:hover {
-    background-color: transparent;
-    color: var(--gold);
-    border: 2px solid var(--gold);
+.header-right {
+    width: 120px; /* Balances out the layout side-space matching logo width */
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* ==========================================================================
@@ -153,7 +145,7 @@ body {
    ========================================================================== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    padding: 140px 2rem 5rem;
+    padding: 160px 2rem 5rem;
     margin-top: 0;
     width: 100%;
     position: relative;
@@ -886,19 +878,6 @@ body {
 }
 
 /* ==========================================================================
-   INTERFACES OVERRIDE STRUCTURAL BLOCK
-   ========================================================================== */
-.hero ~ .header,
-.hero ~ header,
-.mobile-call-banner,
-#mobile-nav-container {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    overflow: hidden !important;
-}
-
-/* ==========================================================================
    PRODUCTION RESPONSIVE ARCHITECTURE (MOBILE MEDIA QUERY)
    ========================================================================== */
 @media (max-width: 768px) {
@@ -916,7 +895,6 @@ body {
         font-size: 2rem !important;
     }
 
-    /* Primary Container Layout Re-stacking */
     .header {
         position: relative !important; 
         display: flex !important;
@@ -926,7 +904,7 @@ body {
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 2.5rem 1rem !important; 
+        padding: 2rem 1rem !important; 
         background: #0d1b2a !important; 
         border-bottom: 6px double #d4a017 !important;
         box-shadow: none !important;
@@ -939,7 +917,7 @@ body {
         display: block !important;
         width: 110px !important; 
         height: auto !important;
-        margin: 0 auto 1.5rem auto !important; 
+        margin: 0 auto 1rem auto !important; 
         position: relative !important;
         top: auto !important;
         left: auto !important;
@@ -953,82 +931,35 @@ body {
         justify-content: center !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto 1.5rem auto !important;
+        margin: 0 auto !important;
+        gap: 0.5rem !important;
     }
     
-    .header-center h1,
-    .header-center p,
-    .header-center span {
+    .header-title-text {
         display: block !important;
         width: 100% !important;
         color: #ffffff !important;
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;
         font-weight: 900 !important;
         line-height: 1.2 !important;
         text-transform: uppercase !important;
         letter-spacing: 0.5px !important;
         text-align: center !important;
         margin: 0 auto !important;
-        padding: 0 !important;
-    }
-    
-    .header-center .gold,
-    .header-center span:nth-child(2) {
-        color: #d9a066 !important;
     }
 
     .phone-link {
-        display: none !important;
+        display: inline-flex !important;
+        font-size: 1.4rem !important;
+        font-weight: 800 !important;
+        color: var(--gold) !important;
+        margin: 0.5rem auto 0 auto !important;
     }
 
     .header-right {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
+        display: none !important;
     }
 
-    .cta-button {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 0px !important;
-
-        width: 90% !important;
-        max-width: 340px !important;
-        min-height: 90px !important;
-        margin: 0 auto !important;
-        padding: 0.75rem 1rem !important;
-
-        background: #d9a066 !important;
-        color: #1a2d45 !important;
-        border-radius: 10px !important;
-        border: none !important;
-
-        font-size: 1.3rem !important;
-        font-weight: 800 !important;
-        line-height: 1.2 !important;
-        text-align: center !important;
-        white-space: nowrap !important;
-        text-decoration: none !important;
-    }
-
-    .cta-button * {
-        display: block !important;
-        font-size: inherit !important;
-        font-weight: inherit !important;
-        line-height: inherit !important;
-        color: inherit !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* Layout Component Reductions */
     .hero {
         display: block !important;
         width: 100% !important;
@@ -1077,7 +1008,6 @@ body {
         gap: 1.5rem !important;
     }
 
-    /* Isolated Mobile Fallback Context for Services Card Engine */
     #services .process-steps {
         display: flex !important;
         flex-direction: column !important;
