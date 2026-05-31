@@ -30,7 +30,7 @@ body {
 }
 
 /* ==========================================================================
-   Header Component
+   Header Component (Desktop / Standard Layout)
    ========================================================================== */
 .header {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
@@ -524,7 +524,7 @@ body {
 }
 
 /* ==========================================================================
-   Old Standard Process Layout (Kept Safe for Alternative Blocks)
+   Old Standard Process Layout
    ========================================================================== */
 .process {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
@@ -568,7 +568,7 @@ body {
 }
 
 /* ==========================================================================
-   NEW MODULE: Interactive 3D Card Flip System (Services Offered Block)
+   Interactive 3D Card Flip System (Services Offered Block)
    ========================================================================== */
 #services.services {
     background-color: var(--ice-blue) !important;
@@ -847,14 +847,16 @@ body {
 }
 
 /* ==========================================================================
-   GLOBAL RULES: HIDE THE MOBILE BUTTON ON DESKTOP LAYOUTS
+   CLEANUP: DESTROY ANY EXTRA FLOATING OR DUPLICATED BANNERS ON SITE
    ========================================================================== */
-.mobile-call-banner {
+.mobile-call-banner,
+.header + .header,
+body > .cta-button {
     display: none !important;
 }
 
 /* ==========================================================================
-   MOBILE & RESPONSIVE LAYOUT MATRIX (Max 768px Screens)
+   MOBILE & RESPONSIVE BREAKPOINT GRID SYSTEM (Max 768px Viewports)
    ========================================================================== */
 @media (max-width: 768px) {
     html, body {
@@ -863,7 +865,7 @@ body {
         overflow-x: hidden !important;
     }
 
-    /* Core Section Reset: Prevents components from breaking viewport width bounds */
+    /* Enforce block model mechanics across all site zones */
     .hero, .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
         width: 100% !important;
         max-width: 100% !important;
@@ -874,8 +876,8 @@ body {
     }
 
     /* ==========================================================================
-       MOBILE HEADER HAMBURGER STACK 
-       Strict vertical order: Logo (Top) -> Business Name (Middle) -> Button (Bottom)
+       STRICT VERTICAL HAMBURGER MOBILE HEADER ENGINE
+       Sequence Layout: 1. Logo (Top) -> 2. Business Name -> 3. Button (Bottom)
        ========================================================================== */
     .header {
         position: relative !important; 
@@ -885,12 +887,13 @@ body {
         justify-content: flex-start !important;
         width: 100% !important;
         height: auto !important;
+        min-height: unset !important;
         padding: 1.75rem 1.25rem !important;
-        gap: 1.5rem !important; /* Spaces elements cleanly */
+        gap: 1.25rem !important; /* Uniform gaps between elements */
         background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%) !important;
     }
 
-    /* 1. Logo placed at the top of the hamburger stack */
+    /* 1. Logo Element on Top */
     .header-logo {
         position: relative !important;
         order: 1 !important; 
@@ -898,25 +901,27 @@ body {
         height: auto !important;
         margin: 0 auto !important;
         display: block !important;
+        top: unset !important;
+        left: unset !important;
     }
 
-    /* 2. Business Name structural box in the exact middle */
+    /* 2. Business Name centered under the logo */
     .header-center {
         position: relative !important;
         order: 2 !important; 
         width: 100% !important;
-        max-width: 290px !important; /* Defines the standard width boundary link */
+        max-width: 290px !important; /* Sets up the explicit horizontal matching box width */
         margin: 0 auto !important;
-        font-size: 1.25rem !important;
-        line-height: 1.4 !important;
-        font-weight: 800 !important;
-        letter-spacing: 1.5px !important;
+        font-size: 1.35rem !important;
+        line-height: 1.3 !important;
+        font-weight: 900 !important;
+        letter-spacing: 1px !important;
         color: #ffffff !important;
         display: block !important;
         text-align: center !important;
     }
 
-    /* 3. Container holding the action button forced directly to the bottom */
+    /* 3. Call Button box container sitting on the bottom */
     .header-right {
         position: relative !important;
         order: 3 !important; 
@@ -926,22 +931,25 @@ body {
         align-items: center !important;
         margin: 0 auto !important;
         padding: 0 !important;
+        gap: 0 !important;
     }
 
-    /* Safely hide standalone desktop text link links */
+    /* Wipe clean old default horizontal row link strings */
     .phone-link {
         display: none !important;
     }
 
     /* ==========================================================================
-       BUTTON CSS GENERATOR 
-       Injects icon, phone number, and matching layout length entirely via CSS
+       CALL NOW BUTTON: MATCHES BUSINESS NAME WIDTH EXACTLY
+       Centers below, drops old horizontal blocks, scales icon dynamically
        ========================================================================== */
     .cta-button {
-        display: block !important;
+        display: flex !important;
         position: relative !important;
+        align-items: center !important;
+        justify-content: center !important;
         
-        /* Forces button width to match the exact size of the business name above */
+        /* Enforces button wrapper length to match the business name text box precisely */
         width: 100% !important;
         max-width: 290px !important; 
         
@@ -951,42 +959,38 @@ body {
         color: var(--navy) !important;
         border-radius: 6px !important;
         text-decoration: none !important;
-        text-align: center !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
         
-        /* Font styling rules */
-        font-weight: 800 !important;
-        letter-spacing: 1.5px !important;
-        line-height: 1.3 !important;
+        /* Content Masking Filters */
         white-space: normal !important; 
-        
-        /* Strips original "CALL NOW" raw text node styling and colorizes it */
-        font-size: 0px !important; 
-        color: transparent !important; 
+        font-size: 0px !important;       /* Safely blocks unstyled raw text node leakages */
+        color: transparent !important;   /* Keeps fallback characters hidden */
     }
 
-    /* Custom CSS Content Injection Engine: Restores text and creates the clean stacked layout */
+    /* Injects the Phone Icon—scaled up to seamlessly match both text lines */
     .cta-button::before {
-        /* Injects the Phone Icon and the 'CALL NOW' text header on Line 1 */
-        content: "📞  CALL NOW" !important;
-        display: block !important;
-        font-size: 0.95rem !important;
-        font-weight: 800 !important;
+        content: "📞" !important;
+        font-size: 1.85rem !important;    
         color: var(--navy) !important;
-        margin-bottom: 2px !important;
-        letter-spacing: 1px !important;
+        margin-right: 0.75rem !important; 
+        display: inline-block !important;
+        line-height: 1 !important;
     }
 
+    /* Injects both lines of clean text centered inside the layout container */
     .cta-button::after {
-        /* Injects the real phone number cleanly on Line 2 */
-        content: "971.428.6446" !important;
-        display: block !important;
-        font-size: 0.85rem !important;
-        font-weight: 700 !important;
+        content: "CALL NOW\A 971.428.6446" !important;
+        display: inline-block !important;
+        white-space: pre-wrap !important; /* Converts '\A' linebreaks natively */
+        text-align: left !important;      
+        font-size: 1rem !important;
+        font-weight: 900 !important;
         color: var(--navy) !important;
         letter-spacing: 0.5px !important;
+        line-height: 1.2 !important;
     }
 
-    /* Hero Section Compensation */
+    /* Hero Padding Spacing Rules */
     .hero {
         padding-top: 2.5rem !important;
     }
@@ -1001,7 +1005,7 @@ body {
         width: 100% !important;
     }
 
-    /* Grid Layout Simplification */
+    /* Fluid Conversions for Grid Layout Blocks */
     .benefits-grid, 
     .testimonials-grid, 
     .contact-layout-wrapper {
@@ -1011,10 +1015,7 @@ body {
         gap: 1.5rem !important;
     }
 
-    /* ==========================================================================
-       MOBILE FLIP SYSTEM BYPASS 
-       Safely flattens unstable 3D browser perspectives on mobile viewports.
-       ========================================================================== */
+    /* Mobile Flip Engine Bypass Protection */
     #services .process-steps {
         display: flex !important;
         flex-direction: column !important;
