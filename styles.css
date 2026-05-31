@@ -83,7 +83,7 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-    height: 100px;
+    height: 140px; /* Expanded height to handle two distinct lines elegantly */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,14 +103,14 @@ body {
     flex: 1;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Force elements to stack vertically */
     align-items: center;
     justify-content: center;
-    gap: 0.25rem;
+    gap: 0.75rem; /* Creates perfect separation between title and button line */
 }
 
 .header-title-text {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: white;
@@ -118,6 +118,30 @@ body {
     margin: 0;
 }
 
+.cta-button {
+    background-color: var(--gold);
+    color: var(--navy);
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: var(--transition-smooth);
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+}
+
+/* Fallback phone structural layout style if present */
 .phone-link {
     color: var(--gold);
     text-decoration: none;
@@ -136,18 +160,8 @@ body {
     fill: var(--gold) !important;
 }
 
-.phone-link:hover {
-    color: #e8c596;
-}
-
-.phone-link:hover i,
-.phone-link:hover svg {
-    color: #e8c596 !important;
-    fill: #e8c596 !important;
-}
-
 .header-right {
-    width: 120px; /* Balances out desktop alignment matching logo width */
+    width: 120px; /* Mirror layout symmetry with logo */
     display: flex;
     justify-content: flex-end;
 }
@@ -157,7 +171,7 @@ body {
    ========================================================================== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    padding: 160px 2rem 5rem;
+    padding: 190px 2rem 5rem; /* Pushed down slightly to account for the deeper header */
     margin-top: 0;
     width: 100%;
     position: relative;
@@ -944,7 +958,7 @@ body {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 auto !important;
-        gap: 0.5rem !important;
+        gap: 0.75rem !important;
     }
     
     .header-title-text {
@@ -960,19 +974,26 @@ body {
         margin: 0 auto !important;
     }
 
+    .cta-button {
+        display: flex !important;
+        width: 90% !important;
+        max-width: 300px !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 1.1rem !important;
+        font-weight: 800 !important;
+        background: #d9a066 !important;
+        color: #1a2d45 !important;
+        border-radius: 8px !important;
+        margin: 0 auto !important;
+    }
+
     .phone-link {
         display: inline-flex !important;
         font-size: 1.4rem !important;
         font-weight: 800 !important;
-        color: #d9a066 !important; /* Specific mobile fallback clarity color */
+        color: #d9a066 !important;
         margin: 0.5rem auto 0 auto !important;
         text-decoration: none !important;
-    }
-
-    .phone-link i, 
-    .phone-link svg {
-        color: #d9a066 !important;
-        fill: #d9a066 !important;
     }
 
     .header-right {
