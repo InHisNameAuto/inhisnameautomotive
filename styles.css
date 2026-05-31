@@ -463,16 +463,20 @@ body {
 .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(212, 165, 116, 0.2); color: #b0b0b0; font-size: 0.9rem; }
 .footer-bottom p { margin: 0.5rem 0; }
 
-/* Cleanup rules to make sure old custom items don't leak out */
+/* Global safety catch to destroy completely duplicate leaked headers */
 .hero ~ .header,
+.hero ~ header,
 .mobile-call-banner,
 #mobile-nav-container {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
 
 
 /* ==========================================================================
-   MOBILE LAYOUT ENGINE (Indestructible Override Matching 221.jpg)
+   MOBILE LAYOUT ENGINE (Exact Spacing & Clearances Recovered for 221.jpg)
    ========================================================================== */
 @media (max-width: 768px) {
     html, body {
@@ -481,7 +485,7 @@ body {
         overflow-x: hidden !important;
     }
 
-    /* 1. DISMANTLE DESKTOP ROW & FORCE VERTICAL STACKING GRID */
+    /* Stack elements inside a dedicated mobile-first frame */
     .header {
         position: relative !important; 
         display: flex !important;
@@ -492,67 +496,53 @@ body {
         height: auto !important;
         min-height: unset !important;
         padding: 2.5rem 1rem 2rem 1rem !important; 
-        background: #0d1b2a !important; /* Forces solid dark frame color background */
-        border-bottom: 5px solid #b07d4c !important; /* Gold line separator matching 221.jpg */
+        background: #0d1b2a !important; 
+        border-bottom: 5px solid #b07d4c !important; /* Gold ribbon rule matching 221.jpg */
         box-shadow: none !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
     }
 
-    /* POSITION 1: LOGO COMPONENT */
+    /* POSITION 1: THE GEAR/PRAYING HANDS LOGO */
     .header-logo {
         display: block !important;
         width: 110px !important; 
         height: auto !important;
-        margin: 0 auto 1.5rem auto !important; 
+        margin: 0 auto 1rem auto !important; 
         position: relative !important;
         top: auto !important;
         left: auto !important;
         transform: none !important;
     }
 
-    /* POSITION 2: THE HEADER SHOP TITLE (Wipes native alignment text issues) */
+    /* POSITION 2: THE NATIVE SITE TEXT TITLE */
     .header-center {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
         margin: 0 auto 1.5rem auto !important; 
-        font-size: 0 !important; /* Completely neutralizes native single line string collapse */
-    }
-
-    /* First Row String: IN HIS NAME */
-    .header-center::before {
-        content: "IN HIS NAME" !important;
-        display: block !important;
-        font-size: 2.2rem !important;
+        font-size: 1.8rem !important;
         font-weight: 900 !important;
-        line-height: 1.1 !important;
+        line-height: 1.2 !important;
         letter-spacing: 0.5px !important;
         color: #ffffff !important;
         text-transform: uppercase !important;
     }
-
-    /* Second Row String: AUTOMOTIVE */
-    .header-center::after {
-        content: "AUTOMOTIVE" !important;
-        display: block !important;
-        font-size: 2.2rem !important;
-        font-weight: 900 !important;
-        line-height: 1.1 !important;
-        letter-spacing: 0.5px !important;
-        color: #b07d4c !important; /* Exact light brown/gold tracking color mapping */
-        text-transform: uppercase !important;
-        margin-top: 0.2rem !important;
+    
+    /* Ensure colors look right if there are span formatting classes applied */
+    .header-center span, 
+    .header-center .gold {
+        color: #b07d4c !important;
     }
 
-    /* Completely hide the old desktop text anchor */
+    /* Hide standard desktop text phone link safely */
     .phone-link {
         display: none !important;
     }
 
-    /* POSITION 3: ACTION BUTTON STRUCTURAL OVERRIDES */
+    /* POSITION 3: RIGHT CONTAINER ELEMENTS RESET */
     .header-right {
         display: block !important;
         width: 100% !important;
@@ -560,60 +550,57 @@ body {
         padding: 0 !important;
     }
 
-    /* THE CALL NOW ACTION BANNER BUTTON */
+    /* THE CALL NOW ACTION BUTTON - MOVED LOWER AWAY FROM THE TEXT GRAPHICS */
     .cta-button {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 1.25rem !important;
+        gap: 0.75rem !important;
         
         width: 90% !important;
-        max-width: 440px !important; 
-        padding: 0.85rem 1.5rem !important;
-        margin: 0 auto !important;
+        max-width: 420px !important; 
+        padding: 0.85rem 1.25rem !important;
+        margin: 0.5rem auto 0 auto !important; /* Explicit top margin to prevent overlapping text elements */
         
-        background-color: #b07d4c !important; /* Solid brown gold block color background fill */
+        background-color: #b07d4c !important; 
+        color: #1a2d45 !important; 
         border-radius: 8px !important;
         text-decoration: none !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
         border: none !important;
+        white-space: nowrap !important;
         
-        font-size: 0 !important; /* Wipes raw desktop element typography layouts safely */
-        text-transform: none !important;
-        letter-spacing: 0 !important;
+        font-size: 1.3rem !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
     }
 
-    /* THE TELEPHONE SYSTEM ICON GRAPHIC */
+    /* Match all child elements explicitly inside the button block */
+    .cta-button * {
+        color: #1a2d45 !important;
+    }
+
+    /* Dynamic phone icon layout placement settings */
     .cta-button::before {
         content: "📞" !important;
-        font-size: 2.3rem !important;
-        color: #1a2d45 !important; /* Clean deep navy contrast formatting */
+        font-size: 1.8rem !important;
+        color: #1a2d45 !important;
         line-height: 1 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         margin: 0 0.25rem 0 0 !important;
-        padding: 0 !important;
     }
 
-    /* THE DUAL-LINE TEXT INJECTION BLOCK */
     .cta-button::after {
-        content: "CALL NOW\A 971.428.6446" !important;
-        display: block !important;
-        white-space: pre !important; /* Processes absolute split view layout on the \A regex line breaker */
-        text-align: left !important;
-        
-        font-size: 1.45rem !important;
-        font-weight: 800 !important;
-        line-height: 1.15 !important;
-        color: #1a2d45 !important; /* Deep navy text tracking colors */
-        text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
+        display: none !important;
     }
 
     /* ==========================================================================
-       HERO COVER CONTAINER BOX RESET
+       HERO AND SUB-CONTENT RESPONSIVE COMPRESSION
        ========================================================================== */
     .hero {
         display: block !important;
@@ -635,11 +622,11 @@ body {
     }
 
     .hero-title {
-        font-size: 2.4rem !important;
+        font-size: 2.2rem !important;
         line-height: 1.2 !important;
     }
 
-    /* Clean template wrapper grid constraints scaling */
+    /* Section dynamic padding collapse structural overrides */
     .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
         width: 100% !important;
         max-width: 100% !important;
