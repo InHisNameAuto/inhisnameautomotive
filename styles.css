@@ -130,12 +130,24 @@ body {
     gap: 0.5rem;
 }
 
+.phone-link i, 
+.phone-link svg {
+    color: var(--gold) !important;
+    fill: var(--gold) !important;
+}
+
 .phone-link:hover {
     color: #e8c596;
 }
 
+.phone-link:hover i,
+.phone-link:hover svg {
+    color: #e8c596 !important;
+    fill: #e8c596 !important;
+}
+
 .header-right {
-    width: 120px; /* Balances out the layout side-space matching logo width */
+    width: 120px; /* Balances out desktop alignment matching logo width */
     display: flex;
     justify-content: flex-end;
 }
@@ -952,8 +964,15 @@ body {
         display: inline-flex !important;
         font-size: 1.4rem !important;
         font-weight: 800 !important;
-        color: var(--gold) !important;
+        color: #d9a066 !important; /* Specific mobile fallback clarity color */
         margin: 0.5rem auto 0 auto !important;
+        text-decoration: none !important;
+    }
+
+    .phone-link i, 
+    .phone-link svg {
+        color: #d9a066 !important;
+        fill: #d9a066 !important;
     }
 
     .header-right {
