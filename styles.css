@@ -431,15 +431,6 @@ body {
 .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(212, 165, 116, 0.2); color: #b0b0b0; font-size: 0.9rem; }
 .footer-bottom p { margin: 0.5rem 0; }
 
-.hero ~ .header,
-.hero ~ header,
-.mobile-call-banner,
-#mobile-nav-container {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    overflow: hidden !important;
-}
 
 /* ==========================================================================
    MOBILE MEDIA QUERY
@@ -451,7 +442,6 @@ body {
         overflow-x: hidden !important;
     }
 
-    /* FIXES LEAK: Forces mobile container framework to follow a clean stacking layout */
     .header {
         position: relative !important; 
         display: flex !important;
