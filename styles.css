@@ -473,7 +473,7 @@ body {
 }
 
 /* ==========================================================================
-   MOBILE & RESPONSIVE LAYOUT (Max 768px Viewports)
+   MOBILE & RESPONSIVE LAYOUT (Exact Match for Image 221.jpg)
    ========================================================================== */
 @media (max-width: 768px) {
     html, body {
@@ -491,110 +491,100 @@ body {
         display: block !important;
     }
 
-    /* Sets mobile header container up to stack vertically cleanly */
+    /* THE BLOCK CONTAINER
+       Explicit height reset. Removes fixed behavior to allow the 
+       stacked child elements to expand to their full natural sizes.
+    */
     .header {
         position: relative !important; 
-        display: flex !important;
-        flex-direction: column !important; 
-        align-items: center !important;
-        justify-content: flex-start !important;
+        display: block !important; /* Disables flex completely to prevent overlapping items */
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 2.5rem 1rem 1.5rem 1rem !important;
-        gap: 0 !important; 
-        background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%) !important;
+        padding: 2rem 1rem 0 1rem !important; /* Zero padding on bottom, handled by the border */
+        background: #112233 !important;
+        
+        /* THE DOUBLE GOLD LINE: Generates the exact double border look from image 221.jpg */
+        border-bottom: 6px double #b07d4c !important; 
         box-shadow: none !important;
     }
 
-    /* --- POSITION A: LOGO (TOP) --- */
+    /* --- ITEM 1: THE LOGO (TOP POSITION) --- */
     .header-logo {
-        position: relative !important;
-        order: 1 !important; 
-        width: 100px !important;
-        height: auto !important;
         display: block !important;
-        
-        /* Spacing below the logo */
-        margin: 0 auto 1.5rem auto !important; 
-        
+        width: 110px !important; /* Exact sizing matching the image aspect ratio */
+        height: auto !important;
+        margin: 0 auto 1.25rem auto !important; /* Centers logo and pushes content below it down */
+        position: relative !important;
         top: auto !important;
         left: auto !important;
         transform: none !important;
     }
 
-    /* --- POSITION B: IN HIS NAME AUTOMOTIVE (MIDDLE) --- */
+    /* --- ITEM 2: IN HIS NAME AUTOMOTIVE (MIDDLE POSITION) --- */
     .header-center {
-        position: relative !important;
-        order: 2 !important; 
+        display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        display: block !important;
         text-align: center !important;
         
-        /* Text styling matching screenshot layout specifications */
-        font-size: 1.75rem !important;
-        line-height: 1.2 !important;
+        /* Direct typography styling matching 221.jpg */
+        font-size: 1.85rem !important;
+        line-height: 1.15 !important;
         font-weight: 800 !important;
         letter-spacing: 0.5px !important;
         color: #ffffff !important;
         text-transform: uppercase !important;
         
-        /* Spacing below the business name text */
-        margin: 0 auto 1.5rem auto !important; 
+        /* Breaks into two rows naturally if container wraps, pushes button down */
+        margin: 0 auto 1.25rem auto !important; 
     }
 
-    /* Clear secondary phone markup out of flow calculations */
+    /* Completely hide secondary inline text strings from layout math */
     .phone-link {
         display: none !important;
     }
 
-    /* --- POSITION C: CALL BUTTON (BOTTOM) --- */
+    /* --- ITEM 3: THE CALL BUTTON CONTAINER (BOTTOM POSITION) --- */
     .header-right {
-        position: relative !important;
-        order: 3 !important; 
+        display: block !important;
         width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
         margin: 0 auto !important;
-        padding: 0 !important;
+        padding: 0 0 1.75rem 0 !important; /* Creates clean buffer space right above the double border line */
     }
 
-    /* NATIVE BUTTON OVERRIDES - RENDERS CLEANLY AND REMOVES TEXT CLIPPING OVERLAPS */
+    /* THE CALL NOW ACTION BAR - SPANS CLEAR AND WIDE WITH INTERNAL FLEX DIRECTION */
     .cta-button {
         display: flex !important;
-        position: relative !important;
+        flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
         
-        /* Standard structural box behavior matching design file */
         width: 100% !important;
-        max-width: 340px !important; 
-        padding: 0.8rem 1.5rem !important;
+        max-width: 360px !important; /* Fits completely inside body layout rules */
+        padding: 0.75rem 1rem !important;
         margin: 0 auto !important;
         
         background-color: var(--gold) !important;
         border-radius: 6px !important;
         text-decoration: none !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
         
-        /* Cleans out string injection rendering and handles natively */
-        font-size: 1.15rem !important;
-        font-weight: 700 !important;
-        letter-spacing: 1px !important;
-        color: var(--navy) !important;
-        white-space: nowrap !important;
+        /* Wipes out string injections completely to make space for native layout text */
+        font-size: 0px !important;
+        color: transparent !important;
+        white-space: normal !important;
     }
     
+    /* Disable any hidden text generators that caused overlapping layouts */
     .cta-button::before,
     .cta-button::after {
         display: none !important;
     }
 
-    /* Hero context grid formatting adjustments */
+    /* Hero header section layout parameters */
     .hero {
-        padding-top: 2rem !important;
+        padding-top: 3rem !important;
     }
 
     .hero-title {
@@ -616,7 +606,7 @@ body {
         gap: 1.5rem !important;
     }
 
-    /* Responsive adjustments for Services Offered card setups */
+    /* Interactive components safe mobile rendering */
     #services .process-steps {
         display: flex !important;
         flex-direction: column !important;
