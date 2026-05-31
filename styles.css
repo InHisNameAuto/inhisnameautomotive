@@ -74,7 +74,7 @@ body {
 }
 
 /* ==========================================================================
-   DESKTOP GLOBAL HEADER SYSTEM
+   GLOBAL HEADER SYSTEM
    ========================================================================== */
 .header {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
@@ -83,7 +83,7 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-    height: 140px; /* Expanded height to handle two distinct lines elegantly */
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,14 +103,14 @@ body {
     flex: 1;
     text-align: center;
     display: flex;
-    flex-direction: column; /* Force elements to stack vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem; /* Creates perfect separation between title and button line */
+    gap: 0.35rem;
 }
 
 .header-title-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: white;
@@ -118,21 +118,32 @@ body {
     margin: 0;
 }
 
+/* Consolidated Combined Button Layout Styles */
 .cta-button {
     background-color: var(--gold);
     color: var(--navy);
-    padding: 0.5rem 1.5rem;
+    padding: 0.55rem 1.25rem;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
     white-space: nowrap;
     transition: var(--transition-smooth);
     border: 2px solid transparent;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.6rem; /* Perfect spacer between icon, number, and string */
+}
+
+/* Target internal phone icon element directly to paint it bright yellow/gold */
+.cta-button i,
+.cta-button svg {
+    color: #ffb84d !important;
+    fill: #ffb84d !important;
+    font-size: 1.05rem;
+    display: inline-block;
 }
 
 .cta-button:hover {
@@ -141,29 +152,22 @@ body {
     border: 2px solid var(--gold);
 }
 
-/* Fallback phone structural layout style if present */
-.phone-link {
-    color: var(--gold);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    white-space: nowrap;
-    transition: var(--transition-smooth);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.phone-link i, 
-.phone-link svg {
+.cta-button:hover i,
+.cta-button:hover svg {
     color: var(--gold) !important;
     fill: var(--gold) !important;
 }
 
+/* Hidden container buffer holding structural symmetries on desktop header layout */
 .header-right {
-    width: 120px; /* Mirror layout symmetry with logo */
+    width: 120px;
     display: flex;
     justify-content: flex-end;
+}
+
+/* Hide stand-alone legacy links if they exist contextually outside button structure */
+.phone-link {
+    display: none !important;
 }
 
 /* ==========================================================================
@@ -171,7 +175,7 @@ body {
    ========================================================================== */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    padding: 190px 2rem 5rem; /* Pushed down slightly to account for the deeper header */
+    padding: 160px 2rem 5rem;
     margin-top: 0;
     width: 100%;
     position: relative;
@@ -930,7 +934,7 @@ body {
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 2rem 1rem !important; 
+        padding: 1.75rem 1rem !important; 
         background: #0d1b2a !important; 
         border-bottom: 6px double #d4a017 !important;
         box-shadow: none !important;
@@ -941,9 +945,9 @@ body {
 
     .header-logo {
         display: block !important;
-        width: 110px !important; 
+        width: 100px !important; 
         height: auto !important;
-        margin: 0 auto 1rem auto !important; 
+        margin: 0 auto 0.75rem auto !important; 
         position: relative !important;
         top: auto !important;
         left: auto !important;
@@ -965,7 +969,7 @@ body {
         display: block !important;
         width: 100% !important;
         color: #ffffff !important;
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
         font-weight: 900 !important;
         line-height: 1.2 !important;
         text-transform: uppercase !important;
@@ -974,26 +978,27 @@ body {
         margin: 0 auto !important;
     }
 
+    /* Mobile specific adjustments to keep combined elements inside safety bounding box */
     .cta-button {
-        display: flex !important;
-        width: 90% !important;
-        max-width: 300px !important;
-        padding: 0.75rem 1rem !important;
-        font-size: 1.1rem !important;
+        display: inline-flex !important;
+        width: auto !important;
+        max-width: 100% !important;
+        padding: 0.55rem 1rem !important;
+        font-size: 0.85rem !important; 
         font-weight: 800 !important;
+        letter-spacing: 0px !important;
         background: #d9a066 !important;
         color: #1a2d45 !important;
-        border-radius: 8px !important;
-        margin: 0 auto !important;
+        border-radius: 6px !important;
+        margin: 0.25rem auto 0 auto !important;
+        gap: 0.4rem !important;
     }
 
-    .phone-link {
-        display: inline-flex !important;
-        font-size: 1.4rem !important;
-        font-weight: 800 !important;
-        color: #d9a066 !important;
-        margin: 0.5rem auto 0 auto !important;
-        text-decoration: none !important;
+    .cta-button i,
+    .cta-button svg {
+        color: #1a2d45 !important; /* Switch to dark color against light button bg for extreme visibility */
+        fill: #1a2d45 !important;
+        font-size: 0.95rem !important;
     }
 
     .header-right {
