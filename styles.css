@@ -1,6 +1,4 @@
-CALL NOW         <-- from ::before
-Call Now / Text  <-- from the raw HTML text string
-971.428.6446     <-- from ::after:root {
+:root {
     --navy: #1a2d45;
     --gold: #b07d4c;       
     --dark-bg: #0d1b2a;    
@@ -394,7 +392,7 @@ body {
     border-radius: 8px;
     box-sizing: border-box;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    background: #ffffff !important; /* Fixed: Forced button card background to clean solid white */
+    background: #ffffff !important; 
     border: 2px solid transparent !important;
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
@@ -403,7 +401,7 @@ body {
 #services .card-front .step-icon { font-size: 2rem !important; margin-bottom: 1rem !important; }
 #services .card-front h4 { color: var(--dark-text) !important; font-weight: bold !important; margin-bottom: 0.8rem !important; }
 #services .card-front p { color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important; }
-#services .services-flip-card:hover .card-front { background-color: #ffffff !important; border-color: var(--gold) !important; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); } /* Fixed: Stays clean white on desktop hover */
+#services .services-flip-card:hover .card-front { background-color: #ffffff !important; border-color: var(--gold) !important; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); } 
 #services .card-back { transform: rotateY(180deg); overflow: hidden; z-index: 1; border: 2px solid var(--gold) !important; background-color: var(--dark-text) !important; }
 #services .card-back img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -487,7 +485,7 @@ body {
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
-        margin: 0 auto 1.5rem auto !important; /* Adjusted to balance title over button */
+        margin: 0 auto 1.5rem auto !important; 
         font-size: 1.8rem !important;
         font-weight: 900 !important;
         line-height: 1.2 !important;
@@ -512,60 +510,60 @@ body {
         padding: 0 !important;
     }
 
+    /* FIXES THE OVERLAP & THE WHITESPACE HOLE */
     .cta-button {
-        display: flex !important;
-        flex-direction: column !important;
+        display: grid !important; /* Changes behavior to structured grid layout rows */
+        grid-template-columns: 1fr !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 0.2rem !important;
+        justify-items: center !important;
+        row-gap: 0 !important; /* Kills any structural vertical spacing gaps */
         
         width: 90% !important;
-        max-width: 420px !important; 
+        max-width: 320px !important; 
         padding: 1rem 1.25rem !important;
-        margin: 0 auto !important; /* Reset margin down to eliminate extra spacing gaps */
+        margin: 0 auto !important; 
         
         background-color: #b07d4c !important; 
-        color: #1a2d45 !important; 
         border-radius: 8px !important;
         text-decoration: none !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
         border: none !important;
         white-space: nowrap !important;
         
-        font-size: 1.4rem !important;
-        font-weight: 800 !important;
-        line-height: 1.1 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
-        color: transparent !important; /* Fixed: Blinds native text color to hide underlying HTML repeat */
+        /* Completely hides all native font renderings inside HTML container links */
+        font-size: 0 !important;
+        color: transparent !important;
+        line-height: 0 !important;
     }
 
-    /* Fixed: Hides font rendering within nested structural wrappers inside button markup */
     .cta-button * {
-        color: transparent !important;
         display: none !important;
     }
 
-    /* Fixed: Displays string strictly inside pseudo selectors to prevent double loop printing */
+    /* Clean generation row 1 */
     .cta-button::before {
         content: "📞 CALL NOW" !important;
         font-size: 1.4rem !important;
         font-weight: 900 !important;
         color: #1a2d45 !important;
-        line-height: 1.1 !important;
+        line-height: 1.2 !important;
         display: block !important;
-        margin: 0 0 0.25rem 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
         letter-spacing: 0.5px !important;
     }
 
+    /* Clean generation row 2 */
     .cta-button::after {
         content: "971.428.6446" !important;
         font-size: 1.2rem !important;
         font-weight: 700 !important;
         color: #1a2d45 !important;
-        line-height: 1.1 !important;
+        line-height: 1.2 !important;
         display: block !important;
         margin: 0 !important;
+        padding: 0 !important;
         letter-spacing: 0.5px !important;
     }
 
@@ -649,7 +647,7 @@ body {
         width: 100% !important;
         height: auto !important;
         padding: 2rem 1.5rem !important;
-        background: #ffffff !important; /* Keep buttons white while section uses var(--ice-blue) */
+        background: #ffffff !important; 
         border: 1px solid rgba(176, 125, 76, 0.25) !important;
         border-radius: 8px !important;
         z-index: 2 !important;
