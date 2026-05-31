@@ -3,11 +3,11 @@
    ========================================================================== */
 :root {
     --navy: #1a2d45;
-    --gold: #b07d4c;       /* Darkened slightly for rich contrast on light backgrounds */
-    --dark-bg: #0d1b2a;    /* Kept for dark sections like Hero/Process/Testimonials */
-    --ice-blue: #f0f4f8;   /* Our new premium crisp light ice theme background */
+    --gold: #b07d4c;       
+    --dark-bg: #0d1b2a;    
+    --ice-blue: #f0f4f8;   
     --light-text: #e8e8e8;
-    --dark-text: #1a2530;  /* High-contrast charcoal text for light sections */
+    --dark-text: #1a2530;  
 }
 
 * {
@@ -30,7 +30,7 @@ body {
 }
 
 /* ==========================================================================
-   Header Component (Desktop / Standard Layout)
+   Header Component (Desktop Standard Layout)
    ========================================================================== */
 .header {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
@@ -847,16 +847,18 @@ body {
 }
 
 /* ==========================================================================
-   CLEANUP: DESTROY ANY EXTRA FLOATING OR DUPLICATED BANNERS ON SITE
+   ANTI-DUPLICATION ENGINE: DESTROYS EXTRA COPIES OF THE HEADER BANNER
    ========================================================================== */
+/* Safety rules to catch any injected duplicate banners below the hero section */
+body > .header ~ .header,
+.hero ~ .header,
 .mobile-call-banner,
-.header + .header,
-body > .cta-button {
+#mobile-nav-container {
     display: none !important;
 }
 
 /* ==========================================================================
-   MOBILE & RESPONSIVE BREAKPOINT GRID SYSTEM (Max 768px Viewports)
+   MOBILE & RESPONSIVE BREAKPOINT SYSTEM (Max 768px Viewports)
    ========================================================================== */
 @media (max-width: 768px) {
     html, body {
@@ -865,7 +867,6 @@ body > .cta-button {
         overflow-x: hidden !important;
     }
 
-    /* Enforce block model mechanics across all site zones */
     .hero, .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
         width: 100% !important;
         max-width: 100% !important;
@@ -876,7 +877,7 @@ body > .cta-button {
     }
 
     /* ==========================================================================
-       STRICT VERTICAL HAMBURGER MOBILE HEADER ENGINE
+       STRICT MOBILE HEADER FLEX ENGINE
        Sequence Layout: 1. Logo (Top) -> 2. Business Name -> 3. Button (Bottom)
        ========================================================================== */
     .header {
@@ -888,32 +889,34 @@ body > .cta-button {
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 1.75rem 1.25rem !important;
-        gap: 1.25rem !important; /* Uniform gaps between elements */
+        padding: 2rem 1rem !important;
+        gap: 1.5rem !important; 
         background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%) !important;
+        box-shadow: none !important;
     }
 
-    /* 1. Logo Element on Top */
+    /* 1. Logo at the absolute top, with spacing reset to prevent overlapping */
     .header-logo {
         position: relative !important;
         order: 1 !important; 
-        width: 85px !important;
+        width: 110px !important;
         height: auto !important;
         margin: 0 auto !important;
         display: block !important;
-        top: unset !important;
-        left: unset !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
     }
 
-    /* 2. Business Name centered under the logo */
+    /* 2. Business Name centered directly below the logo */
     .header-center {
         position: relative !important;
         order: 2 !important; 
         width: 100% !important;
-        max-width: 290px !important; /* Sets up the explicit horizontal matching box width */
+        max-width: 340px !important; /* Establishes width baseline for the action button */
         margin: 0 auto !important;
-        font-size: 1.35rem !important;
-        line-height: 1.3 !important;
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
         font-weight: 900 !important;
         letter-spacing: 1px !important;
         color: #ffffff !important;
@@ -921,7 +924,12 @@ body > .cta-button {
         text-align: center !important;
     }
 
-    /* 3. Call Button box container sitting on the bottom */
+    /* Hide any old text links */
+    .phone-link {
+        display: none !important;
+    }
+
+    /* 3. Call Button box container sitting at the bottom of the column stack */
     .header-right {
         position: relative !important;
         order: 3 !important; 
@@ -931,68 +939,63 @@ body > .cta-button {
         align-items: center !important;
         margin: 0 auto !important;
         padding: 0 !important;
-        gap: 0 !important;
-    }
-
-    /* Wipe clean old default horizontal row link strings */
-    .phone-link {
-        display: none !important;
     }
 
     /* ==========================================================================
-       CALL NOW BUTTON: MATCHES BUSINESS NAME WIDTH EXACTLY
-       Centers below, drops old horizontal blocks, scales icon dynamically
+       CALL BUTTON ENGINE: PERFECT ALIGNMENT & TWO-LINE FLOW
        ========================================================================== */
     .cta-button {
-        display: flex !important;
-        position: relative !important;
+        display: grid !important;
+        grid-template-columns: auto 1fr !important;
         align-items: center !important;
         justify-content: center !important;
         
-        /* Enforces button wrapper length to match the business name text box precisely */
+        /* Forces button outer width to match the business name container exactly */
         width: 100% !important;
-        max-width: 290px !important; 
+        max-width: 340px !important; 
         
-        padding: 0.85rem 1rem !important;
+        padding: 0.85rem 1.25rem !important;
         margin: 0 auto !important;
         background-color: var(--gold) !important;
         color: var(--navy) !important;
         border-radius: 6px !important;
         text-decoration: none !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
         
-        /* Content Masking Filters */
         white-space: normal !important; 
-        font-size: 0px !important;       /* Safely blocks unstyled raw text node leakages */
-        color: transparent !important;   /* Keeps fallback characters hidden */
+        font-size: 0px !important;       
+        color: transparent !important;   
     }
 
-    /* Injects the Phone Icon—scaled up to seamlessly match both text lines */
+    /* High-contrast Unicode phone icon scaled up to cleanly match the two-line block text height */
     .cta-button::before {
         content: "📞" !important;
-        font-size: 1.85rem !important;    
+        font-size: 2.1rem !important;    
         color: var(--navy) !important;
         margin-right: 0.75rem !important; 
-        display: inline-block !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         line-height: 1 !important;
+        height: 100% !important;
     }
 
-    /* Injects both lines of clean text centered inside the layout container */
+    /* Dual line styling for the main text string node blocks */
     .cta-button::after {
         content: "CALL NOW\A 971.428.6446" !important;
         display: inline-block !important;
-        white-space: pre-wrap !important; /* Converts '\A' linebreaks natively */
+        white-space: pre-wrap !important; /* Converts native line break codes */
         text-align: left !important;      
-        font-size: 1rem !important;
+        font-size: 1.05rem !important;
         font-weight: 900 !important;
         color: var(--navy) !important;
         letter-spacing: 0.5px !important;
         line-height: 1.2 !important;
     }
 
-    /* Hero Padding Spacing Rules */
+    /* Layout Spacing Adjustments */
     .hero {
-        padding-top: 2.5rem !important;
+        padding-top: 2rem !important;
     }
 
     .hero-title {
@@ -1005,7 +1008,6 @@ body > .cta-button {
         width: 100% !important;
     }
 
-    /* Fluid Conversions for Grid Layout Blocks */
     .benefits-grid, 
     .testimonials-grid, 
     .contact-layout-wrapper {
@@ -1015,7 +1017,7 @@ body > .cta-button {
         gap: 1.5rem !important;
     }
 
-    /* Mobile Flip Engine Bypass Protection */
+    /* Flip Mechanism Removal for Mobile */
     #services .process-steps {
         display: flex !important;
         flex-direction: column !important;
