@@ -451,6 +451,7 @@ body {
         overflow-x: hidden !important;
     }
 
+    /* FIXES LEAK: Forces mobile container framework to follow a clean stacking layout */
     .header {
         position: relative !important; 
         display: flex !important;
@@ -480,13 +481,14 @@ body {
         transform: none !important;
     }
 
-    /* Standard block properties to handle stacking alignment perfectly */
     .header-center {
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 auto 1.5rem auto !important;
-        text-align: center !important;
     }
     
     .header-center h1,
@@ -515,14 +517,16 @@ body {
     }
 
     .header-right {
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 auto !important;
         padding: 0 !important;
     }
 
-    /* Isolated structural block container rules */
     .cta-button {
         display: flex !important;
         flex-direction: column !important;
