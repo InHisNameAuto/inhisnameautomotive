@@ -30,7 +30,7 @@ body {
 }
 
 /* ==========================================================================
-   Header Component (Desktop Standard Layout)
+   Header Component (Desktop / Standard Layout)
    ========================================================================== */
 .header {
     background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
@@ -139,13 +139,8 @@ body {
     color: white;
 }
 
-.hero-title .white {
-    color: white;
-}
-
-.hero-title .gold {
-    color: var(--gold);
-}
+.hero-title .white { color: white; }
+.hero-title .gold { color: var(--gold); }
 
 .hero-tagline {
     font-size: 1.2rem;
@@ -238,30 +233,13 @@ body {
     text-align: center;
 }
 
-.button-primary {
-    background-color: var(--gold);
-    color: var(--navy);
-}
-
-.button-primary:hover {
-    background-color: transparent;
-    color: var(--gold);
-    border-color: var(--gold);
-}
-
-.button-secondary {
-    background-color: transparent;
-    color: var(--gold);
-    border-color: var(--gold);
-}
-
-.button-secondary:hover {
-    background-color: var(--gold);
-    color: var(--navy);
-}
+.button-primary { background-color: var(--gold); color: var(--navy); }
+.button-primary:hover { background-color: transparent; color: var(--gold); border-color: var(--gold); }
+.button-secondary { background-color: transparent; color: var(--gold); border-color: var(--gold); }
+.button-secondary:hover { background-color: var(--gold); color: var(--navy); }
 
 /* ==========================================================================
-   Shared Light Layout Settings (Our Story, Get In Touch)
+   Shared Light Layout Settings (Our Story, Why Us, Get In Touch)
    ========================================================================== */
 .about, .why-us, .contact {
     background-color: var(--ice-blue) !important;
@@ -275,9 +253,7 @@ body {
     color: var(--dark-text) !important;
 }
 
-.about-text p,
-.why-us p,
-.contact-intro {
+.about-text p, .why-us p, .contact-intro {
     color: #4a5568 !important;
 }
 
@@ -290,25 +266,13 @@ body {
     font-weight: 600;
 }
 
-.section-title .gold {
-    color: var(--gold) !important;
-}
+.section-title .gold { color: var(--gold) !important; }
 
 /* ==========================================================================
    Our Story Layout Settings
    ========================================================================== */
-.about-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.about-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-}
+.about-content { max-width: 1000px; margin: 0 auto; width: 100%; }
+.about-text { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; }
 
 .quote-box {
     background: #ffffff;
@@ -319,25 +283,9 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
-.cross-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.quote-box blockquote {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--dark-text);
-    margin: 0 0 0.5rem 0;
-    line-height: 1.8;
-}
-
-.quote-ref {
-    color: var(--gold);
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 0;
-}
+.cross-icon { font-size: 2rem; margin-bottom: 1rem; }
+.quote-box blockquote { font-size: 1.1rem; font-style: italic; color: var(--dark-text); margin: 0 0 0.5rem 0; line-height: 1.8; }
+.quote-ref { color: var(--gold); font-size: 0.9rem; font-weight: 600; margin: 0; }
 
 .owner-profile {
     display: flex;
@@ -362,33 +310,14 @@ body {
     flex-shrink: 0;
 }
 
-.owner-name {
-    color: var(--dark-text);
-    font-weight: 700;
-    margin: 0;
-}
-
-.owner-title {
-    color: var(--gold);
-    font-size: 0.9rem;
-    margin: 0;
-}
+.owner-name { color: var(--dark-text); font-weight: 700; margin: 0; }
+.owner-title { color: var(--gold); font-size: 0.9rem; margin: 0; }
 
 /* ==========================================================================
    Why Us Layout Settings
    ========================================================================== */
-.why-us-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
+.why-us-content { max-width: 1200px; margin: 0 auto; width: 100%; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
 
 .benefit-card {
     background: #ffffff;
@@ -399,61 +328,18 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
-.benefit-card:hover {
-    background: #fafafa;
-    transform: translateY(-5px);
-    border-color: var(--gold);
-}
-
-.benefit-number {
-    font-size: 2rem;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-}
-
-.benefit-card h4 {
-    color: var(--dark-text);
-    font-size: 1.05rem;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
+.benefit-card:hover { background: #fafafa; transform: translateY(-5px); border-color: var(--gold); }
+.benefit-number { font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem; }
+.benefit-card h4 { color: var(--dark-text); font-size: 1.05rem; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 700; }
 
 /* ==========================================================================
    Contact Layout Settings
    ========================================================================== */
-.contact-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.contact-info {
-    text-align: center;
-    margin-bottom: 3.5rem;
-    width: 100%;
-}
-
-.contact-info .section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin: 0 auto 1.5rem auto;
-}
-
-.contact-info .section-title span {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.contact-layout-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 2.5rem;
-    width: 100%;
-}
+.contact-content { max-width: 1100px; margin: 0 auto; width: 100%; }
+.contact-info { text-align: center; margin-bottom: 3.5rem; width: 100%; }
+.contact-info .section-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin: 0 auto 1.5rem auto; }
+.contact-info .section-title span { display: block; margin-bottom: 0.5rem; }
+.contact-layout-wrapper { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 2.5rem; width: 100%; }
 
 .contact-boxes {
     display: flex;
@@ -480,28 +366,9 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.contact-box:hover {
-    transform: translateY(-2px);
-    background: #fdfdfd;
-    box-shadow: 0 6px 20px rgba(176, 125, 76, 0.12);
-}
-
-.contact-label {
-    color: var(--gold);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.contact-value {
-    color: var(--dark-text);
-    font-size: 1.2rem;
-    font-weight: bold;
-    display: block;
-    line-height: 1.4;
-}
+.contact-box:hover { transform: translateY(-2px); background: #fdfdfd; box-shadow: 0 6px 20px rgba(176, 125, 76, 0.12); }
+.contact-label { color: var(--gold); font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 0.5rem; }
+.contact-value { color: var(--dark-text); font-size: 1.2rem; font-weight: bold; display: block; line-height: 1.4; }
 
 .map-container {
     flex: 1;
@@ -516,124 +383,33 @@ body {
     margin: 0;
 }
 
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
+.map-container iframe { width: 100%; height: 100%; border: none; display: block; }
 
 /* ==========================================================================
    Old Standard Process Layout
    ========================================================================== */
-.process {
-    background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    padding: 5rem 2rem;
-    text-align: center;
-    width: 100%;
-}
-
-.process .step {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    transition: all 0.3s;
-}
-
-.process .step:hover {
-    background: rgba(212, 165, 116, 0.1);
-    transform: translateY(-5px);
-    border-color: var(--gold);
-}
-
-.step-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.process .step h4 {
-    color: white;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.process .step p {
-    color: #b0b0b0;
-    line-height: 1.7;
-    font-size: 0.95rem;
-    margin: 0;
-}
+.process { background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%); padding: 5rem 2rem; text-align: center; width: 100%; }
+.process .step { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); transition: all 0.3s; }
+.process .step:hover { background: rgba(212, 165, 116, 0.1); transform: translateY(-5px); border-color: var(--gold); }
+.step-icon { font-size: 2rem; margin-bottom: 1rem; }
+.process .step h4 { color: white; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 700; }
+.process .step p { color: #b0b0b0; line-height: 1.7; font-size: 0.95rem; margin: 0; }
 
 /* ==========================================================================
    Interactive 3D Card Flip System (Services Offered Block)
    ========================================================================== */
-#services.services {
-    background-color: var(--ice-blue) !important;
-    padding: 5rem 2rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    display: block !important;
-}
+#services.services { background-color: var(--ice-blue) !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important; }
+#services .process-content { max-width: 1100px !important; margin: 0 auto !important; width: 100% !important; }
+#services .section-label { color: var(--gold) !important; }
+#services .section-title { color: var(--dark-text) !important; }
+#services .section-title span { color: var(--gold) !important; }
+#services .process-steps { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important; width: 100% !important; }
+#services .services-footer { margin-top: 3rem; text-align: center; color: #4a5568 !important; font-weight: 500; }
+#services .services-flip-card { background: transparent; perspective: 1000px; }
+#services .card-inner { position: relative; width: 100%; height: 100%; display: grid; grid-template-areas: "stack"; text-align: left; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+#services .services-flip-card:hover .card-inner { transform: rotateY(180deg); }
 
-#services .process-content {
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-}
-
-#services .section-label {
-    color: var(--gold) !important;
-}
-
-#services .section-title {
-    color: var(--dark-text) !important;
-}
-
-#services .section-title span {
-    color: var(--gold) !important;
-}
-
-#services .process-steps {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 2rem !important;
-    align-items: stretch !important;
-    margin-top: 3rem !important;
-    width: 100% !important;
-}
-
-#services .services-footer {
-    margin-top: 3rem;
-    text-align: center;
-    color: #4a5568 !important;
-    font-weight: 500;
-}
-
-#services .services-flip-card {
-    background: transparent;
-    perspective: 1000px;
-}
-
-#services .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-areas: "stack";
-    text-align: left;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-}
-
-#services .services-flip-card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-#services .card-front, 
-#services .card-back {
+#services .card-front, #services .card-back {
     grid-area: stack;
     width: 100%;
     height: 100%;
@@ -647,210 +423,49 @@ body {
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-#services .card-front {
-    padding: 2.5rem 2rem !important;
-    position: relative;
-    z-index: 2;
-}
-
-#services .card-front .step-icon {
-    font-size: 2rem !important;
-    margin-bottom: 1rem !important;
-}
-
-#services .card-front h4 {
-    color: var(--dark-text) !important;
-    font-weight: bold !important;
-    margin-bottom: 0.8rem !important;
-}
-
-#services .card-front p {
-    color: #4a5568 !important;
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-}
-
-#services .services-flip-card:hover .card-front {
-    background-color: #e6f2ff !important;
-    border-color: var(--gold) !important;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-#services .card-back {
-    transform: rotateY(180deg);
-    overflow: hidden;
-    z-index: 1;
-    border: 2px solid var(--gold) !important;
-    background-color: var(--dark-text) !important;
-}
-
-#services .card-back img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+#services .card-front { padding: 2.5rem 2rem !important; position: relative; z-index: 2; }
+#services .card-front .step-icon { font-size: 2rem !important; margin-bottom: 1rem !important; }
+#services .card-front h4 { color: var(--dark-text) !important; font-weight: bold !important; margin-bottom: 0.8rem !important; }
+#services .card-front p { color: #4a5568 !important; font-size: 0.95rem !important; line-height: 1.6 !important; }
+#services .services-flip-card:hover .card-front { background-color: #e6f2ff !important; border-color: var(--gold) !important; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); }
+#services .card-back { transform: rotateY(180deg); overflow: hidden; z-index: 1; border: 2px solid var(--gold) !important; background-color: var(--dark-text) !important; }
+#services .card-back img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ==========================================================================
    Testimonials Layout Settings
    ========================================================================== */
-.testimonials {
-    background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    padding: 5rem 2rem;
-    text-align: center;
-    width: 100%;
-}
-
-.testimonials-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.testimonial-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    transition: all 0.3s;
-}
-
-.testimonial-card:hover {
-    background: rgba(212, 165, 116, 0.1);
-    border-color: var(--gold);
-    transform: translateY(-5px);
-}
-
-.testimonial-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.stars {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.testimonial-text {
-    color: #b0b0b0;
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-    font-size: 0.95rem;
-}
-
-.testimonial-author {
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-}
-
-.review-cta {
-    margin-top: 2rem;
-}
-
-.gold-link {
-    color: var(--gold);
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.gold-link:hover {
-    color: #e8c596;
-}
+.testimonials { background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%); padding: 5rem 2rem; text-align: center; width: 100%; }
+.testimonials-content { max-width: 1200px; margin: 0 auto; width: 100%; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+.testimonial-card { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); transition: all 0.3s; }
+.testimonial-card:hover { background: rgba(212, 165, 116, 0.1); border-color: var(--gold); transform: translateY(-5px); }
+.testimonial-link { text-decoration: none; color: inherit; display: block; }
+.stars { font-size: 1.2rem; margin-bottom: 1rem; }
+.testimonial-text { color: #b0b0b0; font-style: italic; margin-bottom: 1.5rem; line-height: 1.7; font-size: 0.95rem; }
+.testimonial-author { color: var(--gold); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; }
+.review-cta { margin-top: 2rem; }
+.gold-link { color: var(--gold); text-decoration: none; font-weight: 700; }
+.gold-link:hover { color: #e8c596; }
 
 /* ==========================================================================
    Footer Component
    ========================================================================== */
-.footer {
-    background: #0a1218;
-    border-top: 1px solid rgba(212, 165, 116, 0.2);
-    padding: 3rem 2rem;
-    width: 100%;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
-}
-
-.footer-column {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.footer-title {
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0;
-}
-
-.footer-column p {
-    color: #b0b0b0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.scripture {
-    color: var(--gold);
-    font-style: italic;
-    font-size: 0.95rem;
-}
-
-.footer-column a {
-    color: var(--gold);
-    text-decoration: none;
-}
-
-.footer-column a:hover {
-    color: #e8c596;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(212, 165, 116, 0.2);
-    color: #b0b0b0;
-    font-size: 0.9rem;
-}
-
-.footer-bottom p {
-    margin: 0.5rem 0;
-}
+.footer { background: #0a1218; border-top: 1px solid rgba(212, 165, 116, 0.2); padding: 3rem 2rem; width: 100%; }
+.footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; width: 100%; }
+.footer-column { display: flex; flex-direction: column; gap: 0.8rem; }
+.footer-title { color: white; font-size: 1rem; font-weight: 700; letter-spacing: 1px; margin: 0; }
+.footer-column p { color: #b0b0b0; font-size: 0.9rem; line-height: 1.6; margin: 0; }
+.scripture { color: var(--gold); font-style: italic; font-size: 0.95rem; }
+.footer-column a { color: var(--gold); text-decoration: none; }
+.footer-column a:hover { color: #e8c596; }
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(212, 165, 116, 0.2); color: #b0b0b0; font-size: 0.9rem; }
+.footer-bottom p { margin: 0.5rem 0; }
 
 /* ==========================================================================
-   ANTI-DUPLICATION ENGINE: DESTROYS EXTRA COPIES OF THE HEADER BANNER
+   ANTI-DUPLICATION TARGETED STRIKE (Destroys any 2nd header copies)
    ========================================================================== */
-/* Safety rules to catch any injected duplicate banners below the hero section */
-body > .header ~ .header,
 .hero ~ .header,
 .mobile-call-banner,
 #mobile-nav-container {
@@ -858,7 +473,7 @@ body > .header ~ .header,
 }
 
 /* ==========================================================================
-   MOBILE & RESPONSIVE BREAKPOINT SYSTEM (Max 768px Viewports)
+   MOBILE & RESPONSIVE LAYOUT (Max 768px Viewports)
    ========================================================================== */
 @media (max-width: 768px) {
     html, body {
@@ -877,8 +492,7 @@ body > .header ~ .header,
     }
 
     /* ==========================================================================
-       STRICT MOBILE HEADER FLEX ENGINE
-       Sequence Layout: 1. Logo (Top) -> 2. Business Name -> 3. Button (Bottom)
+       STRICT VERTICAL MOBILE LAYOUT
        ========================================================================== */
     .header {
         position: relative !important; 
@@ -889,47 +503,59 @@ body > .header ~ .header,
         width: 100% !important;
         height: auto !important;
         min-height: unset !important;
-        padding: 2rem 1rem !important;
-        gap: 1.5rem !important; 
+        
+        /* Spacing for the overall layout wrapper container */
+        padding: 2.5rem 1rem !important;
+        gap: 0 !important; 
+        
         background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%) !important;
         box-shadow: none !important;
     }
 
-    /* 1. Logo at the absolute top, with spacing reset to prevent overlapping */
+    /* --- POSITION A: LOGO (TOP) --- */
     .header-logo {
         position: relative !important;
         order: 1 !important; 
-        width: 110px !important;
+        width: 100px !important;
         height: auto !important;
-        margin: 0 auto !important;
         display: block !important;
+        margin: 0 auto !important;
+        
+        /* Creates the precise requested empty space BELOW the logo */
+        margin-bottom: 2rem !important; 
+        
         top: auto !important;
         left: auto !important;
         transform: none !important;
     }
 
-    /* 2. Business Name centered directly below the logo */
+    /* --- POSITION B: IN HIS NAME AUTOMOTIVE (MIDDLE) --- */
     .header-center {
         position: relative !important;
         order: 2 !important; 
         width: 100% !important;
-        max-width: 340px !important; /* Establishes width baseline for the action button */
+        max-width: 310px !important; /* Base matching block line length limit */
+        display: block !important;
         margin: 0 auto !important;
-        font-size: 1.5rem !important;
-        line-height: 1.2 !important;
+        text-align: center !important;
+        
+        /* Text attributes */
+        font-size: 1.4rem !important;
+        line-height: 1.3 !important;
         font-weight: 900 !important;
         letter-spacing: 1px !important;
         color: #ffffff !important;
-        display: block !important;
-        text-align: center !important;
+        
+        /* Creates the precise requested empty space BELOW the business name */
+        margin-bottom: 2.25rem !important; 
     }
 
-    /* Hide any old text links */
+    /* Clean old layout elements out of row calculations entirely */
     .phone-link {
         display: none !important;
     }
 
-    /* 3. Call Button box container sitting at the bottom of the column stack */
+    /* --- POSITION C: CALL BUTTON (BOTTOM) --- */
     .header-right {
         position: relative !important;
         order: 3 !important; 
@@ -941,20 +567,18 @@ body > .header ~ .header,
         padding: 0 !important;
     }
 
-    /* ==========================================================================
-       CALL BUTTON ENGINE: PERFECT ALIGNMENT & TWO-LINE FLOW
-       ========================================================================== */
+    /* CALL ACTION BUTTON BOX - EXACT TEXT BOX LIMIT SCALE WIDTH MATCH */
     .cta-button {
-        display: grid !important;
-        grid-template-columns: auto 1fr !important;
+        display: flex !important;
+        position: relative !important;
         align-items: center !important;
         justify-content: center !important;
         
-        /* Forces button outer width to match the business name container exactly */
+        /* Matches business text container dimension width perfectly */
         width: 100% !important;
-        max-width: 340px !important; 
+        max-width: 310px !important; 
         
-        padding: 0.85rem 1.25rem !important;
+        padding: 0.9rem 1rem !important;
         margin: 0 auto !important;
         background-color: var(--gold) !important;
         color: var(--navy) !important;
@@ -962,30 +586,30 @@ body > .header ~ .header,
         text-decoration: none !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
         
+        /* Structural content overrides */
         white-space: normal !important; 
         font-size: 0px !important;       
         color: transparent !important;   
     }
 
-    /* High-contrast Unicode phone icon scaled up to cleanly match the two-line block text height */
+    /* Icon vertical parameters layout adjustments */
     .cta-button::before {
         content: "📞" !important;
-        font-size: 2.1rem !important;    
+        font-size: 1.9rem !important;    
         color: var(--navy) !important;
         margin-right: 0.75rem !important; 
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        display: inline-block !important;
         line-height: 1 !important;
-        height: 100% !important;
+        vertical-align: middle !important;
     }
 
-    /* Dual line styling for the main text string node blocks */
+    /* Generates cleanly aligned twin copy text string lines natively */
     .cta-button::after {
         content: "CALL NOW\A 971.428.6446" !important;
         display: inline-block !important;
-        white-space: pre-wrap !important; /* Converts native line break codes */
+        white-space: pre-wrap !important; 
         text-align: left !important;      
+        vertical-align: middle !important;
         font-size: 1.05rem !important;
         font-weight: 900 !important;
         color: var(--navy) !important;
@@ -993,7 +617,7 @@ body > .header ~ .header,
         line-height: 1.2 !important;
     }
 
-    /* Layout Spacing Adjustments */
+    /* Hero section padding spacer offsets rules */
     .hero {
         padding-top: 2rem !important;
     }
@@ -1017,7 +641,7 @@ body > .header ~ .header,
         gap: 1.5rem !important;
     }
 
-    /* Flip Mechanism Removal for Mobile */
+    /* Card Flip Mobile Shield Rules */
     #services .process-steps {
         display: flex !important;
         flex-direction: column !important;
