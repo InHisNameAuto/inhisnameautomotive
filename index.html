@@ -739,15 +739,15 @@
             .footer-grid-layout {
                 display: flex !important;
                 flex-wrap: wrap !important;
-                gap: 3rem !important;
+                gap: 2rem !important; /* Slightly reduced gap to perfectly space 5 blocks across */
                 justify-content: space-between !important;
-                max-width: 1100px !important;
+                max-width: 1200px !important; /* Expanded slightly for a clean 5-column breathing room */
                 margin: 0 auto !important;
                 width: 100% !important;
             }
             .footer-col-block {
                 flex: 1 !important;
-                min-width: 220px !important; /* Slightly adjusted to accommodate 4 columns gracefully */
+                min-width: 200px !important; /* Adjusted to let all 5 columns sit gracefully without crowding */
             }
             .footer-col-block h4, .footer-col-block h3 {
                 color: #b07d4c !important;
@@ -763,11 +763,11 @@
                 font-size: 0.95rem !important;
                 margin: 0 0 1rem 0 !important;
             }
-            /* Custom styling rules for the new partner column */
+            /* Custom styling rules for the partner columns */
             .partner-badge-wrapper {
                 display: flex !important;
                 flex-direction: column !important;
-                align-items: flex-start !important;
+                align-items: center !important; /* Changed to center to match your alignment zone */
                 margin-bottom: 1rem !important;
             }
             .partner-label {
@@ -813,13 +813,13 @@
                 letter-spacing: 1px !important;
             }
             .footer-divider-line {
-                max-width: 1100px !important;
+                max-width: 1200px !important;
                 margin: 3rem auto 1.5rem auto !important;
                 border: 0 !important;
                 border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
             }
             .footer-copyright-row {
-                max-width: 1100px !important;
+                max-width: 1200px !important;
                 margin: 0 auto !important;
                 display: flex !important;
                 flex-wrap: wrap !important;
@@ -833,8 +833,9 @@
             }
         </style>
 
-<div class="footer-grid-layout">
+        <div class="footer-grid-layout">
             
+            <!-- COLUMN 1: PRO SALEM -->
             <div class="footer-col-block">
                 <div class="partner-alignment-zone" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
                     <div class="partner-badge-wrapper" style="margin-bottom: 0.5rem;">
@@ -849,13 +850,32 @@
                     </p>
                 </div>
             </div>
+
+            <!-- COLUMN 2: NEW CERTIFICATIONS & TRUST BADGES (Right between ProSalem and Business Info) -->
+            <div class="footer-col-block">
+                <div class="partner-alignment-zone" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h3 style="margin-bottom: 1.2rem;">CERTIFIED SHOP</h3>
+                    
+                    <!-- CARFAX Badge -->
+                    <div class="partner-badge-wrapper" style="margin-bottom: 1.5rem;">
+                        <img src="Images/Carfax.png" alt="CARFAX Car Care Service Center" class="partner-logo-img" style="display: block; margin: 0 auto; max-width: 140px;">
+                    </div>
+                    
+                    <!-- ASE Certification Badge -->
+                    <div class="partner-badge-wrapper" style="margin-bottom: 0.5rem;">
+                        <img src="Images/ASECert.png" alt="ASE Certified Facility" class="partner-logo-img" style="display: block; margin: 0 auto; max-width: 110px;">
+                    </div>
+                </div>
+            </div>
             
+            <!-- COLUMN 3: IN HIS NAME AUTOMOTIVE -->
             <div class="footer-col-block">
                 <h4>IN HIS NAME AUTOMOTIVE</h4>
                 <p>Honest auto repair. Faith-driven standards. Serving Salem, OR and surrounding communities.</p>
                 <p class="scripture">"Do to others as you would have them do to you." – Luke 6:31</p>
             </div>
             
+            <!-- COLUMN 4: CONTACT -->
             <div class="footer-col-block">
                 <h3>CONTACT</h3>
                 <p>📞 <a href="tel:9714286446">971.428.6446</a></p>
@@ -863,6 +883,7 @@
                 <p style="line-height: 1.5 !important;">📍 119 50th Ave NW<br>Salem, OR 97304</p>
             </div>
             
+            <!-- COLUMN 5: JUMP TO LINKS -->
             <div class="footer-col-block">
                 <h3>JUMP TO</h3>
                 <ul class="footer-link-list">
