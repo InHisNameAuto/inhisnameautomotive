@@ -614,6 +614,45 @@ body {
     display: block;
 }
 
+/* --- INTEGRATED BRAKE SERVICE CARD SLIDESHOW ENGINE --- */
+.card-back.brake-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.brake-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: brakeCrossfade 12s infinite ease-in-out;
+}
+
+.brake-slide:nth-child(1) { animation-delay: 0s; }
+.brake-slide:nth-child(2) { animation-delay: 3s; }
+.brake-slide:nth-child(3) { animation-delay: 6s; }
+.brake-slide:nth-child(4) { animation-delay: 9s; }
+
+@keyframes brakeCrossfade {
+    0%, 20% { 
+        opacity: 1; 
+        z-index: 2; 
+    }
+    25%, 95% { 
+        opacity: 0; 
+        z-index: 1; 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
 #services .services-footer {
     margin-top: 3.5rem;
     text-align: center;
@@ -921,9 +960,8 @@ body {
         font-size: 2rem !important;
     }
 
-    /* Force the main container block to be a strict centered block stack */
     .header {
-        position: relative !important; 
+        position: relative !important;
         display: flex !important;
         flex-direction: column !important; 
         align-items: center !important;
@@ -951,7 +989,6 @@ body {
         transform: none !important;
     }
 
-    /* Standard block column with absolute centered tracking properties */
     .header-center {
         display: flex !important;
         flex-direction: column !important;
@@ -978,26 +1015,21 @@ body {
         margin: 0 auto !important;
     }
 
-    /* THE MOBILE FIX: Strips out floats, clear alignments, and absolute links.
-       Forces the button block into a true center orientation layout box.
-    */
     .cta-button {
         display: inline-flex !important;
-        flex-direction: column !important; /* Stack elements internal to the button perfectly inside it */
+        flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
         width: 80% !important;
         max-width: 280px !important;
         min-width: 200px !important;
         padding: 0.75rem 1.25rem !important;
-        font-size: 1rem !important; 
+        font-size: 1rem !important;
         font-weight: 800 !important;
         background: #d9a066 !important;
         color: #1a2d45 !important;
         border-radius: 8px !important;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
-        
-        /* Layout overrides to prevent wrapping or breaking off-screen */
         position: relative !important;
         top: auto !important;
         right: auto !important;
@@ -1007,10 +1039,9 @@ body {
         clear: both !important;
     }
 
-    /* Ensure structural icons match layout colors correctly */
     .cta-button i,
     .cta-button svg {
-        color: #1a2d45 !important; 
+        color: #1a2d45 !important;
         fill: #1a2d45 !important;
         font-size: 1.1rem !important;
         margin: 0 auto 0.25rem auto !important;
@@ -1106,7 +1137,9 @@ body {
         z-index: 2 !important;
     }
 
+    /* Keep the slideshow hidden on mobile as per design layout rules */
+    .card-back.brake-slideshow,
     #services .card-back {
-        display: none !important; 
+        display: none !important;
     }
 }
