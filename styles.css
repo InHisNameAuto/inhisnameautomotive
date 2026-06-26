@@ -614,15 +614,18 @@ body {
     display: block;
 }
 
-/* --- INTEGRATED BRAKE SERVICE CARD SLIDESHOW ENGINE --- */
-.card-back.brake-slideshow {
+/* --- INTEGRATED SERVICE CARD SLIDESHOW --- */
+.card-back.brake-slideshow,
+.card-back.gasket-slideshow {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: #000;
 }
 
-.brake-slide {
+.brake-slide,
+.engine-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -631,26 +634,45 @@ body {
     object-fit: cover;
     display: block;
     opacity: 0;
-    animation: brakeCrossfade 12s infinite ease-in-out;
 }
 
+/* ==========================================
+   BRAKE SLIDESHOW (5 Images - 17 Second Loop)
+   Gives Slide 1 extra time, Slides 2-5 get 3s
+   ========================================== */
+.brake-slide {
+    animation: brakeFade 17s infinite ease-in-out;
+}
 .brake-slide:nth-child(1) { animation-delay: 0s; }
-.brake-slide:nth-child(2) { animation-delay: 3s; }
-.brake-slide:nth-child(3) { animation-delay: 6s; }
-.brake-slide:nth-child(4) { animation-delay: 9s; }
+.brake-slide:nth-child(2) { animation-delay: 5s; }
+.brake-slide:nth-child(3) { animation-delay: 8s; }
+.brake-slide:nth-child(4) { animation-delay: 11s; }
+.brake-slide:nth-child(5) { animation-delay: 14s; }
 
-@keyframes brakeCrossfade {
-    0%, 20% { 
-        opacity: 1; 
-        z-index: 2; 
-    }
-    25%, 95% { 
-        opacity: 0; 
-        z-index: 1; 
-    }
-    100% { 
-        opacity: 1; 
-    }
+@keyframes brakeFade {
+    0%, 15% { opacity: 1; z-index: 2; }   /* Visible duration */
+    20%, 95% { opacity: 0; z-index: 1; }  /* Faded out */
+    100% { opacity: 1; }
+}
+
+/* ==========================================
+   ENGINE SLIDESHOW (6 Images - 20 Second Loop)
+   Gives Slide 1 extra time, Slides 2-6 get 3s
+   ========================================== */
+.engine-slide {
+    animation: engineFade 20s infinite ease-in-out;
+}
+.engine-slide:nth-child(1) { animation-delay: 0s; }
+.engine-slide:nth-child(2) { animation-delay: 5s; }
+.engine-slide:nth-child(3) { animation-delay: 8s; }
+.engine-slide:nth-child(4) { animation-delay: 11s; }
+.engine-slide:nth-child(5) { animation-delay: 14s; }
+.engine-slide:nth-child(6) { animation-delay: 17s; }
+
+@keyframes engineFade {
+    0%, 12% { opacity: 1; z-index: 2; }   /* Visible duration */
+    17%, 95% { opacity: 0; z-index: 1; }  /* Faded out */
+    100% { opacity: 1; }
 }
 
 #services .services-footer {
