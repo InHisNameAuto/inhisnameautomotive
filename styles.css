@@ -386,7 +386,7 @@ body {
    WHY US / COMPETITIVE BENEFITS
    ========================================================================== */
 .why-us {
-    background-color: var(--ice-blue) !important;
+    background-color: transparent; /* Removed the hardcoded color lock */
     padding: 6rem 2rem;
     width: 100%;
 }
@@ -679,11 +679,12 @@ body {
    TESTIMONIALS STEP-BY-STEP AUTOMATED SLIDER (DARK THEME CONTRAST FLIP)
    ========================================================================== */
 .testimonials {
-    background: linear-gradient(135deg, var(--navy) 0%, #f0f4f8 100%) !important; /* BACK TO DARK BLUE GRADIENT */
-    padding: 5rem 2rem;
+    background-color: transparent; /* Removed the hardcoded color lock */
+    padding: 6rem 0;
+    text-align: center;
     width: 100%;
-    box-sizing: border-box;
-    display: block;
+    overflow: hidden;
+}
 }
 
 .testimonials-content {
