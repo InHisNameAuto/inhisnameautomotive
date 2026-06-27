@@ -636,10 +636,6 @@ body {
     opacity: 0;
 }
 
-/* ==========================================
-   BRAKE SLIDESHOW (5 Images - 17 Second Loop)
-   Gives Slide 1 extra time, Slides 2-5 get 3s
-   ========================================== */
 .brake-slide {
     animation: brakeFade 17s infinite ease-in-out;
 }
@@ -650,15 +646,11 @@ body {
 .brake-slide:nth-child(5) { animation-delay: 14s; }
 
 @keyframes brakeFade {
-    0%, 15% { opacity: 1; z-index: 2; }   /* Visible duration */
-    20%, 95% { opacity: 0; z-index: 1; }  /* Faded out */
+    0%, 15% { opacity: 1; z-index: 2; }   
+    20%, 95% { opacity: 0; z-index: 1; }  
     100% { opacity: 1; }
 }
 
-/* ==========================================
-   ENGINE SLIDESHOW (6 Images - 20 Second Loop)
-   Gives Slide 1 extra time, Slides 2-6 get 3s
-   ========================================== */
 .engine-slide {
     animation: engineFade 20s infinite ease-in-out;
 }
@@ -670,8 +662,8 @@ body {
 .engine-slide:nth-child(6) { animation-delay: 17s; }
 
 @keyframes engineFade {
-    0%, 12% { opacity: 1; z-index: 2; }   /* Visible duration */
-    17%, 95% { opacity: 0; z-index: 1; }  /* Faded out */
+    0%, 12% { opacity: 1; z-index: 2; }   
+    17%, 95% { opacity: 0; z-index: 1; }  
     100% { opacity: 1; }
 }
 
@@ -684,46 +676,89 @@ body {
 }
 
 /* ==========================================================================
-   TESTIMONIALS & SOCIAL PROOF
+   TESTIMONIALS INFINITE TICKER ENGINE (CLEAN MATRIX VERSION)
    ========================================================================== */
 .testimonials {
-    background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%);
-    padding: 6rem 2rem;
+    background-color: var(--ice-blue) !important;
+    padding: 6rem 0;
     text-align: center;
     width: 100%;
+    overflow: hidden;
 }
 
 .testimonials-content {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     width: 100%;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Mask frame for safety boundaries */
+.testimonial-ticker-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 3rem auto 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Moving continuous layout rail */
+.testimonial-ticker-track {
+    display: flex;
+    width: max-content;
     gap: 2rem;
-    margin: 3.5rem 0;
+    padding: 1.5rem 0;
+    animation: continuousScroll 38s linear infinite;
 }
 
-.testimonial-card {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    border: 1px solid rgba(212, 165, 116, 0.15);
-    transition: var(--transition-smooth);
+/* MOUSEOVER PAUSE ENGINE */
+.testimonial-ticker-track:hover {
+    animation-play-state: paused;
 }
 
-.testimonial-card:hover {
-    background: rgba(212, 165, 116, 0.08);
-    border-color: var(--gold);
-    transform: translateY(-5px);
+/* Precise item proportional math layout boundaries */
+.testimonial-card-element {
+    width: calc((1100px - 4rem) / 3);
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
-.testimonial-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+@media(max-width: 1100px) {
+    .testimonial-card-element {
+        width: 320px;
+    }
+}
+
+/* Core card specifications */
+.testimonial-pop-card {
+    background: #ffffff !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer;
+    height: 100%;
+    text-align: left;
+}
+
+/* Interactive hover popping lift definitions */
+.testimonial-pop-card:hover {
+    background-color: #e6f2ff !important;
+    border-color: #b07d4c !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+.testimonial-pop-card:hover .testimonial-text {
+    color: #0d1b2a !important;
+}
+
+.testimonial-pop-card:hover .testimonial-author {
+    color: #b07d4c !important;
 }
 
 .stars {
@@ -734,7 +769,7 @@ body {
 }
 
 .testimonial-text {
-    color: #b0b0b0;
+    color: #4a5568 !important;
     font-style: italic;
     margin-bottom: 1.5rem;
     line-height: 1.7;
@@ -743,7 +778,7 @@ body {
 
 .testimonial-author {
     color: var(--gold);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
 }
@@ -761,6 +796,16 @@ body {
 
 .gold-link:hover {
     color: #e8c596;
+}
+
+/* Infinite math tracker matrix loops back at exactly 50% seam width marker */
+@keyframes continuousScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 1rem));
+    }
 }
 
 /* ==========================================================================
@@ -1159,8 +1204,6 @@ body {
         z-index: 2 !important;
     }
 
-    /* Keep the slideshow hidden on mobile as per design layout rules */
-    .card-back.brake-slideshow,
     #services .card-back {
         display: none !important;
     }
