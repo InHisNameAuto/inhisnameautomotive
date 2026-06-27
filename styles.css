@@ -386,7 +386,7 @@ body {
    WHY US / COMPETITIVE BENEFITS
    ========================================================================== */
 .why-us {
-    background-color: transparent; /* Removed the hardcoded color lock */
+    background-color: transparent !important; /* CLEARED SO INLINE HTML BACKGROUNDS WORK */
     padding: 6rem 2rem;
     width: 100%;
 }
@@ -510,7 +510,7 @@ body {
    SERVICES INTERACTIVE FLIP MECHANICS
    ========================================================================== */
 #services.services {
-    background-color: var(--ice-blue) !important;
+    background-color: transparent !important; /* CHANGED TO TRANSPARENT TO ALLOW HTML INLINE COLOR ALIGNMENT */
     padding: 6rem 2rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -676,15 +676,15 @@ body {
 }
 
 /* ==========================================================================
-   TESTIMONIALS STEP-BY-STEP AUTOMATED SLIDER (DARK THEME CONTRAST FLIP)
+   TESTIMONIALS STEP-BY-STEP AUTOMATED SLIDER
    ========================================================================== */
 .testimonials {
-    background-color: transparent; /* Removed the hardcoded color lock */
-    padding: 6rem 0;
-    text-align: center;
+    background: transparent !important; /* DECOUPLED INDEPENDENT MECHANICS */
+    padding: 5rem 2rem;
     width: 100%;
+    box-sizing: border-box;
+    display: block;
     overflow: hidden;
-}
 }
 
 .testimonials-content {
@@ -706,17 +706,15 @@ body {
 .testimonial-slider-track {
     display: flex;
     gap: 2rem;
-    padding: 1.5rem 0; /* Clear space for upward pop interaction hover lift */
+    padding: 1.5rem 0; 
     width: max-content;
     animation: slideStepSequence 36s cubic-bezier(0.85, 0, 0.15, 1) infinite;
 }
 
-/* MOUSEOVER CAPTURE: Stalls step shifts instantly */
 .testimonial-slider-track:hover {
     animation-play-state: paused;
 }
 
-/* Precise card scaling formulas */
 .testimonial-card-element {
     width: calc((1100px - 4rem) / 3);
     box-sizing: border-box;
@@ -729,11 +727,10 @@ body {
     }
 }
 
-/* RESTORED ORIGINAL PRESENTATION LOOKS BY USER DEMAND */
 .testimonial-pop-card {
-    background: #ffffff !important; /* Crisp white original surface look preserved */
+    background: #ffffff !important; 
     border: 2px solid transparent !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important; /* Adjusted shadow definition depth for dark theme pop */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important; 
     text-decoration: none !important; 
     color: inherit !important;
     display: flex;
@@ -748,21 +745,21 @@ body {
 
 /* Mouseover Pop Lift Engine */
 .testimonial-pop-card:hover {
-    background-color: #e6f2ff !important; /* Soft interactive light blue default */
-    border-color: #b07d4c !important;     /* Brand gold active border */
-    transform: translateY(-6px) !important; /* Clean upward vertical layout shift */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4) !important;
+    background-color: #e6f2ff !important; 
+    border-color: #b07d4c !important;     
+    transform: translateY(-6px) !important; 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Text visibility overrides preserved on active card hover state change */
 .testimonial-pop-card .testimonial-text {
-    color: #4a5568 !important; /* Original crisp text gray readability overlay look */
+    color: #4a5568 !important; 
 }
 .testimonial-pop-card:hover .testimonial-text {
-    color: #0d1b2a !important; /* Deep navy text transition */
+    color: #0d1b2a !important; 
 }
 .testimonial-pop-card:hover .testimonial-author {
-    color: #b07d4c !important; /* Keeps core brand gold intact */
+    color: #b07d4c !important; 
 }
 
 /* ==========================================================================
@@ -857,7 +854,7 @@ body {
     transform: translateY(-2px);
     background: #fdfdfd;
     box-shadow: 0 6px 20px rgba(176, 125, 76, 0.12);
-    border-color: var(--gold) !important;
+    border: 2px solid var(--gold) !important;
 }
 
 .contact-label {
@@ -1178,6 +1175,7 @@ body {
         display: none !important;
     }
 }
+
 /* --- GOOGLE REVIEW HEADER LAYOUT --- */
 .reviewer-header {
     display: flex;
@@ -1190,7 +1188,7 @@ body {
 .reviewer-avatar {
     width: 40px;
     height: 40px;
-    background-color: #008573; /* Teal circle from the screenshot */
+    background-color: #008573; 
     color: #ffffff;
     border-radius: 50%;
     display: flex;
