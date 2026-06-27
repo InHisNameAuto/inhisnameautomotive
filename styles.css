@@ -679,7 +679,7 @@ body {
    TESTIMONIALS STEP-BY-STEP AUTOMATED SLIDER (DARK THEME CONTRAST FLIP)
    ========================================================================== */
 .testimonials {
-    background: linear-gradient(135deg, var(--navy) 0%, #0f1e2e 100%) !important; /* BACK TO DARK BLUE GRADIENT */
+    background: linear-gradient(135deg, var(--navy) 0%, #f0f4f8 100%) !important; /* BACK TO DARK BLUE GRADIENT */
     padding: 5rem 2rem;
     width: 100%;
     box-sizing: border-box;
