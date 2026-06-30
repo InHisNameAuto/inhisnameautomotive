@@ -174,7 +174,7 @@ body {
     padding: 160px 2rem 5rem;
     margin-top: 0;
     width: 100%;
-    position: relative;
+    relative;
 }
 
 .hero-content-wrapper {
@@ -509,7 +509,7 @@ body {
 /* ==========================================================================
    SERVICES INTERACTIVE FLIP MECHANICS
    ========================================================================== */
-#services.services {
+.services {
     background-color: transparent !important; 
     padding: 6rem 2rem !important;
     width: 100% !important;
@@ -614,7 +614,7 @@ body {
     display: block;
 }
 
-/* --- INTEGRATED SERVICE CARD SLIDESHOW (FIXED TO MAINTAIN EXACT CARD SIZE) --- */
+/* --- INTEGRATED SERVICE CARD SLIDESHOW (TIMING LOOP RE-ENGINEERED) --- */
 #services .card-back.brake-slideshow,
 #services .card-back.gasket-slideshow,
 #services .card-back.coolant-slideshow {
@@ -623,13 +623,11 @@ body {
     height: 100% !important;
     overflow: hidden !important;
     background: #000 !important;
-    /* TIMING TIMELINE PRESERVATION: Keeps slide 1 cleanly frozen out-of-sight */
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease;
 }
 
-/* Displays the slider instantly when flipped over */
 #services .services-flip-card:hover .card-back {
     visibility: visible;
     opacity: 1;
@@ -646,59 +644,69 @@ body {
     object-fit: cover !important;
     display: block !important;
     opacity: 0;
+    z-index: 1;
 }
 
-/* ==========================================
-   BRAKE SLIDESHOW (5 Images - 15 Second Balanced Loop)
-   ========================================== */
+/* ==========================================================================
+   BRAKE SLIDESHOW MECHANIC (5 Images - 20 Second Perfect Loop - 4s Per Frame)
+   ========================================================================== */
 #services .brake-slide {
-    animation: brakeFade 15s infinite ease-in-out;
+    animation: brakeFadeNew 20s infinite ease-in-out;
+}
+#services .services-flip-card:hover .brake-slide {
+    animation-play-state: running !important;
 }
 #services .brake-slide:nth-child(1) { animation-delay: 0s; }
-#services .brake-slide:nth-child(2) { animation-delay: 3s; }
-#services .brake-slide:nth-child(3) { animation-delay: 6s; }
-#services .brake-slide:nth-child(4) { animation-delay: 9s; }
-#services .brake-slide:nth-child(5) { animation-delay: 12s; }
+#services .brake-slide:nth-child(2) { animation-delay: 4s; }
+#services .brake-slide:nth-child(3) { animation-delay: 8s; }
+#services .brake-slide:nth-child(4) { animation-delay: 12s; }
+#services .brake-slide:nth-child(5) { animation-delay: 16s; }
 
-@keyframes brakeFade {
-    0%, 20% { opacity: 1; z-index: 2; }   
-    25%, 100% { opacity: 0; z-index: 1; }  
+@keyframes brakeFadeNew {
+    0%, 20% { opacity: 1; z-index: 2; }
+    25%, 100% { opacity: 0; z-index: 1; }
 }
 
-/* ==========================================
-   ENGINE SLIDESHOW (6 Images - 18 Second Balanced Loop)
-   ========================================== */
+/* ==========================================================================
+   ENGINE REPAIR SLIDESHOW MECHANIC (6 Images - 24 Second Perfect Loop - 4s Per Frame)
+   ========================================================================== */
 #services .engine-slide {
-    animation: engineFade 18s infinite ease-in-out;
+    animation: engineFadeNew 24s infinite ease-in-out;
+}
+#services .services-flip-card:hover .engine-slide {
+    animation-play-state: running !important;
 }
 #services .engine-slide:nth-child(1) { animation-delay: 0s; }
-#services .engine-slide:nth-child(2) { animation-delay: 3s; }
-#services .engine-slide:nth-child(3) { animation-delay: 6s; }
-#services .engine-slide:nth-child(4) { animation-delay: 9s; }
-#services .engine-slide:nth-child(5) { animation-delay: 12s; }
-#services .engine-slide:nth-child(6) { animation-delay: 15s; }
+#services .engine-slide:nth-child(2) { animation-delay: 4s; }
+#services .engine-slide:nth-child(3) { animation-delay: 8s; }
+#services .engine-slide:nth-child(4) { animation-delay: 12s; }
+#services .engine-slide:nth-child(5) { animation-delay: 16s; }
+#services .engine-slide:nth-child(6) { animation-delay: 20s; }
 
-@keyframes engineFade {
-    0%, 16.6% { opacity: 1; z-index: 2; }   
-    21.6%, 100% { opacity: 0; z-index: 1; }  
+@keyframes engineFadeNew {
+    0%, 16.66% { opacity: 1; z-index: 2; }
+    21.66%, 100% { opacity: 0; z-index: 1; }
 }
 
-/* ==========================================
-   COOLING SYSTEM SLIDESHOW (6 Images - 18 Second Balanced Loop)
-   ========================================== */
+/* ==========================================================================
+   COOLING SYSTEM SLIDESHOW MECHANIC (6 Images - 24 Second Perfect Loop - 4s Per Frame)
+   ========================================================================== */
 #services .coolant-slide {
-    animation: coolantFade 18s infinite ease-in-out;
+    animation: coolantFadeNew 24s infinite ease-in-out;
+}
+#services .services-flip-card:hover .coolant-slide {
+    animation-play-state: running !important;
 }
 #services .coolant-slide:nth-child(1) { animation-delay: 0s; }
-#services .coolant-slide:nth-child(2) { animation-delay: 3s; }
-#services .coolant-slide:nth-child(3) { animation-delay: 6s; }
-#services .coolant-slide:nth-child(4) { animation-delay: 9s; }
-#services .coolant-slide:nth-child(5) { animation-delay: 12s; }
-#services .coolant-slide:nth-child(6) { animation-delay: 15s; }
+#services .coolant-slide:nth-child(2) { animation-delay: 4s; }
+#services .coolant-slide:nth-child(3) { animation-delay: 8s; }
+#services .coolant-slide:nth-child(4) { animation-delay: 12s; }
+#services .coolant-slide:nth-child(5) { animation-delay: 16s; }
+#services .coolant-slide:nth-child(6) { animation-delay: 20s; }
 
-@keyframes coolantFade {
-    0%, 16.6% { opacity: 1; z-index: 2; }   
-    21.6%, 100% { opacity: 0; z-index: 1; }  
+@keyframes coolantFadeNew {
+    0%, 16.66% { opacity: 1; z-index: 2; }
+    21.66%, 100% { opacity: 0; z-index: 1; }
 }
 
 #services .services-footer {
@@ -728,7 +736,6 @@ body {
     overflow: hidden;
 }
 
-/* Window frame showing exactly 3 cards at a time */
 .testimonial-slider-viewport {
     width: 100%;
     overflow: hidden;
@@ -736,7 +743,6 @@ body {
     position: relative;
 }
 
-/* Moving conveyor line handling step-by-step leaps */
 .testimonial-slider-track {
     display: flex;
     gap: 2rem;
@@ -777,7 +783,6 @@ body {
     text-align: left;
 }
 
-/* Mouseover Pop Lift Engine */
 .testimonial-pop-card:hover {
     background-color: #e6f2ff !important; 
     border-color: #b07d4c !important;     
@@ -785,7 +790,6 @@ body {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Text visibility overrides preserved on active card hover state change */
 .testimonial-pop-card .testimonial-text {
     color: #4a5568 !important; 
 }
@@ -1178,12 +1182,6 @@ body {
     .hero-title {
         font-size: 2.2rem !important;
         line-height: 1.2 !important;
-    }
-
-    .hero-features {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-        width: 100% !important;
     }
 
     .about, .why-us, .contact, .process, #services.services, .testimonials, .footer {
