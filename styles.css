@@ -386,7 +386,7 @@ body {
    WHY US / COMPETITIVE BENEFITS
    ========================================================================== */
 .why-us {
-    background-color: transparent !important; /* CLEARED SO INLINE HTML BACKGROUNDS WORK */
+    background-color: transparent !important; 
     padding: 6rem 2rem;
     width: 100%;
 }
@@ -510,7 +510,7 @@ body {
    SERVICES INTERACTIVE FLIP MECHANICS
    ========================================================================== */
 #services.services {
-    background-color: transparent !important; /* CHANGED TO TRANSPARENT TO ALLOW HTML INLINE COLOR ALIGNMENT */
+    background-color: transparent !important; 
     padding: 6rem 2rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -616,7 +616,8 @@ body {
 
 /* --- INTEGRATED SERVICE CARD SLIDESHOW --- */
 .card-back.brake-slideshow,
-.card-back.gasket-slideshow {
+.card-back.gasket-slideshow,
+.card-back.coolant-slideshow {
     position: relative;
     width: 100%;
     height: 100%;
@@ -625,7 +626,8 @@ body {
 }
 
 .brake-slide,
-.engine-slide {
+.engine-slide,
+.coolant-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -636,10 +638,26 @@ body {
     opacity: 0;
 }
 
+/* FLIP DELAY ENGINE: Animation is paused until parent card is hovered/flipped */
+.brake-slide,
+.engine-slide,
+.coolant-slide {
+    animation-play-state: paused !important;
+}
+
+.services-flip-card:hover .brake-slide,
+.services-flip-card:hover .engine-slide,
+.services-flip-card:hover .coolant-slide {
+    animation-play-state: running !important;
+}
+
+/* ==========================================
+   BRAKE SLIDESHOW (5 Images - 17 Second Loop)
+   ========================================== */
 .brake-slide {
     animation: brakeFade 17s infinite ease-in-out;
 }
-.brake-slide:nth-child(1) { animation-delay: 0s; }
+.brake-slide:nth-child(1) { animation-delay: 0s; opacity: 1; z-index: 2; } /* Card front fallback static state */
 .brake-slide:nth-child(2) { animation-delay: 5s; }
 .brake-slide:nth-child(3) { animation-delay: 8s; }
 .brake-slide:nth-child(4) { animation-delay: 11s; }
@@ -651,10 +669,13 @@ body {
     100% { opacity: 1; }
 }
 
+/* ==========================================
+   ENGINE SLIDESHOW (6 Images - 20 Second Loop)
+   ========================================== */
 .engine-slide {
     animation: engineFade 20s infinite ease-in-out;
 }
-.engine-slide:nth-child(1) { animation-delay: 0s; }
+.engine-slide:nth-child(1) { animation-delay: 0s; opacity: 1; z-index: 2; } /* Card front fallback static state */
 .engine-slide:nth-child(2) { animation-delay: 5s; }
 .engine-slide:nth-child(3) { animation-delay: 8s; }
 .engine-slide:nth-child(4) { animation-delay: 11s; }
@@ -662,6 +683,25 @@ body {
 .engine-slide:nth-child(6) { animation-delay: 17s; }
 
 @keyframes engineFade {
+    0%, 12% { opacity: 1; z-index: 2; }   
+    17%, 95% { opacity: 0; z-index: 1; }  
+    100% { opacity: 1; }
+}
+
+/* ==========================================
+   COOLING SYSTEM SLIDESHOW (6 Images - 20 Second Loop)
+   ========================================== */
+.coolant-slide {
+    animation: coolantFade 20s infinite ease-in-out;
+}
+.coolant-slide:nth-child(1) { animation-delay: 0s; opacity: 1; z-index: 2; } /* Card front fallback static state */
+.coolant-slide:nth-child(2) { animation-delay: 5s; }
+.coolant-slide:nth-child(3) { animation-delay: 8s; }
+.coolant-slide:nth-child(4) { animation-delay: 11s; }
+.coolant-slide:nth-child(5) { animation-delay: 14s; }
+.coolant-slide:nth-child(6) { animation-delay: 17s; }
+
+@keyframes coolantFade {
     0%, 12% { opacity: 1; z-index: 2; }   
     17%, 95% { opacity: 0; z-index: 1; }  
     100% { opacity: 1; }
@@ -679,7 +719,7 @@ body {
    TESTIMONIALS STEP-BY-STEP AUTOMATED SLIDER
    ========================================================================== */
 .testimonials {
-    background: transparent !important; /* DECOUPLED INDEPENDENT MECHANICS */
+    background: transparent !important; 
     padding: 5rem 2rem;
     width: 100%;
     box-sizing: border-box;
@@ -762,8 +802,45 @@ body {
     color: #b07d4c !important; 
 }
 
+.stars {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+}
+
+.testimonial-text {
+    color: #4a5568 !important;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.testimonial-author {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.review-cta {
+    margin-top: 2.5rem;
+}
+
+.gold-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition-smooth);
+}
+
+.gold-link:hover {
+    color: #e8c596;
+}
+
 /* ==========================================================================
-   STEP ANIMATION LOGIC ENGINE (展示 3 个同时平滑移动 1 格)
+   STEP ANIMATION LOGIC ENGINE
    ========================================================================== */
 @keyframes slideStepSequence {
     0%, 12% { transform: translateX(0); }
