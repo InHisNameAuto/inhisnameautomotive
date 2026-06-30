@@ -623,6 +623,16 @@ body {
     height: 100% !important;
     overflow: hidden !important;
     background: #000 !important;
+    /* TIMING TIMELINE PRESERVATION: Keeps slide 1 cleanly frozen out-of-sight */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+/* Displays the slider instantly when flipped over */
+#services .services-flip-card:hover .card-back {
+    visibility: visible;
+    opacity: 1;
 }
 
 #services .brake-slide,
@@ -638,73 +648,57 @@ body {
     opacity: 0;
 }
 
-/* FLIP DELAY ENGINE: Animation is paused until parent card is hovered/flipped */
-#services .brake-slide,
-#services .engine-slide,
-#services .coolant-slide {
-    animation-play-state: paused !important;
-}
-
-#services .services-flip-card:hover .brake-slide,
-#services .services-flip-card:hover .engine-slide,
-#services .services-flip-card:hover .coolant-slide {
-    animation-play-state: running !important;
-}
-
 /* ==========================================
-   BRAKE SLIDESHOW (5 Images - 17 Second Loop)
+   BRAKE SLIDESHOW (5 Images - 15 Second Balanced Loop)
    ========================================== */
 #services .brake-slide {
-    animation: brakeFade 17s infinite ease-in-out;
+    animation: brakeFade 15s infinite ease-in-out;
 }
-#services .brake-slide:nth-child(1) { animation-delay: 0s; opacity: 1; z-index: 2; }
-#services .brake-slide:nth-child(2) { animation-delay: 5s; }
-#services .brake-slide:nth-child(3) { animation-delay: 8s; }
-#services .brake-slide:nth-child(4) { animation-delay: 11s; }
-#services .brake-slide:nth-child(5) { animation-delay: 14s; }
+#services .brake-slide:nth-child(1) { animation-delay: 0s; }
+#services .brake-slide:nth-child(2) { animation-delay: 3s; }
+#services .brake-slide:nth-child(3) { animation-delay: 6s; }
+#services .brake-slide:nth-child(4) { animation-delay: 9s; }
+#services .brake-slide:nth-child(5) { animation-delay: 12s; }
 
 @keyframes brakeFade {
-    0%, 15% { opacity: 1; z-index: 2; }   
-    20%, 95% { opacity: 0; z-index: 1; }  
-    100% { opacity: 1; }
+    0%, 20% { opacity: 1; z-index: 2; }   
+    25%, 100% { opacity: 0; z-index: 1; }  
 }
 
 /* ==========================================
-   ENGINE SLIDESHOW (6 Images - 20 Second Loop)
+   ENGINE SLIDESHOW (6 Images - 18 Second Balanced Loop)
    ========================================== */
 #services .engine-slide {
-    animation: engineFade 20s infinite ease-in-out;
+    animation: engineFade 18s infinite ease-in-out;
 }
-#services .engine-slide:nth-child(1) { animation-delay: 0s; opacity: 1; z-index: 2; }
-#services .engine-slide:nth-child(2) { animation-delay: 5s; }
-#services .engine-slide:nth-child(3) { animation-delay: 8s; }
-#services .engine-slide:nth-child(4) { animation-delay: 11s; }
-#services .engine-slide:nth-child(5) { animation-delay: 14s; }
-#services .engine-slide:nth-child(6) { animation-delay: 17s; }
+#services .engine-slide:nth-child(1) { animation-delay: 0s; }
+#services .engine-slide:nth-child(2) { animation-delay: 3s; }
+#services .engine-slide:nth-child(3) { animation-delay: 6s; }
+#services .engine-slide:nth-child(4) { animation-delay: 9s; }
+#services .engine-slide:nth-child(5) { animation-delay: 12s; }
+#services .engine-slide:nth-child(6) { animation-delay: 15s; }
 
 @keyframes engineFade {
-    0%, 12% { opacity: 1; z-index: 2; }   
-    17%, 95% { opacity: 0; z-index: 1; }  
-    100% { opacity: 1; }
+    0%, 16.6% { opacity: 1; z-index: 2; }   
+    21.6%, 100% { opacity: 0; z-index: 1; }  
 }
 
 /* ==========================================
-   COOLING SYSTEM SLIDESHOW (6 Images - 20 Second Loop)
+   COOLING SYSTEM SLIDESHOW (6 Images - 18 Second Balanced Loop)
    ========================================== */
 #services .coolant-slide {
-    animation: coolantFade 20s infinite ease-in-out;
+    animation: coolantFade 18s infinite ease-in-out;
 }
-#services .coolant-slide:nth-child(1) { animation-delay: 0s; opacity: 1; z-index: 2; }
-#services .coolant-slide:nth-child(2) { animation-delay: 5s; }
-#services .coolant-slide:nth-child(3) { animation-delay: 8s; }
-#services .coolant-slide:nth-child(4) { animation-delay: 11s; }
-#services .coolant-slide:nth-child(5) { animation-delay: 14s; }
-#services .coolant-slide:nth-child(6) { animation-delay: 17s; }
+#services .coolant-slide:nth-child(1) { animation-delay: 0s; }
+#services .coolant-slide:nth-child(2) { animation-delay: 3s; }
+#services .coolant-slide:nth-child(3) { animation-delay: 6s; }
+#services .coolant-slide:nth-child(4) { animation-delay: 9s; }
+#services .coolant-slide:nth-child(5) { animation-delay: 12s; }
+#services .coolant-slide:nth-child(6) { animation-delay: 15s; }
 
 @keyframes coolantFade {
-    0%, 12% { opacity: 1; z-index: 2; }   
-    17%, 95% { opacity: 0; z-index: 1; }  
-    100% { opacity: 1; }
+    0%, 16.6% { opacity: 1; z-index: 2; }   
+    21.6%, 100% { opacity: 0; z-index: 1; }  
 }
 
 #services .services-footer {
