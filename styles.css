@@ -174,7 +174,7 @@ body {
     padding: 160px 2rem 5rem;
     margin-top: 0;
     width: 100%;
-    position: relative; /* Fixed syntax error */
+    position: relative;
 }
 
 .hero-content-wrapper {
@@ -614,7 +614,7 @@ body {
     display: block;
 }
 
-/* --- INTEGRATED SERVICE CARD SLIDESHOW (CRITICAL STARTING LAYER FIXED) --- */
+/* --- INTEGRATED SERVICE CARD SLIDESHOW (LOCKS INITIAL TIMELINE ON LOAD) --- */
 #services .card-back.brake-slideshow,
 #services .card-back.gasket-slideshow,
 #services .card-back.coolant-slideshow {
@@ -645,12 +645,10 @@ body {
     display: block !important;
     opacity: 0;
     z-index: 1;
-    
-    /* FIX: Keep loops completely frozen on load until user explicitly hovers over card */
     animation-play-state: paused !important; 
 }
 
-/* FIX: Forces image 1 to remain explicitly active and ready before hover trigger starts */
+/* Force first frame active state globally on load */
 #services .brake-slide:nth-child(1),
 #services .engine-slide:nth-child(1),
 #services .coolant-slide:nth-child(1) {
@@ -756,7 +754,7 @@ body {
     gap: 2rem;
     padding: 1.5rem 0; 
     width: max-content;
-    animation: slideStepSequence 36s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+    animation: slideStepSequence 42s cubic-bezier(0.85, 0, 0.15, 1) infinite;
 }
 
 .testimonial-slider-track:hover {
@@ -846,16 +844,17 @@ body {
 }
 
 /* ==========================================================================
-   STEP ANIMATION LOGIC ENGINE
+   INFINITE LOOP ENGINE MATH FIX (7 Unique Reviews Running on a 42s Loop)
    ========================================================================== */
 @keyframes slideStepSequence {
-    0%, 12% { transform: translateX(0); }
-    16%, 28% { transform: translateX(calc(-1 * ((1100px - 4rem) / 3 + 2rem))); }
-    32%, 44% { transform: translateX(calc(-2 * ((1100px - 4rem) / 3 + 2rem))); }
-    48%, 60% { transform: translateX(calc(-3 * ((1100px - 4rem) / 3 + 2rem))); }
-    64%, 76% { transform: translateX(calc(-4 * ((1100px - 4rem) / 3 + 2rem))); }
-    80%, 92% { transform: translateX(calc(-5 * ((1100px - 4rem) / 3 + 2rem))); }
-    100% { transform: translateX(calc(-6 * ((1100px - 4rem) / 3 + 2rem))); }
+    0%, 11% { transform: translateX(0); }
+    14%, 25% { transform: translateX(calc(-1 * ((1100px - 4rem) / 3 + 2rem))); }
+    28%, 39% { transform: translateX(calc(-2 * ((1100px - 4rem) / 3 + 2rem))); }
+    42%, 53% { transform: translateX(calc(-3 * ((1100px - 4rem) / 3 + 2rem))); }
+    56%, 67% { transform: translateX(calc(-4 * ((1100px - 4rem) / 3 + 2rem))); }
+    70%, 81% { transform: translateX(calc(-5 * ((1100px - 4rem) / 3 + 2rem))); }
+    84%, 95% { transform: translateX(calc(-6 * ((1100px - 4rem) / 3 + 2rem))); }
+    98%, 100% { transform: translateX(calc(-7 * ((1100px - 4rem) / 3 + 2rem))); }
 }
 
 /* ==========================================================================
