@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     --navy: #1a2d45;
-    --gold: #b07d4c;       
+    --gold: #b07d4c;        
     --dark-bg: #0d1b2a;    
     --ice-blue: #f0f4f8;   
     --light-text: #e8e8e8;
@@ -157,9 +157,29 @@ body {
 }
 
 .header-right {
-    width: 120px;
+    width: auto;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+}
+
+/* --- BBB SEAL CONTAINER & IMAGE FORMATTING --- */
+.header-bbb-seal {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-bbb-seal img {
+    height: 36px;
+    width: auto;
+    max-height: 40px;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.header-bbb-seal:hover img {
+    opacity: 0.9;
 }
 
 .phone-link {
