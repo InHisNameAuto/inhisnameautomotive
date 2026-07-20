@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <meta name="description" content="Complete independent auto repair facility in Salem, OR. Specializing in advanced diagnostics, electrical troubleshooting, engine timing, brakes, steering, and suspension mechanical repairs.">
-    <meta name="robots" contentF="index, follow">
+    <meta name="robots" content="index, follow">
     <meta name="author" content="In His Name Automotive">
 
     <meta name="geo.region" content="US-OR">
@@ -29,11 +27,12 @@
     <meta property="business:contact_data:country_name" content="United States">
 
     <style>
+        /* Hero Card Styles */
         .hero-custom-card {
             background: #ffffff !important;
             padding: 2rem !important;
             border-radius: 8px !important;
-            border: 2px solid transparent !important; /* Invisible border prevents text-shift jumps */
+            border: 2px solid transparent !important;
             text-align: center !important;
             display: flex !important;
             flex-direction: column !important;
@@ -58,20 +57,215 @@
             margin: 0 !important;
             font-size: 0.95rem !important;
         }
-        
-        /* Interactive State Trigger overrides */
         .hero-custom-card:hover {
             background-color: #e6f2ff !important; 
-            border-color: #b07d4c !important; /* Gold displays exclusively on mouseover */
+            border-color: #b07d4c !important;
             transform: translateY(-6px) !important; 
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Process Pop Card Styles */
+        .process-pop-card {
+            margin: 0 !important;
+            background: #ffffff !important;
+            border: 2px solid transparent !important;
+            padding: 2rem !important;
+            border-radius: 8px !important;
+            transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+            cursor: pointer;
+        }
+        .process-pop-card h4 {
+            color: #0d1b2a !important;
+            font-weight: bold !important;
+            margin-bottom: 0.8rem !important;
+            transition: color 0.3s ease !important;
+        }
+        .process-pop-card p {
+            color: #4a5568 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            transition: color 0.3s ease !important;
+        }
+        .process-pop-card:hover {
+            background-color: #e6f2ff !important;
+            border-color: #b07d4c !important;
+            transform: translateY(-6px) !important;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Why Us Styles */
+        .whyus-pop-card {
+            margin: 0 !important;
+            background: #ffffff !important;
+            border: 2px solid transparent !important;
+            padding: 2rem !important;
+            border-radius: 8px !important;
+            transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+            cursor: pointer;
+        }
+        .whyus-pop-card h4 {
+            color: #0d1b2a !important;
+            font-weight: bold !important;
+            margin-bottom: 0.8rem !important;
+            transition: color 0.3s ease !important;
+        }
+        .whyus-pop-card p {
+            color: #4a5568 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            transition: color 0.3s ease !important;
+        }
+        .whyus-pop-card:hover {
+            background-color: #e6f2ff !important;
+            border-color: #b07d4c !important;
+            transform: translateY(-6px) !important;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        /* Financing Styles */
+        .finance-banner-card {
+            width: 100% !important;
+            max-width: 646px !important;
+            transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+            border-radius: 6px !important;
+            overflow: hidden !important;
+        }
+        .finance-banner-card:hover {
+            transform: translateY(-5px) !important;
+        }
+
+        /* Contact Styles */
+        .contact-pop-card {
+            margin: 0 !important; 
+            background: #ffffff !important;
+            border: 2px solid #b07d4c !important;
+            padding: 1.5rem !important; 
+            border-radius: 8px !important; 
+            text-decoration: none !important; 
+            display: block !important; 
+            flex: 1 !important;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+            cursor: pointer;
+        }
+        .contact-pop-card .contact-label {
+            color: #b07d4c !important;
+            display: block !important; 
+            font-weight: bold !important; 
+            font-size: 0.85rem !important; 
+            margin-bottom: 0.4rem !important;
+        }
+        .contact-pop-card .contact-value {
+            color: #0d1b2a !important;
+            font-weight: bold !important;
+            transition: color 0.3s ease !important;
+        }
+        .contact-pop-card:hover {
+            background-color: #e6f2ff !important;
+            transform: translateY(-6px) !important;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Footer Styles */
+        .footer-grid-layout {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 2rem !important;
+            justify-content: space-between !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+        }
+        .footer-col-block {
+            flex: 1 !important;
+            min-width: 200px !important;
+        }
+        .footer-col-block h4, .footer-col-block h3 {
+            color: #b07d4c !important;
+            font-size: 1.1rem !important;
+            font-weight: bold !important;
+            letter-spacing: 1px !important;
+            margin: 0 0 1.2rem 0 !important;
+            text-transform: uppercase !important;
+        }
+        .footer-col-block p {
+            color: #4a5568 !important;
+            line-height: 1.6 !important;
+            font-size: 0.95rem !important;
+            margin: 0 0 1rem 0 !important;
+        }
+        .partner-badge-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin-bottom: 1rem !important;
+        }
+        .partner-label {
+            font-size: 0.7rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            color: #b07d4c !important;
+            font-weight: bold !important;
+            margin-bottom: 0.5rem !important;
+        }
+        .partner-logo-img {
+            max-width: 130px !important;
+            height: auto !important;
+            display: block !important;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1)) !important;
+        }
+        .footer-col-block .scripture {
+            font-style: italic !important;
+            color: #0d1b2a !important;
+            border-left: 2px solid #b07d4c !important;
+            padding-left: 10px !important;
+            margin-top: 1.5rem !important;
+        }
+        .footer-col-block a {
+            color: #0d1b2a !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease !important;
+            font-weight: bold !important;
+        }
+        .footer-col-block a:hover {
+            color: #b07d4c !important;
+        }
+        .footer-link-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .footer-link-list li {
+            margin-bottom: 0.6rem !important;
+        }
+        .footer-link-list a {
+            font-size: 0.9rem !important;
+            font-weight: bold !important;
+            letter-spacing: 1px !important;
+        }
+        .footer-divider-line {
+            max-width: 1200px !important;
+            margin: 3rem auto 1.5rem auto !important;
+            border: 0 !important;
+            border-top: 1px solid rgba(13, 27, 42, 0.1) !important;
+        }
+        .footer-copyright-row {
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: space-between !important;
+            gap: 1rem !important;
+            color: #718096 !important;
+            font-size: 0.85rem !important;
+        }
+        .footer-copyright-row p {
+            margin: 0 !important;
         }
     </style>
 </head>
 <body>
 
 <header class="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-sizing: border-box; height: 70px; background-color: #0d1b2a;">
-        
     <img src="Images/logo.png" alt="In His Name Automotive Logo" class="header-logo" 
          style="position: absolute; top: 10px; left: 20px; height: 130px; width: auto; z-index: 1001; max-width: none; filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1)) drop-shadow(0px 0px 4px rgba(176, 125, 76, 1));">
     
@@ -81,7 +275,6 @@
 
     <div class="header-content" style="margin-left: auto; position: relative; z-index: 2; height: 100%; display: flex; align-items: center; padding-right: 20px;">
         <div class="header-actions" style="display: flex; align-items: center; gap: 15px;">
-            <!-- BBB Dynamic Seal (Scaled down to 36px height to prevent expanding the bar) -->
             <a href="https://www.bbb.org/us/or/salem/profile/auto-repairs/in-his-name-automotive-llc-1296-1000198731/#sealclick" target="_blank" rel="nofollow" style="display: flex; align-items: center;">
                 <img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-42-bbb-1000198731.png" style="border: 0; height: 36px; width: auto;" alt="In His Name Automotive, LLC BBB Business Review" />
             </a>
@@ -94,9 +287,9 @@
     <div style="position: absolute; bottom: -16px; left: 0; width: 100%; height: 16px; background-color: #0d1b2a; box-shadow: 0 4px 6px rgba(0,0,0,0.15); display: block;">
         <div style="width: 100%; height: 100%; background: linear-gradient(to bottom, 
             #0d1b2a 0px, #0d1b2a 3px,
-            #ffcc00 3px, #ffcc00 6px,   /* Yellow Stripe 1 */
+            #ffcc00 3px, #ffcc00 6px,
             #0d1b2a 6px, #0d1b2a 10px,
-            #ffcc00 10px, #ffcc00 13px, /* Yellow Stripe 2 */
+            #ffcc00 10px, #ffcc00 13px,
             #0d1b2a 13px, #0d1b2a 16px
         );"></div>
     </div>
@@ -123,162 +316,92 @@
         </div>
 
         <div class="hero-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; width: 100%; max-width: 1100px !important; margin: 2rem auto 0 auto !important; align-items: stretch;">
-            
             <div class="hero-custom-card">
-                <div class="checkmark">✓</div>
+                <div class="checkmark">✔</div>
                 <h4>HONEST ESTIMATES</h4>
                 <p>No hidden fees</p>
             </div>
             
             <div class="hero-custom-card">
-                <div class="checkmark">✓</div>
+                <div class="checkmark">✔</div>
                 <h4>PHOTO & VIDEO PROOF</h4>
                 <p>Via Tekmetric</p>
             </div>
             
             <div class="hero-custom-card">
-                <div class="checkmark">✓</div>
+                <div class="checkmark">✔</div>
                 <h4>ZERO UPSELLING</h4>
                 <p>We only fix what's broken</p>
             </div>
-
         </div>
 
     </div>
 </section>
-<body>
 
-<header class="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-sizing: border-box; height: 70px; background-color: #0d1b2a; margin-bottom: 20px;">
-        
-    <img src="Images/logo.png" alt="In His Name Automotive Logo" class="header-logo" 
-         style="position: absolute; top: 10px; left: 20px; height: 130px; width: auto; z-index: 1001; max-width: none; filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1)) drop-shadow(0px 0px 4px rgba(176, 125, 76, 1));">
-    
-    <div style="position: absolute; left: 0; right: 0; display: flex; justify-content: center; align-items: center; pointer-events: none; width: 100%; height: 100%;">
-        <h2 class="logo-text" style="pointer-events: auto; font-weight: bold; color: #ffffff; margin: 0; font-size: 1.5rem; letter-spacing: 1px;">IN HIS NAME AUTOMOTIVE</h2>
-    </div>
+<section class="about" id="about" style="background-color: #f0f4f8 !important; color: #1a2530 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+    <div class="about-content" style="max-width: 1100px !important; margin: 0 auto !important;">
+        <div class="about-text">
+            <h1 class="section-label" style="color: #b07d4c !important;">OUR STORY</h1>
+            <h1 class="section-title" style="color: #1a2530 !important;">
+                <span>BUILT ON FRUSTRATION.</span><br>
+                <span style="color: #b07d4c !important;">DRIVEN BY FAITH.</span>
+            </h1>
+            
+            <div class="quote-box" style="background: #ffffff !important; border-left: 4px solid #b07d4c !important; padding: 2rem !important; margin: 1.5rem 0 !important; border-radius: 4px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.04) !important;">
+                <div class="cross-icon" style="font-size: 2rem !important; margin-bottom: 0.5rem !important;">✝</div>
+                <blockquote style="color: #1a2530 !important; font-style: italic !important; font-size: 1.1rem !important; line-height: 1.6 !important; margin-bottom: 0.5rem !important;">
+                    "Honest scales and balances belong to the Lord; all the weights in the bag are of his making."
+                </blockquote>
+                <p class="quote-ref" style="color: #b07d4c !important; font-weight: bold !important; margin: 0 !important;">PROVERBS 11:1</p>
+            </div>
 
-    <div class="header-content" style="margin-left: auto; position: relative; z-index: 2; height: 100%; display: flex; align-items: center; padding-right: 20px;">
-        <div class="header-actions">
-            <a href="tel:9714286446" class="phone-link" style="color: #ffffff; text-decoration: none; margin-right: 15px;">📞 971.428.6446</a>
-            <a href="#contact" class="cta-button">CALL NOW</a>
-        </div>
-    </div>
+            <p style="color: #4a5568 !important;">I started In His Name Automotive because I was tired of watching customers get taken advantage of. Too many shops work on commission. Too many techs are incentivized to find problems that don't exist.</p>
+            <p style="color: #4a5568 !important;">We built something different: a shop where every estimate is honest, every repair is necessary, and every customer leaves understanding exactly what was done to their vehicle and why.</p>
+            <p style="color: #4a5568 !important;">As a Christian business, we hold ourselves to a standard higher than the industry average. Our faith isn't a marketing angle — it's the reason we do things the way we do.</p>
 
-    <div style="position: absolute; bottom: -16px; left: 0; width: 100%; height: 16px; background-color: #0d1b2a; box-shadow: 0 4px 6px rgba(0,0,0,0.15); display: block;">
-        <div style="width: 100%; height: 100%; background: linear-gradient(to bottom, 
-            #0d1b2a 0px, #0d1b2a 3px,
-            #ffcc00 3px, #ffcc00 6px,   /* Racing Stripe Line 1 */
-            #0d1b2a 6px, #0d1b2a 10px,
-            #ffcc00 10px, #ffcc00 13px, /* Racing Stripe Line 2 */
-            #0d1b2a 13px, #0d1b2a 16px
-        );"></div>
-    </div>
-</header>
-    
-    <section class="about" id="about" style="background-color: #f0f4f8 !important; color: #1a2530 !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
-        <div class="about-content" style="max-width: 1100px !important; margin: 0 auto !important;">
-            <div class="about-text">
-                <h1 class="section-label" style="color: #b07d4c !important;">OUR STORY</h1>
-                <h1 class="section-title" style="color: #1a2530 !important;">
-                    <span>BUILT ON FRUSTRATION.</span><br>
-                    <span style="color: #b07d4c !important;">DRIVEN BY FAITH.</span>
-                </h1>
-                
-                <div class="quote-box" style="background: #ffffff !important; border-left: 4px solid #b07d4c !important; padding: 2rem !important; margin: 1.5rem 0 !important; border-radius: 4px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.04) !important;">
-                    <div class="cross-icon" style="font-size: 2rem !important; margin-bottom: 0.5rem !important;">✝️</div>
-                    <blockquote style="color: #1a2530 !important; font-style: italic !important; font-size: 1.1rem !important; line-height: 1.6 !important; margin-bottom: 0.5rem !important;">
-                        "Honest scales and balances belong to the Lord; all the weights in the bag are of his making."
-                    </blockquote>
-                    <p class="quote-ref" style="color: #b07d4c !important; font-weight: bold !important; margin: 0 !important;">PROVERBS 11:1</p>
-                </div>
-
-                <p style="color: #4a5568 !important;">I started In His Name Automotive because I was tired of watching customers get taken advantage of. Too many shops work on commission. Too many techs are incentivized to find problems that don't exist.</p>
-                <p style="color: #4a5568 !important;">We built something different: a shop where every estimate is honest, every repair is necessary, and every customer leaves understanding exactly what was done to their vehicle and why.</p>
-                <p style="color: #4a5568 !important;">As a Christian business, we hold ourselves to a standard higher than the industry average. Our faith isn't a marketing angle — it's the reason we do things the way we do.</p>
-
-                <div class="owner-profile" style="display: flex !important; gap: 1rem !important; align-items: center !important; margin-top: 2rem !important; padding-top: 1rem !important; border-top: 1px solid rgba(26,37,48,0.1) !important;">
-                    <div class="owner-avatar" style="width: 50px !important; height: 50px !important; background: #b07d4c !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; font-weight: bold !important; color: #ffffff !important; font-size: 1.3rem !important;">N</div>
-                    <div>
-                        <p class="owner-name" style="color: #1a2530 !important; font-weight: bold !important; margin: 0 !important;">Nathan</p>
-                        <p class="owner-title" style="color: #b07d4c !important; margin: 0 !important; font-size: 0.9rem !important;">Owner & Master Technician</p>
-                    </div>
+            <div class="owner-profile" style="display: flex !important; gap: 1rem !important; align-items: center !important; margin-top: 2rem !important; padding-top: 1rem !important; border-top: 1px solid rgba(26,37,48,0.1) !important;">
+                <div class="owner-avatar" style="width: 50px !important; height: 50px !important; background: #b07d4c !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; font-weight: bold !important; color: #ffffff !important; font-size: 1.3rem !important;">N</div>
+                <div>
+                    <p class="owner-name" style="color: #1a2530 !important; font-weight: bold !important; margin: 0 !important;">Nathan</p>
+                    <p class="owner-title" style="color: #b07d4c !important; margin: 0 !important; font-size: 0.9rem !important;">Owner & Master Technician</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="process" id="process" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; color: #e8e8e8 !important; padding: 5rem 2rem !important;">
-        
-        <style>
-            .process-pop-card {
-                margin: 0 !important;
-                background: #ffffff !important; /* Starts crisp solid white */
-                border: 2px solid transparent !important; /* Clean and borderless until hover */
-                padding: 2rem !important;
-                border-radius: 8px !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-                cursor: pointer;
-            }
+    <div class="process-content" style="max-width: 1100px !important; margin: 0 auto !important;">
+        <h1 class="section-label">OUR PROCESS</h1>
+        <h1 class="section-title" style="color: #ffffff !important;">YOU SEE <span class="gold" style="color: #b07d4c !important;">EVERYTHING</span></h1>
+        <p class="section-subtitle">Through Tekmetric, we photograph and video every single issue we find — before we ask you to approve a single repair.</p>
+
+        <div class="process-steps" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
+            <div class="step process-pop-card">
+                <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🔍</div>
+                <h4>WE INSPECT YOUR VEHICLE</h4>
+                <p>Our technicians do a thorough inspection — not a walk-around, a real under-the-hood, under-the-car, check-the-fluids inspection.</p>
+            </div>
             
-            /* Text elements start dark immediately so they read perfectly on the white background */
-            .process-pop-card h4 {
-                color: #0d1b2a !important; /* Dark Navy/Black */
-                font-weight: bold !important;
-                margin-bottom: 0.8rem !important;
-                transition: color 0.3s ease !important;
-            }
-            .process-pop-card p {
-                color: #4a5568 !important; /* Readable dark grey text */
-                font-size: 0.95rem !important;
-                line-height: 1.6 !important;
-                transition: color 0.3s ease !important;
-            }
+            <div class="step process-pop-card">
+                <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">📷</div>
+                <h4>WE DOCUMENT WHAT WE FIND</h4>
+                <p>Every issue is photographed and videoed through Tekmetric. You receive a direct link to see exactly what we're looking at — the actual part, the actual problem.</p>
+            </div>
             
-            /* Mouseover effect: pops up, turns ice blue, and activates the gold border */
-            .process-pop-card:hover {
-                background-color: #e6f2ff !important; /* Soft Ice Blue */
-                border-color: #b07d4c !important;     /* Gold border lights up */
-                transform: translateY(-6px) !important; /* Smooth upward pop */
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
-            }
-        </style>
-
-<div class="process-content" style="max-width: 1100px !important; margin: 0 auto !important;">
-            <h1 class="section-label">OUR PROCESS</h1>
-            <!-- DARK BACKGROUND: WHITE HEADER -->
-            <h1 class="section-title" style="color: #ffffff !important;">YOU SEE <span class="gold" style="color: #b07d4c !important;">EVERYTHING</span></h1>
-            <p class="section-subtitle">Through Tekmetric, we photograph and video every single issue we find — before we ask you to approve a single repair.</p>
-
-            <div class="process-steps" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
-                
-                <div class="step process-pop-card">
-                    <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">🔧</div>
-                    <h4>WE INSPECT YOUR VEHICLE</h4>
-                    <p>Our technicians do a thorough inspection — not a walk-around, a real under-the-hood, under-the-car, check-the-fluids inspection.</p>
-                </div>
-                
-                <div class="step process-pop-card">
-                    <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">📷</div>
-                    <h4>WE DOCUMENT WHAT WE FIND</h4>
-                    <p>Every issue is photographed and videoed through Tekmetric. You receive a direct link to see exactly what we're looking at — the actual part, the actual problem.</p>
-                </div>
-                
-                <div class="step process-pop-card">
-                    <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">👍</div>
-                    <h4>YOU APPROVE THE WORK</h4>
-                    <p>Nothing gets fixed until you say so. You review the visual report, ask questions, and approve only the repairs that make sense to you.</p>
-                </div>
-
+            <div class="step process-pop-card">
+                <div class="step-icon" style="font-size: 2rem !important; margin-bottom: 1rem !important;">👍</div>
+                <h4>YOU APPROVE THE WORK</h4>
+                <p>Nothing gets fixed until you say so. You review the visual report, ask questions, and approve only the repairs that make sense to you.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="shop-warranty-section" id="warranty" style="background-color: #f0f4f8 !important; padding: 6rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
     <div style="max-width: 1100px !important; margin: 0 auto !important; text-align: center !important;">
-        
         <p class="section-label" style="color: #b07d4c !important; margin-bottom: 0.5rem !important; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Guaranteed Workmanship</p>
         
-        <!-- LIGHT BACKGROUND: NAVY HEADER -->
         <h3 style="margin: 0 auto 1.5rem auto !important; font-size: 2.5rem !important; font-weight: 800 !important; line-height: 1.2 !important; color: #0d1b2a !important; text-transform: uppercase; letter-spacing: 0.5px;">
             <span style="color: #0d1b2a !important;">PREMIUM COMPONENTS.</span><br>
             <span style="color: #b07d4c !important;">BACKED FOR 12 MONTHS OR 12,000 MILES.</span>
@@ -297,14 +420,12 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>    
 
 <section class="services" id="services" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; padding: 6rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
     <div class="process-content" style="max-width: 1100px !important; margin: 0 auto !important; width: 100% !important;">
         <h1 class="section-label" style="color: #b07d4c !important;">WHAT WE FIX</h1>
-
         <h1 class="section-title" style="color: #ffffff !important; font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem;">SERVICES <span style="color: #b07d4c !important;">OFFERED</span></h1>
 
         <div class="process-steps" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2.5rem !important; align-items: stretch !important; margin-top: 3.5rem !important; width: 100% !important;">
@@ -312,7 +433,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">💎</div>
+                        <div class="step-icon">💻</div>
                         <h4>ENGINE DIAGNOSTICS</h4>
                         <p>Full computer diagnostics with clear explanations of what the codes mean and what actually needs repair.</p>
                     </div>
@@ -325,7 +446,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">🔧</div>
+                        <div class="step-icon">🛑</div>
                         <h4>BRAKE SERVICE</h4>
                         <p>Pad and rotor replacement, caliper inspection, fluid flushes — with photos so you see the wear yourself.</p>
                     </div>
@@ -342,7 +463,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">🚗</div>
+                        <div class="step-icon">⚙️</div>
                         <h4>SUSPENSION & STEERING</h4>
                         <p>Shocks, struts, tie rods, alignments — we diagnose precisely and only recommend what's needed.</p>
                     </div>
@@ -352,29 +473,28 @@
                 </div>
             </div>
 
-<div class="step services-flip-card">
-    <div class="card-inner">
-        <div class="card-front" style="background: #ffffff !important;">
-            <div class="step-icon">🌡️</div>
-            <h4>COOLING SYSTEM</h4>
-            <p>Radiator, thermostat, hoses, water pump. We keep your engine running at the safe temperature layout it needs.</p>
-        </div>
-        <!-- UPDATED BACK FRAME SLIDESHOW WITH NEW CLASSES -->
-        <div class="card-back coolant-slideshow">
-            <img src="Images/HeaterCore1.png" alt="Cooling System Service 1" class="coolant-slide">
-            <img src="Images/HeaterCore2.png" alt="Cooling System Service 2" class="coolant-slide">
-            <img src="Images/HeaterCore3.png" alt="Cooling System Service 3" class="coolant-slide">
-            <img src="Images/HeaterCore4.png" alt="Cooling System Service 4" class="coolant-slide">
-            <img src="Images/HeaterCore5.png" alt="Cooling System Service 5" class="coolant-slide">
-            <img src="Images/HeaterCore6.png" alt="Cooling System Service 6" class="coolant-slide">
-        </div>
-    </div>
-</div>
+            <div class="step services-flip-card">
+                <div class="card-inner">
+                    <div class="card-front" style="background: #ffffff !important;">
+                        <div class="step-icon">🌡️</div>
+                        <h4>COOLING SYSTEM</h4>
+                        <p>Radiator, thermostat, hoses, water pump. We keep your engine running at the safe temperature layout it needs.</p>
+                    </div>
+                    <div class="card-back coolant-slideshow">
+                        <img src="Images/HeaterCore1.png" alt="Cooling System Service 1" class="coolant-slide">
+                        <img src="Images/HeaterCore2.png" alt="Cooling System Service 2" class="coolant-slide">
+                        <img src="Images/HeaterCore3.png" alt="Cooling System Service 3" class="coolant-slide">
+                        <img src="Images/HeaterCore4.png" alt="Cooling System Service 4" class="coolant-slide">
+                        <img src="Images/HeaterCore5.png" alt="Cooling System Service 5" class="coolant-slide">
+                        <img src="Images/HeaterCore6.png" alt="Cooling System Service 6" class="coolant-slide">
+                    </div>
+                </div>
+            </div>
 
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">⚙️</div>
+                        <div class="step-icon">🔧</div>
                         <h4>ENGINE REPAIR</h4>
                         <p>From minor component fixes, leaks, and timing belts to full engine replacements. Reliable mechanical work built to last.</p>
                     </div>
@@ -392,7 +512,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">⚙️</div>
+                        <div class="step-icon">🚘</div>
                         <h4>TRANSMISSION SERVICE</h4>
                         <p>Fluid services, diagnostics, and honest guidance on whether a repair or rebuild is truly needed.</p>
                     </div>
@@ -418,7 +538,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">🔋</div>
+                        <div class="step-icon">⚡</div>
                         <h4>ELECTRICAL SYSTEMS</h4>
                         <p>Batteries, alternators, starters, and wiring diagnosis. Modern vehicles need modern diagnostic tools.</p>
                     </div>
@@ -444,7 +564,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">📋</div>
+                        <div class="step-icon">📅</div>
                         <h4>SCHEDULED MAINTENANCE</h4>
                         <p>30k, 60k, and 90k factory mileage checks to keep your vehicle's warranty status intact.</p>
                     </div>
@@ -457,7 +577,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">🛡️</div>
+                        <div class="step-icon">📋</div>
                         <h4>PRE-PURCHASE INSPECTIONS</h4>
                         <p>Buying a used car? We'll give you the full picture — good and bad — before you sign anything.</p>
                     </div>
@@ -470,7 +590,7 @@
             <div class="step services-flip-card">
                 <div class="card-inner">
                     <div class="card-front" style="background: #ffffff !important;">
-                        <div class="step-icon">🌬️</div>
+                        <div class="step-icon">🍃</div>
                         <h4>OZONE DEODORIZING</h4>
                         <p>Eliminate stubborn odors, mold, and bacteria permanently with an industrial ozone treatment paired with a fresh cabin air filter.</p>
                     </div>
@@ -485,11 +605,8 @@
         <p class="services-footer" style="margin-top: 3.5rem; text-align: center; color: #b0b0b0 !important; font-weight: 500; font-size: 1.05rem;">Don't see your specific issue listed? Call us – if we can't help, we'll tell you who can.</p>
     </div>
 </section>
-    
+
 <section class="testimonials" id="testimonials" style="background-color: #f0f4f8 !important; padding: 5rem 0 !important; width: 100% !important; box-sizing: border-box !important; display: block !important; overflow: hidden;">
-    
-<section class="testimonials" id="testimonials" style="background-color: #f0f4f8 !important; padding: 5rem 0 !important; width: 100% !important; box-sizing: border-box !important; display: block !important; overflow: hidden;">
-    
     <div class="testimonials-content" style="max-width: 1100px !important; margin: 0 auto !important;">
         <h1 class="section-label" style="color: #b07d4c !important; text-align: center !important; font-size: 1rem !important; letter-spacing: 2px !important; font-weight: bold !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important;">WHAT CUSTOMERS SAY</h1>
         
@@ -500,7 +617,6 @@
         <div class="testimonial-slider-viewport">
             <div class="testimonial-slider-track">
                 
-                <!-- REVIEW 1: MARILYN NAGEL -->
                 <div class="testimonial-card-element">
                     <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
                         <div class="reviewer-header">
@@ -515,7 +631,6 @@
                     </a>
                 </div>
 
-                <!-- REVIEW 2: BYRON INSCOE -->
                 <div class="testimonial-card-element">
                     <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
                         <div class="reviewer-header">
@@ -530,7 +645,6 @@
                     </a>
                 </div>
 
-                <!-- REVIEW 3: TASIA SMITH -->
                 <div class="testimonial-card-element">
                     <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
                         <div class="reviewer-header">
@@ -545,7 +659,6 @@
                     </a>
                 </div>
 
-                <!-- REVIEW 4: TERYLL CARDONA -->
                 <div class="testimonial-card-element">
                     <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
                         <div class="reviewer-header">
@@ -560,7 +673,6 @@
                     </a>
                 </div>
 
-                <!-- REVIEW 5: BRYAN SMITH -->
                 <div class="testimonial-card-element">
                     <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
                         <div class="reviewer-header">
@@ -575,7 +687,6 @@
                     </a>
                 </div>
 
-                <!-- REVIEW 6: CARMELITA GRACE -->
                 <div class="testimonial-card-element">
                     <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
                         <div class="reviewer-header">
@@ -590,7 +701,6 @@
                     </a>
                 </div>
 
-                <!-- NEW ADDED REVIEW 7: A TEETER (From Screenshot 2026-07-06 064138.png) -->
                 <div class="testimonial-card-element">
                     <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
                         <div class="reviewer-header">
@@ -605,121 +715,52 @@
                     </a>
                 </div>
 
-                <div class="testimonial-card-element">
-                    <div class="testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar" style="background-color: #b07d4c;">M</div>
-                            <div class="reviewer-info-block"><span class="reviewer-name-text">Marilyn Nagel</span></div>
-                        </div>
-                        <div class="stars" style="margin-bottom: 1rem !important;">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text" style="color: #4a5568 !important; line-height: 1.6 !important; margin-bottom: 0 !important;">"We are very happy to have found Nathan. He was so very thorough..."</p>
-                    </div>
-                </div>
-                <div class="testimonial-card-element">
-                    <div class="testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar" style="background-color: #4a5568;">B</div>
-                            <div class="reviewer-info-block"><span class="reviewer-name-text">Byron Inscoe</span></div>
-                        </div>
-                        <div class="stars" style="margin-bottom: 1rem !important;">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text" style="color: #4a5568 !important; line-height: 1.6 !important; margin-bottom: 0 !important;">"Excellent service and care. These guys are top-notch..."</p>
-                    </div>
-                </div>
-                <div class="testimonial-card-element">
-                    <div class="testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar" style="background-color: #1a2d45;">T</div>
-                            <div class="reviewer-info-block"><span class="reviewer-name-text">Tasia Smith</span></div>
-                        </div>
-                        <div class="stars" style="margin-bottom: 1rem !important;">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text" style="color: #4a5568 !important; line-height: 1.6 !important; margin-bottom: 0 !important;">"Nathan did an inspection on my car. He took photos and explained..."</p>
-                    </div>
-                </div>
-
             </div>
         </div>
 
         <div class="review-cta" style="text-align: center !important; margin-top: 3rem !important;">
             <p style="color: #4a5568 !important; margin-bottom: 0.5rem !important;">Had a great experience at In His Name Automotive? We'd love to hear about it.</p>
-            <a href="https://loyaltyvisits.com/ReviewLocation/TiPcSLfHLkC2mR4DeCYu1w" target="_blank" class="gold-link" style="color: #b07d4c !important; font-weight: bold !important; text-decoration: none !important;">LEAVE A GOOGLE REVIEW →</a>
+            <a href="https://loyaltyvisits.com/ReviewLocation/TiPcSLfHLkC2mR4DeCYu1w" target="_blank" class="gold-link" style="color: #b07d4c !important; font-weight: bold !important; text-decoration: none !important;">LEAVE A GOOGLE REVIEW ➔</a>
         </div>
     </div>
 </section>
     
 <section class="why-us" id="why-us" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+    <div class="why-us-content" style="max-width: 1100px !important; margin: 0 auto !important;">
+        <h1 class="section-label" style="color: #b07d4c !important; font-size: 1rem !important; letter-spacing: 2px !important; font-weight: bold !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important;">WHY CHOOSE US</h1>
         
-        <style>
-            .whyus-pop-card {
-                margin: 0 !important;
-                background: #ffffff !important;
-                border: 2px solid transparent !important;
-                padding: 2rem !important;
-                border-radius: 8px !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-                cursor: pointer;
-            }
-            .whyus-pop-card h4 {
-                color: #0d1b2a !important;
-                font-weight: bold !important;
-                margin-bottom: 0.8rem !important;
-                transition: color 0.3s ease !important;
-            }
-            .whyus-pop-card p {
-                color: #4a5568 !important;
-                font-size: 0.95rem !important;
-                line-height: 1.6 !important;
-                transition: color 0.3s ease !important;
-            }
-            .whyus-pop-card:hover {
-                background-color: #e6f2ff !important;
-                border-color: #b07d4c !important;
-                transform: translateY(-6px) !important;
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
-            }
-            .whyus-pop-card:hover h4 { color: #0d1b2a !important; }
-            .whyus-pop-card:hover p { color: #4a5568 !important; }
-        </style>
+        <h1 class="section-title" style="font-size: 2.2rem !important; font-weight: 800 !important; line-height: 1.2 !important; margin-bottom: 1.5rem !important;">
+            <span style="color: #ffffff !important;">A SHOP YOU CAN </span><span class="gold" style="color: #b07d4c !important;">ACTUALLY TRUST</span>
+        </h1>
+        
+        <p class="section-subtitle" style="color: #b0b0b0 !important; opacity: 1 !important;">We built this shop around one question: what would it look like if an auto repair shop treated every customer the way we'd want to be treated?</p>
 
-        <div class="why-us-content" style="max-width: 1100px !important; margin: 0 auto !important;">
-            <h1 class="section-label" style="color: #b07d4c !important; font-size: 1rem !important; letter-spacing: 2px !important; font-weight: bold !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important;">WHY CHOOSE US</h1>
+        <div class="benefits-grid" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
+            <div class="benefit-card whyus-pop-card">
+                <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">01</div>
+                <h4>HONEST ESTIMATES, EVERY TIME</h4>
+                <p>You'll never get a bill full of surprise line items. We walk you through exactly what needs to be done and why before any work begins.</p>
+            </div>
             
-            <!-- DARK BACKGROUND: USER REQUESTED WHITE TEXT FOR "A SHOP YOU CAN" -->
-            <h1 class="section-title" style="font-size: 2.2rem !important; font-weight: 800 !important; line-height: 1.2 !important; margin-bottom: 1.5rem !important;">
-                <span style="color: #ffffff !important;">A SHOP YOU CAN </span><span class="gold" style="color: #b07d4c !important;">ACTUALLY TRUST</span>
-            </h1>
+            <div class="benefit-card whyus-pop-card">
+                <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">02</div>
+                <h4>VISUAL PROOF OF EVERY ISSUE</h4>
+                <p>Through Tekmetric, we document every problem with photos and videos. You see the worn brake pad, the leaking gasket, the cracked belt — not just our word for it.</p>
+            </div>
             
-            <p class="section-subtitle" style="color: #b0b0b0 !important; opacity: 1 !important;">We built this shop around one question: what would it look like if an auto repair shop treated every customer the way we'd want to be treated?</p>
-
-            <div class="benefits-grid" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; margin-top: 3rem !important;">
-                
-                <div class="benefit-card whyus-pop-card">
-                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">01</div>
-                    <h4>HONEST ESTIMATES, EVERY TIME</h4>
-                    <p>You'll never get a bill full of surprise line items. We walk you through exactly what needs to be done and why before any work begins.</p>
-                </div>
-                
-                <div class="benefit-card whyus-pop-card">
-                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">02</div>
-                    <h4>VISUAL PROOF OF EVERY ISSUE</h4>
-                    <p>Through Tekmetric, we document every problem with photos and videos. You see the worn brake pad, the leaking gasket, the cracked belt — not just our word for it.</p>
-                </div>
-                
-                <div class="benefit-card whyus-pop-card">
-                    <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">03</div>
-                    <h4>FAITH-DRIVEN STANDARDS</h4>
-                    <p>Our business is built on Proverbs 11:1 — "Honest scales and balances belong to the Lord." We hold ourselves to a higher standard.</p>
-                </div>
-
+            <div class="benefit-card whyus-pop-card">
+                <div class="benefit-number" style="font-size: 1.5rem !important; font-weight: bold !important; color: #b07d4c !important; margin-bottom: 0.5rem !important; transition: color 0.3s ease;">03</div>
+                <h4>FAITH-DRIVEN STANDARDS</h4>
+                <p>Our business is built on Proverbs 11:1 — "Honest scales and balances belong to the Lord." We hold ourselves to a higher standard.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="financing-section" id="financing" style="background-color: #f0f4f8 !important; padding: 5rem 2rem !important; text-align: center !important; clear: both !important;">
     <div class="financing-content" style="max-width: 800px !important; margin: 0 auto !important;">
-        
         <p class="section-label" style="color: #b07d4c !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-size: 0.85rem !important; margin-bottom: 0.5rem !important; font-weight: 600 !important;">Flexible Payment Options</p>
         
-        <!-- LIGHT BACKGROUND: USER REQUESTED NAVY BLUE TEXT FOR "DONT LET YOUR REPAIR COSTS" -->
         <h3 class="section-title" style="color: #0d1b2a !important; font-size: 2.2rem !important; font-weight: 900 !important; margin-bottom: 1.5rem !important; text-transform: uppercase;">
             <span style="color: #0d1b2a !important;">DONT LET YOUR REPAIR COSTS </span><span class="gold" style="color: #b07d4c !important;">STALL YOUR LIFE</span>
         </h3>
@@ -754,284 +795,122 @@
                 </a>
             </div>
         </div>
-
     </div>
 </section>
 
-<style>
-    .finance-banner-card {
-        width: 100% !important;
-        max-width: 646px !important;
-        transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-        border-radius: 6px !important;
-        overflow: hidden !important;
-    }
-    .finance-banner-card:hover {
-        transform: translateY(-5px) !important;
-    }
-</style>
-
 <section id="contact" style="background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important; padding: 5rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+    <div style="max-width: 1100px !important; margin: 0 auto !important; width: 100% !important; display: block !important;">
         
-        <style>
-            .contact-pop-card {
-                margin: 0 !important; 
-                background: #ffffff !important;
-                border: 2px solid #b07d4c !important;
-                padding: 1.5rem !important; 
-                border-radius: 8px !important; 
-                text-decoration: none !important; 
-                display: block !important; 
-                flex: 1 !important;
-                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
-                cursor: pointer;
-            }
-            .contact-pop-card .contact-label {
-                color: #b07d4c !important;
-                display: block !important; 
-                font-weight: bold !important; 
-                font-size: 0.85rem !important; 
-                margin-bottom: 0.4rem !important;
-            }
-            .contact-pop-card .contact-value {
-                color: #0d1b2a !important;
-                font-weight: bold !important;
-                transition: color 0.3s ease !important;
-            }
-            .contact-pop-card:hover {
-                background-color: #e6f2ff !important;
-                transform: translateY(-6px) !important;
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
-            }
-            .contact-pop-card:hover .contact-value {
-                color: #4a5568 !important;
-            }
-        </style>
-
-        <div style="max-width: 1100px !important; margin: 0 auto !important; width: 100% !important; display: block !important;">
+        <div style="text-align: center !important; margin-bottom: 3.5rem !important; width: 100% !important; display: block !important;">
+            <p style="color: #b07d4c !important; font-size: 0.9rem !important; letter-spacing: 2px !important; font-weight: bold !important; margin: 0 0 0.5rem 0 !important; text-transform: uppercase !important;">GET IN TOUCH</p>
             
-            <div style="text-align: center !important; margin-bottom: 3.5rem !important; width: 100% !important; display: block !important;">
-                <p style="color: #b07d4c !important; font-size: 0.9rem !important; letter-spacing: 2px !important; font-weight: bold !important; margin: 0 0 0.5rem 0 !important; text-transform: uppercase !important;">GET IN TOUCH</p>
+            <h3 style="margin: 0 auto 1.5rem auto !important; font-size: 2.5rem !important; font-weight: 800 !important; line-height: 1.2 !important; text-align: center !important;">
+                <span style="display: block !important; margin-bottom: 0.5rem !important; color: #ffffff !important;">COME SEE US.</span>
+                <span style="color: #b07d4c !important; display: block !important;">WE'LL BE STRAIGHT WITH YOU.</span>
+            </h3>
+            
+            <p style="max-width: 700px !important; margin: 0 auto !important; text-align: center !important; color: #b0b0b0 !important; line-height: 1.6 !important; font-size: 1.05rem !important; display: block !important;">
+                Call, email, or just drop by. No waiting room games, no service advisor sales pitch. Just honest answers.
+            </p>
+        </div>
+
+        <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: stretch !important; gap: 2.5rem !important; width: 100% !important;">
+            <div style="display: flex !important; flex-direction: column !important; justify-content: space-between !important; gap: 1.5rem !important; flex: 1 !important; min-width: 300px !important; max-width: 480px !important; height: 460px !important; text-align: left !important; margin: 0 !important;">
+                <a href="tel:9714286446" class="contact-box contact-pop-card">
+                    <span class="contact-label">CALL OR TEXT</span>
+                    <span class="contact-value" style="font-size: 1.2rem !important;">971.428.6446</span>
+                </a>
                 
-                <!-- DARK BACKGROUND: USER REQUESTED WHITE TEXT FOR "COME SEE US" -->
-                <h3 style="margin: 0 auto 1.5rem auto !important; font-size: 2.5rem !important; font-weight: 800 !important; line-height: 1.2 !important; text-align: center !important;">
-                    <span style="display: block !important; margin-bottom: 0.5rem !important; color: #ffffff !important;">COME SEE US.</span>
-                    <span style="color: #b07d4c !important; display: block !important;">WE'LL BE STRAIGHT WITH YOU.</span>
-                </h3>
+                <a href="mailto:Nathan@InHisNameAutomotive.com" class="contact-box contact-pop-card">
+                    <span class="contact-label">EMAIL</span>
+                    <span class="contact-value" style="font-size: 1.1rem !important; word-break: break-all !important;">Nathan@InHisNameAutomotive.com</span>
+                </a>
                 
-                <p style="max-width: 700px !important; margin: 0 auto !important; text-align: center !important; color: #b0b0b0 !important; line-height: 1.6 !important; font-size: 1.05rem !important; display: block !important;">
-                    Call, email, or just drop by. No waiting room games, no service advisor sales pitch. Just honest answers.
-                </p>
+                <a href="https://maps.google.com/maps?q=119+50th+Ave+NW,+Salem,+OR+97304&t=&z=15&ie=UTF8&iwloc=&output=embed" target="_blank" rel="noopener noreferrer" class="contact-box contact-pop-card">
+                    <span class="contact-label">LOCATION</span>
+                    <span class="contact-value" style="font-size: 1.1rem !important; line-height: 1.5 !important;">119 50th Ave NW<br>Salem, OR 97304</span>
+                </a>
             </div>
 
-            <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: stretch !important; gap: 2.5rem !important; width: 100% !important;">
-                
-                <div style="display: flex !important; flex-direction: column !important; justify-content: space-between !important; gap: 1.5rem !important; flex: 1 !important; min-width: 300px !important; max-width: 480px !important; height: 460px !important; text-align: left !important; margin: 0 !important;">
-                    
-                    <a href="tel:9714286446" class="contact-box contact-pop-card">
-                        <span class="contact-label">CALL OR TEXT</span>
-                        <span class="contact-value" style="font-size: 1.2rem !important;">971.428.6446</span>
-                    </a>
-                    
-                    <a href="mailto:Nathan@InHisNameAutomotive.com" class="contact-box contact-pop-card">
-                        <span class="contact-label">EMAIL</span>
-                        <span class="contact-value" style="font-size: 1.1rem !important; word-break: break-all !important;">Nathan@InHisNameAutomotive.com</span>
-                    </a>
-                    
-                    <a href="https://maps.google.com/maps?q=119+50th+Ave+NW,+Salem,+OR+97304&t=&z=15&ie=UTF8&iwloc=&output=embed" target="_blank" rel="noopener noreferrer" class="contact-box contact-pop-card">
-                        <span class="contact-label">LOCATION</span>
-                        <span class="contact-value" style="font-size: 1.1rem !important; line-height: 1.5 !important;">119 50th Ave NW<br>Salem, OR 97304</span>
-                    </a>
-                </div>
-
-                <div style="flex: 1 !important; min-width: 300px !important; max-width: 480px !important; height: 460px !important; border-radius: 12px !important; overflow: hidden !important; box-shadow: 0 12px 24px rgba(0,0,0,0.3) !important; border: 2px solid #b07d4c !important; margin: 0 !important;">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=119+50th+Ave+NW,+Salem,+OR+97304&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border: 0 !important; display: block !important; width: 100% !important; height: 100% !important;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-
+            <div style="flex: 1 !important; min-width: 300px !important; max-width: 480px !important; height: 460px !important; border-radius: 12px !important; overflow: hidden !important; box-shadow: 0 12px 24px rgba(0,0,0,0.3) !important; border: 2px solid #b07d4c !important; margin: 0 !important;">
+                <iframe 
+                    src="https://maps.google.com/maps?q=119+50th+Ave+NW,+Salem,+OR+97304&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border: 0 !important; display: block !important; width: 100% !important; height: 100% !important;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <footer class="footer" style="background-color: #f0f4f8 !important; padding: 4rem 2rem 2rem 2rem !important; width: 100% !important; box-sizing: border-box !important; display: block !important; color: #0d1b2a !important; border-top: 1px solid rgba(176, 125, 76, 0.2) !important;">
-        
-        <style>
-            .footer-grid-layout {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                gap: 2rem !important;
-                justify-content: space-between !important;
-                max-width: 1200px !important;
-                margin: 0 auto !important;
-                width: 100% !important;
-            }
-            .footer-col-block {
-                flex: 1 !important;
-                min-width: 200px !important;
-            }
-            .footer-col-block h4, .footer-col-block h3 {
-                color: #b07d4c !important;
-                font-size: 1.1rem !important;
-                font-weight: bold !important;
-                letter-spacing: 1px !important;
-                margin: 0 0 1.2rem 0 !important;
-                text-transform: uppercase !important;
-            }
-            .footer-col-block p {
-                color: #4a5568 !important; /* LIGHT BACKGROUND: SHIFTED TO NAVY GRAY */
-                line-height: 1.6 !important;
-                font-size: 0.95rem !important;
-                margin: 0 0 1rem 0 !important;
-            }
-            .partner-badge-wrapper {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                margin-bottom: 1rem !important;
-            }
-            .partner-label {
-                font-size: 0.7rem !important;
-                text-transform: uppercase !important;
-                letter-spacing: 1px !important;
-                color: #b07d4c !important;
-                font-weight: bold !important;
-                margin-bottom: 0.5rem !important;
-            }
-            .partner-logo-img {
-                max-width: 130px !important;
-                height: auto !important;
-                display: block !important;
-                filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1)) !important;
-            }
-            .footer-col-block .scripture {
-                font-style: italic !important;
-                color: #0d1b2a !important; /* LIGHT BACKGROUND: SHIFTED TO NAVY */
-                border-left: 2px solid #b07d4c !important;
-                padding-left: 10px !important;
-                margin-top: 1.5rem !important;
-            }
-            .footer-col-block a {
-                color: #0d1b2a !important; /* LIGHT BACKGROUND: SHIFTED TO NAVY */
-                text-decoration: none !important;
-                transition: color 0.2s ease !important;
-                font-weight: bold !important;
-            }
-            .footer-col-block a:hover {
-                color: #b07d4c !important;
-            }
-            .footer-link-list {
-                list-style: none !important;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-            .footer-link-list li {
-                margin-bottom: 0.6rem !important;
-            }
-            .footer-link-list a {
-                font-size: 0.9rem !important;
-                font-weight: bold !important;
-                letter-spacing: 1px !important;
-            }
-            .footer-divider-line {
-                max-width: 1200px !important;
-                margin: 3rem auto 1.5rem auto !important;
-                border: 0 !important;
-                border-top: 1px solid rgba(13, 27, 42, 0.1) !important;
-            }
-            .footer-copyright-row {
-                max-width: 1200px !important;
-                margin: 0 auto !important;
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: space-between !important;
-                gap: 1rem !important;
-                color: #718096 !important;
-                font-size: 0.85rem !important;
-            }
-            .footer-copyright-row p {
-                margin: 0 !important;
-            }
-        </style>
-
-        <div class="footer-grid-layout">
-            
-            <!-- COLUMN 1: PRO SALEM -->
-            <div class="footer-col-block">
-                <div class="partner-alignment-zone" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <div class="partner-badge-wrapper" style="margin-bottom: 0.5rem;">
-                        <span class="partner-label" style="display: block; margin-bottom: 0.5rem;">Affiliated With</span>
-                        <a href="https://www.prosalem.com/" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
-                            <img src="Images/ProSalemNavy.png" alt="Pro Salem Networking logo" class="partner-logo-img" style="display: block; margin: 0 auto;">
-                        </a>
-                    </div>
-                    <h3 style="margin-top: 1rem;">LOCAL EXPERTS</h3>
-                    <p>Proudly partnered with local professionals you can trust across our community. <br>
-                       <a href="https://www.prosalem.com/" target="_blank" rel="noopener noreferrer" style="color: #b07d4c !important; font-weight: bold; display: inline-block; margin-top: 0.5rem;">Visit Website →</a>
-                    </p>
+    <div class="footer-grid-layout">
+        <div class="footer-col-block">
+            <div class="partner-alignment-zone" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div class="partner-badge-wrapper" style="margin-bottom: 0.5rem;">
+                    <span class="partner-label" style="display: block; margin-bottom: 0.5rem;">Affiliated With</span>
+                    <a href="https://www.prosalem.com/" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+                        <img src="Images/ProSalemNavy.png" alt="Pro Salem Networking logo" class="partner-logo-img" style="display: block; margin: 0 auto;">
+                    </a>
                 </div>
+                <h3 style="margin-top: 1rem;">LOCAL EXPERTS</h3>
+                <p>Proudly partnered with local professionals you can trust across our community. <br>
+                   <a href="https://www.prosalem.com/" target="_blank" rel="noopener noreferrer" style="color: #b07d4c !important; font-weight: bold; display: inline-block; margin-top: 0.5rem;">Visit Website➔</a>
+                </p>
             </div>
-
-            <!-- COLUMN 2: TRUST BADGES -->
-            <div class="footer-col-block">
-                <div class="partner-alignment-zone" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <h3 style="margin-bottom: 1.2rem;">CERTIFIED SHOP</h3>
-                    
-                    <!-- CARFAX Badge -->
-                    <div class="partner-badge-wrapper" style="margin-bottom: 1.5rem;">
-                        <img src="Images/Carfax.png" alt="CARFAX Car Care Service Center" class="partner-logo-img" style="display: block; margin: 0 auto; max-width: 140px;">
-                    </div>
-                    
-                    <!-- ASE Certification Badge -->
-                    <div class="partner-badge-wrapper" style="margin-bottom: 0.5rem;">
-                        <img src="Images/ASECert.png" alt="ASE Certified Facility" class="partner-logo-img" style="display: block; margin: 0 auto; max-width: 110px;">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- COLUMN 3: IN HIS NAME AUTOMOTIVE -->
-            <div class="footer-col-block">
-                <h4>IN HIS NAME AUTOMOTIVE</h4>
-                <p>Honest auto repair. Faith-driven standards. Serving Salem, OR and surrounding communities.</p>
-                <p class="scripture">"Do to others as you would have them do to you." – Luke 6:31</p>
-            </div>
-            
-            <!-- COLUMN 4: CONTACT -->
-            <div class="footer-col-block">
-                <h3>CONTACT</h3>
-                <p>📞 <a href="tel:9714286446">971.428.6446</a></p>
-                <p>✉️ <a href="mailto:Nathan@InHisNameAutomotive.com">Nathan@InHisNameAutomotive.com</a></p>
-                <p style="line-height: 1.5 !important;">📍 119 50th Ave NW<br>Salem, OR 97304</p>
-            </div>
-            
-            <!-- COLUMN 5: JUMP TO LINKS -->
-            <div class="footer-col-block">
-                <h3>JUMP TO</h3>
-                <ul class="footer-link-list">
-                    <li><a href="#about">ABOUT US</a></li>
-                    <li><a href="#process">HOW WE WORK</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#why-us">WHY CHOOSE US</a></li>
-                    <li><a href="#testimonials">TESTIMONIALS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </div>
-            
-        </div>
-        
-        <hr class="footer-divider-line">
-        
-        <div class="footer-copyright-row">
-            <p>© 2026 In His Name Automotive - Salem, OR</p>
-            <p>Operating with faith, integrity, and honest hands</p>
         </div>
 
-    </footer>
+        <div class="footer-col-block">
+            <div class="partner-alignment-zone" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <h3 style="margin-bottom: 1.2rem;">CERTIFIED SHOP</h3>
+                
+                <div class="partner-badge-wrapper" style="margin-bottom: 1.5rem;">
+                    <img src="Images/Carfax.png" alt="CARFAX Car Care Service Center" class="partner-logo-img" style="display: block; margin: 0 auto; max-width: 140px;">
+                </div>
+                
+                <div class="partner-badge-wrapper" style="margin-bottom: 0.5rem;">
+                    <img src="Images/ASECert.png" alt="ASE Certified Facility" class="partner-logo-img" style="display: block; margin: 0 auto; max-width: 110px;">
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-col-block">
+            <h4>IN HIS NAME AUTOMOTIVE</h4>
+            <p>Honest auto repair. Faith-driven standards. Serving Salem, OR and surrounding communities.</p>
+            <p class="scripture">"Do to others as you would have them do to you." – Luke 6:31</p>
+        </div>
+        
+        <div class="footer-col-block">
+            <h3>CONTACT</h3>
+            <p>📞 <a href="tel:9714286446">971.428.6446</a></p>
+            <p>✉️ <a href="mailto:Nathan@InHisNameAutomotive.com">Nathan@InHisNameAutomotive.com</a></p>
+            <p style="line-height: 1.5 !important;">📍 119 50th Ave NW<br>Salem, OR 97304</p>
+        </div>
+        
+        <div class="footer-col-block">
+            <h3>JUMP TO</h3>
+            <ul class="footer-link-list">
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#process">HOW WE WORK</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#why-us">WHY CHOOSE US</a></li>
+                <li><a href="#testimonials">TESTIMONIALS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <hr class="footer-divider-line">
+    
+    <div class="footer-copyright-row">
+        <p>© 2026 In His Name Automotive - Salem, OR</p>
+        <p>Operating with faith, integrity, and honest hands</p>
+    </div>
+</footer>
+
 </body>
 </html>
