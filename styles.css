@@ -55,12 +55,15 @@ body {
 .logo-link {
     display: flex;
     align-items: center;
+    z-index: 10; /* Keeps floating logo above the stripe */
 }
 
+/* Floating logo over yellow stripes */
 .header-logo {
     height: 110px;
     width: auto;
     max-width: none;
+    transform: translateY(12px); /* Floats the logo down over the yellow stripes */
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) 
             drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1)) 
             drop-shadow(0px 0px 4px rgba(176, 125, 76, 1));
@@ -75,17 +78,16 @@ body {
     white-space: nowrap;
 }
 
-/* Right Side Actions: BBB Seal + Call Button */
+/* Right Side Actions: BBB Seal + Call CTA Button */
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 25px; /* Spacing between BBB Seal, Phone, and Call CTA */
+    gap: 25px; /* Spacing between BBB Seal and Call CTA */
 }
 
 .bbb-seal-link {
     display: inline-flex;
     align-items: center;
-    margin-right: 10px; /* Extra breathing room */
     transition: opacity 0.2s ease;
 }
 
@@ -99,17 +101,10 @@ body {
     display: block;
 }
 
-.phone-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
 .cta-button {
     background-color: #b07d4c;
     color: #ffffff;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
@@ -131,6 +126,7 @@ body {
     height: 16px;
     background-color: #0d1b2a;
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    z-index: 1;
 }
 
 .stripe-gradient {
