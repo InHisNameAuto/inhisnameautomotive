@@ -68,6 +68,46 @@
             transform: translateY(-6px) !important; 
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
         }
+
+        /* --- CAROUSEL & SLIDESHOW FIXES --- */
+        .testimonial-slider-viewport {
+            overflow: hidden !important;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .testimonial-slider-track {
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+            width: 100%;
+        }
+        .testimonial-card-element {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        /* Card Flip Slideshow Styling */
+        .card-back {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        .card-back img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .card-back img.active-slide {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +126,10 @@
 
         <!-- Actions Right (BBB Seal + Call Now ONLY) -->
         <div class="header-content" style="margin-left: auto; position: relative; z-index: 1002; height: 100%; display: flex; align-items: center;">
-<a href="https://www.bbb.org/us/or/salem/profile/auto-repairs/in-his-name-automotive-llc-1296-1000198731/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-250-52-whitetxt-bbb-1000198731.png" style="border: 0;" alt="In His Name Automotive, LLC BBB Business Review" /></a>
+            <div class="header-actions" style="display: flex; align-items: center; gap: 15px;">
+                <a href="https://www.bbb.org/us/or/salem/profile/auto-repairs/in-his-name-automotive-llc-1296-1000198731/#sealclick" target="_blank" rel="nofollow" style="display: inline-flex; align-items: center;">
+                    <img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-42-whitetxt-bbb-1000198731.png" style="border: 0; height: 38px; width: auto;" alt="In His Name Automotive, LLC BBB Business Review" />
+                </a>
                 <a href="#contact" class="cta-button">CALL NOW</a>
             </div>
         </div>
@@ -248,7 +291,7 @@
                             <p>Full computer diagnostics with clear explanations of what the codes mean and what actually needs repair.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/EngineDiag.png" alt="Engine Diagnostics">
+                            <img src="Images/EngineDiag.png" alt="Engine Diagnostics" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -261,11 +304,11 @@
                             <p>Pad and rotor replacement, caliper inspection, fluid flushes — with photos so you see the wear yourself.</p>
                         </div>
                         <div class="card-back brake-slideshow">
-                            <img src="Images/Brakes1.png" alt="Brake Service 1" class="brake-slide">
-                            <img src="Images/Brakes2.png" alt="Brake Service 2" class="brake-slide">
-                            <img src="Images/Brakes3.png" alt="Brake Service 3" class="brake-slide">
-                            <img src="Images/Brakes4.png" alt="Brake Service 4" class="brake-slide">
-                            <img src="Images/Brakes5.png" alt="Brake Service 5" class="brake-slide">
+                            <img src="Images/Brakes1.png" alt="Brake Service 1" class="active-slide">
+                            <img src="Images/Brakes2.png" alt="Brake Service 2">
+                            <img src="Images/Brakes3.png" alt="Brake Service 3">
+                            <img src="Images/Brakes4.png" alt="Brake Service 4">
+                            <img src="Images/Brakes5.png" alt="Brake Service 5">
                         </div>
                     </div>
                 </div>
@@ -278,7 +321,7 @@
                             <p>Shocks, struts, tie rods, alignments — we diagnose precisely and only recommend what's needed.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/SuspensionService.png" alt="Suspension and Steering">
+                            <img src="Images/SuspensionService.png" alt="Suspension and Steering" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -291,12 +334,12 @@
                             <p>Radiator, thermostat, hoses, water pump. We keep your engine running at the safe temperature layout it needs.</p>
                         </div>
                         <div class="card-back coolant-slideshow">
-                            <img src="Images/HeaterCore1.png" alt="Cooling System Service 1" class="coolant-slide">
-                            <img src="Images/HeaterCore2.png" alt="Cooling System Service 2" class="coolant-slide">
-                            <img src="Images/HeaterCore3.png" alt="Cooling System Service 3" class="coolant-slide">
-                            <img src="Images/HeaterCore4.png" alt="Cooling System Service 4" class="coolant-slide">
-                            <img src="Images/HeaterCore5.png" alt="Cooling System Service 5" class="coolant-slide">
-                            <img src="Images/HeaterCore6.png" alt="Cooling System Service 6" class="coolant-slide">
+                            <img src="Images/HeaterCore1.png" alt="Cooling System Service 1" class="active-slide">
+                            <img src="Images/HeaterCore2.png" alt="Cooling System Service 2">
+                            <img src="Images/HeaterCore3.png" alt="Cooling System Service 3">
+                            <img src="Images/HeaterCore4.png" alt="Cooling System Service 4">
+                            <img src="Images/HeaterCore5.png" alt="Cooling System Service 5">
+                            <img src="Images/HeaterCore6.png" alt="Cooling System Service 6">
                         </div>
                     </div>
                 </div>
@@ -309,12 +352,12 @@
                             <p>From minor component fixes, leaks, and timing belts to full engine replacements. Reliable mechanical work built to last.</p>
                         </div>
                         <div class="card-back gasket-slideshow">
-                            <img src="Images/HeadGasket1.png" alt="Engine Repair 1" class="engine-slide">
-                            <img src="Images/HeadGasket2.png" alt="Engine Repair 2" class="engine-slide">
-                            <img src="Images/HeadGasket3.png" alt="Engine Repair 3" class="engine-slide">
-                            <img src="Images/HeadGasket4.png" alt="Engine Repair 4" class="engine-slide">
-                            <img src="Images/HeadGasket5.png" alt="Engine Repair 5" class="engine-slide">
-                            <img src="Images/HeadGasket6.png" alt="Engine Repair 6" class="engine-slide">
+                            <img src="Images/HeadGasket1.png" alt="Engine Repair 1" class="active-slide">
+                            <img src="Images/HeadGasket2.png" alt="Engine Repair 2">
+                            <img src="Images/HeadGasket3.png" alt="Engine Repair 3">
+                            <img src="Images/HeadGasket4.png" alt="Engine Repair 4">
+                            <img src="Images/HeadGasket5.png" alt="Engine Repair 5">
+                            <img src="Images/HeadGasket6.png" alt="Engine Repair 6">
                         </div>
                     </div>
                 </div>
@@ -327,7 +370,7 @@
                             <p>Fluid services, diagnostics, and honest guidance on whether a repair or rebuild is truly needed.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/TransmissionService.png" alt="Transmission Service">
+                            <img src="Images/TransmissionService.png" alt="Transmission Service" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -340,7 +383,7 @@
                             <p>Leaking refrigerant, warm air blowing, or a noisy compressor? We diagnose, recharge, and fix your climate control system completely.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/ACRepair.png" alt="A/C Repair">
+                            <img src="Images/ACRepair.png" alt="A/C Repair" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -353,7 +396,7 @@
                             <p>Batteries, alternators, starters, and wiring diagnosis. Modern vehicles need modern diagnostic tools.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/Electrical.png" alt="Electrical Systems">
+                            <img src="Images/Electrical.png" alt="Electrical Systems" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -366,7 +409,7 @@
                             <p>Quick, thorough service. We check your filters, fluids, and tire pressure while we're at it.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/OilChange2.png" alt="Oil Changes">
+                            <img src="Images/OilChange2.png" alt="Oil Changes" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -379,7 +422,7 @@
                             <p>30k, 60k, and 90k factory mileage checks to keep your vehicle's warranty status intact.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/ScheduledMaintance.png" alt="Scheduled Maintenance">
+                            <img src="Images/ScheduledMaintance.png" alt="Scheduled Maintenance" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -392,7 +435,7 @@
                             <p>Buying a used car? We'll give you the full picture — good and bad — before you sign anything.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/PrePurchace.png" alt="Pre-Purchase Inspection">
+                            <img src="Images/PrePurchace.png" alt="Pre-Purchase Inspection" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -405,7 +448,7 @@
                             <p>Eliminate stubborn odors, mold, and bacteria permanently with an industrial ozone treatment paired with a fresh cabin air filter.</p>
                         </div>
                         <div class="card-back">
-                            <img src="Images/OzoneDeodorizing.png" alt="Ozone Deodorizing and Cabin Air Filter">
+                            <img src="Images/OzoneDeodorizing.png" alt="Ozone Deodorizing and Cabin Air Filter" class="active-slide">
                         </div>
                     </div>
                 </div>
@@ -726,5 +769,57 @@
         </div>
     </footer>
 
+    <!-- INTERACTIVE SCRIPTS (SLIDESHOWS & REVIEWS LOOP) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. REVIEWS CAROUSEL SCRIPT
+            const track = document.querySelector('.testimonial-slider-track');
+            const slides = document.querySelectorAll('.testimonial-card-element');
+            const viewport = document.querySelector('.testimonial-slider-viewport');
+            
+            if (track && slides.length > 0) {
+                let currentIndex = 0;
+                let reviewInterval;
+
+                function updateSlidePosition() {
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % slides.length; // Infinite loop back to 0 after 6 (7th item)
+                    updateSlidePosition();
+                }
+
+                function startInterval() {
+                    reviewInterval = setInterval(nextSlide, 4000); // 4 Second Pause
+                }
+
+                function stopInterval() {
+                    clearInterval(reviewInterval);
+                }
+
+                startInterval();
+
+                // Mouseover stops/pauses cycling
+                viewport.addEventListener('mouseenter', stopInterval);
+                viewport.addEventListener('mouseleave', startInterval);
+            }
+
+            // 2. FLIP CARD IMAGE SLIDESHOW SCRIPT
+            const slideshowContainers = document.querySelectorAll('.card-back');
+
+            slideshowContainers.forEach(container => {
+                const images = container.querySelectorAll('img');
+                if (images.length > 1) {
+                    let imgIndex = 0;
+                    setInterval(() => {
+                        images[imgIndex].classList.remove('active-slide');
+                        imgIndex = (imgIndex + 1) % images.length;
+                        images[imgIndex].classList.add('active-slide');
+                    }, 2500); // Cycle flipped images every 2.5 seconds
+                }
+            });
+        });
+    </script>
 </body>
 </html>
