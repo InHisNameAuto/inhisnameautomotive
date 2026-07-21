@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +27,35 @@
     <meta property="business:contact_data:country_name" content="United States">
 
     <style>
+        body {
+            margin: 0;
+            padding-top: 70px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        .cta-button {
+            background-color: #b07d4c;
+            color: #ffffff;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #8c6038;
+        }
+
         .hero-custom-card {
             background: #ffffff !important;
             padding: 2rem !important;
             border-radius: 8px !important;
-            border: 2px solid transparent !important; /* Invisible border prevents text-shift jumps */
+            border: 2px solid transparent !important;
             text-align: center !important;
             display: flex !important;
             flex-direction: column !important;
@@ -55,43 +81,122 @@
             font-size: 0.95rem !important;
         }
         
-        /* Interactive State Trigger overrides */
         .hero-custom-card:hover {
             background-color: #e6f2ff !important; 
-            border-color: #b07d4c !important; /* Gold displays exclusively on mouseover */
+            border-color: #b07d4c !important;
             transform: translateY(-6px) !important; 
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        footer {
+            background-color: #0d1b2a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-<header class="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-sizing: border-box; height: 70px; background-color: #0d1b2a;">
+<header class="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-sizing: border-box; height: 70px; background-color: #0d1b2a; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
         
+    <!-- Logo Left -->
     <img src="Images/logo.png" alt="In His Name Automotive Logo" class="header-logo" 
          style="position: absolute; top: 10px; left: 20px; height: 130px; width: auto; z-index: 1001; max-width: none; filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1)) drop-shadow(0px 0px 4px rgba(176, 125, 76, 1));">
     
+    <!-- Title Centered -->
     <div style="position: absolute; left: 0; right: 0; display: flex; justify-content: center; align-items: center; pointer-events: none; width: 100%; height: 100%;">
         <h2 class="logo-text" style="pointer-events: auto; font-weight: bold; color: #ffffff; margin: 0; font-size: 1.5rem; letter-spacing: 1px;">IN HIS NAME AUTOMOTIVE</h2>
     </div>
 
-    <div class="header-content" style="margin-left: auto; position: relative; z-index: 2; height: 100%; display: flex; align-items: center; padding-right: 20px;">
-        <div class="header-actions" style="display: flex; align-items: center;">
-            <a href="https://www.bbb.org/us/or/salem/profile/auto-repairs/in-his-name-automotive-llc-1296-1000198731/#sealclick" target="_blank" rel="nofollow" style="margin-right: 15px; display: inline-flex; align-items: center;">
+    <!-- Actions Right (BBB Seal + Call Now) -->
+    <div class="header-content" style="margin-left: auto; position: relative; z-index: 1002; height: 100%; display: flex; align-items: center;">
+        <div class="header-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a href="https://www.bbb.org/us/or/salem/profile/auto-repairs/in-his-name-automotive-llc-1296-1000198731/#sealclick" target="_blank" rel="nofollow" style="display: inline-flex; align-items: center;">
                 <img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-42-whitetxt-bbb-1000198731.png" style="border: 0; height: 38px; width: auto;" alt="In His Name Automotive, LLC BBB Business Review" />
             </a>
-            <a href="tel:9714286446" class="phone-link" style="color: #ffffff; text-decoration: none; margin-right: 15px;">📞 971.428.6446</a>
-            <a href="#contact" class="cta-button">CALL NOW</a>
+            <a href="tel:9714286446" class="cta-button">CALL NOW</a>
         </div>
     </div>
 
+    <!-- Decorative Bottom Bar -->
     <div style="position: absolute; bottom: -16px; left: 0; width: 100%; height: 16px; background-color: #0d1b2a; box-shadow: 0 4px 6px rgba(0,0,0,0.15); display: block;">
         <div style="width: 100%; height: 100%; background: linear-gradient(to bottom, 
             #0d1b2a 0px, #0d1b2a 3px,
-            #ffcc00 3px, #ffcc00 6px,   /* Yellow Stripe 1 */
+            #ffcc00 3px, #ffcc00 6px,
             #0d1b2a 6px, #0d1b2a 10px,
-            #ffcc00 10px, #ffcc00 13px, /* Yellow Stripe 2 */
+            #ffcc00 10px, #ffcc00 13px,
             #0d1b2a 13px, #0d1b2a 16px
         );"></div>
     </div>
 </header>
+
+<main>
+    <!-- Hero / Services Grid Section -->
+    <section class="section-container">
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 30px;">
+            <h1 style="color: #0d1b2a; font-size: 2.2rem;">Honest, Quality Auto Repair in Salem, OR</h1>
+            <p style="color: #555; font-size: 1.1rem;">Specializing in advanced diagnostics, electrical troubleshooting, and complete mechanical repair.</p>
+        </div>
+
+        <div class="hero-grid">
+            <div class="hero-custom-card">
+                <span class="checkmark">✔</span>
+                <h4>ADVANCED DIAGNOSTICS</h4>
+                <p>Pinpoint accurate electronic & engine diagnostic solutions.</p>
+            </div>
+            <div class="hero-custom-card">
+                <span class="checkmark">✔</span>
+                <h4>ELECTRICAL & TIMING</h4>
+                <p>Expert electrical troubleshooting and precision engine timing.</p>
+            </div>
+            <div class="hero-custom-card">
+                <span class="checkmark">✔</span>
+                <h4>BRAKES & SUSPENSION</h4>
+                <p>Complete safety inspections, brake repair, steering, and suspension service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="section-container" style="background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h2 style="color: #0d1b2a; text-align: center; margin-bottom: 20px;">Contact Us</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; text-align: center;">
+            <div>
+                <h3 style="color: #b07d4c;">Location</h3>
+                <p>119 50th Ave NW<br>Salem, OR 97304</p>
+            </div>
+            <div>
+                <h3 style="color: #b07d4c;">Phone</h3>
+                <p><a href="tel:9714286446" style="color: #0d1b2a; font-weight: bold; text-decoration: none;">(971) 428-6446</a></p>
+            </div>
+            <div>
+                <h3 style="color: #b07d4c;">Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; In His Name Automotive. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
