@@ -66,76 +66,37 @@ body {
             drop-shadow(0px 0px 4px rgba(176, 125, 76, 1));
 }
 
-/* Left Group: CARFAX & ASE */
-.header-cert-badges {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-left: 20px;
-}
-
-.cert-badge-img {
-    height: 38px;
-    width: auto;
-    display: block;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.4));
-    transition: transform 0.2s ease;
-}
-
-.cert-badge-img:hover {
-    transform: scale(1.05);
-}
-
-/* Center Group: Title + BBB Seal & ProSalem */
-.header-center-group {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
 .logo-text {
     font-weight: 800;
     color: #ffffff;
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     letter-spacing: 1px;
     white-space: nowrap;
 }
 
-.header-partner-badges {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.badge-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.badge-link:hover {
-    transform: translateY(-2px);
-}
-
-.bbb-seal-img {
-    border: 0;
-    height: 38px;
-    width: auto;
-}
-
-.prosalem-badge-img {
-    height: 38px;
-    width: auto;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
-}
-
-/* Right Group: Phone & Call CTA */
+/* Right Side Actions: BBB Seal + Call Button */
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 25px; /* Spacing between BBB Seal, Phone, and Call CTA */
+}
+
+.bbb-seal-link {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px; /* Extra breathing room */
+    transition: opacity 0.2s ease;
+}
+
+.bbb-seal-link:hover {
+    opacity: 0.9;
+}
+
+.bbb-seal-link img {
+    height: 42px;
+    width: auto;
+    display: block;
 }
 
 .phone-link {
@@ -161,7 +122,7 @@ body {
     background-color: #96673d;
 }
 
-/* Header Stripe */
+/* Header Stripe Decorative Accent */
 .header-stripe {
     position: absolute;
     bottom: -16px;
@@ -1006,30 +967,19 @@ body {
 /* ==========================================================================
    RESPONSIVE ADJUSTMENTS
    ========================================================================== */
-@media (max-width: 1024px) {
-    .header-cert-badges {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .header-inner {
         flex-direction: column;
         height: auto;
-        padding: 10px;
+        padding: 12px;
         gap: 10px;
     }
 
-    .header-center-group {
-        flex-direction: column;
-        gap: 5px;
+    .logo-text {
+        font-size: 1.2rem;
     }
 
     .hero {
-        padding-top: 12rem;
-    }
-
-    .logo-text {
-        font-size: 1.1rem;
+        padding-top: 11rem;
     }
 }
