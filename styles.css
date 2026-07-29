@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     --navy: #1a2d45;
-    --gold: #b07d4c;       
+    --gold: #b07d4c;        
     --dark-bg: #0d1b2a;    
     --ice-blue: #f0f4f8;   
     --light-text: #e8e8e8;
@@ -1412,5 +1412,46 @@ body {
 
     #services .card-back {
         display: none !important;
+    }
+
+    .testimonial-card-element {
+        width: calc(100vw - 2.5rem) !important;
+    }
+
+    @keyframes slideStepSequence {
+        0%, 11% { transform: translateX(0); }
+        14%, 25% { transform: translateX(calc(-1 * (100vw - 2.5rem + 2rem))); }
+        28%, 39% { transform: translateX(calc(-2 * (100vw - 2.5rem + 2rem))); }
+        42%, 53% { transform: translateX(calc(-3 * (100vw - 2.5rem + 2rem))); }
+        56%, 67% { transform: translateX(calc(-4 * (100vw - 2.5rem + 2rem))); }
+        70%, 81% { transform: translateX(calc(-5 * (100vw - 2.5rem + 2rem))); }
+        84%, 95% { transform: translateX(calc(-6 * (100vw - 2.5rem + 2rem))); }
+        98%, 100% { transform: translateX(calc(-7 * (100vw - 2.5rem + 2rem))); }
+    }
+
+    .footer-grid-layout {
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+    }
+
+    .footer-copyright-row {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+}
+
+/* Extra Small Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+    .cta-button {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .hero-title {
+        font-size: 1.6rem !important;
+    }
+
+    .warranty-title {
+        font-size: 1.5rem !important;
     }
 }
