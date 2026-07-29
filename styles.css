@@ -109,12 +109,12 @@ body {
     z-index: 1010;
 }
 
-/* Increased logo size by 10px (155px) & moved down slightly */
+/* Logo size bumped to 185px with adjusted vertical shift */
 .header-logo {
-    height: 155px !important;
+    height: 185px !important;
     width: auto;
     position: relative;
-    transform: translateY(22px) !important; /* Smoothly drops down past header line */
+    transform: translateY(32px) !important; /* Drops down nicely past header line */
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
     z-index: 1020;
 }
