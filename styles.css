@@ -96,16 +96,16 @@ body {
     justify-content: space-between;
     padding: 0 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    overflow: visible !important; /* Prevents top or bottom logo clipping */
+    overflow: visible !important; /* Prevents logo clipping */
 }
 
 .header-logo-container {
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important; /* Perfectly centers title vertically */
+    align-items: center !important; /* Centers elements vertically */
     justify-content: flex-start !important;
     gap: 15px;
-    height: 100% !important;
+    height: 70px !important;
     position: relative;
     z-index: 1010;
 }
@@ -115,13 +115,13 @@ body {
     width: auto;
     position: relative;
     top: 0 !important;
-    margin-top: 50px !important; /* Shifts image down without clipping the top */
+    margin-top: 40px !important; /* Shifted up 10px */
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
     z-index: 1020;
     display: block;
 }
 
-/* Perfect Vertical Centering for "IN HIS NAME AUTOMOTIVE" */
+/* Vertical Centering for "IN HIS NAME AUTOMOTIVE" */
 .logo-text {
     color: #ffffff !important;
     font-size: 1.3rem !important;
@@ -129,10 +129,8 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     letter-spacing: 1px;
-    display: inline-flex !important;
-    align-items: center !important;
     line-height: 1 !important;
-    height: 100% !important;
+    display: block !important;
 }
 
 .header-actions {
@@ -457,7 +455,7 @@ body {
 }
 
 /* ==========================================================================
-   WARRANTY SECTION (WIDTH EXPANDED TO FULL 1100PX MATCH)
+   WARRANTY SECTION
    ========================================================================== */
 .shop-warranty-section {
     background-color: var(--ice-blue) !important;
@@ -468,7 +466,7 @@ body {
 }
 
 .warranty-content {
-    max-width: 1100px !important; /* Fixed width matching sections above/below */
+    max-width: 1100px !important;
     width: 100% !important;
     margin: 0 auto !important;
     text-align: center !important;
@@ -485,7 +483,7 @@ body {
 }
 
 .warranty-description {
-    max-width: 1100px !important; /* Stretches text box to full section width */
+    max-width: 1100px !important;
     margin: 0 auto 3.5rem auto !important;
     color: #4a5568 !important;
     line-height: 1.7 !important;
@@ -536,7 +534,7 @@ body {
 }
 
 /* ==========================================================================
-   SERVICES SECTION (FIXED: ALL TEXT HEADINGS IN WHITE)
+   SERVICES SECTION
    ========================================================================== */
 .services, 
 #services {
@@ -547,7 +545,6 @@ body {
     display: block !important;
 }
 
-/* Forces all section text titles & subheadings in Services section to White */
 #services .section-title,
 #services h2,
 #services h3,
@@ -639,7 +636,6 @@ body {
     display: block;
 }
 
-/* --- INTEGRATED SERVICE CARD SLIDESHOW CONTAINERS --- */
 #services .card-back.brake-slideshow,
 #services .card-back.gasket-slideshow,
 #services .card-back.coolant-slideshow,
@@ -690,7 +686,7 @@ body {
     animation-play-state: running !important;
 }
 
-/* BRAKE SLIDESHOW (5 Images - 20s Loop) */
+/* BRAKE SLIDESHOW */
 #services .brake-slide { animation: brakeFadeNew 20s infinite ease-in-out; }
 #services .brake-slide:nth-child(1) { animation-delay: 0s; }
 #services .brake-slide:nth-child(2) { animation-delay: 4s; }
@@ -703,7 +699,7 @@ body {
     25%, 100% { opacity: 0; z-index: 1; }
 }
 
-/* ENGINE SLIDESHOW (6 Images - 24s Loop) */
+/* ENGINE SLIDESHOW */
 #services .engine-slide { animation: engineFadeNew 24s infinite ease-in-out; }
 #services .engine-slide:nth-child(1) { animation-delay: 0s; }
 #services .engine-slide:nth-child(2) { animation-delay: 4s; }
@@ -717,7 +713,7 @@ body {
     21.66%, 100% { opacity: 0; z-index: 1; }
 }
 
-/* COOLING SLIDESHOW (6 Images - 24s Loop) */
+/* COOLING SLIDESHOW */
 #services .coolant-slide { animation: coolantFadeNew 24s infinite ease-in-out; }
 #services .coolant-slide:nth-child(1) { animation-delay: 0s; }
 #services .coolant-slide:nth-child(2) { animation-delay: 4s; }
@@ -731,7 +727,7 @@ body {
     21.66%, 100% { opacity: 0; z-index: 1; }
 }
 
-/* SUSPENSION SLIDESHOW (13 Images - 52s Loop - 4s Per Frame) */
+/* SUSPENSION SLIDESHOW */
 #services .suspension-slide { animation: suspensionFade 52s infinite ease-in-out; }
 #services .suspension-slide:nth-child(1) { animation-delay: 0s; }
 #services .suspension-slide:nth-child(2) { animation-delay: 4s; }
@@ -761,7 +757,7 @@ body {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SLIDER & GOOGLE REVIEW HEADERS
+   TESTIMONIALS SLIDER
    ========================================================================== */
 .testimonials {
     background-color: var(--ice-blue) !important;
@@ -1482,7 +1478,6 @@ body {
     }
 }
 
-/* Extra Small Mobile Devices (<= 480px) */
 @media (max-width: 480px) {
     .cta-button {
         width: 100% !important;
