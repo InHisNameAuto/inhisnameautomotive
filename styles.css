@@ -637,10 +637,15 @@ body {
     display: block;
 }
 
-#services .card-back.brake-slideshow,
-#services .card-back.gasket-slideshow,
-#services .card-back.coolant-slideshow,
-#services .card-back.suspension-slideshow {
+/* ==========================================================================
+   SERVICES SLIDESHOW (pure CSS autoplay, no JavaScript)
+   Each slideshow fades through its images automatically. A row of dots below
+   shows progress — one dot lit gold at a time, moving as the picture changes.
+   No click controls. To add a new slideshow, copy one of these blocks,
+   rename the class prefix, and set the slide count.
+   ========================================================================== */
+
+#services .card-back.as-slideshow {
     position: relative !important;
     width: 100% !important;
     height: 100% !important;
@@ -651,15 +656,12 @@ body {
     transition: visibility 0s, opacity 0.3s ease;
 }
 
-#services .services-flip-card:hover .card-back {
+#services .services-flip-card:hover .card-back.as-slideshow {
     visibility: visible;
     opacity: 1;
 }
 
-#services .brake-slide,
-#services .engine-slide,
-#services .coolant-slide,
-#services .suspension-slide {
+#services .as-img {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
@@ -669,84 +671,172 @@ body {
     display: block !important;
     opacity: 0;
     z-index: 1;
-    animation-play-state: paused !important; 
+    animation-play-state: paused !important;
 }
 
-#services .brake-slide:nth-child(1),
-#services .engine-slide:nth-child(1),
-#services .coolant-slide:nth-child(1),
-#services .suspension-slide:nth-child(1) {
+#services .as-img:nth-child(1) {
     opacity: 1 !important;
     z-index: 2 !important;
 }
 
-#services .services-flip-card:hover .brake-slide,
-#services .services-flip-card:hover .engine-slide,
-#services .services-flip-card:hover .coolant-slide,
-#services .services-flip-card:hover .suspension-slide {
+#services .services-flip-card:hover .as-img {
     animation-play-state: running !important;
 }
 
-/* BRAKE SLIDESHOW */
-#services .brake-slide { animation: brakeFadeNew 20s infinite ease-in-out; }
-#services .brake-slide:nth-child(1) { animation-delay: 0s; }
-#services .brake-slide:nth-child(2) { animation-delay: 4s; }
-#services .brake-slide:nth-child(3) { animation-delay: 8s; }
-#services .brake-slide:nth-child(4) { animation-delay: 12s; }
-#services .brake-slide:nth-child(5) { animation-delay: 16s; }
-
-@keyframes brakeFadeNew {
-    0%, 20% { opacity: 1; z-index: 2; }
-    25%, 100% { opacity: 0; z-index: 1; }
+#services .as-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    padding: 0 12px;
+    box-sizing: border-box;
+    z-index: 5;
 }
 
-/* ENGINE SLIDESHOW */
-#services .engine-slide { animation: engineFadeNew 24s infinite ease-in-out; }
-#services .engine-slide:nth-child(1) { animation-delay: 0s; }
-#services .engine-slide:nth-child(2) { animation-delay: 4s; }
-#services .engine-slide:nth-child(3) { animation-delay: 8s; }
-#services .engine-slide:nth-child(4) { animation-delay: 12s; }
-#services .engine-slide:nth-child(5) { animation-delay: 16s; }
-#services .engine-slide:nth-child(6) { animation-delay: 20s; }
-
-@keyframes engineFadeNew {
-    0%, 16.66% { opacity: 1; z-index: 2; }
-    21.66%, 100% { opacity: 0; z-index: 1; }
+#services .as-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    display: block;
+    animation-play-state: paused !important;
 }
 
-/* COOLING SLIDESHOW */
-#services .coolant-slide { animation: coolantFadeNew 24s infinite ease-in-out; }
-#services .coolant-slide:nth-child(1) { animation-delay: 0s; }
-#services .coolant-slide:nth-child(2) { animation-delay: 4s; }
-#services .coolant-slide:nth-child(3) { animation-delay: 8s; }
-#services .coolant-slide:nth-child(4) { animation-delay: 12s; }
-#services .coolant-slide:nth-child(5) { animation-delay: 16s; }
-#services .coolant-slide:nth-child(6) { animation-delay: 20s; }
-
-@keyframes coolantFadeNew {
-    0%, 16.66% { opacity: 1; z-index: 2; }
-    21.66%, 100% { opacity: 0; z-index: 1; }
+/* Slide 1's dot starts lit while paused (pre-hover). Not !important —
+   once the animation is running, each dot's own keyframe takes over,
+   including fading dot 1 back out when its turn ends. */
+#services .as-dot:nth-child(1) {
+    background: var(--gold);
 }
 
-/* SUSPENSION SLIDESHOW */
-#services .suspension-slide { animation: suspensionFade 52s infinite ease-in-out; }
-#services .suspension-slide:nth-child(1) { animation-delay: 0s; }
-#services .suspension-slide:nth-child(2) { animation-delay: 4s; }
-#services .suspension-slide:nth-child(3) { animation-delay: 8s; }
-#services .suspension-slide:nth-child(4) { animation-delay: 12s; }
-#services .suspension-slide:nth-child(5) { animation-delay: 16s; }
-#services .suspension-slide:nth-child(6) { animation-delay: 20s; }
-#services .suspension-slide:nth-child(7) { animation-delay: 24s; }
-#services .suspension-slide:nth-child(8) { animation-delay: 28s; }
-#services .suspension-slide:nth-child(9) { animation-delay: 32s; }
-#services .suspension-slide:nth-child(10) { animation-delay: 36s; }
-#services .suspension-slide:nth-child(11) { animation-delay: 40s; }
-#services .suspension-slide:nth-child(12) { animation-delay: 44s; }
-#services .suspension-slide:nth-child(13) { animation-delay: 48s; }
+#services .services-flip-card:hover .as-dot {
+    animation-play-state: running !important;
+}
 
-@keyframes suspensionFade {
+/* BRAKE SLIDESHOW — 5 images, 20s full cycle */
+#services .brake-img { animation: brakeFadeAS 20s infinite ease-in-out; }
+#services .brake-img:nth-child(1) { animation-delay: 0s; }
+#services .brake-img:nth-child(2) { animation-delay: 4s; }
+#services .brake-img:nth-child(3) { animation-delay: 8s; }
+#services .brake-img:nth-child(4) { animation-delay: 12s; }
+#services .brake-img:nth-child(5) { animation-delay: 16s; }
+
+@keyframes brakeFadeAS {
+    0%, 20.0% { opacity: 1; z-index: 2; }
+    25.0%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .brake-dot { animation: brakeDotAS 20s infinite ease-in-out; }
+#services .brake-dot:nth-child(1) { animation-delay: 0s; }
+#services .brake-dot:nth-child(2) { animation-delay: 4s; }
+#services .brake-dot:nth-child(3) { animation-delay: 8s; }
+#services .brake-dot:nth-child(4) { animation-delay: 12s; }
+#services .brake-dot:nth-child(5) { animation-delay: 16s; }
+
+@keyframes brakeDotAS {
+    0%, 20.0% { background: var(--gold); }
+    25.0%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+/* SUSPENSION SLIDESHOW — 13 images, 52s full cycle */
+#services .suspension-img { animation: suspensionFadeAS 52s infinite ease-in-out; }
+#services .suspension-img:nth-child(1) { animation-delay: 0s; }
+#services .suspension-img:nth-child(2) { animation-delay: 4s; }
+#services .suspension-img:nth-child(3) { animation-delay: 8s; }
+#services .suspension-img:nth-child(4) { animation-delay: 12s; }
+#services .suspension-img:nth-child(5) { animation-delay: 16s; }
+#services .suspension-img:nth-child(6) { animation-delay: 20s; }
+#services .suspension-img:nth-child(7) { animation-delay: 24s; }
+#services .suspension-img:nth-child(8) { animation-delay: 28s; }
+#services .suspension-img:nth-child(9) { animation-delay: 32s; }
+#services .suspension-img:nth-child(10) { animation-delay: 36s; }
+#services .suspension-img:nth-child(11) { animation-delay: 40s; }
+#services .suspension-img:nth-child(12) { animation-delay: 44s; }
+#services .suspension-img:nth-child(13) { animation-delay: 48s; }
+
+@keyframes suspensionFadeAS {
     0%, 7.69% { opacity: 1; z-index: 2; }
-    11.53%, 100% { opacity: 0; z-index: 1; }
+    12.69%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .suspension-dot { animation: suspensionDotAS 52s infinite ease-in-out; }
+#services .suspension-dot:nth-child(1) { animation-delay: 0s; }
+#services .suspension-dot:nth-child(2) { animation-delay: 4s; }
+#services .suspension-dot:nth-child(3) { animation-delay: 8s; }
+#services .suspension-dot:nth-child(4) { animation-delay: 12s; }
+#services .suspension-dot:nth-child(5) { animation-delay: 16s; }
+#services .suspension-dot:nth-child(6) { animation-delay: 20s; }
+#services .suspension-dot:nth-child(7) { animation-delay: 24s; }
+#services .suspension-dot:nth-child(8) { animation-delay: 28s; }
+#services .suspension-dot:nth-child(9) { animation-delay: 32s; }
+#services .suspension-dot:nth-child(10) { animation-delay: 36s; }
+#services .suspension-dot:nth-child(11) { animation-delay: 40s; }
+#services .suspension-dot:nth-child(12) { animation-delay: 44s; }
+#services .suspension-dot:nth-child(13) { animation-delay: 48s; }
+
+@keyframes suspensionDotAS {
+    0%, 7.69% { background: var(--gold); }
+    12.69%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+/* COOLANT SLIDESHOW — 6 images, 24s full cycle */
+#services .coolant-img { animation: coolantFadeAS 24s infinite ease-in-out; }
+#services .coolant-img:nth-child(1) { animation-delay: 0s; }
+#services .coolant-img:nth-child(2) { animation-delay: 4s; }
+#services .coolant-img:nth-child(3) { animation-delay: 8s; }
+#services .coolant-img:nth-child(4) { animation-delay: 12s; }
+#services .coolant-img:nth-child(5) { animation-delay: 16s; }
+#services .coolant-img:nth-child(6) { animation-delay: 20s; }
+
+@keyframes coolantFadeAS {
+    0%, 16.67% { opacity: 1; z-index: 2; }
+    21.67%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .coolant-dot { animation: coolantDotAS 24s infinite ease-in-out; }
+#services .coolant-dot:nth-child(1) { animation-delay: 0s; }
+#services .coolant-dot:nth-child(2) { animation-delay: 4s; }
+#services .coolant-dot:nth-child(3) { animation-delay: 8s; }
+#services .coolant-dot:nth-child(4) { animation-delay: 12s; }
+#services .coolant-dot:nth-child(5) { animation-delay: 16s; }
+#services .coolant-dot:nth-child(6) { animation-delay: 20s; }
+
+@keyframes coolantDotAS {
+    0%, 16.67% { background: var(--gold); }
+    21.67%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+/* GASKET SLIDESHOW — 6 images, 24s full cycle */
+#services .gasket-img { animation: gasketFadeAS 24s infinite ease-in-out; }
+#services .gasket-img:nth-child(1) { animation-delay: 0s; }
+#services .gasket-img:nth-child(2) { animation-delay: 4s; }
+#services .gasket-img:nth-child(3) { animation-delay: 8s; }
+#services .gasket-img:nth-child(4) { animation-delay: 12s; }
+#services .gasket-img:nth-child(5) { animation-delay: 16s; }
+#services .gasket-img:nth-child(6) { animation-delay: 20s; }
+
+@keyframes gasketFadeAS {
+    0%, 16.67% { opacity: 1; z-index: 2; }
+    21.67%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .gasket-dot { animation: gasketDotAS 24s infinite ease-in-out; }
+#services .gasket-dot:nth-child(1) { animation-delay: 0s; }
+#services .gasket-dot:nth-child(2) { animation-delay: 4s; }
+#services .gasket-dot:nth-child(3) { animation-delay: 8s; }
+#services .gasket-dot:nth-child(4) { animation-delay: 12s; }
+#services .gasket-dot:nth-child(5) { animation-delay: 16s; }
+#services .gasket-dot:nth-child(6) { animation-delay: 20s; }
+
+@keyframes gasketDotAS {
+    0%, 16.67% { background: var(--gold); }
+    21.67%, 100% { background: rgba(255, 255, 255, 0.55); }
 }
 
 .services-footer {
