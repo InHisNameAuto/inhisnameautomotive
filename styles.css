@@ -99,22 +99,26 @@ body {
 
 .header-logo-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 15px;
     position: relative;
     z-index: 1010;
+    text-align: center;
 }
 
-/* Enlarged logo centered vertically across the bottom double yellow lines */
+/* Enlarged logo shifted down 5px (top: 35px) */
 .header-logo {
     height: 145px !important;
     width: auto;
     position: relative;
-    top: 30px !important;
+    top: 35px !important;
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
     z-index: 1020;
 }
 
+/* Centered text rule */
 .logo-text {
     color: #ffffff;
     font-size: 1.3rem;
@@ -122,7 +126,10 @@ body {
     margin: 0;
     letter-spacing: 1px;
     text-align: center !important;
-    display: block;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
 }
 
 .header-actions {
@@ -137,7 +144,6 @@ body {
     text-decoration: none;
 }
 
-/* Uniform larger size for seal and call button */
 .bbb-seal-img {
     height: 48px;
     width: auto;
@@ -311,6 +317,10 @@ body {
     margin: 0 auto !important;
 }
 
+.about .section-title {
+    color: var(--dark-text) !important;
+}
+
 .about-text p {
     color: #4a5568 !important;
     font-size: 1.05rem;
@@ -444,7 +454,7 @@ body {
 }
 
 /* ==========================================================================
-   WARRANTY SECTION
+   WARRANTY SECTION (FIXED COLOR & WIDTH)
    ========================================================================== */
 .shop-warranty-section {
     background-color: var(--ice-blue) !important;
@@ -465,7 +475,7 @@ body {
     font-size: 2.2rem !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
-    color: #0d1b2a !important;
+    color: var(--dark-text) !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -652,7 +662,6 @@ body {
     animation-play-state: paused !important; 
 }
 
-/* Force first frame active state globally on load */
 #services .brake-slide:nth-child(1),
 #services .engine-slide:nth-child(1),
 #services .coolant-slide:nth-child(1),
@@ -739,7 +748,7 @@ body {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SLIDER & GOOGLE REVIEW HEADERS
+   TESTIMONIALS SLIDER & GOOGLE REVIEW HEADERS (FIXED COLOR)
    ========================================================================== */
 .testimonials {
     background-color: var(--ice-blue) !important;
@@ -748,6 +757,10 @@ body {
     box-sizing: border-box !important;
     display: block !important;
     overflow: hidden;
+}
+
+.testimonials .section-title {
+    color: var(--dark-text) !important;
 }
 
 .testimonials-content {
@@ -1346,8 +1359,9 @@ body {
     }
 
     .header-logo-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
         margin-bottom: 0.75rem;
     }
 
@@ -1359,6 +1373,7 @@ body {
     .logo-text {
         font-size: 1.1rem;
         text-align: center !important;
+        justify-content: center !important;
         width: 100%;
     }
 
