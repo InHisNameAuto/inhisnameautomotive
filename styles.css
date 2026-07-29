@@ -111,39 +111,28 @@ body {
 }
 
 .header-logo {
-    height: 155px !important;
+    height: 155px;
     width: auto;
-    position: relative;
-    top: 0 !important;
-    margin: 0 !important;
-    transform: translateY(32px) !important; /* Forced visual shift down */
+    margin: 0;
+    /* Header is 70px tall and flex-centers this image by default (top = -42.5px).
+       The stripe sits directly below the header (70px-86px, center at 78px).
+       Shifting down 43px from the natural centered position puts the logo's
+       own vertical center exactly on the stripe's center line. */
+    transform: translateY(43px);
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
     z-index: 1020;
     display: block;
 }
 
 .logo-text {
-    color: #ffffff !important;
-    font-size: 1.3rem !important;
-    font-weight: 800 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1 !important;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
     letter-spacing: 1px;
-    transform: translateY(-1px) !important; /* Visual baseline centering correction */
-    display: block !important;
-}
-
-/* Vertical Centering for "IN HIS NAME AUTOMOTIVE" */
-.logo-text {
-    color: #ffffff !important;
-    font-size: 1.3rem !important;
-    font-weight: 800 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    letter-spacing: 1px;
-    line-height: 1 !important;
-    display: block !important;
+    display: block;
 }
 
 .header-actions {
@@ -1398,9 +1387,9 @@ body {
     }
 
     .header-logo {
-        top: 0 !important;
         margin-top: 0 !important;
         height: 110px !important;
+        transform: none !important;
     }
 
     .logo-text {
