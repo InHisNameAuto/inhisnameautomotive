@@ -34,12 +34,12 @@
 <header class="header" style="position: fixed; top: 0; left: 0; width: 100%; height: 70px; background-color: #0d1b2a; z-index: 1000; display: flex !important; align-items: center !important; justify-content: space-between; padding: 0 20px; overflow: visible !important;">
     
     <div class="header-logo-container" style="display: flex !important; align-items: center !important; height: 70px !important; gap: 15px; position: relative;">
-        <!-- Logo lowered another 7px to margin-top: 64px -->
-        <img src="Images/logo.png" alt="In His Name Automotive Logo" class="header-logo" style="height: 155px !important; width: auto; margin-top: 64px !important; position: relative; z-index: 1020; display: block;">
+        <!-- Logo shifted down using forced CSS Transform -->
+        <img src="Images/logo.png" alt="In His Name Automotive Logo" class="header-logo" style="height: 155px !important; width: auto; transform: translateY(32px) !important; position: relative; z-index: 1020; display: block; margin: 0 !important;">
         
-        <!-- Text container using Flexbox to force perfect vertical centering -->
-        <div style="display: flex !important; align-items: center !important; height: 100% !important;">
-            <h2 class="logo-text" style="color: #ffffff !important; font-size: 1.3rem !important; font-weight: 800 !important; margin: 0 !important; padding: 0 !important; line-height: 1 !important; letter-spacing: 1px;">
+        <!-- Text forced into middle visually with flex + line-height tweak -->
+        <div style="display: flex !important; align-items: center !important; height: 70px !important; line-height: 1 !important;">
+            <h2 class="logo-text" style="color: #ffffff !important; font-size: 1.3rem !important; font-weight: 800 !important; margin: 0 !important; padding: 0 !important; line-height: 1 !important; letter-spacing: 1px; transform: translateY(-1px) !important;">
                 IN HIS NAME AUTOMOTIVE
             </h2>
         </div>
