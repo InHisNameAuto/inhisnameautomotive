@@ -107,10 +107,10 @@ body {
 
 /* Enlarged logo centered vertically across the bottom double yellow lines */
 .header-logo {
-    height: 120px;
+    height: 145px !important;
     width: auto;
     position: relative;
-    top: 25px; 
+    top: 30px !important;
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
     z-index: 1020;
 }
@@ -121,6 +121,8 @@ body {
     font-weight: 800;
     margin: 0;
     letter-spacing: 1px;
+    text-align: center !important;
+    display: block;
 }
 
 .header-actions {
@@ -1351,12 +1353,13 @@ body {
 
     .header-logo {
         top: 0 !important;
-        height: 90px !important;
+        height: 110px !important;
     }
 
     .logo-text {
         font-size: 1.1rem;
-        text-align: center;
+        text-align: center !important;
+        width: 100%;
     }
 
     .header-actions {
