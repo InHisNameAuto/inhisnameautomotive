@@ -92,34 +92,35 @@ body {
     z-index: 1000;
     box-sizing: border-box;
     display: flex !important;
-    align-items: center !important; /* Forces vertical centering in top bar */
+    align-items: center !important; /* Forces vertical centering across top bar */
     justify-content: space-between;
     padding: 0 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    overflow: visible !important; /* Ensures logo hangover is never clipped */
 }
 
 .header-logo-container {
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important;
+    align-items: center !important; /* Perfectly centers title with logo */
     justify-content: flex-start !important;
     gap: 15px;
-    height: 100% !important; /* Spans header height for proper alignment */
+    height: 100% !important;
     position: relative;
     z-index: 1010;
 }
 
-/* Logo size bumped to 185px with adjusted vertical shift */
+/* Logo set to 155px with top spacing to prevent clipping at upper edge */
 .header-logo {
-    height: 185px !important;
+    height: 155px !important;
     width: auto;
     position: relative;
-    transform: translateY(32px) !important; /* Drops down nicely past header line */
+    top: 35px; /* Safely offsets logo down without top-clipping */
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
     z-index: 1020;
 }
 
-/* Centered title text vertically in header */
+/* Vertical alignment fix for header text */
 .logo-text {
     color: #ffffff !important;
     font-size: 1.3rem !important;
@@ -130,6 +131,7 @@ body {
     display: flex !important;
     align-items: center !important;
     line-height: 1 !important;
+    height: 100%;
 }
 
 .header-actions {
@@ -454,7 +456,7 @@ body {
 }
 
 /* ==========================================================================
-   WARRANTY SECTION
+   WARRANTY SECTION (WIDTH ALIGNED TO 1100PX GRID)
    ========================================================================== */
 .shop-warranty-section {
     background-color: var(--ice-blue) !important;
@@ -465,7 +467,8 @@ body {
 }
 
 .warranty-content {
-    max-width: 1100px !important;
+    max-width: 1100px !important; /* Forces full alignment with process/financing sections */
+    width: 100% !important;
     margin: 0 auto !important;
     text-align: center !important;
 }
@@ -481,7 +484,7 @@ body {
 }
 
 .warranty-description {
-    max-width: 800px !important;
+    max-width: 1100px !important; /* Expanded to stretch fully across section */
     margin: 0 auto 3.5rem auto !important;
     color: #4a5568 !important;
     line-height: 1.7 !important;
@@ -532,14 +535,23 @@ body {
 }
 
 /* ==========================================================================
-   SERVICES INTERACTIVE FLIP MECHANICS & SLIDESHOW ENGINES
+   SERVICES SECTION (FORCE WHITE HEADINGS)
    ========================================================================== */
-.services {
+.services, 
+#services {
     background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important;
     padding: 6rem 2rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
     display: block !important;
+}
+
+/* Enforce white text for all headers/titles in Services section */
+#services .section-title,
+#services h2,
+#services h3,
+#services .section-label {
+    color: #ffffff !important;
 }
 
 #services .process-content {
@@ -981,7 +993,7 @@ body {
 }
 
 /* ==========================================================================
-   FINANCING SECTION (FIXED COLOR & ALIGNED 1100PX WIDTH)
+   FINANCING SECTION
    ========================================================================== */
 .financing-section {
     background-color: var(--ice-blue) !important;
@@ -992,14 +1004,14 @@ body {
 }
 
 .financing-content {
-    max-width: 1100px !important; /* Expanded to match top grid width */
+    max-width: 1100px !important;
     margin: 0 auto !important;
 }
 
 .financing-section .section-title,
 .financing-section h2,
 .financing-section h3 {
-    color: var(--dark-text) !important; /* Fixes white light-text bug */
+    color: var(--dark-text) !important;
 }
 
 .financing-story {
@@ -1032,7 +1044,7 @@ body {
 
 .finance-banner-card {
     width: 100% !important;
-    max-width: 1100px !important; /* Stretches to full 1100px grid width */
+    max-width: 1100px !important;
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
     border-radius: 6px !important;
     overflow: hidden !important;
@@ -1376,7 +1388,7 @@ body {
     }
 
     .header-logo {
-        transform: none !important;
+        top: 0 !important;
         height: 110px !important;
     }
 
@@ -1397,7 +1409,7 @@ body {
         font-size: 2.2rem !important;
     }
 
-    .about, .why-us, .contact-section, .process, #services.services, .testimonials, .footer, .financing-section {
+    .about, .why-us, .contact-section, .process, #services.services, .testimonials, .footer, .financing-section, .shop-warranty-section {
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
     }
