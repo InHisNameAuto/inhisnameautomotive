@@ -7,7 +7,7 @@
     --dark-bg: #0d1b2a;    
     --ice-blue: #f0f4f8;   
     --light-text: #e8e8e8;
-    --dark-text: #1a2530;
+    --dark-text: #0d1b2a;
     --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -67,6 +67,7 @@ body {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: var(--dark-text);
 }
 
 .section-title .gold,
@@ -90,46 +91,45 @@ body {
     background-color: #0d1b2a;
     z-index: 1000;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important; /* Forces vertical centering in top bar */
     justify-content: space-between;
     padding: 0 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-logo-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     gap: 15px;
+    height: 100% !important; /* Spans header height for proper alignment */
     position: relative;
     z-index: 1010;
-    text-align: center;
 }
 
-/* Enlarged logo shifted down 5px (top: 35px) */
+/* Increased logo size by 10px (155px) & moved down slightly */
 .header-logo {
-    height: 145px !important;
+    height: 155px !important;
     width: auto;
     position: relative;
-    top: 35px !important;
+    transform: translateY(22px) !important; /* Smoothly drops down past header line */
     filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
     z-index: 1020;
 }
 
-/* Centered text rule */
+/* Centered title text vertically in header */
 .logo-text {
-    color: #ffffff;
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin: 0;
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     letter-spacing: 1px;
-    text-align: center !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    width: 100%;
+    line-height: 1 !important;
 }
 
 .header-actions {
@@ -454,7 +454,7 @@ body {
 }
 
 /* ==========================================================================
-   WARRANTY SECTION (FIXED COLOR & WIDTH)
+   WARRANTY SECTION
    ========================================================================== */
 .shop-warranty-section {
     background-color: var(--ice-blue) !important;
@@ -748,7 +748,7 @@ body {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SLIDER & GOOGLE REVIEW HEADERS (FIXED COLOR)
+   TESTIMONIALS SLIDER & GOOGLE REVIEW HEADERS
    ========================================================================== */
 .testimonials {
     background-color: var(--ice-blue) !important;
@@ -925,6 +925,7 @@ body {
     font-weight: 800 !important;
     line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
+    color: #ffffff !important;
 }
 
 .why-us .section-subtitle {
@@ -980,22 +981,29 @@ body {
 }
 
 /* ==========================================================================
-   FINANCING SECTION
+   FINANCING SECTION (FIXED COLOR & ALIGNED 1100PX WIDTH)
    ========================================================================== */
 .financing-section {
     background-color: var(--ice-blue) !important;
     padding: 5rem 2rem !important;
     text-align: center !important;
     clear: both !important;
+    width: 100% !important;
 }
 
 .financing-content {
-    max-width: 800px !important;
+    max-width: 1100px !important; /* Expanded to match top grid width */
     margin: 0 auto !important;
 }
 
+.financing-section .section-title,
+.financing-section h2,
+.financing-section h3 {
+    color: var(--dark-text) !important; /* Fixes white light-text bug */
+}
+
 .financing-story {
-    max-width: 650px !important;
+    max-width: 900px !important;
     margin: 0 auto 3rem !important;
     text-align: center !important;
 }
@@ -1019,11 +1027,12 @@ body {
     flex-direction: column !important;
     align-items: center !important;
     gap: 1.5rem !important;
+    width: 100% !important;
 }
 
 .finance-banner-card {
     width: 100% !important;
-    max-width: 646px !important;
+    max-width: 1100px !important; /* Stretches to full 1100px grid width */
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
     border-radius: 6px !important;
     overflow: hidden !important;
@@ -1036,7 +1045,6 @@ body {
 
 .finance-banner-card img {
     width: 100% !important;
-    max-width: 646px !important;
     height: auto !important;
     border-radius: 6px !important;
     border: none !important;
@@ -1088,6 +1096,7 @@ body {
     font-weight: 800 !important;
     line-height: 1.2 !important;
     text-align: center !important;
+    color: #ffffff !important;
 }
 
 .contact-main-title span {
@@ -1363,15 +1372,16 @@ body {
         align-items: center !important;
         justify-content: center !important;
         margin-bottom: 0.75rem;
+        height: auto !important;
     }
 
     .header-logo {
-        top: 0 !important;
+        transform: none !important;
         height: 110px !important;
     }
 
     .logo-text {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
         text-align: center !important;
         justify-content: center !important;
         width: 100%;
@@ -1387,7 +1397,7 @@ body {
         font-size: 2.2rem !important;
     }
 
-    .about, .why-us, .contact-section, .process, #services.services, .testimonials, .footer {
+    .about, .why-us, .contact-section, .process, #services.services, .testimonials, .footer, .financing-section {
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
     }
