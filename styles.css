@@ -889,6 +889,7 @@ body {
 
 .testimonial-card-element {
     width: calc((1100px - 4rem) / 3);
+    height: 400px;
     box-sizing: border-box;
     flex-shrink: 0;
 }
@@ -975,6 +976,25 @@ body {
     line-height: 1.6 !important;
     margin-bottom: 0 !important;
     transition: color 0.3s ease;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+}
+
+.testimonial-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+.testimonial-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.testimonial-text::-webkit-scrollbar-thumb {
+    background-color: var(--gold);
+    border-radius: 10px;
 }
 
 .review-cta {
