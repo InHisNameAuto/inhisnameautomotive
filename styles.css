@@ -1014,14 +1014,16 @@ body {
 }
 
 @keyframes slideStepSequence {
-    0%, 11% { transform: translateX(0); }
-    14%, 25% { transform: translateX(calc(-1 * ((1100px - 4rem) / 3 + 2rem))); }
-    28%, 39% { transform: translateX(calc(-2 * ((1100px - 4rem) / 3 + 2rem))); }
-    42%, 53% { transform: translateX(calc(-3 * ((1100px - 4rem) / 3 + 2rem))); }
-    56%, 67% { transform: translateX(calc(-4 * ((1100px - 4rem) / 3 + 2rem))); }
-    70%, 81% { transform: translateX(calc(-5 * ((1100px - 4rem) / 3 + 2rem))); }
-    84%, 95% { transform: translateX(calc(-6 * ((1100px - 4rem) / 3 + 2rem))); }
-    98%, 100% { transform: translateX(calc(-7 * ((1100px - 4rem) / 3 + 2rem))); }
+    0%, 7.86% { transform: translateX(0); }
+    10%, 17.86% { transform: translateX(calc(-1 * ((1100px - 4rem) / 3 + 2rem))); }
+    20%, 27.86% { transform: translateX(calc(-2 * ((1100px - 4rem) / 3 + 2rem))); }
+    30%, 37.86% { transform: translateX(calc(-3 * ((1100px - 4rem) / 3 + 2rem))); }
+    40%, 47.86% { transform: translateX(calc(-4 * ((1100px - 4rem) / 3 + 2rem))); }
+    50%, 57.86% { transform: translateX(calc(-5 * ((1100px - 4rem) / 3 + 2rem))); }
+    60%, 67.86% { transform: translateX(calc(-6 * ((1100px - 4rem) / 3 + 2rem))); }
+    70%, 77.86% { transform: translateX(calc(-7 * ((1100px - 4rem) / 3 + 2rem))); }
+    80%, 87.86% { transform: translateX(calc(-8 * ((1100px - 4rem) / 3 + 2rem))); }
+    90%, 100% { transform: translateX(calc(-9 * ((1100px - 4rem) / 3 + 2rem))); }
 }
 
 /* ==========================================================================
@@ -1569,14 +1571,16 @@ body {
     }
 
     @keyframes slideStepSequence {
-        0%, 11% { transform: translateX(0); }
-        14%, 25% { transform: translateX(calc(-1 * (100vw - 2.5rem + 2rem))); }
-        28%, 39% { transform: translateX(calc(-2 * (100vw - 2.5rem + 2rem))); }
-        42%, 53% { transform: translateX(calc(-3 * (100vw - 2.5rem + 2rem))); }
-        56%, 67% { transform: translateX(calc(-4 * (100vw - 2.5rem + 2rem))); }
-        70%, 81% { transform: translateX(calc(-5 * (100vw - 2.5rem + 2rem))); }
-        84%, 95% { transform: translateX(calc(-6 * (100vw - 2.5rem + 2rem))); }
-        98%, 100% { transform: translateX(calc(-7 * (100vw - 2.5rem + 2rem))); }
+        0%, 7.86% { transform: translateX(0); }
+        10%, 17.86% { transform: translateX(calc(-1 * (100vw - 2.5rem + 2rem))); }
+        20%, 27.86% { transform: translateX(calc(-2 * (100vw - 2.5rem + 2rem))); }
+        30%, 37.86% { transform: translateX(calc(-3 * (100vw - 2.5rem + 2rem))); }
+        40%, 47.86% { transform: translateX(calc(-4 * (100vw - 2.5rem + 2rem))); }
+        50%, 57.86% { transform: translateX(calc(-5 * (100vw - 2.5rem + 2rem))); }
+        60%, 67.86% { transform: translateX(calc(-6 * (100vw - 2.5rem + 2rem))); }
+        70%, 77.86% { transform: translateX(calc(-7 * (100vw - 2.5rem + 2rem))); }
+        80%, 87.86% { transform: translateX(calc(-8 * (100vw - 2.5rem + 2rem))); }
+        90%, 100% { transform: translateX(calc(-9 * (100vw - 2.5rem + 2rem))); }
     }
 
     .footer-grid-layout {
