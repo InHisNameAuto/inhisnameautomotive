@@ -870,21 +870,42 @@ body {
 
 .testimonial-slider-viewport {
     width: 100%;
-    overflow: hidden;
     margin-top: 3rem;
     position: relative;
+    height: 430px; /* card height (400px) + top/bottom breathing room */
 }
 
-.testimonial-slider-track {
+/* Each page holds 3 cards and fades in/out on its own turn in a shared 40s cycle.
+   Because every page uses the identical fade, the transition from page 4 back to
+   page 1 looks exactly the same as every other transition — nothing to "snap." */
+.testimonial-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     gap: 2rem;
-    padding: 1.5rem 0; 
-    width: max-content;
-    animation: slideStepSequence 42s linear infinite;
+    padding: 1.5rem 0;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: testimonialPageFade 40s infinite ease-in-out;
 }
 
-.testimonial-slider-track:hover {
+.testimonial-slider-viewport:hover .testimonial-page {
     animation-play-state: paused;
+}
+
+.testimonial-page:nth-child(1) { animation-delay: 0s; }
+.testimonial-page:nth-child(2) { animation-delay: 10s; }
+.testimonial-page:nth-child(3) { animation-delay: 20s; }
+.testimonial-page:nth-child(4) { animation-delay: 30s; }
+
+@keyframes testimonialPageFade {
+    0% { opacity: 0; pointer-events: none; }
+    2% { opacity: 1; pointer-events: auto; }
+    21% { opacity: 1; pointer-events: auto; }
+    23% { opacity: 0; pointer-events: none; }
+    100% { opacity: 0; pointer-events: none; }
 }
 
 .testimonial-card-element {
@@ -1011,11 +1032,6 @@ body {
     color: var(--gold) !important;
     font-weight: bold !important;
     text-decoration: none !important;
-}
-
-@keyframes slideStepSequence {
-    from { transform: translateX(0); }
-    to { transform: translateX(calc(-10 * ((1100px - 4rem) / 3 + 2rem))); }
 }
 
 /* ==========================================================================
@@ -1562,9 +1578,14 @@ body {
         width: calc(100vw - 2.5rem) !important;
     }
 
-    @keyframes slideStepSequence {
-        from { transform: translateX(0); }
-        to { transform: translateX(calc(-10 * (100vw - 2.5rem + 2rem))); }
+    .testimonial-page {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+
+    .testimonial-slider-viewport {
+        height: 1350px !important; /* fits 3 stacked cards per page on narrow screens */
     }
 
     .footer-grid-layout {
