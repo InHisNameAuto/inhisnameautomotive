@@ -1628,23 +1628,31 @@ body {
 .repairpal-float-tab {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background: var(--gold);
     color: #ffffff;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     letter-spacing: 0.3px;
-    padding: 14px 20px;
+    padding: 16px 24px;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(176, 125, 76, 0.6);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     white-space: nowrap;
+    animation: repairpalPulse 2.5s ease-out infinite;
+}
+
+@keyframes repairpalPulse {
+    0% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(176, 125, 76, 0.55); }
+    70% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 16px rgba(176, 125, 76, 0); }
+    100% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(176, 125, 76, 0); }
 }
 
 .repairpal-float-tab:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    animation-play-state: paused;
 }
 
 .repairpal-tab-icon {
