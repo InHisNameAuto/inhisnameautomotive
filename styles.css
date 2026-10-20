@@ -1433,10 +1433,23 @@ body {
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .footer-link-list li {
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+}
+
+.footer-link-list li:not(:last-child)::after {
+    content: "•";
+    display: inline-block;
+    margin: 0 0.65rem;
+    color: var(--gold);
+    font-weight: bold;
 }
 
 .footer-link-list a {
