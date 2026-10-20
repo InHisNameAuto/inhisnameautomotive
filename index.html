@@ -783,5 +783,18 @@
     </div>
 </footer>
 
+<!-- Floating RepairPal estimator — stays fixed to the lower-left corner on every page, pure CSS toggle, no JS -->
+<input type="checkbox" id="repairpal-toggle" class="repairpal-toggle-input">
+<div class="repairpal-float">
+    <label for="repairpal-toggle" class="repairpal-float-tab">
+        <span class="repairpal-tab-icon">🔧</span>
+        <span class="repairpal-tab-text">Get a Repair Estimate</span>
+    </label>
+    <div class="repairpal-float-panel">
+        <label for="repairpal-toggle" class="repairpal-float-close" aria-label="Close estimator">✕</label>
+        <iframe id="estimator-widget-preview" title="RepairPal Service Estimator" class="repairpal-iframe" src="https://repairpal.com/estimator_widgets/v3/embedded?service_location_id=432438"></iframe>
+    </div>
+</div>
+
 </body>
 </html>
