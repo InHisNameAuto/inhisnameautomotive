@@ -1014,16 +1014,17 @@ body {
 }
 
 @keyframes slideStepSequence {
-    0%, 7.86% { transform: translateX(0); }
-    10%, 17.86% { transform: translateX(calc(-1 * ((1100px - 4rem) / 3 + 2rem))); }
-    20%, 27.86% { transform: translateX(calc(-2 * ((1100px - 4rem) / 3 + 2rem))); }
-    30%, 37.86% { transform: translateX(calc(-3 * ((1100px - 4rem) / 3 + 2rem))); }
-    40%, 47.86% { transform: translateX(calc(-4 * ((1100px - 4rem) / 3 + 2rem))); }
-    50%, 57.86% { transform: translateX(calc(-5 * ((1100px - 4rem) / 3 + 2rem))); }
-    60%, 67.86% { transform: translateX(calc(-6 * ((1100px - 4rem) / 3 + 2rem))); }
-    70%, 77.86% { transform: translateX(calc(-7 * ((1100px - 4rem) / 3 + 2rem))); }
-    80%, 87.86% { transform: translateX(calc(-8 * ((1100px - 4rem) / 3 + 2rem))); }
-    90%, 100% { transform: translateX(calc(-9 * ((1100px - 4rem) / 3 + 2rem))); }
+    0%, 7.14% { transform: translateX(0); }
+    9.09%, 16.23% { transform: translateX(calc(-1 * ((1100px - 4rem) / 3 + 2rem))); }
+    18.18%, 25.32% { transform: translateX(calc(-2 * ((1100px - 4rem) / 3 + 2rem))); }
+    27.27%, 34.41% { transform: translateX(calc(-3 * ((1100px - 4rem) / 3 + 2rem))); }
+    36.36%, 43.5% { transform: translateX(calc(-4 * ((1100px - 4rem) / 3 + 2rem))); }
+    45.45%, 52.59% { transform: translateX(calc(-5 * ((1100px - 4rem) / 3 + 2rem))); }
+    54.55%, 61.69% { transform: translateX(calc(-6 * ((1100px - 4rem) / 3 + 2rem))); }
+    63.64%, 70.78% { transform: translateX(calc(-7 * ((1100px - 4rem) / 3 + 2rem))); }
+    72.73%, 79.87% { transform: translateX(calc(-8 * ((1100px - 4rem) / 3 + 2rem))); }
+    81.82%, 88.96% { transform: translateX(calc(-9 * ((1100px - 4rem) / 3 + 2rem))); }
+    90.91%, 100% { transform: translateX(calc(-10 * ((1100px - 4rem) / 3 + 2rem))); }
 }
 
 /* ==========================================================================
@@ -1601,16 +1602,17 @@ body {
     }
 
     @keyframes slideStepSequence {
-        0%, 7.86% { transform: translateX(0); }
-        10%, 17.86% { transform: translateX(calc(-1 * (100vw - 2.5rem + 2rem))); }
-        20%, 27.86% { transform: translateX(calc(-2 * (100vw - 2.5rem + 2rem))); }
-        30%, 37.86% { transform: translateX(calc(-3 * (100vw - 2.5rem + 2rem))); }
-        40%, 47.86% { transform: translateX(calc(-4 * (100vw - 2.5rem + 2rem))); }
-        50%, 57.86% { transform: translateX(calc(-5 * (100vw - 2.5rem + 2rem))); }
-        60%, 67.86% { transform: translateX(calc(-6 * (100vw - 2.5rem + 2rem))); }
-        70%, 77.86% { transform: translateX(calc(-7 * (100vw - 2.5rem + 2rem))); }
-        80%, 87.86% { transform: translateX(calc(-8 * (100vw - 2.5rem + 2rem))); }
-        90%, 100% { transform: translateX(calc(-9 * (100vw - 2.5rem + 2rem))); }
+        0%, 7.14% { transform: translateX(0); }
+        9.09%, 16.23% { transform: translateX(calc(-1 * (100vw - 2.5rem + 2rem))); }
+        18.18%, 25.32% { transform: translateX(calc(-2 * (100vw - 2.5rem + 2rem))); }
+        27.27%, 34.41% { transform: translateX(calc(-3 * (100vw - 2.5rem + 2rem))); }
+        36.36%, 43.5% { transform: translateX(calc(-4 * (100vw - 2.5rem + 2rem))); }
+        45.45%, 52.59% { transform: translateX(calc(-5 * (100vw - 2.5rem + 2rem))); }
+        54.55%, 61.69% { transform: translateX(calc(-6 * (100vw - 2.5rem + 2rem))); }
+        63.64%, 70.78% { transform: translateX(calc(-7 * (100vw - 2.5rem + 2rem))); }
+        72.73%, 79.87% { transform: translateX(calc(-8 * (100vw - 2.5rem + 2rem))); }
+        81.82%, 88.96% { transform: translateX(calc(-9 * (100vw - 2.5rem + 2rem))); }
+        90.91%, 100% { transform: translateX(calc(-10 * (100vw - 2.5rem + 2rem))); }
     }
 
     .footer-grid-layout {
