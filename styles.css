@@ -1429,6 +1429,22 @@ body {
     line-height: 1.5 !important;
 }
 
+.footer-jumpto-row {
+    max-width: 1200px !important;
+    margin: 2.5rem auto 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.footer-jumpto-row h3 {
+    color: var(--gold) !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    margin: 0 0 1.2rem 0 !important;
+    text-transform: uppercase !important;
+}
+
 .footer-link-list {
     list-style: none !important;
     padding: 0 !important;
@@ -1436,6 +1452,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .footer-link-list li {
