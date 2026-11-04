@@ -667,16 +667,19 @@ body {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important; /* show the full 1024x1024 photo, no cropping */
+    object-fit: cover !important; /* photo fills the whole box; box size never changes */
+    object-position: center !important;
     display: block !important;
     opacity: 0;
     z-index: 1;
     animation-play-state: paused !important;
 }
 
+/* Slide 1 shows first via its own animation (delay 0). It must NOT be pinned with
+   !important, or it stays visible underneath every other photo. */
 #services .as-img:nth-child(1) {
-    opacity: 1 !important;
-    z-index: 2 !important;
+    opacity: 1;
+    z-index: 2;
 }
 
 #services .services-flip-card:hover .as-img {
