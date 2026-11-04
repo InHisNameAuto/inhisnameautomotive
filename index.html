@@ -1,839 +1,1883 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In His Name Automotive - Honest Auto Repair in Salem, OR</title>
-    
-    <!-- External Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+/* ==========================================================================
+   PRODUCTION CSS RESETS & ROOT VARIABLE INITIALIZATION
+   ========================================================================== */
+:root {
+    --navy: #1a2d45;
+    --gold: #b07d4c;        
+    --dark-bg: #0d1b2a;    
+    --ice-blue: #f0f4f8;   
+    --light-text: #e8e8e8;
+    --dark-text: #0d1b2a;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    <!-- SEO & Metadata -->
-    <meta name="description" content="Complete independent auto repair facility in Salem, OR. Specializing in advanced diagnostics, electrical troubleshooting, engine timing, brakes, steering, and suspension mechanical repairs.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="In His Name Automotive">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-    <meta name="geo.region" content="US-OR">
-    <meta name="geo.placename" content="Salem">
-    <meta name="geo.position" content="44.9548;-123.0560">
-    <meta name="ICBM" content="44.9548, -123.0560">
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
-    <meta property="og:type" content="business.business">
-    <meta property="og:title" content="In His Name Automotive | Full-Service Auto Repair">
-    <meta property="og:description" content="Complete mechanical repair, advanced diagnostics, and electrical troubleshooting in Salem, OR. Professional shop service you can trust.">
-    <meta property="og:url" content="https://www.inhisnameautomotive.com/">
-    <meta property="og:image" content="https://www.inhisnameautomotive.com/Images/workshop.png">
-    <meta property="business:contact_data:street_address" content="119 50th Ave NW">
-    <meta property="business:contact_data:locality" content="Salem">
-    <meta property="business:contact_data:region" content="OR">
-    <meta property="business:contact_data:postal_code" content="97304">
-    <meta property="business:contact_data:country_name" content="United States">
-</head>
-<body>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.6;
+}
 
-<header class="header">
-    
-    <div class="header-logo-container">
-        <img src="Images/logo.png" alt="In His Name Automotive Logo" class="header-logo">
-    </div>
+/* ==========================================================================
+   GLOBAL UTILITIES & LAYOUT HELPERS
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-    <h2 class="logo-text">IN HIS NAME AUTOMOTIVE</h2>
-    
-    <div class="header-actions" style="display: flex; align-items: center; gap: 15px;">
-        <!-- BBB Seal -->
-        <a href="https://www.bbb.org/us/or/salem/profile/auto-repairs/in-his-name-automotive-llc-1296-1000198731/#sealclick" 
-           target="_blank" 
-           rel="nofollow" 
-           class="bbb-seal-link">
-            <img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-250-52-whitetxt-bbb-1000198731.png" 
-                 alt="In His Name Automotive, LLC BBB Business Review" 
-                 class="bbb-seal-img">
-        </a>
-        <a href="#contact" class="cta-button">CALL NOW</a>
-    </div>
+.section-padding {
+    padding: 6rem 2rem;
+}
 
-    <!-- Racing Stripe Line Accent -->
-    <div class="header-stripe">
-        <div class="stripe-gradient"></div>
-    </div>
-</header>
-<section class="hero" id="home">
-    <div class="hero-content">
-        
-        <p class="section-label">WEST SALEM, OREGON</p>
-        
-        <h1 class="hero-title">
-            IN HIS NAME <span class="gold">AUTOMOTIVE</span>
-        </h1>
-        
-        <p class="hero-subtitle">
-            Honest repairs. Real proof. Faith-driven service.
-        </p>
-        <p class="hero-tagline-main">
-            No upsells. No BS. Just the truth about your vehicle.
-        </p>
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 
-        <div class="hero-image-container">
-            <img src="Images/workshop.png" alt="In His Name Automotive Shop Lift">
-        </div>
+.section-label {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--gold) !important;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    display: block;
+}
 
-        <div class="hero-features">
-            <div class="hero-custom-card">
-                <div class="checkmark">✓</div>
-                <h4>HONEST ESTIMATES</h4>
-                <p>No hidden fees</p>
-            </div>
-            
-            <div class="hero-custom-card">
-                <div class="checkmark">✓</div>
-                <h4>PHOTO & VIDEO PROOF</h4>
-                <p>Via Tekmetric</p>
-            </div>
-            
-            <div class="hero-custom-card">
-                <div class="checkmark">✓</div>
-                <h4>ZERO UPSELLING</h4>
-                <p>We only fix what's broken</p>
-            </div>
-        </div>
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--dark-text);
+}
 
-    </div>
-</section>
+.section-title .gold,
+.gold {
+    color: var(--gold) !important;
+}
 
-<section class="about" id="about">
-    <div class="about-content">
-        <div class="about-text">
-            <h1 class="section-label">OUR STORY</h1>
-            <h1 class="section-title">
-                <span>BUILT ON FRUSTRATION.</span><br>
-                <span class="gold">DRIVEN BY FAITH.</span>
-            </h1>
-            
-            <div class="quote-box">
-                <div class="cross-icon">✝️</div>
-                <blockquote>
-                    "Honest scales and balances belong to the Lord; all the weights in the bag are of his making."
-                </blockquote>
-                <p class="quote-ref">PROVERBS 16:11</p>
-            </div>
+.white {
+    color: #ffffff !important;
+}
 
-            <p>I started In His Name Automotive because I was tired of watching customers get taken advantage of. Too many shops work on commission. Too many techs are incentivized to find problems that don't exist.</p>
-            <p>We built something different: a shop where every estimate is honest, every repair is necessary, and every customer leaves understanding exactly what was done to their vehicle and why.</p>
-            <p>As a Christian business, we hold ourselves to a standard higher than the industry average. Our faith isn't a marketing angle — it's the reason we do things the way we do.</p>
+/* ==========================================================================
+   HEADER & FLOATING LOGO / BBB SEAL INTEGRATION
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #0d1b2a;
+    z-index: 1000;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo | centered text | actions */
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    overflow: visible !important; /* Prevents logo clipping */
+}
 
-            <div class="owner-profile">
-                <div class="owner-avatar">N</div>
-                <div>
-                    <p class="owner-name">Nathan</p>
-                    <p class="owner-title">Owner & Master Technician</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+.header-logo-container {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    position: relative;
+    z-index: 1010;
+}
 
-<section class="process" id="process">
-    <div class="process-content">
-        <h1 class="section-label">OUR PROCESS</h1>
-        <h1 class="section-title">YOU SEE <span class="gold">EVERYTHING</span></h1>
-        <p class="section-subtitle">Through Tekmetric, we photograph and video every single issue we find — before we ask you to approve a single repair.</p>
+.header-logo {
+    height: 155px;
+    width: auto;
+    margin: 0;
+    /* Header is 70px tall and flex-centers this image by default (top = -42.5px).
+       The stripe sits directly below the header (70px-86px, center at 78px).
+       Shifting down 43px from the natural centered position puts the logo's
+       own vertical center exactly on the stripe's center line. */
+    transform: translateY(43px);
+    filter: drop-shadow(1px 1px 1px rgba(176, 125, 76, 1)) drop-shadow(-1px -1px 1px rgba(176, 125, 76, 1));
+    z-index: 1020;
+    display: block;
+}
 
-        <div class="process-steps">
-            <div class="step process-pop-card">
-                <div class="step-icon">🔧</div>
-                <h4>WE INSPECT YOUR VEHICLE</h4>
-                <p>Our technicians do a thorough inspection — not a walk-around, a real under-the-hood, under-the-car, check-the-fluids inspection.</p>
-            </div>
-            
-            <div class="step process-pop-card">
-                <div class="step-icon">📷</div>
-                <h4>WE DOCUMENT WHAT WE FIND</h4>
-                <p>Every issue is photographed and videoed through Tekmetric. You receive a direct link to see exactly what we're looking at — the actual part, the actual problem.</p>
-            </div>
-            
-            <div class="step process-pop-card">
-                <div class="step-icon">👍</div>
-                <h4>YOU APPROVE THE WORK</h4>
-                <p>Nothing gets fixed until you say so. You review the visual report, ask questions, and approve only the repairs that make sense to you.</p>
-            </div>
-        </div>
-    </div>
-</section>
+.logo-text {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    letter-spacing: 1px;
+    display: block;
+    text-align: center;
+    justify-self: center;
+}
 
-<section class="shop-warranty-section" id="warranty">
-    <div class="warranty-content">
-        <p class="section-label">Guaranteed Workmanship</p>
-        <h3 class="warranty-title">
-            <span>PREMIUM COMPONENTS.</span><br>
-            <span class="gold">BACKED FOR 12 MONTHS OR 12,000 MILES.</span>
-        </h3>
-        
-        <p class="warranty-description">
-            A warranty is only as reliable as the components installed under the hood. We refuse to cut corners with cheaply made retail box-store parts that are prone to early failure. Instead, we source premium, professional-grade components and Original Equipment (OE) matching parts directly through top-tier commercial distribution networks like <strong>FMP (Factory Motor Parts)</strong>, <strong>Worldpac</strong>, and <strong>Parts Authority (IMC / Fast Undercar)</strong>. Because we invest exclusively in commercial-tier quality, we proudly back our workmanship with a written <strong>12-Month / 12,000-Mile warranty</strong>.
-        </p>
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-        <div class="warranty-badge-container">
-            <div class="warranty-badge">
-                <span class="shield-icon">🛡️</span>
-                <div class="badge-text">
-                    <h4>12,000-MILE WARRANTY</h4>
-                    <p>Premium commercial components built to last</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>    
+.bbb-seal-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
-<section class="services" id="services">
-    <div class="process-content">
-        <h1 class="section-label">WHAT WE FIX</h1>
-        <h1 class="section-title">SERVICES <span class="gold">OFFERED</span></h1>
+.bbb-seal-img {
+    height: 48px;
+    width: auto;
+    display: block;
+    border: 0;
+}
 
-        <div class="process-steps">
-            
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">💎</div>
-                        <h4>ENGINE DIAGNOSTICS</h4>
-                        <p>Full computer diagnostics with clear explanations of what the codes mean and what actually needs repair.</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="Images/EngineDiag.png" alt="Engine Diagnostics">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">🔧</div>
-                        <h4>BRAKE SERVICE</h4>
-                        <p>Pad and rotor replacement, caliper inspection, fluid flushes — with photos so you see the wear yourself.</p>
-                    </div>
-                                                            <div class="card-back as-slideshow">
-                        <img src="Images/Brakes1.png" alt="Brake Service 1" class="as-img brake-img">
-                        <img src="Images/Brakes2.png" alt="Brake Service 2" class="as-img brake-img">
-                        <img src="Images/Brakes3.png" alt="Brake Service 3" class="as-img brake-img">
-                        <img src="Images/Brakes4.png" alt="Brake Service 4" class="as-img brake-img">
-                        <img src="Images/Brakes5.png" alt="Brake Service 5" class="as-img brake-img">
-                        <div class="as-dots">
-                            <span class="as-dot brake-dot"></span>
-                            <span class="as-dot brake-dot"></span>
-                            <span class="as-dot brake-dot"></span>
-                            <span class="as-dot brake-dot"></span>
-                            <span class="as-dot brake-dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">🚗</div>
-                        <h4>SUSPENSION & STEERING</h4>
-                        <p>Shocks, struts, tie rods, alignments — we diagnose precisely and only recommend what's needed.</p>
-                    </div>
-                                                            <div class="card-back as-slideshow">
-                        <img src="Images/Suspension01.png" alt="Suspension Repair 1" class="as-img suspension-img">
-                        <img src="Images/Suspension02.png" alt="Suspension Repair 2" class="as-img suspension-img">
-                        <img src="Images/Suspension03.png" alt="Suspension Repair 3" class="as-img suspension-img">
-                        <img src="Images/Suspension04.png" alt="Suspension Repair 4" class="as-img suspension-img">
-                        <img src="Images/Suspension05.png" alt="Suspension Repair 5" class="as-img suspension-img">
-                        <img src="Images/Suspension06.png" alt="Suspension Repair 6" class="as-img suspension-img">
-                        <img src="Images/Suspension07.png" alt="Suspension Repair 7" class="as-img suspension-img">
-                        <img src="Images/Suspension08.png" alt="Suspension Repair 8" class="as-img suspension-img">
-                        <img src="Images/Suspension09.png" alt="Suspension Repair 9" class="as-img suspension-img">
-                        <img src="Images/Suspension10.png" alt="Suspension Repair 10" class="as-img suspension-img">
-                        <img src="Images/Suspension11.png" alt="Suspension Repair 11" class="as-img suspension-img">
-                        <img src="Images/Suspension12.png" alt="Suspension Repair 12" class="as-img suspension-img">
-                        <img src="Images/Suspension13.png" alt="Suspension Repair 13" class="as-img suspension-img">
-                        <div class="as-dots">
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                            <span class="as-dot suspension-dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+.cta-button {
+    background-color: var(--gold);
+    color: #ffffff;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
 
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">🌡️</div>
-                        <h4>COOLING SYSTEM</h4>
-                        <p>Radiator, thermostat, hoses, water pump. We keep your engine running at the safe temperature layout it needs.</p>
-                    </div>
-                                                            <div class="card-back as-slideshow">
-                        <img src="Images/HeaterCore1.png" alt="Cooling System Service 1" class="as-img coolant-img">
-                        <img src="Images/HeaterCore2.png" alt="Cooling System Service 2" class="as-img coolant-img">
-                        <img src="Images/HeaterCore3.png" alt="Cooling System Service 3" class="as-img coolant-img">
-                        <img src="Images/HeaterCore4.png" alt="Cooling System Service 4" class="as-img coolant-img">
-                        <img src="Images/HeaterCore5.png" alt="Cooling System Service 5" class="as-img coolant-img">
-                        <img src="Images/HeaterCore6.png" alt="Cooling System Service 6" class="as-img coolant-img">
-                        <div class="as-dots">
-                            <span class="as-dot coolant-dot"></span>
-                            <span class="as-dot coolant-dot"></span>
-                            <span class="as-dot coolant-dot"></span>
-                            <span class="as-dot coolant-dot"></span>
-                            <span class="as-dot coolant-dot"></span>
-                            <span class="as-dot coolant-dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+.cta-button:hover {
+    background-color: #8c6139;
+}
 
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">⚙️</div>
-                        <h4>ENGINE REPAIR</h4>
-                        <p>From minor component fixes, leaks, and timing belts to full engine replacements. Reliable mechanical work built to last.</p>
-                    </div>
-                                                            <div class="card-back as-slideshow">
-                        <img src="Images/HeadGasket1.png" alt="Engine Repair 1" class="as-img gasket-img">
-                        <img src="Images/HeadGasket2.png" alt="Engine Repair 2" class="as-img gasket-img">
-                        <img src="Images/HeadGasket3.png" alt="Engine Repair 3" class="as-img gasket-img">
-                        <img src="Images/HeadGasket4.png" alt="Engine Repair 4" class="as-img gasket-img">
-                        <img src="Images/HeadGasket5.png" alt="Engine Repair 5" class="as-img gasket-img">
-                        <img src="Images/HeadGasket6.png" alt="Engine Repair 6" class="as-img gasket-img">
-                        <div class="as-dots">
-                            <span class="as-dot gasket-dot"></span>
-                            <span class="as-dot gasket-dot"></span>
-                            <span class="as-dot gasket-dot"></span>
-                            <span class="as-dot gasket-dot"></span>
-                            <span class="as-dot gasket-dot"></span>
-                            <span class="as-dot gasket-dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+.header-stripe {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background-color: #0d1b2a;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    display: block;
+    z-index: 1000;
+}
 
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">⚙️</div>
-                        <h4>TRANSMISSION SERVICE</h4>
-                        <p>Fluid services, diagnostics, and honest guidance on whether a repair or rebuild is truly needed.</p>
-                    </div>
-                    <div class="card-back as-slideshow">
-                        <img src="Images/TRANS01.jpg" alt="Transmission Service 1" class="as-img trans-img">
-                        <img src="Images/TRANS02.jpg" alt="Transmission Service 2" class="as-img trans-img">
-                        <img src="Images/TRANS03.jpg" alt="Transmission Service 3" class="as-img trans-img">
-                        <img src="Images/TRANS04.jpg" alt="Transmission Service 4" class="as-img trans-img">
-                        <img src="Images/TRANS05.jpg" alt="Transmission Service 5" class="as-img trans-img">
-                        <img src="Images/TRANS06.jpg" alt="Transmission Service 6" class="as-img trans-img">
-                        <img src="Images/TRANS07.jpg" alt="Transmission Service 7" class="as-img trans-img">
-                        <img src="Images/TRANS08.jpg" alt="Transmission Service 8" class="as-img trans-img">
-                        <img src="Images/TRANS09.jpg" alt="Transmission Service 9" class="as-img trans-img">
-                        <img src="Images/TRANS10.jpg" alt="Transmission Service 10" class="as-img trans-img">
-                        <img src="Images/TRANS11.png" alt="Transmission Service 11" class="as-img trans-img">
-                        <img src="Images/TRANS12.jpg" alt="Transmission Service 12" class="as-img trans-img">
-                        <div class="as-dots">
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                            <span class="as-dot trans-dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+.stripe-gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        #0d1b2a 0px, #0d1b2a 3px,
+        #ffcc00 3px, #ffcc00 6px,
+        #0d1b2a 6px, #0d1b2a 10px,
+        #ffcc00 10px, #ffcc00 13px,
+        #0d1b2a 13px, #0d1b2a 16px
+    );
+}
 
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">❄️</div>
-                        <h4>A/C REPAIR</h4>
-                        <p>Leaking refrigerant, warm air blowing, or a noisy compressor? We diagnose, recharge, and fix your climate control system completely.</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="Images/ACRepair.png" alt="A/C Repair">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">🔋</div>
-                        <h4>ELECTRICAL SYSTEMS</h4>
-                        <p>Batteries, alternators, starters, and wiring diagnosis. Modern vehicles need modern diagnostic tools.</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="Images/Electrical.png" alt="Electrical Systems">
-                    </div>
-                </div>
-            </div>
+/* ==========================================================================
+   HERO & BRAND INTRODUCTION SECTION
+   ========================================================================== */
+.hero {
+    position: relative;
+    padding: 7rem 2rem 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1b2a 100%);
+}
 
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">🛢️</div>
-                        <h4>OIL CHANGES</h4>
-                        <p>Quick, thorough service. We check your filters, fluids, and tire pressure while we're at it.</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="Images/OilChange2.png" alt="Oil Changes">
-                    </div>
-                </div>
-            </div>
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">📋</div>
-                        <h4>SCHEDULED MAINTENANCE</h4>
-                        <p>30k, 60k, and 90k factory mileage checks to keep your vehicle's warranty status intact.</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="Images/ScheduledMaintance.png" alt="Scheduled Maintenance">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">🛡️</div>
-                        <h4>PRE-PURCHASE INSPECTIONS</h4>
-                        <p>Buying a used car? We'll give you the full picture — good and bad — before you sign anything.</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="Images/PrePurchace.png" alt="Pre-Purchase Inspection">
-                    </div>
-                </div>
-            </div>
+.hero-title {
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-size: 3rem;
+}
 
-            <div class="step services-flip-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="step-icon">🌬️</div>
-                        <h4>OZONE DEODORIZING</h4>
-                        <p>Eliminate stubborn odors, mold, and bacteria permanently with an industrial ozone treatment paired with a fresh cabin air filter.</p>
-                    </div>
-                    <div class="card-back">
-                        <img src="Images/OzoneDeodorizing.png" alt="Ozone Deodorizing and Cabin Air Filter">
-                    </div>
-                </div>
-            </div>
+.hero-subtitle {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #b0b0b0;
+    font-size: 1.2rem;
+}
 
-        </div>
+.hero-tagline-main {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
 
-        <p class="services-footer">Don't see your specific issue listed? Call us – if we can't help, we'll tell you who can.</p>
-    </div>
-</section>
-    
-<section class="testimonials" id="testimonials">
-    <div class="testimonials-content">
-        <h1 class="section-label">WHAT CUSTOMERS SAY</h1>
-        
-        <h1 class="section-title">
-            <span>REAL PEOPLE. </span><span class="gold">REAL RESULTS.</span>
-        </h1>
+.hero-image-container {
+    max-width: 1100px;
+    margin: 0 auto 4rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 2px solid var(--gold);
+    width: 100%;
+}
 
-        <div class="testimonial-slider-viewport">
-            <div class="testimonial-slider-track">
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-c">B</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Brooke China</span>
-                                <span class="reviewer-stats-text">5 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Save yourself the time of looking for a mechanic and go see Nathan! From the very beginning, he was thorough and showed me every repair my car needed, breaking them down from the most critical to the least. His estimates are easy to read and navigate. I approved the repairs I wanted and declined the ones that can wait for now. He was also so helpful in giving me multiple ways I could potentially pay for the repairs and went above and beyond to answer all of my questions. Not once was there any pressure or upselling. As a single parent who uses her car to support community members and advocate for families from Polk to Marion to Lane to Douglas counties, his service means more to me than I could ever express. I will be coming back!"</p>
-                    </a>
-                </div>
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto 0 auto;
+    align-items: stretch;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-m">M</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Marilyn Nagel</span>
-                                <span class="reviewer-stats-text">1 review</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"We are very happy to have found Nathan. He was so very thorough. He took all the time we needed to understand what he found, and his assessment of it. His honesty is a quality he possesses beyond the normal."</p>
-                    </a>
-                </div>
+.hero-custom-card {
+    background: #ffffff !important;
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    border: 2px solid transparent !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+    cursor: pointer;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-b">B</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Byron Inscoe</span>
-                                <span class="reviewer-stats-text">1 review</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Excellent service and care. These guys are top-notch. Professional and honest. They check everything and if you don't need it they tell you you don't need it. One of the few places you can truly trust."</p>
-                    </a>
-                </div>
+.hero-custom-card .checkmark {
+    font-size: 1.5rem !important;
+    color: var(--gold) !important; 
+    margin-bottom: 0.5rem !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-t">T</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Tasia Smith</span>
-                                <span class="reviewer-stats-text">1 review</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Nathan did an inspection on my car. He took photos and explained different areas. It is very hard to find an awesome and honest Mechanic. Moving forward, we will only be going to Nathan."</p>
-                    </a>
-                </div>
+.hero-custom-card h4 {
+    color: #0d1b2a !important; 
+    font-weight: 800 !important;
+    margin: 0 0 0.5rem 0 !important;
+    letter-spacing: 1px !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-tc">T</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Teryll Cardona</span>
-                                <span class="reviewer-stats-text">3 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Great price! He listened to my concerns, checked out the used Subaru that I bought, and determined the issues quickly. He gave me photos of the issues and an estimate for each repair. Very pleased!"</p>
-                    </a>
-                </div>
+.hero-custom-card p {
+    color: #4a5568 !important; 
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-bs">B</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Bryan Smith</span>
-                                <span class="reviewer-stats-text">Local Guide • 20 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"This business feels like having a private mechanic available to you. He's very honest, and only charges what's needed. Incredibly affordable. I was expecting to pay $1000+, and it ended up being $500."</p>
-                    </a>
-                </div>
+.hero-custom-card:hover {
+    background-color: #e6f2ff !important; 
+    border-color: var(--gold) !important;
+    transform: translateY(-6px) !important; 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-c">C</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Carmelita Grace</span>
-                                <span class="reviewer-stats-text">2 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Last week I had a great experience with this skilled, knowledgeable and honest mechanic and I will continue to go to him for all mine and my families vehicle needs. I highly recommend In His Name Automotive."</p>
-                    </a>
-                </div>
+/* ==========================================================================
+   ABOUT & OWNER EDITORIAL SECTION
+   ========================================================================== */
+.about {
+    background-color: var(--ice-blue) !important;
+    color: var(--dark-text) !important;
+    padding: 5rem 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-a">A</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">A Teeter</span>
-                                <span class="reviewer-stats-text">Local Guide • 29 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"this is the second time I've needed help getting my truck running. The man that works at the shop is very fair in pricing and he even tried to work with me the best he could at what I needed done with my budget. I am so very thankful. I had a great experience and I'll be coming back..."</p>
-                    </a>
-                </div>
+.about-content {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-b">B</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Bell Gardens Landscape, Inc</span>
-                                <span class="reviewer-stats-text">7 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"I can't say enough good things about Nathan at In His Name Automotive. Nathan is honest, knowledgeable, and truly cares about doing the job right. He took the time to thoroughly diagnose my truck, explain what was going on, and kept me informed throughout the repair process. Even when we ran into a defective remanufactured transfer case that required a warranty replacement, Nathan stood behind his work and handled everything professionally. His attention to detail and commitment to quality gave me confidence that my truck was in good hands. It's hard to find a mechanic you can truly trust, and Nathan has earned mine. I highly recommend In His Name Automotive to anyone looking for honest, high-quality automotive repairs. Thank you for getting my truck back on the road!"</p>
-                    </a>
-                </div>
+.about .section-title {
+    color: var(--dark-text) !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-t">T</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Tabitha Sartain-Ragsac</span>
-                                <span class="reviewer-stats-text">Local Guide • 35 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Great price! Nathan took the time to not only thoroughly check my car, but also to show me things that were wrong. He also talked me through some of the things he was doing to fix my car. 10/10 definitely going again!!"</p>
-                    </a>
-                </div>
+.about-text p {
+    color: #4a5568 !important;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-c">P</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Patty Sheldon</span>
-                                <span class="reviewer-stats-text">5 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Reasonable price. The alternator on my 2018 Nissan Rogue went out on me! After a lot of frustration trying to figure out how to get it fixed, I found In His Name Automotive. They were able to run diagnostics and provide pictures and estimates on everything that needed repairs. Turns out I needed a bit more than just the alternator replaced. I can't think of a time where any other place I've taken my vehicle has provided pictures of what needs to be repaired and why. Nathan took the time to explain some things to me when I picked up my vehicle. In His Name Automotive is very honest and upfront with their customers. I would highly recommended this repair shop to anyone."</p>
-                    </a>
-                </div>
+.quote-box {
+    background: #ffffff !important;
+    border-left: 4px solid var(--gold) !important;
+    padding: 2rem !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04) !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-bs">S</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Susan Trumm</span>
-                                <span class="reviewer-stats-text">Local Guide • 12 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Reasonable price. We were very happy with the ease of appointment day and time, diagnostics and information regarding our 2008 BMW 528i. Will definitely use this shop again."</p>
-                    </a>
-                </div>
+.cross-icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+}
 
-                <div class="testimonial-card-element">
-                    <a href="https://maps.google.com" target="_blank" class="testimonial-card testimonial-link testimonial-pop-card">
-                        <div class="reviewer-header">
-                            <div class="reviewer-avatar avatar-tc">H</div>
-                            <div class="reviewer-info-block">
-                                <span class="reviewer-name-text">Hugh Baker</span>
-                                <span class="reviewer-stats-text">9 reviews</span>
-                            </div>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"I've taken my van to T&R Automotive, Chuck's Automotive, Abdels, Frontie Automotive in the last 2 or 3 years and they never found an issue with the front left wheel bearing. It's been an issue for years, but today I drove it and it feels like new again. Very impressed with In His Name Automotive for finding and fixing this. I can drive confidently again."</p>
-                    </a>
-                </div>
+.quote-box blockquote {
+    color: var(--dark-text) !important;
+    font-style: italic !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0.5rem !important;
+}
 
-            </div>
-        </div>
+.quote-ref {
+    color: var(--gold) !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+}
 
-        <div class="review-cta">
-            <p>Had a great experience at In His Name Automotive? We'd love to hear about it.</p>
-            <a href="https://loyaltyvisits.com/ReviewLocation/TiPcSLfHLkC2mR4DeCYu1w" target="_blank" class="gold-link">LEAVE A GOOGLE REVIEW →</a>
-        </div>
-    </div>
-</section>
-    
-<section class="why-us" id="why-us">
-    <div class="why-us-content">
-        <h1 class="section-label">WHY CHOOSE US</h1>
-        
-        <h1 class="section-title">
-            <span class="white">A SHOP YOU CAN </span><span class="gold">ACTUALLY TRUST</span>
-        </h1>
-        
-        <p class="section-subtitle">We built this shop around one question: what would it look like if an auto repair shop treated every customer the way we'd want to be treated?</p>
+.owner-profile {
+    display: flex !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    margin-top: 2rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid rgba(26,37,48,0.1) !important;
+}
 
-        <div class="benefits-grid">
-            <div class="benefit-card whyus-pop-card">
-                <div class="benefit-number">01</div>
-                <h4>HONEST ESTIMATES, EVERY TIME</h4>
-                <p>You'll never get a bill full of surprise line items. We walk you through exactly what needs to be done and why before any work begins.</p>
-            </div>
-            
-            <div class="benefit-card whyus-pop-card">
-                <div class="benefit-number">02</div>
-                <h4>VISUAL PROOF OF EVERY ISSUE</h4>
-                <p>Through Tekmetric, we document every problem with photos and videos. You see the worn brake pad, the leaking gasket, the cracked belt — not just our word for it.</p>
-            </div>
-            
-            <div class="benefit-card whyus-pop-card">
-                <div class="benefit-number">03</div>
-                <h4>FAITH-DRIVEN STANDARDS</h4>
-                <p>Our business is built on Proverbs 16:11 — "Honest scales and balances belong to the Lord." We hold ourselves to a higher standard.</p>
-            </div>
-        </div>
-    </div>
-</section>
+.owner-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    background: var(--gold) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+}
 
-<section class="financing-section" id="financing">
-    <div class="financing-content">
-        <p class="section-label">Flexible Payment Options</p>
-        
-        <h3 class="section-title">
-            <span>DONT LET YOUR REPAIR COSTS </span><span class="gold">STALL YOUR LIFE</span>
-        </h3>
-        
-        <div class="financing-story">
-            <p>
-                We get it—vehicle breakdowns never happen at a convenient time, and unexpected repair bills can completely catch you off guard. But putting off a critical safety fix or losing your daily transportation shouldn't have to be your only choice.
-            </p>
-            <p class="financing-subtext">
-                At <strong>In His Name Automotive</strong>, we care about keeping you safely on the road without draining your savings. That's why we partner with trusted financing providers to offer flexible, no-stress payment plans tailored to your budget. Get approved in minutes and get back on the road today.
-            </p>
-        </div>
+.owner-name {
+    color: var(--dark-text) !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+}
 
-        <div class="banner-stack-container">
-            <div class="finance-banner-card">
-                <a href="https://snapf.in/bfrCyPw" target="_blank" rel="noopener noreferrer">
-                    <img src="https://merchant-banners-s3.snapfinance.com/Loans/EN/A646x80.jpeg" alt="Snap Finance - Apply Here">
-                </a>
-            </div>
+.owner-title {
+    color: var(--gold) !important;
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+}
 
-            <div class="divider-text">— OR —</div>
+/* ==========================================================================
+   OPERATIONAL PROCESS METHODOLOGY
+   ========================================================================== */
+.process {
+    background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important;
+    color: #e8e8e8 !important;
+    padding: 5rem 2rem !important;
+}
 
-            <div class="finance-banner-card">
-                <a href="https://customerappx.easypayfinance.com/findastore?b=b1f21256" target="_blank">
-                    <img src="https://businesscenter.easypayfinance.com/layout/images/EasyPay_Web_Banner_Horizontal.jpg" alt="Easy Pay Finance - Apply Here">
-                </a>
-            </div>
-        </div>
+.process-content {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
 
-    </div>
-</section>
+.process .section-title {
+    color: #ffffff !important;
+}
 
-<section id="contact" class="contact-section">
-    <div class="contact-content-container">
-        
-        <div class="contact-header-block">
-            <p class="section-label">GET IN TOUCH</p>
-            <h3 class="contact-main-title">
-                <span class="white">COME SEE US.</span>
-                <span class="gold">WE'LL BE STRAIGHT WITH YOU.</span>
-            </h3>
-            <p class="contact-subtext">
-                Call, email, or just drop by. No waiting room games, no service advisor sales pitch. Just honest answers.
-            </p>
-        </div>
+.process-subtitle {
+    color: #b0b0b0;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
 
-        <div class="contact-layout-wrapper">
-            <div class="contact-boxes">
-                <a href="tel:9714286446" class="contact-box contact-pop-card">
-                    <span class="contact-label">CALL OR TEXT</span>
-                    <span class="contact-value val-phone">971.428.6446</span>
-                </a>
-                
-                <a href="mailto:Nathan@InHisNameAutomotive.com" class="contact-box contact-pop-card">
-                    <span class="contact-label">EMAIL</span>
-                    <span class="contact-value val-email">Nathan@InHisNameAutomotive.com</span>
-                </a>
-                
-                <a href="https://maps.google.com/maps?q=119+50th+Ave+NW,+Salem,+OR+97304&t=&z=15&ie=UTF8&iwloc=&output=embed" target="_blank" rel="noopener noreferrer" class="contact-box contact-pop-card">
-                    <span class="contact-label">LOCATION</span>
-                    <span class="contact-value val-address">119 50th Ave NW<br>Salem, OR 97304</span>
-                </a>
-            </div>
+.process-steps {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    align-items: stretch !important;
+    margin-top: 3rem !important;
+}
 
-            <div class="map-container">
-                <iframe 
-                    src="https://maps.google.com/maps?q=119+50th+Ave+NW,+Salem,+OR+97304&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </div>
-</section>
+.process-pop-card {
+    margin: 0 !important;
+    background: #ffffff !important;
+    border: 2px solid transparent !important;
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer;
+}
 
-<footer class="footer">
-    <div class="footer-grid-layout">
-        
-        <div class="footer-col-block">
-            <div class="partner-alignment-zone">
-                <div class="partner-badge-wrapper">
-                    <span class="partner-label">Affiliated With</span>
-                    <a href="https://www.prosalem.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="Images/ProSalemNavy.png" alt="Pro Salem Networking logo" class="partner-logo-img">
-                    </a>
-                </div>
-                <h3>LOCAL EXPERTS</h3>
-                <p>Proudly partnered with local professionals you can trust across our community. <br>
-                   <a href="https://www.prosalem.com/" target="_blank" rel="noopener noreferrer" class="visit-link">Visit Website →</a>
-                </p>
-            </div>
-        </div>
+.process-pop-card h4 {
+    color: #0d1b2a !important;
+    font-weight: bold !important;
+    margin-bottom: 0.8rem !important;
+    transition: color 0.3s ease !important;
+}
 
-        <div class="footer-col-block">
-            <div class="partner-alignment-zone">
-                <h3>CERTIFIED SHOP</h3>
-                <div class="partner-badge-wrapper carfax-wrap">
-                    <img src="Images/Carfax.png" alt="CARFAX Car Care Service Center" class="partner-logo-img carfax-img">
-                </div>
-                <div class="partner-badge-wrapper ase-wrap">
-                    <img src="Images/ASECert.png" alt="ASE Certified Facility" class="partner-logo-img ase-img">
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-col-block">
-            <h4>IN HIS NAME AUTOMOTIVE</h4>
-            <p>Honest auto repair. Faith-driven standards. Serving Salem, OR and surrounding communities.</p>
-            <p class="scripture">"Do to others as you would have them do to you." – Luke 6:31</p>
-        </div>
-        
-        <div class="footer-col-block">
-            <h3>CONTACT</h3>
-            <p>📞 <a href="tel:9714286446">971.428.6446</a></p>
-            <p class="footer-email-line">✉️ <a href="mailto:Nathan@InHisNameAutomotive.com">Nathan@InHisNameAutomotive.com</a></p>
-            <p class="address-p">📍 119 50th Ave NW<br>Salem, OR 97304</p>
-        </div>
-        
-    </div>
+.process-pop-card p {
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    transition: color 0.3s ease !important;
+}
 
-    <div class="footer-jumpto-row">
-        <h3>JUMP TO</h3>
-        <ul class="footer-link-list">
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#process">HOW WE WORK</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#why-us">WHY CHOOSE US</a></li>
-            <li><a href="#testimonials">TESTIMONIALS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-    </div>
+.process-pop-card:hover {
+    background-color: #e6f2ff !important;
+    border-color: var(--gold) !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+}
 
-    <hr class="footer-divider-line">
+/* ==========================================================================
+   WARRANTY SECTION
+   ========================================================================== */
+.shop-warranty-section {
+    background-color: var(--ice-blue) !important;
+    padding: 6rem 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
 
-    <div class="footer-copyright-row">
-        <p>© 2026 In His Name Automotive - Salem, OR</p>
-        <p>Operating with faith, integrity, and honest hands</p>
-    </div>
-</footer>
+.warranty-content {
+    max-width: 1100px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
 
-<!-- Floating RepairPal estimator — stays fixed to the lower-left corner on every page, pure CSS toggle, no JS -->
-<input type="checkbox" id="repairpal-toggle" class="repairpal-toggle-input">
-<div class="repairpal-float">
-    <label for="repairpal-toggle" class="repairpal-float-tab">
-        <span class="repairpal-tab-icon">🔧</span>
-        <span class="repairpal-tab-text">Get a Repair Estimate</span>
-    </label>
-    <div class="repairpal-float-panel">
-        <label for="repairpal-toggle" class="repairpal-float-close" aria-label="Close estimator">✕</label>
-        <iframe id="estimator-widget-preview" title="RepairPal Service Estimator" class="repairpal-iframe" src="https://repairpal.com/estimator_widgets/v3/embedded?service_location_id=432438"></iframe>
-    </div>
-</div>
+.warranty-title {
+    margin: 0 auto 1.5rem auto !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    color: var(--dark-text) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-</body>
-</html>
+.warranty-description {
+    max-width: 1100px !important;
+    margin: 0 auto 3.5rem auto !important;
+    color: #4a5568 !important;
+    line-height: 1.7 !important;
+    font-size: 1.1rem !important;
+}
+
+.warranty-badge-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.warranty-badge {
+    background-color: #ffffff !important;
+    border: 2px solid var(--gold) !important;
+    padding: 2rem 4rem !important;
+    border-radius: 8px !important;
+    color: #0d1b2a !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04) !important;
+}
+
+.shield-icon {
+    font-size: 2.5rem !important;
+    line-height: 1 !important;
+}
+
+.badge-text {
+    text-align: left !important;
+}
+
+.badge-text h4 {
+    margin: 0 !important;
+    font-weight: 800 !important;
+    font-size: 1.3rem !important;
+    color: #0d1b2a !important;
+    letter-spacing: 0.5px;
+}
+
+.badge-text p {
+    margin: 0 !important;
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   SERVICES SECTION
+   ========================================================================== */
+.services, 
+#services {
+    background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important;
+    padding: 6rem 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+#services .section-title,
+#services h2,
+#services h3,
+#services .section-label {
+    color: #ffffff !important;
+}
+
+#services .process-content {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+#services .services-flip-card {
+    background: transparent;
+    perspective: 1000px;
+    min-height: 320px;
+}
+
+#services .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "stack";
+    text-align: left;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+#services .services-flip-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+#services .card-front, #services .card-back {
+    grid-area: stack;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: var(--card-shadow);
+}
+
+#services .card-front {
+    background: #ffffff !important;
+    border: 2px solid transparent !important;
+    padding: 2.5rem 2rem !important;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+#services .card-front .step-icon {
+    font-size: 2.2rem !important;
+    margin-bottom: 1.2rem !important;
+}
+
+#services .card-front h4 {
+    color: var(--dark-text) !important;
+    font-size: 1.25rem !important;
+    font-weight: bold !important;
+    margin-bottom: 0.8rem !important;
+}
+
+#services .card-front p {
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+
+#services .services-flip-card:hover .card-front {
+    border-color: var(--gold) !important;
+}
+
+#services .card-back {
+    transform: rotateY(180deg);
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--gold) !important;
+    background-color: var(--dark-bg) !important;
+}
+
+#services .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   SERVICES SLIDESHOW (pure CSS autoplay, no JavaScript)
+   Each slideshow fades through its images automatically. A row of dots below
+   shows progress — one dot lit gold at a time, moving as the picture changes.
+   No click controls. To add a new slideshow, copy one of these blocks,
+   rename the class prefix, and set the slide count.
+   ========================================================================== */
+
+#services .card-back.as-slideshow {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    background: #000 !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+#services .services-flip-card:hover .card-back.as-slideshow {
+    visibility: visible;
+    opacity: 1;
+}
+
+#services .as-img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* photo fills the whole box; box size never changes */
+    object-position: center !important;
+    display: block !important;
+    opacity: 0;
+    z-index: 1;
+    animation-play-state: paused !important;
+}
+
+/* Slide 1 shows first via its own animation (delay 0). It must NOT be pinned with
+   !important, or it stays visible underneath every other photo. */
+#services .as-img:nth-child(1) {
+    opacity: 1;
+    z-index: 2;
+}
+
+#services .services-flip-card:hover .as-img {
+    animation-play-state: running !important;
+}
+
+#services .as-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    padding: 0 12px;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+#services .as-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    display: block;
+    animation-play-state: paused !important;
+}
+
+/* Slide 1's dot starts lit while paused (pre-hover). Not !important —
+   once the animation is running, each dot's own keyframe takes over,
+   including fading dot 1 back out when its turn ends. */
+#services .as-dot:nth-child(1) {
+    background: var(--gold);
+}
+
+#services .services-flip-card:hover .as-dot {
+    animation-play-state: running !important;
+}
+
+/* BRAKE SLIDESHOW — 5 images, 20s full cycle */
+#services .brake-img { animation: brakeFadeAS 20s infinite ease-in-out; }
+#services .brake-img:nth-child(1) { animation-delay: 0s; }
+#services .brake-img:nth-child(2) { animation-delay: 4s; }
+#services .brake-img:nth-child(3) { animation-delay: 8s; }
+#services .brake-img:nth-child(4) { animation-delay: 12s; }
+#services .brake-img:nth-child(5) { animation-delay: 16s; }
+
+@keyframes brakeFadeAS {
+    0%, 20.0% { opacity: 1; z-index: 2; }
+    25.0%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .brake-dot { animation: brakeDotAS 20s infinite ease-in-out; }
+#services .brake-dot:nth-child(1) { animation-delay: 0s; }
+#services .brake-dot:nth-child(2) { animation-delay: 4s; }
+#services .brake-dot:nth-child(3) { animation-delay: 8s; }
+#services .brake-dot:nth-child(4) { animation-delay: 12s; }
+#services .brake-dot:nth-child(5) { animation-delay: 16s; }
+
+@keyframes brakeDotAS {
+    0%, 20.0% { background: var(--gold); }
+    25.0%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+/* SUSPENSION SLIDESHOW — 13 images, 52s full cycle */
+#services .suspension-img { animation: suspensionFadeAS 52s infinite ease-in-out; }
+#services .suspension-img:nth-child(1) { animation-delay: 0s; }
+#services .suspension-img:nth-child(2) { animation-delay: 4s; }
+#services .suspension-img:nth-child(3) { animation-delay: 8s; }
+#services .suspension-img:nth-child(4) { animation-delay: 12s; }
+#services .suspension-img:nth-child(5) { animation-delay: 16s; }
+#services .suspension-img:nth-child(6) { animation-delay: 20s; }
+#services .suspension-img:nth-child(7) { animation-delay: 24s; }
+#services .suspension-img:nth-child(8) { animation-delay: 28s; }
+#services .suspension-img:nth-child(9) { animation-delay: 32s; }
+#services .suspension-img:nth-child(10) { animation-delay: 36s; }
+#services .suspension-img:nth-child(11) { animation-delay: 40s; }
+#services .suspension-img:nth-child(12) { animation-delay: 44s; }
+#services .suspension-img:nth-child(13) { animation-delay: 48s; }
+
+@keyframes suspensionFadeAS {
+    0%, 7.69% { opacity: 1; z-index: 2; }
+    12.69%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .suspension-dot { animation: suspensionDotAS 52s infinite ease-in-out; }
+#services .suspension-dot:nth-child(1) { animation-delay: 0s; }
+#services .suspension-dot:nth-child(2) { animation-delay: 4s; }
+#services .suspension-dot:nth-child(3) { animation-delay: 8s; }
+#services .suspension-dot:nth-child(4) { animation-delay: 12s; }
+#services .suspension-dot:nth-child(5) { animation-delay: 16s; }
+#services .suspension-dot:nth-child(6) { animation-delay: 20s; }
+#services .suspension-dot:nth-child(7) { animation-delay: 24s; }
+#services .suspension-dot:nth-child(8) { animation-delay: 28s; }
+#services .suspension-dot:nth-child(9) { animation-delay: 32s; }
+#services .suspension-dot:nth-child(10) { animation-delay: 36s; }
+#services .suspension-dot:nth-child(11) { animation-delay: 40s; }
+#services .suspension-dot:nth-child(12) { animation-delay: 44s; }
+#services .suspension-dot:nth-child(13) { animation-delay: 48s; }
+
+@keyframes suspensionDotAS {
+    0%, 7.69% { background: var(--gold); }
+    12.69%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+/* COOLANT SLIDESHOW — 6 images, 24s full cycle */
+#services .coolant-img { animation: coolantFadeAS 24s infinite ease-in-out; }
+#services .coolant-img:nth-child(1) { animation-delay: 0s; }
+#services .coolant-img:nth-child(2) { animation-delay: 4s; }
+#services .coolant-img:nth-child(3) { animation-delay: 8s; }
+#services .coolant-img:nth-child(4) { animation-delay: 12s; }
+#services .coolant-img:nth-child(5) { animation-delay: 16s; }
+#services .coolant-img:nth-child(6) { animation-delay: 20s; }
+
+@keyframes coolantFadeAS {
+    0%, 16.67% { opacity: 1; z-index: 2; }
+    21.67%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .coolant-dot { animation: coolantDotAS 24s infinite ease-in-out; }
+#services .coolant-dot:nth-child(1) { animation-delay: 0s; }
+#services .coolant-dot:nth-child(2) { animation-delay: 4s; }
+#services .coolant-dot:nth-child(3) { animation-delay: 8s; }
+#services .coolant-dot:nth-child(4) { animation-delay: 12s; }
+#services .coolant-dot:nth-child(5) { animation-delay: 16s; }
+#services .coolant-dot:nth-child(6) { animation-delay: 20s; }
+
+@keyframes coolantDotAS {
+    0%, 16.67% { background: var(--gold); }
+    21.67%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+/* GASKET SLIDESHOW — 6 images, 24s full cycle */
+#services .gasket-img { animation: gasketFadeAS 24s infinite ease-in-out; }
+#services .gasket-img:nth-child(1) { animation-delay: 0s; }
+#services .gasket-img:nth-child(2) { animation-delay: 4s; }
+#services .gasket-img:nth-child(3) { animation-delay: 8s; }
+#services .gasket-img:nth-child(4) { animation-delay: 12s; }
+#services .gasket-img:nth-child(5) { animation-delay: 16s; }
+#services .gasket-img:nth-child(6) { animation-delay: 20s; }
+
+@keyframes gasketFadeAS {
+    0%, 16.67% { opacity: 1; z-index: 2; }
+    21.67%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .gasket-dot { animation: gasketDotAS 24s infinite ease-in-out; }
+#services .gasket-dot:nth-child(1) { animation-delay: 0s; }
+#services .gasket-dot:nth-child(2) { animation-delay: 4s; }
+#services .gasket-dot:nth-child(3) { animation-delay: 8s; }
+#services .gasket-dot:nth-child(4) { animation-delay: 12s; }
+#services .gasket-dot:nth-child(5) { animation-delay: 16s; }
+#services .gasket-dot:nth-child(6) { animation-delay: 20s; }
+
+@keyframes gasketDotAS {
+    0%, 16.67% { background: var(--gold); }
+    21.67%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+/* TRANS SLIDESHOW — 12 images, 48s full cycle */
+#services .trans-img { animation: transFadeAS 48s infinite ease-in-out; }
+#services .trans-img:nth-child(1) { animation-delay: 0s; }
+#services .trans-img:nth-child(2) { animation-delay: 4s; }
+#services .trans-img:nth-child(3) { animation-delay: 8s; }
+#services .trans-img:nth-child(4) { animation-delay: 12s; }
+#services .trans-img:nth-child(5) { animation-delay: 16s; }
+#services .trans-img:nth-child(6) { animation-delay: 20s; }
+#services .trans-img:nth-child(7) { animation-delay: 24s; }
+#services .trans-img:nth-child(8) { animation-delay: 28s; }
+#services .trans-img:nth-child(9) { animation-delay: 32s; }
+#services .trans-img:nth-child(10) { animation-delay: 36s; }
+#services .trans-img:nth-child(11) { animation-delay: 40s; }
+#services .trans-img:nth-child(12) { animation-delay: 44s; }
+
+@keyframes transFadeAS {
+    0%, 8.33% { opacity: 1; z-index: 2; }
+    13.33%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .trans-dot { animation: transDotAS 48s infinite ease-in-out; }
+#services .trans-dot:nth-child(1) { animation-delay: 0s; }
+#services .trans-dot:nth-child(2) { animation-delay: 4s; }
+#services .trans-dot:nth-child(3) { animation-delay: 8s; }
+#services .trans-dot:nth-child(4) { animation-delay: 12s; }
+#services .trans-dot:nth-child(5) { animation-delay: 16s; }
+#services .trans-dot:nth-child(6) { animation-delay: 20s; }
+#services .trans-dot:nth-child(7) { animation-delay: 24s; }
+#services .trans-dot:nth-child(8) { animation-delay: 28s; }
+#services .trans-dot:nth-child(9) { animation-delay: 32s; }
+#services .trans-dot:nth-child(10) { animation-delay: 36s; }
+#services .trans-dot:nth-child(11) { animation-delay: 40s; }
+#services .trans-dot:nth-child(12) { animation-delay: 44s; }
+
+@keyframes transDotAS {
+    0%, 8.33% { background: var(--gold); }
+    13.33%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
+.services-footer {
+    margin-top: 3.5rem;
+    text-align: center;
+    color: #b0b0b0 !important;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   TESTIMONIALS SLIDER
+   ========================================================================== */
+.testimonials {
+    background-color: var(--ice-blue) !important;
+    padding: 5rem 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    overflow: hidden;
+}
+
+.testimonials .section-title {
+    color: var(--dark-text) !important;
+}
+
+.testimonials-content {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
+
+.testimonial-slider-viewport {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.testimonial-slider-track {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    width: max-content;
+    animation: slideStepSequence 46s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+}
+
+.testimonial-slider-viewport:hover .testimonial-slider-track {
+    animation-play-state: paused;
+}
+
+.testimonial-card-element {
+    width: calc((1100px - 4rem) / 3);
+    height: 400px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.testimonial-pop-card {
+    background: #ffffff !important; 
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important; 
+    text-decoration: none !important; 
+    color: inherit !important;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer;
+    height: 100%; 
+    text-align: left;
+}
+
+.testimonial-pop-card:hover {
+    background-color: #e6f2ff !important; 
+    border-color: var(--gold) !important;      
+    transform: translateY(-6px) !important; 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.reviewer-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.avatar-m { background-color: var(--gold); }
+.avatar-b { background-color: #4a5568; }
+.avatar-t { background-color: #1a2d45; }
+.avatar-tc { background-color: #008573; }
+.avatar-bs { background-color: #d4a017; }
+.avatar-c { background-color: #718096; }
+.avatar-a { background-color: #008573; }
+
+.reviewer-info-block {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.reviewer-name-text {
+    color: #1a2530 !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.reviewer-stats-text {
+    color: #718096 !important;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.stars {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 1rem !important;
+    display: block;
+}
+
+.testimonial-text {
+    color: #4a5568 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+    transition: color 0.3s ease;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+}
+
+.testimonial-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+.testimonial-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.testimonial-text::-webkit-scrollbar-thumb {
+    background-color: var(--gold);
+    border-radius: 10px;
+}
+
+.review-cta {
+    text-align: center !important;
+    margin-top: 3rem !important;
+}
+
+.review-cta p {
+    color: #4a5568 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.gold-link {
+    color: var(--gold) !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
+@keyframes slideStepSequence {
+    0%, 7.14% { transform: translateX(0); }
+    9.09%, 16.23% { transform: translateX(calc(-1 * ((1100px - 4rem) / 3 + 2rem))); }
+    18.18%, 25.32% { transform: translateX(calc(-2 * ((1100px - 4rem) / 3 + 2rem))); }
+    27.27%, 34.41% { transform: translateX(calc(-3 * ((1100px - 4rem) / 3 + 2rem))); }
+    36.36%, 43.5% { transform: translateX(calc(-4 * ((1100px - 4rem) / 3 + 2rem))); }
+    45.45%, 52.59% { transform: translateX(calc(-5 * ((1100px - 4rem) / 3 + 2rem))); }
+    54.55%, 61.69% { transform: translateX(calc(-6 * ((1100px - 4rem) / 3 + 2rem))); }
+    63.64%, 70.78% { transform: translateX(calc(-7 * ((1100px - 4rem) / 3 + 2rem))); }
+    72.73%, 79.87% { transform: translateX(calc(-8 * ((1100px - 4rem) / 3 + 2rem))); }
+    81.82%, 88.96% { transform: translateX(calc(-9 * ((1100px - 4rem) / 3 + 2rem))); }
+    90.91%, 100% { transform: translateX(calc(-10 * ((1100px - 4rem) / 3 + 2rem))); }
+}
+
+/* ==========================================================================
+   WHY CHOOSE US CARD STYLES
+   ========================================================================== */
+.why-us {
+    background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important;
+    padding: 5rem 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+.why-us-content {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
+
+.why-us .section-title {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    color: #ffffff !important;
+}
+
+.why-us .section-subtitle {
+    color: #b0b0b0 !important;
+    opacity: 1 !important;
+}
+
+.benefits-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    align-items: stretch !important;
+    margin-top: 3rem !important;
+}
+
+.whyus-pop-card {
+    margin: 0 !important;
+    background: #ffffff !important;
+    border: 2px solid transparent !important;
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer;
+}
+
+.benefit-number {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    color: var(--gold) !important;
+    margin-bottom: 0.5rem !important;
+    transition: color 0.3s ease;
+}
+
+.whyus-pop-card h4 {
+    color: #0d1b2a !important;
+    font-weight: bold !important;
+    margin-bottom: 0.8rem !important;
+    transition: color 0.3s ease !important;
+}
+
+.whyus-pop-card p {
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    transition: color 0.3s ease !important;
+}
+
+.whyus-pop-card:hover {
+    background-color: #e6f2ff !important;
+    border-color: var(--gold) !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==========================================================================
+   FINANCING SECTION
+   ========================================================================== */
+.financing-section {
+    background-color: var(--ice-blue) !important;
+    padding: 5rem 2rem !important;
+    text-align: center !important;
+    clear: both !important;
+    width: 100% !important;
+}
+
+.financing-content {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
+
+.financing-section .section-title,
+.financing-section h2,
+.financing-section h3 {
+    color: var(--dark-text) !important;
+}
+
+.financing-story {
+    max-width: 900px !important;
+    margin: 0 auto 3rem !important;
+    text-align: center !important;
+}
+
+.financing-story p {
+    color: #4a5568 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 1rem !important;
+}
+
+.financing-subtext {
+    color: #718096 !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+    font-style: italic !important;
+}
+
+.banner-stack-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+}
+
+.finance-banner-card {
+    width: 100% !important;
+    max-width: 1100px !important;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+}
+
+.finance-banner-card a {
+    display: block;
+    line-height: 0;
+}
+
+.finance-banner-card img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 6px !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+}
+
+.finance-banner-card:hover {
+    transform: translateY(-5px) !important;
+}
+
+
+/* ==========================================================================
+   FINANCING ROLODEX CAROUSEL (pure CSS, no JavaScript)
+   Front card full size, neighbors smaller and angled. Pauses on hover.
+   ========================================================================== */
+.fin-carousel {
+    --fx1: 250px; --fx2: 430px; --frot1: 38deg; --frot2: 52deg;
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 660px;
+    margin: 2.5rem auto 0;
+    perspective: 1400px;
+    overflow: hidden;
+}
+.fin-stage {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+}
+.fin-card {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 300px;
+    height: 600px;
+    margin-left: -150px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    display: block;
+    animation: finRolodex 30s ease-in-out infinite;
+    backface-visibility: hidden;
+}
+.fin-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.fin-card-1 { animation-delay: 0s; }
+.fin-card-2 { animation-delay: -25s; }
+.fin-card-3 { animation-delay: -20s; }
+.fin-card-4 { animation-delay: -15s; }
+.fin-card-5 { animation-delay: -10s; }
+.fin-card-6 { animation-delay: -5s; }
+.fin-carousel:hover .fin-card { animation-play-state: paused; }
+
+@keyframes finRolodex {
+    0%, 13.333% { transform: translateX(0) translateZ(0px) rotateY(0deg) scale(1); opacity: 1; z-index: 10; pointer-events: auto; }
+    16.667%, 30% { transform: translateX(calc(var(--fx1) * -1)) translateZ(-120px) rotateY(calc(var(--frot1))) scale(0.78); opacity: 0.95; z-index: 8; pointer-events: auto; }
+    33.333%, 46.667% { transform: translateX(calc(var(--fx2) * -1)) translateZ(-260px) rotateY(calc(var(--frot2))) scale(0.58); opacity: 0.6; z-index: 6; pointer-events: auto; }
+    50%, 63.333% { transform: translateX(0) translateZ(-420px) rotateY(0deg) scale(0.4); opacity: 0; z-index: 1; pointer-events: none; }
+    66.667%, 80% { transform: translateX(var(--fx2)) translateZ(-260px) rotateY(calc(var(--frot2) * -1)) scale(0.58); opacity: 0.6; z-index: 6; pointer-events: auto; }
+    83.333%, 96.667% { transform: translateX(var(--fx1)) translateZ(-120px) rotateY(calc(var(--frot1) * -1)) scale(0.78); opacity: 0.95; z-index: 8; pointer-events: auto; }
+    100% { transform: translateX(0) translateZ(0px) rotateY(0deg) scale(1); opacity: 1; z-index: 10; pointer-events: auto; }
+}
+
+@media (max-width: 768px) {
+    .fin-carousel { --fx1: 190px; --fx2: 300px; --frot1: 42deg; --frot2: 55deg; height: 620px; }
+}
+
+.divider-text {
+    color: var(--gold) !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    letter-spacing: 2px !important;
+    position: relative !important;
+    margin: 0.5rem 0 !important;
+    text-transform: uppercase !important;
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.contact-section {
+    background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%) !important;
+    padding: 5rem 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+.contact-content-container {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.contact-header-block {
+    text-align: center !important;
+    margin-bottom: 3.5rem !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.contact-main-title {
+    margin: 0 auto 1.5rem auto !important;
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    color: #ffffff !important;
+}
+
+.contact-main-title span {
+    display: block !important;
+}
+
+.contact-subtext {
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    color: #b0b0b0 !important;
+    line-height: 1.6 !important;
+    font-size: 1.05rem !important;
+    display: block !important;
+}
+
+.contact-layout-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+}
+
+.contact-boxes {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 1.5rem !important;
+    flex: 1 !important;
+    min-width: 300px !important;
+    max-width: 480px !important;
+    height: 460px !important;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+.contact-pop-card {
+    margin: 0 !important; 
+    background: #ffffff !important;
+    border: 2px solid var(--gold) !important;
+    padding: 1.5rem !important; 
+    border-radius: 8px !important; 
+    text-decoration: none !important; 
+    display: block !important; 
+    flex: 1 !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer;
+}
+
+.contact-pop-card .contact-label {
+    color: var(--gold) !important;
+    display: block !important; 
+    font-weight: bold !important; 
+    font-size: 0.85rem !important; 
+    margin-bottom: 0.4rem !important;
+}
+
+.contact-pop-card .contact-value {
+    color: #0d1b2a !important;
+    font-weight: bold !important;
+    transition: color 0.3s ease !important;
+}
+
+.val-phone { font-size: 1.2rem !important; }
+.val-email { font-size: 1.1rem !important; word-break: break-all !important; }
+.val-address { font-size: 1.1rem !important; line-height: 1.5 !important; }
+
+.contact-pop-card:hover {
+    background-color: #e6f2ff !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.contact-pop-card:hover .contact-value {
+    color: #4a5568 !important;
+}
+
+.map-container {
+    flex: 1 !important;
+    min-width: 300px !important;
+    max-width: 480px !important;
+    height: 460px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3) !important;
+    border: 2px solid var(--gold) !important;
+    margin: 0 !important;
+}
+
+.map-container iframe {
+    border: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ==========================================================================
+   GLOBAL SITE FOOTER
+   ========================================================================== */
+.footer {
+    background-color: var(--ice-blue) !important;
+    padding: 4rem 2rem 2rem 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    color: #0d1b2a !important;
+    border-top: 1px solid rgba(176, 125, 76, 0.2) !important;
+}
+
+.footer-grid-layout {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 2rem !important;
+    justify-content: space-between !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+.footer-col-block {
+    flex: 1 !important;
+    min-width: 200px !important;
+}
+
+.footer-col-block h4, .footer-col-block h3 {
+    color: var(--gold) !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    margin: 0 0 1.2rem 0 !important;
+    text-transform: uppercase !important;
+}
+
+.footer-col-block p {
+    color: #4a5568 !important;
+    line-height: 1.6 !important;
+    font-size: 0.95rem !important;
+    margin: 0 0 1rem 0 !important;
+}
+
+.footer-email-line {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+}
+
+.footer-email-line a {
+    white-space: nowrap !important;
+}
+
+.partner-alignment-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.partner-badge-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 1rem !important;
+}
+
+.carfax-wrap { margin-bottom: 1.5rem !important; }
+.ase-wrap { margin-bottom: 0.5rem !important; }
+
+.partner-label {
+    font-size: 0.7rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: var(--gold) !important;
+    font-weight: bold !important;
+    margin-bottom: 0.5rem !important;
+    display: block;
+}
+
+.partner-logo-img {
+    max-width: 130px !important;
+    height: auto !important;
+    display: block !important;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1)) !important;
+    margin: 0 auto;
+}
+
+.carfax-img { max-width: 140px !important; }
+.ase-img { max-width: 110px !important; }
+
+.visit-link {
+    color: var(--gold) !important;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.footer-col-block .scripture {
+    font-style: italic !important;
+    color: #0d1b2a !important;
+    border-left: 2px solid var(--gold) !important;
+    padding-left: 10px !important;
+    margin-top: 1.5rem !important;
+}
+
+.footer-col-block a {
+    color: #0d1b2a !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+    font-weight: bold !important;
+}
+
+.footer-col-block a:hover {
+    color: var(--gold) !important;
+}
+
+.address-p {
+    line-height: 1.5 !important;
+}
+
+.footer-jumpto-row {
+    max-width: 1200px !important;
+    margin: 2.5rem auto 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.footer-jumpto-row h3 {
+    color: var(--gold) !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    margin: 0 0 1.2rem 0 !important;
+    text-transform: uppercase !important;
+}
+
+.footer-link-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-link-list li {
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+}
+
+.footer-link-list li:not(:last-child)::after {
+    content: "•";
+    display: inline-block;
+    margin: 0 0.65rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.footer-link-list a {
+    font-size: 0.9rem !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+}
+
+.footer-divider-line {
+    max-width: 1200px !important;
+    margin: 3rem auto 1.5rem auto !important;
+    border: 0 !important;
+    border-top: 1px solid rgba(13, 27, 42, 0.1) !important;
+}
+
+.footer-copyright-row {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    color: #718096 !important;
+    font-size: 0.85rem !important;
+}
+
+.footer-copyright-row p {
+    margin: 0 !important;
+}
+
+/* ==========================================================================
+   PRODUCTION RESPONSIVE ARCHITECTURE (MOBILE MEDIA QUERY)
+   ========================================================================== */
+@media (max-width: 768px) {
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .header {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 1.5rem 1rem !important; 
+        background: #0d1b2a !important; 
+    }
+
+    .header-logo-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 0.75rem;
+        height: auto !important;
+    }
+
+    .header-logo {
+        margin-top: 0 !important;
+        height: 110px !important;
+        transform: none !important;
+    }
+
+    .logo-text {
+        font-size: 1.1rem !important;
+        text-align: center !important;
+        justify-content: center !important;
+        width: 100%;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+
+    .about, .why-us, .contact-section, .process, #services.services, .testimonials, .footer, .financing-section, .shop-warranty-section {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .benefits-grid, .contact-layout-wrapper {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    #services .services-flip-card {
+        width: 100% !important;
+        height: auto !important;
+        perspective: none !important;
+    }
+
+    #services .card-inner {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        transform-style: flat !important;
+    }
+
+    #services .services-flip-card:hover .card-inner {
+        transform: none !important;
+    }
+
+    #services .card-front {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+        background: #ffffff !important; 
+        border: 1px solid rgba(176, 125, 76, 0.25) !important;
+        border-radius: 8px !important;
+        z-index: 2 !important;
+    }
+
+    #services .card-back {
+        display: none !important;
+    }
+
+    .testimonial-card-element {
+        width: calc(100vw - 2.5rem) !important;
+    }
+
+    @keyframes slideStepSequence {
+        0%, 7.14% { transform: translateX(0); }
+        9.09%, 16.23% { transform: translateX(calc(-1 * (100vw - 2.5rem + 2rem))); }
+        18.18%, 25.32% { transform: translateX(calc(-2 * (100vw - 2.5rem + 2rem))); }
+        27.27%, 34.41% { transform: translateX(calc(-3 * (100vw - 2.5rem + 2rem))); }
+        36.36%, 43.5% { transform: translateX(calc(-4 * (100vw - 2.5rem + 2rem))); }
+        45.45%, 52.59% { transform: translateX(calc(-5 * (100vw - 2.5rem + 2rem))); }
+        54.55%, 61.69% { transform: translateX(calc(-6 * (100vw - 2.5rem + 2rem))); }
+        63.64%, 70.78% { transform: translateX(calc(-7 * (100vw - 2.5rem + 2rem))); }
+        72.73%, 79.87% { transform: translateX(calc(-8 * (100vw - 2.5rem + 2rem))); }
+        81.82%, 88.96% { transform: translateX(calc(-9 * (100vw - 2.5rem + 2rem))); }
+        90.91%, 100% { transform: translateX(calc(-10 * (100vw - 2.5rem + 2rem))); }
+    }
+
+    .footer-grid-layout {
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+    }
+
+    .footer-copyright-row {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .hero-title {
+        font-size: 1.6rem !important;
+    }
+
+    .warranty-title {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ==========================================================================
+   FLOATING REPAIRPAL ESTIMATOR
+   Fixed to the lower-left corner, stays put while scrolling, never overlaps
+   page content. Pure CSS open/close (checkbox + label), no JavaScript.
+   ========================================================================== */
+.repairpal-toggle-input {
+    display: none;
+}
+
+.repairpal-float {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+}
+
+.repairpal-float-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    padding: 16px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(176, 125, 76, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    animation: repairpalPulse 2.5s ease-out infinite;
+}
+
+@keyframes repairpalPulse {
+    0% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(176, 125, 76, 0.55); }
+    70% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 16px rgba(176, 125, 76, 0); }
+    100% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(176, 125, 76, 0); }
+}
+
+.repairpal-float-tab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    animation-play-state: paused;
+}
+
+.repairpal-tab-icon {
+    font-size: 1.1rem;
+}
+
+.repairpal-float-panel {
+    position: absolute;
+    left: 0;
+    bottom: 72px;
+    width: 390px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    padding: 14px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.repairpal-toggle-input:checked ~ .repairpal-float .repairpal-float-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
+}
+
+.repairpal-float-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.repairpal-float-close:hover {
+    background: #e2e2e2;
+}
+
+.repairpal-iframe {
+    width: 100%;
+    min-height: 700px;
+    border: none;
+    display: block;
+    margin-top: 28px; /* clears the close button */
+}
+
+@media (max-width: 768px) {
+    .repairpal-float {
+        left: 12px;
+        bottom: 12px;
+    }
+
+    .repairpal-float-tab {
+        padding: 12px 16px;
+    }
+
+    .repairpal-tab-text {
+        display: none; /* icon-only tab on small screens to stay out of the way */
+    }
+
+    .repairpal-float-panel {
+        width: calc(100vw - 24px);
+        bottom: 64px;
+    }
+}
