@@ -839,6 +839,45 @@ body {
     21.67%, 100% { background: rgba(255, 255, 255, 0.55); }
 }
 
+/* TRANS SLIDESHOW — 12 images, 48s full cycle */
+#services .trans-img { animation: transFadeAS 48s infinite ease-in-out; }
+#services .trans-img:nth-child(1) { animation-delay: 0s; }
+#services .trans-img:nth-child(2) { animation-delay: 4s; }
+#services .trans-img:nth-child(3) { animation-delay: 8s; }
+#services .trans-img:nth-child(4) { animation-delay: 12s; }
+#services .trans-img:nth-child(5) { animation-delay: 16s; }
+#services .trans-img:nth-child(6) { animation-delay: 20s; }
+#services .trans-img:nth-child(7) { animation-delay: 24s; }
+#services .trans-img:nth-child(8) { animation-delay: 28s; }
+#services .trans-img:nth-child(9) { animation-delay: 32s; }
+#services .trans-img:nth-child(10) { animation-delay: 36s; }
+#services .trans-img:nth-child(11) { animation-delay: 40s; }
+#services .trans-img:nth-child(12) { animation-delay: 44s; }
+
+@keyframes transFadeAS {
+    0%, 8.33% { opacity: 1; z-index: 2; }
+    13.33%, 100% { opacity: 0; z-index: 1; }
+}
+
+#services .trans-dot { animation: transDotAS 48s infinite ease-in-out; }
+#services .trans-dot:nth-child(1) { animation-delay: 0s; }
+#services .trans-dot:nth-child(2) { animation-delay: 4s; }
+#services .trans-dot:nth-child(3) { animation-delay: 8s; }
+#services .trans-dot:nth-child(4) { animation-delay: 12s; }
+#services .trans-dot:nth-child(5) { animation-delay: 16s; }
+#services .trans-dot:nth-child(6) { animation-delay: 20s; }
+#services .trans-dot:nth-child(7) { animation-delay: 24s; }
+#services .trans-dot:nth-child(8) { animation-delay: 28s; }
+#services .trans-dot:nth-child(9) { animation-delay: 32s; }
+#services .trans-dot:nth-child(10) { animation-delay: 36s; }
+#services .trans-dot:nth-child(11) { animation-delay: 40s; }
+#services .trans-dot:nth-child(12) { animation-delay: 44s; }
+
+@keyframes transDotAS {
+    0%, 8.33% { background: var(--gold); }
+    13.33%, 100% { background: rgba(255, 255, 255, 0.55); }
+}
+
 .services-footer {
     margin-top: 3.5rem;
     text-align: center;
