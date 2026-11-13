@@ -1,34 +1,19 @@
-/* Towing page additions only. Shared styles.css keeps the site's theme and
-   header/footer styling; selectors here are scoped to .towing-page. */
+/* Towing page additions only. Two alternating section backgrounds are used:
+   the shared dark navy and the site's light ice blue. */
+.towing-page .header-actions { display: flex; align-items: center; gap: 15px; }
+.towing-page .logo-text { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+
 .towing-page .towing-hero {
     min-height: 100vh;
     padding: 8rem 2rem 4rem;
     text-align: center;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--dark-bg) 100%);
+    background: var(--dark-bg);
 }
 
-.towing-hero-content,
-.towing-content,
-.towing-contact-content,
-.towing-finance-content {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.towing-hero .hero-title {
-    margin: 0 auto 1rem;
-    font-size: clamp(2.2rem, 6vw, 3.8rem);
-}
-
+.towing-hero-content, .towing-content, .towing-contact-content, .towing-finance-content { max-width: 1100px; margin: 0 auto; }
+.towing-hero .hero-title { margin: 0 auto 1rem; font-size: clamp(2.2rem, 6vw, 3.8rem); }
 .towing-hero .hero-subtitle { margin-bottom: .75rem; }
-
-.towing-hero-copy {
-    max-width: 680px;
-    margin: 0 auto 1.5rem;
-    color: #e8e8e8;
-    font-size: 1.08rem;
-}
-
+.towing-hero-copy { max-width: 680px; margin: 0 auto 1.5rem; color: #e8e8e8; font-size: 1.08rem; }
 .towing-main-cta { margin-bottom: 2rem; }
 
 .towing-hero-image {
@@ -42,181 +27,62 @@
     background: #07121e;
     box-shadow: 0 20px 40px rgba(0, 0, 0, .45);
 }
+.towing-hero-image img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
 
-.towing-hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-}
-
-.towing-services {
-    padding: 5.5rem 2rem;
-    background: linear-gradient(135deg, #1a2d45 0%, #0d1b2a 100%);
-}
-
-.towing-services .section-label,
-.towing-offer .section-label,
-.towing-finance .section-label,
-.towing-contact .section-label { color: var(--gold) !important; }
-
+.towing-services { padding: 5.5rem 2rem; background: var(--dark-bg); }
+.towing-services .section-label, .towing-offer .section-label, .towing-finance .section-label, .towing-contact .section-label { color: var(--gold) !important; }
 .towing-services .section-title { color: #fff; margin-bottom: .8rem; }
-
-.towing-intro {
-    max-width: 780px;
-    margin-bottom: 2.5rem;
-    color: #c7d0da;
-}
-
-.towing-card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    align-items: stretch;
-}
-
+.towing-intro { max-width: 780px; margin-bottom: 2.5rem; color: #c7d0da; }
+.towing-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: stretch; }
 .towing-flip-card { min-height: 310px; perspective: 1000px; outline: none; }
+.towing-card-inner { position: relative; display: grid; grid-template-areas: "stack"; width: 100%; height: 100%; min-height: 310px; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.4, 0, .2, 1); }
+.towing-flip-card:hover .towing-card-inner, .towing-flip-card:focus .towing-card-inner, .towing-flip-card:focus-within .towing-card-inner { transform: rotateY(180deg); }
 
-.towing-card-inner {
-    position: relative;
-    display: grid;
-    grid-template-areas: "stack";
-    width: 100%;
-    height: 100%;
-    min-height: 310px;
-    transform-style: preserve-3d;
-    transition: transform .6s cubic-bezier(.4, 0, .2, 1);
-}
-
-.towing-flip-card:hover .towing-card-inner,
-.towing-flip-card:focus .towing-card-inner,
-.towing-flip-card:focus-within .towing-card-inner { transform: rotateY(180deg); }
-
-.towing-card-front,
-.towing-card-back {
+.towing-card-front, .towing-card-back {
     grid-area: stack;
     width: 100%;
     min-height: 310px;
     overflow: hidden;
-    border: 2px solid transparent;
+    border: 2px solid rgba(176, 125, 76, .55);
     border-radius: 8px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, .2);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
-.towing-card-front {
-    z-index: 2;
-    padding: 2rem 1.6rem;
-    background: #fff;
-    color: var(--dark-text);
-    transition: border-color .25s ease;
-}
-
-.towing-flip-card:hover .towing-card-front,
-.towing-flip-card:focus .towing-card-front { border-color: var(--gold); }
-
-.towing-icon { display: block; margin-bottom: 1rem; font-size: 2.6rem; line-height: 1; }
-.towing-card-front h3 { margin-bottom: .65rem; color: var(--dark-text); font-size: 1.13rem; font-weight: 800; line-height: 1.35; }
-.towing-card-front p { color: #4a5568; font-size: .96rem; line-height: 1.6; }
-
-.flip-hint {
-    display: inline-block;
-    margin-top: 1.2rem;
-    color: #80603d;
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.towing-card-back {
-    position: relative;
-    transform: rotateY(180deg);
-    border-color: var(--gold);
-    background: var(--dark-bg);
-    color: #fff;
-}
-
+.towing-card-front { z-index: 2; padding: 2rem 1.6rem; background: #1a2d45; color: #fff; transition: border-color .25s ease; }
+.towing-flip-card:hover .towing-card-front, .towing-flip-card:focus .towing-card-front { border-color: var(--gold); }
+.service-card-title { display: flex; min-height: 54px; align-items: center; gap: .85rem; margin-bottom: .8rem; color: #fff; font-size: 1.08rem; font-weight: 800; line-height: 1.25; }
+.service-card-icon { display: inline-flex; width: 48px; min-width: 48px; height: 48px; align-items: center; justify-content: center; font-size: 2.15rem; line-height: 1; }
+.wrecker-icon { width: 54px; min-width: 54px; height: 48px; fill: var(--gold); stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.towing-card-front p { color: #e1e7ee; font-size: .96rem; line-height: 1.6; }
+.flip-hint { display: inline-block; margin-top: 1.2rem; color: #e4b782; font-size: .68rem; font-weight: 800; letter-spacing: 1px; }
+.towing-card-back { position: relative; transform: rotateY(180deg); border-color: var(--gold); background: var(--dark-bg); color: #fff; }
 .towing-photo-back img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #07121e; }
 .towing-photo-back::after { position: absolute; inset: 35% 0 0; content: ""; background: linear-gradient(transparent, rgba(5, 14, 23, .95)); }
-
-.towing-photo-caption,
-.towing-back-copy {
-    position: absolute;
-    z-index: 1;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    left: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: .45rem;
-    color: #fff;
-}
-
-.towing-photo-caption strong,
-.towing-back-copy strong { color: #fff; font-size: 1.18rem; }
-.towing-photo-caption span,
-.towing-back-copy span { color: #e8e8e8; font-size: .92rem; line-height: 1.5; }
-
-.towing-icon-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.4rem;
-    background: radial-gradient(circle at 50% 30%, #294867 0%, #0d1b2a 72%);
-}
-
+.towing-photo-caption, .towing-back-copy { position: absolute; z-index: 1; right: 1.25rem; bottom: 1.25rem; left: 1.25rem; display: flex; flex-direction: column; gap: .45rem; color: #fff; }
+.towing-photo-caption strong, .towing-back-copy strong { color: #fff; font-size: 1.18rem; }
+.towing-photo-caption span, .towing-back-copy span { color: #e8e8e8; font-size: .92rem; line-height: 1.5; }
+.towing-icon-back { display: flex; align-items: center; justify-content: center; padding: 1.4rem; background: #1a2d45; }
 .back-service-icon { position: absolute; top: 1.6rem; font-size: 4.4rem; filter: drop-shadow(0 5px 12px rgba(0, 0, 0, .3)); }
-.towing-back-copy { padding: 1.15rem; border: 1px solid rgba(176, 125, 76, .55); border-radius: 6px; background: rgba(7, 18, 30, .88); }
+.towing-back-copy { padding: 1.15rem; border: 1px solid rgba(176, 125, 76, .55); border-radius: 6px; background: rgba(7, 18, 30, .92); }
 .towing-disclaimer { margin-top: 2rem; color: #c7d0da; text-align: center; }
 
 .towing-offer { padding: 5rem 2rem; background: var(--ice-blue); color: var(--dark-text); }
-
-.towing-offer-panel {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: clamp(1.5rem, 5vw, 3.5rem);
-    border: 2px solid var(--gold);
-    border-radius: 10px;
-    background: #fff;
-    text-align: center;
-    box-shadow: 0 8px 28px rgba(13, 27, 42, .1);
-}
-
+.towing-offer-panel { max-width: 900px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3.5rem); border: 2px solid var(--gold); border-radius: 10px; background: var(--ice-blue); text-align: center; }
 .towing-offer-panel h2 { margin: .5rem 0 1rem; color: var(--dark-text); font-size: clamp(1.6rem, 4vw, 2.35rem); font-weight: 900; line-height: 1.2; }
 .towing-offer-panel p:not(.section-label) { max-width: 720px; margin: 0 auto 1.5rem; color: #4a5568; line-height: 1.7; }
 
-.towing-finance { padding: 5rem 2rem; background: #fff; color: var(--dark-text); }
+.towing-finance { padding: 5rem 2rem; background: var(--ice-blue); color: var(--dark-text); }
 .towing-finance h2 { margin: .5rem 0 1rem; color: var(--dark-text); font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 900; line-height: 1.2; }
 .finance-intro { max-width: 850px; margin-bottom: 2rem; color: #4a5568; line-height: 1.7; }
-
-.finance-minimum-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-.finance-minimum-card {
-    display: flex;
-    min-height: 150px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: .35rem;
-    padding: 1.25rem;
-    border: 1px solid rgba(176, 125, 76, .5);
-    border-radius: 8px;
-    background: var(--ice-blue);
-    text-align: center;
-}
-
+.finance-minimum-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.finance-minimum-card { display: flex; min-height: 150px; flex-direction: column; align-items: center; justify-content: center; gap: .35rem; padding: 1.25rem; border: 1px solid rgba(176, 125, 76, .5); border-radius: 8px; background: #e4ebf1; text-align: center; }
 .finance-minimum { color: var(--gold); font-size: 1.75rem; font-weight: 900; }
 .finance-minimum-card strong { color: var(--dark-text); font-size: 1.05rem; }
 .finance-minimum-card > span:last-child { color: #4a5568; font-size: .85rem; }
 .finance-note { margin-top: 1.25rem; color: #596575; font-size: .88rem; line-height: 1.6; }
 
-.towing-contact { padding: 5rem 2rem; background: linear-gradient(135deg, var(--navy) 0%, var(--dark-bg) 100%); text-align: center; }
+.towing-contact { padding: 5rem 2rem; background: var(--dark-bg); text-align: center; }
 .towing-contact h2 { margin: .5rem 0 1rem; color: #fff; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 900; }
 .towing-contact-content > p:not(.section-label) { max-width: 680px; margin: 0 auto 1.5rem; color: #d3dae2; }
 .towing-contact .cta-button { margin: .25rem .4rem; }
@@ -224,17 +90,16 @@
 .towing-home-link:hover { color: var(--gold); }
 .towing-page .footer { width: 100%; }
 
-@media (max-width: 900px) {
-    .towing-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .finance-minimum-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
+@media (max-width: 900px) { .towing-card-grid, .finance-minimum-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 700px) {
+    .towing-page .logo-text { left: 46%; max-width: calc(100% - 190px); overflow: hidden; font-size: .9rem; text-overflow: ellipsis; }
+    .towing-page .header-actions { gap: 8px; }
+    .towing-page .bbb-seal-img { height: 34px; }
+    .towing-page .header-actions .cta-button { height: 40px; padding: 0 12px; font-size: .82rem; }
     .towing-page .towing-hero { min-height: auto; padding: 7rem 1.25rem 3rem; }
     .towing-services, .towing-offer, .towing-finance, .towing-contact { padding: 3.5rem 1.25rem; }
     .towing-card-grid, .finance-minimum-grid { grid-template-columns: 1fr; gap: 1.1rem; }
     .towing-flip-card, .towing-card-inner, .towing-card-front, .towing-card-back { min-height: 285px; }
     .towing-card-front { padding: 1.7rem 1.4rem; }
 }
-
 @media (prefers-reduced-motion: reduce) { .towing-card-inner { transition: none; } }
